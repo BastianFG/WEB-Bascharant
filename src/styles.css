@@ -1,0 +1,127 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sage: var(--sage);
+  --color-olive: var(--olive);
+  --color-sand: var(--sand);
+  --color-stone: var(--stone);
+  --color-charcoal: var(--charcoal);
+}
+
+:root {
+  /* Premium organic palette */
+  --background: oklch(0.985 0.005 85);     /* blanco roto */
+  --foreground: oklch(0.22 0.015 130);     /* carbón suave verdoso */
+
+  --card: oklch(0.98 0.006 85);
+  --card-foreground: oklch(0.22 0.015 130);
+  --popover: oklch(0.98 0.006 85);
+  --popover-foreground: oklch(0.22 0.015 130);
+
+  --primary: oklch(0.32 0.04 140);          /* verde oliva oscuro */
+  --primary-foreground: oklch(0.97 0.01 85);
+
+  --secondary: oklch(0.92 0.012 90);        /* beige claro */
+  --secondary-foreground: oklch(0.28 0.03 140);
+
+  --muted: oklch(0.94 0.008 85);
+  --muted-foreground: oklch(0.48 0.015 130);
+
+  --accent: oklch(0.72 0.04 145);           /* verde salvia */
+  --accent-foreground: oklch(0.18 0.02 140);
+
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.98 0.005 85);
+
+  --border: oklch(0.88 0.01 90);
+  --input: oklch(0.9 0.008 90);
+  --ring: oklch(0.55 0.04 140);
+
+  /* Brand tokens */
+  --sage: oklch(0.74 0.038 148);
+  --olive: oklch(0.32 0.04 140);
+  --sand: oklch(0.88 0.025 80);
+  --stone: oklch(0.62 0.012 90);
+  --charcoal: oklch(0.22 0.012 130);
+
+  --shadow-soft: 0 1px 2px rgba(40,45,35,0.04), 0 20px 50px -20px rgba(40,45,35,0.12);
+  --shadow-lift: 0 30px 80px -30px rgba(40,45,35,0.25);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: var(--olive);
+    color: var(--background);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: color-mix(in oklab, var(--background) 70%, transparent);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+  }
+  .glass-dark {
+    background: color-mix(in oklab, var(--charcoal) 55%, transparent);
+    backdrop-filter: saturate(160%) blur(16px);
+    -webkit-backdrop-filter: saturate(160%) blur(16px);
+  }
+  .text-balance { text-wrap: balance; }
+  .tracking-tightest { letter-spacing: -0.04em; }
+  .hairline { height: 1px; background: var(--border); }
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--muted-foreground);
+  }
+}

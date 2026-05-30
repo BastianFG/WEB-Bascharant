@@ -95,7 +95,7 @@ export default function Contact() {
                   <MapPin strokeWidth={1.2} className="h-4 w-4 mt-0.5 text-[var(--olive)]" />
                   <div>
                     <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Cobertura</div>
-                    <div className="text-sm mt-1">Santiago y regiones — Chile</div>
+                    <div className="text-sm mt-1">Santiago y Region de los Lagos — Chile</div>
                   </div>
                 </div>
               </div>

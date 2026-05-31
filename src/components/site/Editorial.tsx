@@ -15,7 +15,7 @@ export default function Editorial() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-muted">
               <motion.img
                 src={img}
-                alt="Estudio Bascharant"
+                alt="Empresa Bascharant"
                 style={{ y }}
                 className="absolute inset-0 h-[115%] w-full object-cover"
                 loading="lazy"

@@ -29,7 +29,7 @@ export default function Hero() {
           className="flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-white/70"
         >
           <span className="inline-block h-px w-10 bg-white/50" />
-          Estudio de paisajismo · Chile
+          Empresa de paisajismo · Chile
         </motion.div>
 
         <div className="max-w-5xl">

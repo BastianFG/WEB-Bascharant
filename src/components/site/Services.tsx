@@ -29,7 +29,7 @@ export default function Services() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(2rem,4.5vw,4rem)] leading-[1.02] tracking-tightest text-balance"
             >
-              Un estudio que entiende el espacio como
+              Una Empresa que entiende el espacio como
               <span className="italic text-muted-foreground"> una experiencia viva.</span>
             </motion.h2>
           </div>

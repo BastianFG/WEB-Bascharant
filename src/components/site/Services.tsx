@@ -6,7 +6,7 @@ import {
 const items = [
   { icon: Leaf,     n: "01", t: "Diseño paisajístico",            d: "Conceptualización y planimetría de espacios verdes con visión arquitectónica." },
   { icon: Sprout,   n: "02", t: "Renovación de jardines",         d: "Rediseño integral de jardines existentes con criterio estético contemporáneo." },
-  { icon: HardHat,  n: "03", t: "Ejecución de proyectos",         d: "Construcción y plantación con cuadrillas especializadas y materiales premium." },
+  { icon: HardHat,  n: "03", t: "Ejecución de proyectos",         d: "Construcción y plantación con cuadrillas especializadas y materiales ." },
   { icon: Scissors, n: "04", t: "Mantención",                     d: "Programas continuos que preservan la salud y la belleza del paisaje en el tiempo." },
   { icon: Flower2,  n: "05", t: "Jardineras ornamentales",        d: "Composiciones vegetales sofisticadas para interiores, terrazas y fachadas." },
   { icon: Building2,n: "06", t: "Áreas verdes corporativas",      d: "Soluciones a escala para oficinas, condominios y proyectos inmobiliarios." },

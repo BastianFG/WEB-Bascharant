@@ -41,12 +41,12 @@ export default function Contact() {
                 </div>
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
               </a>
-              <a href="mailto:contacto@bascharant.cl" className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]">
+              <a href="mailto:Paisajismojf@gmail.com" className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]">
                 <div className="flex items-center gap-4">
                   <Mail strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
                   <div>
                     <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Email</div>
-                    <div className="text-sm mt-1">contacto@bascharant.cl</div>
+                    <div className="text-sm mt-1">Paisajismojf@gmail.com</div>
                   </div>
                 </div>
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
@@ -56,7 +56,7 @@ export default function Contact() {
                   <Instagram strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
                   <div>
                     <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Instagram</div>
-                    <div className="text-sm mt-1">@bascharant</div>
+                    <div className="text-sm mt-1">@paisajismobascharant</div>
                   </div>
                 </div>
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>

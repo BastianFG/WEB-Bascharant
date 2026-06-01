@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Paisajismo Bascharant — Empresa de paisajismo en Chile" },
-      { name: "description", content: "Diseño, ejecución y mantención de proyectos paisajísticos premium para empresas, hogares y espacios comerciales en Chile." },
+      { name: "description", content: "Diseño, ejecución y mantención de proyectos paisajísticos para empresas, hogares y espacios comerciales en Chile." },
       { property: "og:title", content: "Paisajismo Bascharant SpA" },
       { property: "og:description", content: "Empresa de paisajismo arquitectónico. Transformamos espacios en experiencias naturales." },
       { name: "google-site-verification", content: "iFdVG8aUcn3RJdL8JAym-st9Fo3KYBUDFGTF_JXIrno" },

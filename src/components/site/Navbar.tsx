@@ -39,7 +39,7 @@ export default function Navbar() {
         <a href="#inicio" className="group flex items-center gap-2">
           <span className="inline-block h-2 w-2 rounded-full bg-[var(--sage)] transition-transform duration-500 group-hover:scale-150" />
           <span className="font-display text-[17px] tracking-tight">
-            Bascharant<span className="text-muted-foreground"> · paisajismo</span>
+            Bascharant<span className="text-muted-foreground"> · Paisajismo</span>
           </span>
         </a>
 

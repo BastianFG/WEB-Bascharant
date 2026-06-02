@@ -166,10 +166,13 @@ function EmpresasCard(p: { id: string; hidden: boolean; mobileVisible: boolean; 
         <Field label="Servicio requerido">
           <select name="Servicio_Requerido" className={inputCls} defaultValue="">
             <option value="" disabled>Seleccionar</option>
-            <option>Diseño</option>
-            <option>Ejecución</option>
-            <option>Mantención</option>
-            <option>Integral</option>
+            <option className="text-slate-900 bg-white">Mantención de jardín</option>
+            <option className="text-slate-900 bg-white">Diseño paisajístico</option>
+            <option className="text-slate-900 bg-white">Instalación de riego automático</option>
+            <option className="text-slate-900 bg-white">Instalación de pasto (rollo/semilla)</option>
+            <option className="text-slate-900 bg-white">Fumigación y control de plagas</option>
+            <option className="text-slate-900 bg-white">Poda y limpieza de áreas</option>
+            <option className="text-slate-900 bg-white">Otro</option>
           </select>
         </Field>
         

@@ -5,13 +5,22 @@ import g3 from "@/assets/g3.jpg";
 import g4 from "@/assets/g4.jpg";
 import g5 from "@/assets/g5.jpg";
 import g6 from "@/assets/g6.jpg";
+import g7 from "@/assets/PodaQuilicura.png";
+import g8 from "@/assets/Podaaltura.png";
+import g9 from "@/assets/Catapilco.png";
+
+
+
 
 const items = [
   { src: g1, t: "Jardín contemporáneo", l: "Lo Barnechea", span: "row-span-2" },
   { src: g2, t: "Terraza corporativa",  l: "Las Condes",    span: "" },
+  { src: g7, t: "Poda Palmeras",  l: "Quilicura",    span: "" },
   { src: g3, t: "Muro vegetal",         l: "Vitacura",      span: "" },
   { src: g4, t: "Acceso corporativo",   l: "Santiago",      span: "" },
+  { src: g8, t: "Poda en Altura",         l: "Mall Quilicura",      span: "" },
   { src: g5, t: "Piscina + olivos",     l: "Chicureo",      span: "row-span-2" },
+  { src: g9, t: "Pasto Alfombra",         l: "Zapallar",      span: "" },
   { src: g6, t: "Terraza comercial",    l: "Providencia",   span: "" },
 ];
 

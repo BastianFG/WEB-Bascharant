@@ -22,7 +22,6 @@ export const Route = createFileRoute("/")({
       { name: "google-site-verification", content: "iFdVG8aUcn3RJdL8JAym-st9Fo3KYBUDFGTF_JXIrno" },
     ],
     links: [
-      { rel: "icon", type: "image/png", href: "/logo.ico" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,0..100&family=Inter:wght@300;400;500;600&display=swap" },

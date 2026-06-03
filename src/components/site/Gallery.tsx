@@ -8,7 +8,7 @@ import g6 from "@/assets/g6.jpg";
 import g7 from "@/assets/PodaQuilicura.png";
 import g8 from "@/assets/Podaaltura.png";
 import g9 from "@/assets/Catapilco.png";
-
+import g10 from "@/assets/Zap2.jpeg";
 
 
 
@@ -16,12 +16,13 @@ const items = [
   { src: g1, t: "Jardín contemporáneo", l: "Lo Barnechea", span: "row-span-2" },
   { src: g2, t: "Terraza corporativa",  l: "Las Condes",    span: "" },
   { src: g7, t: "Poda Palmeras",  l: "Quilicura",    span: "" },
-  { src: g3, t: "Muro vegetal",         l: "Vitacura",      span: "" },
-  { src: g4, t: "Acceso corporativo",   l: "Santiago",      span: "" },
-  { src: g8, t: "Poda en Altura",         l: "Mall Quilicura",      span: "" },
-  { src: g5, t: "Piscina + olivos",     l: "Chicureo",      span: "row-span-2" },
-  { src: g9, t: "Pasto Alfombra",         l: "Zapallar",      span: "" },
-  { src: g6, t: "Terraza comercial",    l: "Providencia",   span: "" },
+  { src: g9, t: "Paisajismo Seco",         l: "Arauco Quilicura",      span: "" },
+  { src: g3, t: "Muro Artificial",         l: "Vitacura",      span: "" },
+  { src: g4, t: "Plano Acceso corporativo",   l: "Santiago",      span: "" },
+  { src: g8, t: "Poda en Altura",         l: "Arauco San ignacio",      span: "" },
+  { src: g6, t: "Fumigacion Control Plagas",    l: "Arauco Quilicura",  span: "row-span-2" },
+  { src: g5, t: "Plano Piscina + olivos",     l: "Chicureo",      span: "" },
+  { src: g10, t: "Piscina + Palmeras",    l: "Zapallar",   span: "" },
 ];
 
 export default function Gallery() {

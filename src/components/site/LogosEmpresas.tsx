@@ -24,7 +24,7 @@ export function LogosEmpresas() {
         {/* Título elegante de la sección */}
         <div className="text-center mb-12">
           <h2 className="text-xs md:text-sm font-semibold tracking-[0.25em] text-slate-500 dark:text-slate-400 uppercase">
-            Empresas que confían en nosotros
+            Empresas que confíaron en nosotros
           </h2>
         </div>
 

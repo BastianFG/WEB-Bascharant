@@ -70,33 +70,34 @@ export default function Contact() {
           </div>
 
           <div className="col-span-12 lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-background">
-              <div className="absolute inset-0 opacity-90"
-                   style={{
-                     backgroundImage:
-                       "linear-gradient(135deg, color-mix(in oklab, var(--sage) 18%, var(--background)) 0%, var(--background) 60%)",
-                   }}
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-background hover:shadow-[var(--shadow-soft)] transition-all duration-500">
+              <iframe
+                src="https://maps.google.com/maps?q=Santiago,Chile&t=&z=6&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
               />
-              <svg className="absolute inset-0 h-full w-full opacity-40" viewBox="0 0 400 500" fill="none">
-                <g stroke="currentColor" strokeWidth="0.5" className="text-foreground/30">
-                  {Array.from({ length: 20 }).map((_, i) => (
-                    <line key={`h${i}`} x1="0" y1={i * 25} x2="400" y2={i * 25} />
-                  ))}
-                  {Array.from({ length: 16 }).map((_, i) => (
-                    <line key={`v${i}`} x1={i * 25} y1="0" x2={i * 25} y2="500" />
-                  ))}
-                </g>
-                <path d="M 0 320 Q 100 280 180 300 T 400 260" stroke="currentColor" className="text-[var(--olive)]/60" strokeWidth="1.5" fill="none" />
-                <circle cx="220" cy="280" r="6" className="fill-[var(--olive)]" />
-                <circle cx="220" cy="280" r="14" className="fill-[var(--olive)]/20" />
-              </svg>
-              <div className="absolute bottom-6 left-6 right-6 glass rounded-xl p-4 border border-border/60">
-                <div className="flex items-start gap-3">
-                  <MapPin strokeWidth={1.2} className="h-4 w-4 mt-0.5 text-[var(--olive)]" />
-                  <div>
-                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Cobertura</div>
-                    <div className="text-sm mt-1">Santiago y Region de los Lagos — Chile</div>
+              <div className="absolute bottom-6 left-6 right-6 glass rounded-xl p-4 border border-border/60 pointer-events-auto">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-start gap-3">
+                    <MapPin strokeWidth={1.2} className="h-4 w-4 mt-0.5 text-[var(--olive)]" />
+                    <div>
+                      <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Cobertura</div>
+                      <div className="text-sm mt-1">Santiago-Zapallar-Frutillar</div>
+                    </div>
                   </div>
+                  <a
+                    href="https://www.google.com/maps/dir/Santiago/Zapallar/Frutillar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[var(--olive)] opacity-70 hover:opacity-100 hover:translate-x-0.5 transition-all text-xs self-center flex items-center gap-1 cursor-pointer"
+                  >
+                    Ver en Maps →
+                  </a>
                 </div>
               </div>
             </div>

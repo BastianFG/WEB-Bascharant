@@ -161,8 +161,7 @@ function EmpresasCard(p: { id: string; hidden: boolean; mobileVisible: boolean; 
           </select>
         </Field>
         
-        <Field label="Tamaño estimado (m²)"><input name="Tamano_m2" type="number" min={1} max={1000000} className={inputCls} placeholder="0" /></Field>
-        
+
         <Field label="Servicio requerido">
           <select name="Servicio_Requerido" className={inputCls} defaultValue="">
             <option value="" disabled>Seleccionar</option>
@@ -176,8 +175,7 @@ function EmpresasCard(p: { id: string; hidden: boolean; mobileVisible: boolean; 
           </select>
         </Field>
         
-        <Field label="Presupuesto estimado"><input name="Presupuesto_Estimado" maxLength={80} className={inputCls} placeholder="Referencial CLP" /></Field>
-        
+
         <Field label="Fecha ideal de inicio">
           <input name="Fecha_Inicio" type="date" min={today} className={inputCls} />
         </Field>

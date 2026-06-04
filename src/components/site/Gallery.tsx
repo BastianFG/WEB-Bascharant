@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useEffect, useState, useCallback, useRef } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import g1 from "@/assets/g1.jpg";
 import g2 from "@/assets/g2.jpg";
 import g3 from "@/assets/g3.jpg";
@@ -9,8 +11,6 @@ import g7 from "@/assets/PodaQuilicura.png";
 import g8 from "@/assets/Podaaltura.png";
 import g9 from "@/assets/Catapilco.png";
 import g10 from "@/assets/Zap2.jpeg";
-
-
 
 const items = [
   { src: g1, t: "Jardín contemporáneo", l: "Lo Barnechea", span: "row-span-2" },
@@ -25,11 +25,115 @@ const items = [
   { src: g10, t: "Piscina + Palmeras",    l: "Zapallar",   span: "" },
 ];
 
+function MobileGallery() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+  const [current, setCurrent] = useState(0);
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCurrent(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  const stopAutoplay = useCallback(() => {
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+  }, []);
+
+  const startAutoplay = useCallback(() => {
+    stopAutoplay();
+    autoplayRef.current = setInterval(() => {
+      if (emblaApi) emblaApi.scrollNext();
+    }, 6000);
+  }, [emblaApi, stopAutoplay]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    startAutoplay();
+
+    // Pause on user drag
+    emblaApi.on("pointerDown", stopAutoplay);
+    emblaApi.on("pointerUp", () => {
+      stopAutoplay();
+      setTimeout(startAutoplay, 3000);
+    });
+
+    return () => {
+      stopAutoplay();
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect, startAutoplay, stopAutoplay]);
+
+  return (
+    <div className="md:hidden relative w-full select-none">
+      {/* Embla Viewport */}
+      <div className="overflow-hidden w-full px-1" ref={emblaRef}>
+        {/* Embla Container */}
+        <div className="flex">
+          {items.map((it, i) => (
+            <div
+              key={i}
+              className="shrink-0 grow-0 basis-[82%] min-w-0 pr-4 aspect-[4/3] relative overflow-hidden rounded-2xl bg-muted"
+            >
+              <img
+                src={it.src}
+                alt={it.t}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+              {/* Soft overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
+              
+              {/* Caption (always visible on mobile since there is no hover) */}
+              <div className="absolute inset-x-0 bottom-0 p-5 text-left">
+                <div className="text-white font-display text-[17px] leading-tight">{it.t}</div>
+                <div className="text-white/70 text-[9.5px] tracking-[0.22em] uppercase mt-1.5">{it.l}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dot Indicators */}
+      <div className="flex justify-center gap-1.5 mt-5">
+        {items.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => {
+              if (emblaApi) {
+                stopAutoplay();
+                emblaApi.scrollTo(i);
+                setTimeout(startAutoplay, 3000);
+              }
+            }}
+            aria-label={`Ir al proyecto ${i + 1}`}
+            style={{
+              height: 5,
+              borderRadius: 99,
+              width: i === current ? 16 : 5,
+              background: i === current ? "var(--olive)" : "var(--border)",
+              transition: "all 0.3s ease",
+              border: "none",
+              cursor: "pointer",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Gallery() {
   return (
-    <section id="proyectos" className="relative py-28 md:py-40 bg-secondary/40">
+    <section id="proyectos" className="relative py-16 md:py-40 bg-secondary/40">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-        <div className="grid grid-cols-12 gap-8 mb-16">
+        <div className="grid grid-cols-12 gap-8 mb-12">
           <div className="col-span-12 md:col-span-4">
             <p className="eyebrow">— Proyectos</p>
           </div>
@@ -44,7 +148,11 @@ export default function Gallery() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 auto-rows-[220px] md:auto-rows-[280px] gap-3 md:gap-5">
+        {/* Mobile View: Swipeable Carousel */}
+        <MobileGallery />
+
+        {/* Desktop View: Grid Layout */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 auto-rows-[280px] gap-5">
           {items.map((it, i) => (
             <motion.figure
               key={i}
@@ -63,7 +171,7 @@ export default function Gallery() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <figcaption className="absolute inset-x-0 bottom-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
                 <div className="text-white font-display text-lg leading-tight">{it.t}</div>
-                <div className="text-white/70 text-[11px] tracking-[0.2em] uppercase mt-1">{it.l}</div>
+                <div className="text-white/70 text-[11px] tracking-[0.25em] uppercase mt-1">{it.l}</div>
               </figcaption>
             </motion.figure>
           ))}

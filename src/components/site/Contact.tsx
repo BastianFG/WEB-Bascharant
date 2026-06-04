@@ -3,10 +3,10 @@ import { Phone, Mail, MessageCircle, Instagram, MapPin } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contacto" className="py-28 md:py-36 bg-secondary/40">
+    <section id="contacto" className="py-16 md:py-36 bg-secondary/40">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-        <div className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 lg:col-span-7">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10">
+          <div className="w-full lg:col-span-7">
             <p className="eyebrow mb-6">— Contacto</p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -69,8 +69,8 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-background hover:shadow-[var(--shadow-soft)] transition-all duration-500">
+          <div className="w-full lg:col-span-5">
+            <div className="relative aspect-[16/10] lg:aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-background hover:shadow-[var(--shadow-soft)] transition-all duration-500">
               <iframe
                 src="https://maps.google.com/maps?q=Santiago,Chile&t=&z=6&ie=UTF8&iwloc=&output=embed"
                 width="100%"

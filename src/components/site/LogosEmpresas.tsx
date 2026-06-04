@@ -7,7 +7,6 @@ import logoAir from '../../assets/Logoair.png';
 import logoQuilicura from '../../assets/LogoQuilicura.png'; 
 
 export function LogosEmpresas() {
-  // Pasa las variables importadas en lugar de texto
   const clientes = [
     { nombre: "Arauco", logo: logoArauco },
     { nombre: "Copec", logo: logoCopec },
@@ -17,42 +16,45 @@ export function LogosEmpresas() {
     { nombre: "Quilicura", logo: logoQuilicura },
   ];
 
+  // Quadruple the array to guarantee zero seam gaps on ultra-wide screens
+  const doubledClientes = [...clientes, ...clientes, ...clientes, ...clientes];
+
   return (
-    <section className="py-16 bg-slate-50/50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+    <section className="py-16 bg-slate-50/50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         
-        {/* Título elegante de la sección */}
-        <div className="text-center mb-12">
+        {/* Elegant Section Title */}
+        <div className="text-center mb-10">
           <h2 className="text-xs md:text-sm font-semibold tracking-[0.25em] text-slate-500 dark:text-slate-400 uppercase">
-            Empresas que confíaron en nosotros
+            Empresas que confiaron en nosotros
           </h2>
         </div>
 
-        {/* Cosas clave añadidas aquí:
-          - grid-cols-2 sm:grid-cols-3 lg:grid-cols-6: Distribuye los logos equitativamente según el tamaño de pantalla.
-          - items-center justify-items-center: Centra perfectamente el contenido horizontal y verticalmente.
-        */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-          {clientes.map((cliente, index) => (
-            <div 
-              key={index} 
-              /* Caja contenedora fija: Garantiza que todos tengan el mismo espacio disponible
-                Aumentamos la altura a h-20 en móvil y h-24 / h-28 en pantallas más grandes para mejorar la proporción general.
-              */
-              className="group flex items-center justify-center w-full h-20 md:h-24 lg:h-28 p-4 transition-all duration-300"
-            >
-              <img
-                src={cliente.logo}
-                alt={`Logo de ${cliente.nombre}`}
-                title={cliente.nombre}
-                /* - max-h-full y max-w-full: Hacen que el logo crezca hasta tocar el borde de su celda sin deformarse.
-                  - opacity-60: Ajustada un poco más alta para darles mayor presencia inicial en la página.
-                */
-                className="max-h-full max-w-full object-contain filter grayscale opacity-60 dark:opacity-50 transition-all duration-500 ease-out group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 cursor-pointer"
-                loading="lazy"
-              />
-            </div>
-          ))}
+        {/* Marquee Viewport with Edge Fade Masks */}
+        <div 
+          className="relative w-full overflow-hidden select-none"
+          style={{
+            maskImage: "linear-gradient(to right, transparent, white 15%, white 85%, transparent)",
+            WebkitMaskImage: "linear-gradient(to right, transparent, white 15%, white 85%, transparent)"
+          }}
+        >
+          {/* Infinite Running Track */}
+          <div className="flex animate-marquee gap-16 py-4 items-center w-max">
+            {doubledClientes.map((cliente, index) => (
+              <div 
+                key={index} 
+                className="shrink-0 flex items-center justify-center h-20 w-44 p-3 transition-all duration-300 group"
+              >
+                <img
+                  src={cliente.logo}
+                  alt={`Logo de ${cliente.nombre}`}
+                  title={cliente.nombre}
+                  className="max-h-full max-w-full object-contain transition-all duration-500 ease-out hover:scale-105 cursor-pointer"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>

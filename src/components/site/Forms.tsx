@@ -8,7 +8,7 @@ const today = new Date().toISOString().split('T')[0];
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
     <label className="block group">
-      <span className="block text-[11px] tracking-[0.18em] uppercase text-muted-foreground mb-2">
+      <span className="block text-[11px] tracking-[0.18em] uppercase text-muted-foreground mb-1.5 md:mb-2">
         {label}
       </span>
       {children}
@@ -17,7 +17,7 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 }
 
 const inputCls =
-  "w-full bg-transparent border-b border-border py-3 text-[15px] outline-none transition-all duration-500 focus:border-foreground placeholder:text-muted-foreground/60";
+  "w-full bg-transparent border-b border-border py-2.5 md:py-3 text-[15px] outline-none transition-all duration-500 focus:border-foreground placeholder:text-muted-foreground/60";
 
 // --- FUNCIÓN ACTUALIZADA PARA CONECTAR CON FORMSPREE ---
 function handleSubmit(label: string) {
@@ -60,11 +60,11 @@ export default function Forms() {
   return (
     <section className="relative py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-        <div className="grid grid-cols-12 gap-8 mb-12">
-          <div className="col-span-12 md:col-span-4">
+        <div className="flex flex-col md:grid md:grid-cols-12 gap-8 mb-12">
+          <div className="w-full md:col-span-4">
             <p className="eyebrow">— Trabajemos juntos</p>
           </div>
-          <div className="col-span-12 md:col-span-8">
+          <div className="w-full md:col-span-8">
             <h2 className="text-[clamp(2rem,4.5vw,4rem)] leading-[1.02] tracking-tightest text-balance">
               Dos caminos para comenzar
               <span className="italic text-muted-foreground"> tu proyecto.</span>
@@ -113,16 +113,16 @@ function CardShell({
         dark ? "bg-[var(--charcoal)] text-background border-white/10" : "bg-secondary/50 border-border"
       } ${mobileVisible ? "block" : "hidden md:block"}`}
     >
-      <div className="relative aspect-[16/9] overflow-hidden">
+      <div className="relative aspect-[21/9] md:aspect-[16/9] overflow-hidden">
         <img src={img} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-[1600ms] hover:scale-105" />
         <div className={`absolute inset-0 ${dark ? "bg-gradient-to-t from-[var(--charcoal)] via-transparent to-transparent" : "bg-gradient-to-t from-secondary via-transparent to-transparent"}`} />
       </div>
-      <div className="p-8 md:p-12">
-        <p className={`text-[11px] tracking-[0.28em] uppercase mb-4 ${dark ? "text-white/60" : "text-muted-foreground"}`}>{eyebrow}</p>
-        <h3 className="font-display text-3xl md:text-[2.4rem] leading-[1.05] tracking-tightest mb-5 text-balance">
+      <div className="p-5 md:p-12">
+        <p className={`text-[11px] tracking-[0.28em] uppercase mb-3 md:mb-4 ${dark ? "text-white/60" : "text-muted-foreground"}`}>{eyebrow}</p>
+        <h3 className="font-display text-[26px] md:text-[2.4rem] leading-[1.05] tracking-tightest mb-4 md:mb-5 text-balance">
           {title}
         </h3>
-        <p className={`text-[14.5px] leading-relaxed mb-10 max-w-prose ${dark ? "text-white/70" : "text-muted-foreground"}`}>
+        <p className={`text-[14px] md:text-[14.5px] leading-relaxed mb-6 md:mb-10 max-w-prose ${dark ? "text-white/70" : "text-muted-foreground"}`}>
           {text}
         </p>
         {children}
@@ -141,7 +141,7 @@ function EmpresasCard(p: { id: string; hidden: boolean; mobileVisible: boolean; 
       title="Solicita una propuesta para tu empresa"
       text="Diseñamos propuestas de paisajismo para empresas que buscan mejorar la imagen y experiencia de sus espacios. Completa el formulario y te contactaremos para evaluar tu proyecto."
     >
-      <form onSubmit={handleSubmit("evaluación")} className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+      <form onSubmit={handleSubmit("evaluación")} className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 md:gap-y-6">
         {/* Se agregaron los atributos 'name' a todos los campos */}
         <Field label="Empresa"><input name="Empresa" required maxLength={120} className={inputCls} placeholder="Razón social" /></Field>
         <Field label="Nombre y cargo"><input name="Nombre_Contacto" required maxLength={120} className={inputCls} placeholder="Ej. Camila Ruiz · Gerente" /></Field>
@@ -214,7 +214,7 @@ function ParticularesCard(p: { id: string; mobileVisible: boolean; img: string }
       title="Agenda una visita para tu hogar o local"
       text="Si quieres renovar el jardín de tu casa o mejorar la estética natural de tu local, agenda una visita y revisaremos tu espacio en terreno para proponerte una solución adecuada."
     >
-      <form onSubmit={handleSubmit("visita")} className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+      <form onSubmit={handleSubmit("visita")} className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 md:gap-y-6">
         {/* Se agregaron los atributos 'name' a todos los campos */}
         <Field label="Nombre completo"><input name="Nombre_Completo" required maxLength={120} className={`${inputCls} border-white/20 focus:border-white text-white`} placeholder="Tu nombre" /></Field>
         <Field label="Teléfono"><input name="Telefono" required type="tel" maxLength={30} className={`${inputCls} border-white/20 focus:border-white text-white`} placeholder="+56" /></Field>

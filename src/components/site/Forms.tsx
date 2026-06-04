@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useState, useRef, type FormEvent, type ReactNode } from "react";
 import { toast } from "sonner";
+import { useGooglePlacesAutocomplete } from "@/hooks/useGooglePlacesAutocomplete";
 import empresasImg from "@/assets/empresas.jpg";
 import particularesImg from "@/assets/particulares.jpg";
 const today = new Date().toISOString().split('T')[0];
@@ -132,6 +133,9 @@ function CardShell({
 }
 
 function EmpresasCard(p: { id: string; hidden: boolean; mobileVisible: boolean; img: string }) {
+  const addressRef = useRef<HTMLInputElement>(null);
+  useGooglePlacesAutocomplete(addressRef);
+
   return (
     <CardShell
       id={p.id}
@@ -148,7 +152,7 @@ function EmpresasCard(p: { id: string; hidden: boolean; mobileVisible: boolean; 
         <Field label="Teléfono"><input name="Telefono" required type="tel" maxLength={30} className={inputCls} placeholder="+56" /></Field>
         <Field label="Correo corporativo"><input name="Correo" required type="email" maxLength={150} className={inputCls} placeholder="nombre@empresa.cl" /></Field>
         <Field label="Rubro"><input name="Rubro" maxLength={80} className={inputCls} placeholder="Oficinas, retail, hotelería…" /></Field>
-        <Field label="Dirección del proyecto"><input name="Direccion" maxLength={200} className={inputCls} placeholder="Comuna, ciudad" /></Field>
+        <Field label="Dirección del proyecto"><input ref={addressRef} name="Direccion" maxLength={200} className={inputCls} placeholder="Comuna, ciudad" /></Field>
         
         <Field label="Tipo de espacio">
           <select name="Tipo_Espacio" className={inputCls} defaultValue="">
@@ -204,6 +208,9 @@ function EmpresasCard(p: { id: string; hidden: boolean; mobileVisible: boolean; 
 }
 
 function ParticularesCard(p: { id: string; mobileVisible: boolean; img: string }) {
+  const addressRef = useRef<HTMLInputElement>(null);
+  useGooglePlacesAutocomplete(addressRef);
+
   return (
     <CardShell
       id={p.id}
@@ -219,7 +226,7 @@ function ParticularesCard(p: { id: string; mobileVisible: boolean; img: string }
         <Field label="Nombre completo"><input name="Nombre_Completo" required maxLength={120} className={`${inputCls} border-white/20 focus:border-white text-white`} placeholder="Tu nombre" /></Field>
         <Field label="Teléfono"><input name="Telefono" required type="tel" maxLength={30} className={`${inputCls} border-white/20 focus:border-white text-white`} placeholder="+56" /></Field>
         <Field label="Correo"><input name="Correo" required type="email" maxLength={150} className={`${inputCls} border-white/20 focus:border-white text-white`} placeholder="nombre@correo.cl" /></Field>
-        <Field label="Dirección"><input name="Direccion" maxLength={200} className={`${inputCls} border-white/20 focus:border-white text-white`} placeholder="Comuna, ciudad" /></Field>
+        <Field label="Dirección"><input ref={addressRef} name="Direccion" maxLength={200} className={`${inputCls} border-white/20 focus:border-white text-white`} placeholder="Comuna, ciudad" /></Field>
         
         <Field label="Tipo de cliente">
           <select name="Tipo_Cliente" className={`${inputCls} border-white/20 focus:border-white text-white bg-[var(--charcoal)]`} defaultValue="">

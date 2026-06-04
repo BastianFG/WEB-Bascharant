@@ -104,11 +104,13 @@ export function useGooglePlacesAutocomplete(inputRef: React.RefObject<HTMLInputE
         // Escuchar el evento de selección de dirección
         autocomplete.addListener("place_changed", () => {
           const place = autocomplete?.getPlace();
-          if (place && place.formatted_address) {
-            inputRef.current!.value = place.formatted_address;
+          // Intentar obtener la dirección formateada; si no está disponible, usar el nombre descriptivo
+          const address = place?.formatted_address || place?.name;
+          if (address && inputRef.current) {
+            inputRef.current.value = address;
             
             // Disparar evento de input para que React actualice sus estados
-            inputRef.current!.dispatchEvent(new Event("input", { bubbles: true }));
+            inputRef.current.dispatchEvent(new Event("input", { bubbles: true }));
           }
         });
 

@@ -2,6 +2,36 @@ import { useEffect } from "react";
 
 let scriptLoadingPromise: Promise<void> | null = null;
 
+// Registrar el callback global de falla de autenticación de Google Maps
+if (typeof window !== "undefined") {
+  (window as any).gm_authFailure = () => {
+    console.warn(
+      "Google Maps API: Error de autenticación detectado (posible API Key inválida, sin facturación habilitada o dominio no autorizado)."
+    );
+    // Restaurar inmediatamente cualquier input afectado por la falla de Google Maps
+    const autocompleteInputs = document.querySelectorAll("input");
+    autocompleteInputs.forEach((el) => {
+      if (el.disabled || el.placeholder.includes("error") || el.placeholder.includes("produjo") || el.placeholder.includes("occurred")) {
+        el.disabled = false;
+        // Quitar clases inyectadas por Google
+        el.classList.remove("pac-target-input");
+        // Restaurar placeholder original (si lo guardamos en un data-attribute)
+        const orig = el.getAttribute("data-original-placeholder");
+        if (orig) {
+          el.placeholder = orig;
+        }
+        if (el.value.toLowerCase().includes("error") || el.value.toLowerCase().includes("se produjo")) {
+          el.value = "";
+        }
+      }
+    });
+
+    // Remover contenedores de sugerencias vacíos/rotos
+    const pacContainers = document.querySelectorAll(".pac-container");
+    pacContainers.forEach((container) => container.remove());
+  };
+}
+
 function loadGoogleMapsScript(apiKey: string): Promise<void> {
   if (typeof window === "undefined") {
     return Promise.resolve();
@@ -20,7 +50,7 @@ function loadGoogleMapsScript(apiKey: string): Promise<void> {
     script.defer = true;
     script.onload = () => resolve();
     script.onerror = (err) => {
-      scriptLoadingPromise = null; // allow retry
+      scriptLoadingPromise = null; // permitir reintento
       reject(err);
     };
     document.head.appendChild(script);
@@ -42,9 +72,14 @@ export function useGooglePlacesAutocomplete(inputRef: React.RefObject<HTMLInputE
       return;
     }
 
-    let autocomplete: google.maps.places.Autocomplete | null = null;
+    // Guardar el placeholder original en memoria y en un atributo HTML para restauración global
+    const originalPlaceholder = input.placeholder || "";
+    input.setAttribute("data-original-placeholder", originalPlaceholder);
 
-    // Prevenir el envío del formulario cuando se presiona Enter para seleccionar una sugerencia
+    let autocomplete: google.maps.places.Autocomplete | null = null;
+    let checkInterval: NodeJS.Timeout | null = null;
+
+    // Prevenir el envío del formulario al presionar Enter para seleccionar una sugerencia
     const handleKeyDown = (e: KeyboardEvent) => {
       const pacContainer = document.querySelector(".pac-container");
       if (pacContainer && window.getComputedStyle(pacContainer).display !== "none") {
@@ -72,10 +107,64 @@ export function useGooglePlacesAutocomplete(inputRef: React.RefObject<HTMLInputE
           if (place && place.formatted_address) {
             inputRef.current!.value = place.formatted_address;
             
-            // Disparar evento de input para que React y los controladores de formulario actualicen su estado
+            // Disparar evento de input para que React actualice sus estados
             inputRef.current!.dispatchEvent(new Event("input", { bubbles: true }));
           }
         });
+
+        // Monitoreo proactivo: Si Google Maps inyecta un error o deshabilita el input,
+        // lo detectamos inmediatamente y restauramos el input nativo.
+        let checkCount = 0;
+        checkInterval = setInterval(() => {
+          const el = inputRef.current;
+          if (!el) {
+            if (checkInterval) clearInterval(checkInterval);
+            return;
+          }
+          checkCount++;
+
+          const hasErrorPlaceholder =
+            el.placeholder.toLowerCase().includes("error") ||
+            el.placeholder.toLowerCase().includes("occurred") ||
+            el.placeholder.toLowerCase().includes("se produjo") ||
+            el.placeholder.toLowerCase().includes("produjo");
+
+          const hasErrorValue =
+            el.value.toLowerCase().includes("error") ||
+            el.value.toLowerCase().includes("se produjo");
+
+          if (el.disabled || hasErrorPlaceholder || hasErrorValue) {
+            console.warn(
+              "Google Places Autocomplete: Error de API o billing detectado. Restaurando el input de dirección original."
+            );
+
+            if (checkInterval) clearInterval(checkInterval);
+
+            // Desvincular listeners de Google Maps
+            if (autocomplete) {
+              window.google?.maps?.event?.clearInstanceListeners(autocomplete);
+            }
+
+            // Quitar clase de control de Google Maps
+            el.classList.remove("pac-target-input");
+
+            // Restaurar estado e input original
+            el.disabled = false;
+            el.placeholder = originalPlaceholder;
+            if (hasErrorValue) {
+              el.value = "";
+            }
+
+            // Eliminar paneles de Google Maps remanentes
+            const pacContainers = document.querySelectorAll(".pac-container");
+            pacContainers.forEach((container) => container.remove());
+          }
+
+          // Dejar de verificar después de 4 segundos (el handshake de Google toma < 1s)
+          if (checkCount > 40) {
+            if (checkInterval) clearInterval(checkInterval);
+          }
+        }, 100);
       })
       .catch((err) => {
         console.error("Error al cargar la API de Google Maps:", err);
@@ -83,10 +172,10 @@ export function useGooglePlacesAutocomplete(inputRef: React.RefObject<HTMLInputE
 
     return () => {
       input.removeEventListener("keydown", handleKeyDown);
+      if (checkInterval) clearInterval(checkInterval);
       if (autocomplete) {
         window.google?.maps?.event?.clearInstanceListeners(autocomplete);
       }
-      // Limpiar pac-containers residuales del DOM
       const pacContainers = document.querySelectorAll(".pac-container");
       pacContainers.forEach((container) => container.remove());
     };

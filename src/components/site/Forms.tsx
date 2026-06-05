@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useRef, type FormEvent, type ReactNode } from "react";
+import { useState, useRef, useEffect, type FormEvent, type ReactNode } from "react";
 import { toast } from "sonner";
 import { useGooglePlacesAutocomplete } from "@/hooks/useGooglePlacesAutocomplete";
 import empresasImg from "@/assets/empresas.jpg";
@@ -60,8 +60,22 @@ export default function Forms() {
   const addressRef = useRef<HTMLInputElement>(null);
   useGooglePlacesAutocomplete(addressRef);
 
+  useEffect(() => {
+    const checkHash = () => {
+      const hash = window.location.hash;
+      if (hash === "#reunion-tecnica") {
+        setActiveForm("reunion");
+      } else if (hash === "#empresas") {
+        setActiveForm("propuesta");
+      }
+    };
+    window.addEventListener("hashchange", checkHash);
+    checkHash();
+    return () => window.removeEventListener("hashchange", checkHash);
+  }, []);
+
   return (
-    <section className="relative py-20 md:py-32 border-t border-border/60">
+    <section id="empresas" className="relative py-20 md:py-32 border-t border-border/60">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         {/* Header */}
         <div className="flex flex-col md:grid md:grid-cols-12 gap-8 mb-12">
@@ -90,6 +104,7 @@ export default function Forms() {
               1. Solicitar Propuesta Comercial
             </button>
             <button
+              id="reunion-tecnica"
               onClick={() => setActiveForm("reunion")}
               className={`flex-1 rounded-full py-3 text-xs font-semibold tracking-wide capitalize transition-all ${
                 activeForm === "reunion"
@@ -121,7 +136,6 @@ export default function Forms() {
                 {activeForm === "propuesta" ? (
                   <motion.div
                     key="propuesta-form"
-                    id="empresas"
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -15 }}
@@ -289,7 +303,6 @@ export default function Forms() {
                 ) : (
                   <motion.div
                     key="reunion-form"
-                    id="reunion-tecnica"
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -15 }}

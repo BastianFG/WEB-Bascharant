@@ -13,12 +13,12 @@ export default function FloatingCTA() {
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.96 }}
         title="Agendar Reunión Técnica"
-        className="group inline-flex items-center gap-3 rounded-full bg-[var(--charcoal)] text-background pl-3 pr-5 py-3 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.4)] border border-white/10"
+        className="group inline-flex items-center justify-center gap-0 md:gap-3 rounded-full bg-[var(--charcoal)] text-background p-2.5 md:pl-3 md:pr-5 md:py-3 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.4)] border border-white/10"
       >
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--sage)]">
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--sage)] shrink-0">
           <Calendar strokeWidth={1.4} className="h-5 w-5 text-[var(--charcoal)]" />
         </span>
-        <span className="flex flex-col text-left leading-tight">
+        <span className="hidden md:flex flex-col text-left leading-tight">
           <span className="text-[9px] tracking-[0.2em] uppercase text-white/50">Reunión Técnica</span>
           <span className="text-[13px] font-medium text-white">Agendar Sesión</span>
         </span>
@@ -35,12 +35,12 @@ export default function FloatingCTA() {
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.96 }}
         title="WhatsApp Corporativo"
-        className="group inline-flex items-center gap-3 rounded-full bg-[var(--charcoal)] text-background pl-3 pr-5 py-3 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.4)] border border-white/10"
+        className="group inline-flex items-center justify-center gap-0 md:gap-3 rounded-full bg-[var(--charcoal)] text-background p-2.5 md:pl-3 md:pr-5 md:py-3 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.4)] border border-white/10"
       >
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500">
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500 shrink-0">
           <MessageCircle strokeWidth={1.4} className="h-5 w-5 text-white" />
         </span>
-        <span className="flex flex-col text-left leading-tight">
+        <span className="hidden md:flex flex-col text-left leading-tight">
           <span className="text-[9px] tracking-[0.2em] uppercase text-white/50">Canal Directo</span>
           <span className="text-[13px] font-medium text-white">WhatsApp</span>
         </span>

@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
-import { useEffect, useState, useCallback, useRef } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import g1 from "@/assets/g1.jpg";
 import g2 from "@/assets/g2.jpg";
 import g3 from "@/assets/g3.jpg";
@@ -12,170 +11,250 @@ import g8 from "@/assets/Podaaltura.png";
 import g9 from "@/assets/Catapilco.png";
 import g10 from "@/assets/Zap2.jpeg";
 
-const items = [
-  { src: g1, t: "Jardín contemporáneo", l: "Lo Barnechea", span: "row-span-2" },
-  { src: g2, t: "Terraza corporativa",  l: "Las Condes",    span: "" },
-  { src: g7, t: "Poda Palmeras",  l: "Quilicura",    span: "" },
-  { src: g9, t: "Paisajismo Seco",         l: "Arauco Quilicura",      span: "" },
-  { src: g3, t: "Muro Artificial",         l: "Vitacura",      span: "" },
-  { src: g4, t: "Plano Acceso corporativo",   l: "Santiago",      span: "" },
-  { src: g8, t: "Poda en Altura",         l: "Arauco San ignacio",      span: "" },
-  { src: g6, t: "Fumigacion Control Plagas",    l: "Arauco Quilicura",  span: "row-span-2" },
-  { src: g5, t: "Plano Piscina + olivos",     l: "Chicureo",      span: "" },
-  { src: g10, t: "Piscina + Palmeras",    l: "Zapallar",   span: "" },
-];
-
-function MobileGallery() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
-  const [current, setCurrent] = useState(0);
-  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setCurrent(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  const stopAutoplay = useCallback(() => {
-    if (autoplayRef.current) {
-      clearInterval(autoplayRef.current);
-      autoplayRef.current = null;
-    }
-  }, []);
-
-  const startAutoplay = useCallback(() => {
-    stopAutoplay();
-    autoplayRef.current = setInterval(() => {
-      if (emblaApi) emblaApi.scrollNext();
-    }, 6000);
-  }, [emblaApi, stopAutoplay]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-    startAutoplay();
-
-    // Pause on user drag
-    emblaApi.on("pointerDown", stopAutoplay);
-    emblaApi.on("pointerUp", () => {
-      stopAutoplay();
-      setTimeout(startAutoplay, 3000);
-    });
-
-    return () => {
-      stopAutoplay();
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
-    };
-  }, [emblaApi, onSelect, startAutoplay, stopAutoplay]);
-
-  return (
-    <div className="md:hidden relative w-full select-none">
-      {/* Embla Viewport */}
-      <div className="overflow-hidden w-full px-1" ref={emblaRef}>
-        {/* Embla Container */}
-        <div className="flex">
-          {items.map((it, i) => (
-            <div
-              key={i}
-              className="shrink-0 grow-0 basis-[82%] min-w-0 pr-4 aspect-[4/3] relative overflow-hidden rounded-2xl bg-muted"
-            >
-              <img
-                src={it.src}
-                alt={it.t}
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-              {/* Soft overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
-              
-              {/* Caption (always visible on mobile since there is no hover) */}
-              <div className="absolute inset-x-0 bottom-0 p-5 text-left">
-                <div className="text-white font-display text-[17px] leading-tight">{it.t}</div>
-                <div className="text-white/70 text-[9.5px] tracking-[0.22em] uppercase mt-1.5">{it.l}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Dot Indicators */}
-      <div className="flex justify-center gap-1.5 mt-5">
-        {items.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => {
-              if (emblaApi) {
-                stopAutoplay();
-                emblaApi.scrollTo(i);
-                setTimeout(startAutoplay, 3000);
-              }
-            }}
-            aria-label={`Ir al proyecto ${i + 1}`}
-            style={{
-              height: 5,
-              borderRadius: 99,
-              width: i === current ? 16 : 5,
-              background: i === current ? "var(--olive)" : "var(--border)",
-              transition: "all 0.3s ease",
-              border: "none",
-              cursor: "pointer",
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  );
+interface ProjectItem {
+  src: string;
+  t: string;
+  l: string;
+  category: "ejecucion" | "mantencion" | "diseno";
+  mandante: string;
+  superficie: string;
+  plazo: string;
+  servicio: string;
 }
 
+const items: ProjectItem[] = [
+  {
+    src: g9,
+    t: "Paisajismo Seco y Reconversión Hídrica",
+    l: "Quilicura",
+    category: "ejecucion",
+    mandante: "Arauco Quilicura",
+    superficie: "4.800 m²",
+    plazo: "90 días",
+    servicio: "Sustitución de césped y riego automatizado",
+  },
+  {
+    src: g2,
+    t: "Habilitación de Terraza Corporativa",
+    l: "Las Condes",
+    category: "ejecucion",
+    mandante: "Edificio Corporativo Bash",
+    superficie: "450 m²",
+    plazo: "15 días",
+    servicio: "Diseño e implementación macetas y arboles",
+  },
+  {
+    src: g7,
+    t: "Poda Preventiva y Silvicultura",
+    l: "Quilicura",
+    category: "mantencion",
+    mandante: "Arauco San Ignacio",
+    superficie: "45 ejemplares",
+    plazo: "5 días",
+    servicio: "Poda certificada y control fitosanitario",
+  },
+  {
+    src: g8,
+    t: "Mantención de Áreas Verdes Industriales",
+    l: "San Ignacio",
+    category: "mantencion",
+    mandante: "Arauco San Ignacio",
+    superficie: "10 ejemplares",
+    plazo: "Contrato Mantencion",
+    servicio: "Poda en altura",
+  },
+  {
+    src: g4,
+    t: "Plano Acceso y Paisajismo Vial",
+    l: "Santiago",
+    category: "diseno",
+    mandante: "Copec S.A.",
+    superficie: "900 m²",
+    plazo: "25 días",
+    servicio: "Diseño paisajístico 3D y especificaciones técnicas",
+  },
+  {
+    src: g3,
+    t: "Muro Verde Vertical de Alto Tránsito",
+    l: "Vitacura",
+    category: "diseno",
+    mandante: "Huber Chile",
+    superficie: "120 m²",
+    plazo: "8 días",
+    servicio: "Ingeniería de soporte y plantación artificial",
+  },
+  {
+    src: g6,
+    t: "Fumigación y Control Fitosanitario",
+    l: "Quilicura",
+    category: "mantencion",
+    mandante: "Arauco Quilicura",
+    superficie: "8.500 m²",
+    plazo: "Servicio Mensual",
+    servicio: "Prevención fitosanitaria en áreas comunes",
+  },
+  {
+    src: g5,
+    t: "Plano Habilitación Piscina + Entorno",
+    l: "Chicureo",
+    category: "diseno",
+    mandante: "Condominio Los Olivos",
+    superficie: "700 m²",
+    plazo: "15 días",
+    servicio: "Modelado 3D y paisajismo",
+  },
+  {
+    src: g10,
+    t: "Paisajismo Residencial",
+    l: "Zapallar",
+    category: "ejecucion",
+    mandante: "Residencial Privado",
+    superficie: "350 m²",
+    plazo: "25 días",
+    servicio: "Instalacion Pasto alfombra, sistema de riego",
+  },
+];
+
+const categories = [
+  { id: "all", label: "Todos los proyectos" },
+  { id: "ejecucion", label: "Ejecución (Obras)" },
+  { id: "mantencion", label: "Mantención Corporativa" },
+  { id: "diseno", label: "Diseño & Licitaciones" },
+];
+
 export default function Gallery() {
+  const [activeTab, setActiveTab] = useState<string>("all");
+  const [showAll, setShowAll] = useState<boolean>(false);
+
+  // Filter items based on selected category tab
+  const filteredItems = items.filter((item) => activeTab === "all" || item.category === activeTab);
+
+  // Limit items visible: show only 6 initially (especially important on mobile to avoid pushing content off screen)
+  const visibleItems = showAll ? filteredItems : filteredItems.slice(0, 6);
+
   return (
-    <section id="proyectos" className="relative py-16 md:py-40 bg-secondary/40">
+    <section
+      id="proyectos"
+      className="relative py-20 md:py-36 bg-secondary/20 border-t border-border/60"
+    >
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        {/* Section Header */}
         <div className="grid grid-cols-12 gap-8 mb-12">
           <div className="col-span-12 md:col-span-4">
-            <p className="eyebrow">— Proyectos</p>
+            <p className="eyebrow">— Portafolio B2B</p>
           </div>
-          <div className="col-span-12 md:col-span-8 flex items-end justify-between gap-6">
-            <h2 className="text-[clamp(2rem,4.5vw,4rem)] leading-[1.02] tracking-tightest text-balance">
-              Una selección de
-              <span className="italic text-muted-foreground"> nuestro trabajo.</span>
+          <div className="col-span-12 md:col-span-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.02] tracking-tightest text-balance">
+              Nuestra trayectoria en
+              <span className="italic text-muted-foreground"> grandes superficies.</span>
             </h2>
-            <a href="#contacto" className="hidden md:inline-flex shrink-0 text-[12.5px] tracking-wider uppercase border-b border-foreground pb-1 hover:text-[var(--olive)] hover:border-[var(--olive)] transition-colors">
-              Ver más →
-            </a>
           </div>
         </div>
 
-        {/* Mobile View: Swipeable Carousel */}
-        <MobileGallery />
-
-        {/* Desktop View: Grid Layout */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 auto-rows-[280px] gap-5">
-          {items.map((it, i) => (
-            <motion.figure
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.9, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-              className={`group relative overflow-hidden rounded-sm bg-muted ${it.span}`}
+        {/* Tab Filters */}
+        <div className="flex flex-wrap gap-2 mb-10 pb-2 border-b border-border/60">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => {
+                setActiveTab(cat.id);
+                setShowAll(false); // Reset expansion when tab changes
+              }}
+              className={`rounded-full px-5 py-2 text-[12.5px] font-medium tracking-wide transition-all ${
+                activeTab === cat.id
+                  ? "bg-foreground text-background shadow-sm"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary/40"
+              }`}
             >
-              <img
-                src={it.src}
-                alt={it.t}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              <figcaption className="absolute inset-x-0 bottom-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
-                <div className="text-white font-display text-lg leading-tight">{it.t}</div>
-                <div className="text-white/70 text-[11px] tracking-[0.25em] uppercase mt-1">{it.l}</div>
-              </figcaption>
-            </motion.figure>
+              {cat.label}
+            </button>
           ))}
         </div>
+
+        {/* Symmetrical Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatePresence mode="popLayout">
+            {visibleItems.map((it, i) => (
+              <motion.article
+                key={it.t}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="group flex flex-col bg-background rounded-xl border border-border/80 overflow-hidden hover:shadow-[var(--shadow-soft)] transition-shadow duration-500"
+              >
+                {/* Image Container with Fixed Aspect Ratio */}
+                <div className="relative aspect-[16/10] overflow-hidden bg-muted w-full">
+                  <img
+                    src={it.src}
+                    alt={it.t}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 right-4 bg-background/95 backdrop-blur-sm px-3 py-1 rounded-full border border-border/60 text-[10px] tracking-wide font-medium uppercase text-muted-foreground">
+                    {it.category === "ejecucion"
+                      ? "Ejecución"
+                      : it.category === "mantencion"
+                        ? "Mantención"
+                        : "Diseño"}
+                  </div>
+                </div>
+
+                {/* Project Specs - Corporate Ficha Técnica */}
+                <div className="p-6 flex flex-col flex-grow justify-between text-left">
+                  <div>
+                    <h3 className="font-display text-xl leading-snug mb-4 group-hover:text-[var(--olive)] transition-colors duration-300">
+                      {it.t}
+                    </h3>
+
+                    {/* Technical Metadata Specs */}
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-3 pt-3 border-t border-border/50">
+                      <div>
+                        <div className="project-spec-label">Mandante</div>
+                        <div className="project-spec-value truncate" title={it.mandante}>
+                          {it.mandante}
+                        </div>
+                      </div>
+                      <div>
+                        <div className="project-spec-label">Superficie</div>
+                        <div className="project-spec-value">{it.superficie}</div>
+                      </div>
+                      <div>
+                        <div className="project-spec-label">Plazo Entregado</div>
+                        <div className="project-spec-value text-[var(--olive)]">{it.plazo}</div>
+                      </div>
+                      <div>
+                        <div className="project-spec-label">Ubicación</div>
+                        <div className="project-spec-value truncate">{it.l}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Detailed service line */}
+                  <div className="mt-5 pt-3 border-t border-border/30 text-[11.5px] text-muted-foreground italic">
+                    {it.servicio}
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </AnimatePresence>
+        </div>
+
+        {/* Expand/Collapse Control (Ver más) */}
+        {filteredItems.length > 6 && (
+          <div className="flex justify-center mt-12">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-3 rounded-full border border-border bg-background px-8 py-3.5 text-xs font-semibold tracking-wider uppercase text-foreground hover:bg-secondary hover:border-foreground/20 transition-all duration-300"
+            >
+              {showAll
+                ? "Ver menos proyectos"
+                : `Ver todos los proyectos (${filteredItems.length})`}
+              <span>{showAll ? "↑" : "↓"}</span>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,10 +1,10 @@
-import React from 'react';
-import logoArauco from '../../assets/logo-ParqueArauco.png';
-import logoCopec from '../../assets/logocopec.png';
-import logoHuber from '../../assets/logohuber.png';
-import logoBash from '../../assets/logobash.png';
-import logoAir from '../../assets/Logoair.png';
-import logoQuilicura from '../../assets/LogoQuilicura.png'; 
+import React from "react";
+import logoArauco from "../../assets/logo-ParqueArauco.png";
+import logoCopec from "../../assets/logocopec.png";
+import logoHuber from "../../assets/logohuber.png";
+import logoBash from "../../assets/logobash.png";
+import logoAir from "../../assets/Logoair.png";
+import logoQuilicura from "../../assets/LogoQuilicura.png";
 
 export function LogosEmpresas() {
   const clientes = [
@@ -22,7 +22,6 @@ export function LogosEmpresas() {
   return (
     <section className="py-16 bg-slate-50/50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        
         {/* Elegant Section Title */}
         <div className="text-center mb-10">
           <h2 className="text-xs md:text-sm font-semibold tracking-[0.25em] text-slate-500 dark:text-slate-400 uppercase">
@@ -31,18 +30,19 @@ export function LogosEmpresas() {
         </div>
 
         {/* Marquee Viewport with Edge Fade Masks */}
-        <div 
+        <div
           className="relative w-full overflow-hidden select-none"
           style={{
             maskImage: "linear-gradient(to right, transparent, white 15%, white 85%, transparent)",
-            WebkitMaskImage: "linear-gradient(to right, transparent, white 15%, white 85%, transparent)"
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, white 15%, white 85%, transparent)",
           }}
         >
           {/* Infinite Running Track */}
           <div className="flex animate-marquee gap-16 py-4 items-center w-max">
             {doubledClientes.map((cliente, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="shrink-0 flex items-center justify-center h-20 w-44 p-3 transition-all duration-300 group"
               >
                 <img
@@ -56,7 +56,6 @@ export function LogosEmpresas() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

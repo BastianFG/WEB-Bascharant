@@ -4,14 +4,20 @@ let scriptLoadingPromise: Promise<void> | null = null;
 
 // Registrar el callback global de falla de autenticación de Google Maps
 if (typeof window !== "undefined") {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (window as any).gm_authFailure = () => {
     console.warn(
-      "Google Maps API: Error de autenticación detectado (posible API Key inválida, sin facturación habilitada o dominio no autorizado)."
+      "Google Maps API: Error de autenticación detectado (posible API Key inválida, sin facturación habilitada o dominio no autorizado).",
     );
     // Restaurar inmediatamente cualquier input afectado por la falla de Google Maps
     const autocompleteInputs = document.querySelectorAll("input");
     autocompleteInputs.forEach((el) => {
-      if (el.disabled || el.placeholder.includes("error") || el.placeholder.includes("produjo") || el.placeholder.includes("occurred")) {
+      if (
+        el.disabled ||
+        el.placeholder.includes("error") ||
+        el.placeholder.includes("produjo") ||
+        el.placeholder.includes("occurred")
+      ) {
         el.disabled = false;
         // Quitar clases inyectadas por Google
         el.classList.remove("pac-target-input");
@@ -20,7 +26,10 @@ if (typeof window !== "undefined") {
         if (orig) {
           el.placeholder = orig;
         }
-        if (el.value.toLowerCase().includes("error") || el.value.toLowerCase().includes("se produjo")) {
+        if (
+          el.value.toLowerCase().includes("error") ||
+          el.value.toLowerCase().includes("se produjo")
+        ) {
           el.value = "";
         }
       }
@@ -67,7 +76,7 @@ export function useGooglePlacesAutocomplete(inputRef: React.RefObject<HTMLInputE
     const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
     if (!apiKey) {
       console.warn(
-        "VITE_GOOGLE_MAPS_API_KEY no está configurado en el archivo .env. Autocompletado de Google Maps desactivado."
+        "VITE_GOOGLE_MAPS_API_KEY no está configurado en el archivo .env. Autocompletado de Google Maps desactivado.",
       );
       return;
     }
@@ -108,7 +117,7 @@ export function useGooglePlacesAutocomplete(inputRef: React.RefObject<HTMLInputE
           const address = place?.formatted_address || place?.name;
           if (address && inputRef.current) {
             inputRef.current.value = address;
-            
+
             // Disparar evento de input para que React actualice sus estados
             inputRef.current.dispatchEvent(new Event("input", { bubbles: true }));
           }
@@ -137,7 +146,7 @@ export function useGooglePlacesAutocomplete(inputRef: React.RefObject<HTMLInputE
 
           if (el.disabled || hasErrorPlaceholder || hasErrorValue) {
             console.warn(
-              "Google Places Autocomplete: Error de API o billing detectado. Restaurando el input de dirección original."
+              "Google Places Autocomplete: Error de API o billing detectado. Restaurando el input de dirección original.",
             );
 
             if (checkInterval) clearInterval(checkInterval);

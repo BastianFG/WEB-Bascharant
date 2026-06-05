@@ -16,15 +16,26 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Paisajismo Bascharant — Empresa de paisajismo en Chile" },
-      { name: "description", content: "Diseño, ejecución y mantención de proyectos paisajísticos para empresas, hogares y espacios comerciales en Chile." },
+      {
+        name: "description",
+        content:
+          "Diseño, ejecución y mantención de proyectos paisajísticos para empresas, hogares y espacios comerciales en Chile.",
+      },
       { property: "og:title", content: "Paisajismo Bascharant SpA" },
-      { property: "og:description", content: "Empresa de paisajismo arquitectónico. Transformamos espacios en experiencias naturales." },
+      {
+        property: "og:description",
+        content:
+          "Empresa de paisajismo arquitectónico. Transformamos espacios en experiencias naturales.",
+      },
       { name: "google-site-verification", content: "iFdVG8aUcn3RJdL8JAym-st9Fo3KYBUDFGTF_JXIrno" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,0..100&family=Inter:wght@300;400;500;600&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,0..100&family=Inter:wght@300;400;500;600&display=swap",
+      },
     ],
   }),
   component: Index,

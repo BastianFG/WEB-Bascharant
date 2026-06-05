@@ -1,20 +1,18 @@
-import logo from '../../assets/logo.png';
+import logo from "../../assets/logo.png";
 
 export default function Footer() {
   return (
     <footer className="bg-[var(--charcoal)] text-background border-t border-white/5 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-20">
         <div className="grid grid-cols-12 gap-10 mb-16">
-          
           {/* --- COLUMNA IZQUIERDA (AQUÍ ESTÁ LA MAGIA DEL CENTRADO) --- */}
           {/* Agregamos 'relative' a la columna para que la marca de agua use este espacio como límite */}
           <div className="col-span-12 md:col-span-5 relative">
-            
             {/* LOGO DE FONDO */}
             <div className="absolute inset-0 pointer-events-none select-none flex items-center justify-center">
-              <img 
-                src={logo} 
-                alt="" 
+              <img
+                src={logo}
+                alt=""
                 /* 
                   - w-[130%] lg:w-[110%]: Hace que el logo sea un poco más ancho que la columna, dándole ese efecto de "desborde" elegante.
                   - max-w-none: Evita que el logo se comprima.
@@ -28,9 +26,9 @@ export default function Footer() {
             {/* Envolvemos el contenido en 'relative z-10' para asegurar que esté por encima de la marca de agua */}
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6 group cursor-pointer w-fit">
-                <img 
-                  src={logo} 
-                  alt="Sello Bascharant" 
+                <img
+                  src={logo}
+                  alt="Sello Bascharant"
                   className="h-7 w-auto object-contain filter brightness-0 invert opacity-80 transition-opacity duration-300"
                 />
               </div>
@@ -43,23 +41,70 @@ export default function Footer() {
 
           {/* Navegación */}
           <div className="col-span-6 md:col-span-2 md:col-start-7">
-            <div className="text-[11px] tracking-[0.25em] uppercase text-white/50 mb-5">Navegación</div>
+            <div className="text-[11px] tracking-[0.25em] uppercase text-white/50 mb-5">
+              Navegación
+            </div>
             <ul className="space-y-3 text-sm text-white/80">
-              <li><a href="#inicio" className="hover:text-white transition-colors duration-300">Inicio</a></li>
-              <li><a href="#servicios" className="hover:text-white transition-colors duration-300">Servicios</a></li>
-              <li><a href="#empresas" className="hover:text-white transition-colors duration-300">Empresas</a></li>
-              <li><a href="#particulares" className="hover:text-white transition-colors duration-300">Particulares</a></li>
-              <li><a href="#proyectos" className="hover:text-white transition-colors duration-300">Proyectos</a></li>
+              <li>
+                <a href="#inicio" className="hover:text-white transition-colors duration-300">
+                  Inicio
+                </a>
+              </li>
+              <li>
+                <a href="#servicios" className="hover:text-white transition-colors duration-300">
+                  Servicios
+                </a>
+              </li>
+              <li>
+                <a href="#empresas" className="hover:text-white transition-colors duration-300">
+                  Empresas
+                </a>
+              </li>
+              <li>
+                <a href="#particulares" className="hover:text-white transition-colors duration-300">
+                  Particulares
+                </a>
+              </li>
+              <li>
+                <a href="#proyectos" className="hover:text-white transition-colors duration-300">
+                  Proyectos
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Contacto */}
           <div className="col-span-6 md:col-span-2">
-            <div className="text-[11px] tracking-[0.25em] uppercase text-white/50 mb-5">Contacto</div>
+            <div className="text-[11px] tracking-[0.25em] uppercase text-white/50 mb-5">
+              Contacto
+            </div>
             <ul className="space-y-3 text-sm text-white/80">
-              <li><a href="tel:+56988458216" className="hover:text-white transition-colors duration-300">+56 9 8845 8216</a></li>
-              <li><a href="mailto:contacto@bascharant.cl" className="hover:text-white transition-colors duration-300">contacto@bascharant.cl</a></li>
-              <li><a href="https://wa.me/56988458216" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">WhatsApp</a></li>
+              <li>
+                <a
+                  href="tel:+56988458216"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  +56 9 8845 8216
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:contacto@bascharant.cl"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  contacto@bascharant.cl
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/56988458216"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  WhatsApp
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -67,8 +112,24 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-2">
             <div className="text-[11px] tracking-[0.25em] uppercase text-white/50 mb-5">Redes</div>
             <ul className="space-y-3 text-sm text-white/80">
-              <li><a href="https://www.instagram.com/paisajismobascharant/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">Instagram</a></li>
-              <li><a href="https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/" className="hover:text-white transition-colors duration-300">LinkedIn</a></li>
+              <li>
+                <a
+                  href="https://www.instagram.com/paisajismobascharant/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -76,7 +137,9 @@ export default function Footer() {
         {/* Línea inferior de cierre */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
           <p>&copy; {new Date().getFullYear()} Bascharant. Todos los derechos reservados.</p>
-          <p className="tracking-[0.2em] uppercase text-[10px] text-white/30">Empresa de Paisajismo</p>
+          <p className="tracking-[0.2em] uppercase text-[10px] text-white/30">
+            Empresa de Paisajismo
+          </p>
         </div>
       </div>
     </footer>

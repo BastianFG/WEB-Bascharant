@@ -2,9 +2,24 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const items = [
-  { n: "MR", a: "María Reyes", r: "Cliente · Vitacura", q: "El jardín transformó completamente la sensación de la casa. El cuidado por cada detalle es notable." },
-  { n: "CG", a: "Constructora Galena", r: "Empresa · Las Condes", q: "Profesionalismo de principio a fin. Las áreas verdes elevaron la imagen del edificio corporativo." },
-  { n: "JP", a: "Juan Pablo Soto", r: "Café Origen · Providencia", q: "El paisajismo de la terraza se volvió parte de la identidad del local. Recibimos comentarios todos los días." },
+  {
+    n: "MR",
+    a: "María Reyes",
+    r: "Cliente · Vitacura",
+    q: "El jardín transformó completamente la sensación de la casa. El cuidado por cada detalle es notable.",
+  },
+  {
+    n: "CG",
+    a: "Constructora Galena",
+    r: "Empresa · Las Condes",
+    q: "Profesionalismo de principio a fin. Las áreas verdes elevaron la imagen del edificio corporativo.",
+  },
+  {
+    n: "JP",
+    a: "Juan Pablo Soto",
+    r: "Café Origen · Providencia",
+    q: "El paisajismo de la terraza se volvió parte de la identidad del local. Recibimos comentarios todos los días.",
+  },
 ];
 
 export default function Testimonials() {
@@ -61,7 +76,9 @@ export default function Testimonials() {
                 className="shrink-0 grow-0 basis-full min-w-0 flex justify-center px-2 md:px-4"
               >
                 <figure className="max-w-3xl w-full rounded-2xl border border-border bg-card p-8 md:p-12 text-center transition-all duration-700 hover:shadow-[var(--shadow-soft)] relative overflow-hidden">
-                  <div className="font-display text-4xl md:text-5xl text-[var(--olive)] mb-4 md:mb-6">“</div>
+                  <div className="font-display text-4xl md:text-5xl text-[var(--olive)] mb-4 md:mb-6">
+                    “
+                  </div>
                   <blockquote className="text-[15px] md:text-lg leading-[1.6] md:leading-[1.7] text-foreground/90 font-display italic">
                     {t.q}
                   </blockquote>
@@ -70,8 +87,12 @@ export default function Testimonials() {
                       {t.n}
                     </div>
                     <div>
-                      <div className="text-sm font-semibold tracking-wide text-foreground">{t.a}</div>
-                      <div className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-0.5">{t.r}</div>
+                      <div className="text-sm font-semibold tracking-wide text-foreground">
+                        {t.a}
+                      </div>
+                      <div className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-0.5">
+                        {t.r}
+                      </div>
                     </div>
                   </figcaption>
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-24 bg-[var(--olive)] opacity-20" />

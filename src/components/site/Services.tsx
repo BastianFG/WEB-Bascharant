@@ -1,18 +1,54 @@
 import { motion } from "framer-motion";
 import {
-  Leaf, Sprout, HardHat, Scissors, Flower2, Building2, Store,
-  ChevronLeft, ChevronRight,
+  Leaf,
+  Sprout,
+  HardHat,
+  Scissors,
+  Flower2,
+  Building2,
+  Store,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { useEffect, useRef, useState, useCallback } from "react";
 
 const items = [
-  { icon: Leaf,      n: "01", t: "Diseño paisajístico",       d: "Conceptualización y planimetría de espacios verdes con visión arquitectónica." },
-  { icon: Sprout,    n: "02", t: "Renovación de jardines",    d: "Rediseño integral de jardines existentes con criterio estético contemporáneo." },
-  { icon: HardHat,   n: "03", t: "Ejecución de proyectos",   d: "Construcción y plantación con cuadrillas especializadas y materiales." },
-  { icon: Scissors,  n: "04", t: "Mantención",               d: "Programas continuos que preservan la salud y la belleza del paisaje en el tiempo." },
-  { icon: Flower2,   n: "05", t: "Jardineras ornamentales",  d: "Composiciones vegetales sofisticadas para interiores, terrazas y fachadas." },
-  { icon: Building2, n: "06", t: "Áreas verdes corporativas",d: "Soluciones a escala para oficinas, condominios y proyectos inmobiliarios." },
-  { icon: Store,     n: "07", t: "Paisajismo comercial",     d: "Identidad visual natural para cafés, locales, hoteles y espacios de marca." },
+  {
+    icon: Leaf,
+    n: "01",
+    t: "Diseño & Licitaciones",
+    d: "Conceptualización, modelado 3D y especificaciones técnicas para licitaciones y permisos.",
+  },
+  {
+    icon: HardHat,
+    n: "02",
+    t: "Ejecución a Gran Escala",
+    d: "Movimiento de tierras, urbanización verde y plantación con personal acreditado en obra.",
+  },
+  {
+    icon: Scissors,
+    n: "03",
+    t: "Mantención Corporativa",
+    d: "Programas continuos con reportes técnicos fitosanitarios y cumplimiento estricto de SLAs.",
+  },
+  {
+    icon: Sprout,
+    n: "04",
+    t: "Riego Tecnificado",
+    d: "Diseño y automatización de riego con telemetría para la optimización del recurso hídrico.",
+  },
+  {
+    icon: Building2,
+    n: "05",
+    t: "Paisajismo Inmobiliario",
+    d: "Habilitación de áreas comunes para condominios, parques urbanos y proyectos inmobiliarios.",
+  },
+  {
+    icon: Store,
+    n: "06",
+    t: "Espacios Comerciales & Oficinas",
+    d: "Diseño y conservación botánica de interiores, fachadas y terrazas corporativas.",
+  },
 ];
 
 import useEmblaCarousel from "embla-carousel-react";
@@ -110,7 +146,9 @@ function MobileCarousel() {
               className="shrink-0 grow-0 basis-full bg-background p-8 aspect-square flex flex-col items-center justify-center text-center relative overflow-hidden"
             >
               {/* Floating Top Number */}
-              <span className="absolute top-6 right-6 text-[10px] font-mono tracking-[0.3em] text-muted-foreground/80">{s.n}</span>
+              <span className="absolute top-6 right-6 text-[10px] font-mono tracking-[0.3em] text-muted-foreground/80">
+                {s.n}
+              </span>
 
               {/* Centered Icon Container */}
               <div className="mb-4 p-4 bg-secondary/50 rounded-2xl flex items-center justify-center">
@@ -118,8 +156,12 @@ function MobileCarousel() {
               </div>
 
               {/* Centered Text Content */}
-              <h3 className="font-display text-2xl leading-tight mb-2.5 text-foreground px-2">{s.t}</h3>
-              <p className="text-[13px] leading-relaxed text-muted-foreground px-4 text-balance">{s.d}</p>
+              <h3 className="font-display text-2xl leading-tight mb-2.5 text-foreground px-2">
+                {s.t}
+              </h3>
+              <p className="text-[13px] leading-relaxed text-muted-foreground px-4 text-balance">
+                {s.d}
+              </p>
 
               {/* Bottom Line */}
               <span className="absolute bottom-0 left-0 h-1 w-full bg-[var(--olive)] opacity-20" />
@@ -187,8 +229,11 @@ export default function Services() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(2rem,4.5vw,4rem)] leading-[1.02] tracking-tightest text-balance"
             >
-              Una Empresa que entiende el espacio como
-              <span className="italic text-muted-foreground"> una experiencia viva.</span>
+              Soluciones integrales de paisajismo
+              <span className="italic text-muted-foreground">
+                {" "}
+                para infraestructura corporativa.
+              </span>
             </motion.h2>
           </div>
         </div>
@@ -208,7 +253,10 @@ export default function Services() {
               className="group relative bg-background p-8 md:p-10 min-h-[280px] flex flex-col justify-between overflow-hidden transition-colors duration-700 hover:bg-secondary/60"
             >
               <div className="flex items-start justify-between">
-                <s.icon strokeWidth={1.1} className="h-7 w-7 text-[var(--olive)] transition-transform duration-700 group-hover:-rotate-6 group-hover:scale-110" />
+                <s.icon
+                  strokeWidth={1.1}
+                  className="h-7 w-7 text-[var(--olive)] transition-transform duration-700 group-hover:-rotate-6 group-hover:scale-110"
+                />
                 <span className="text-[11px] tracking-[0.25em] text-muted-foreground">{s.n}</span>
               </div>
               <div>

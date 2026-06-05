@@ -1,9 +1,9 @@
-import { tanstackStart } from '@tanstack/react-start/plugin/vite'
-import { defineConfig } from 'vite'
-import viteReact from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-import { nitro } from 'nitro/vite'
-import tsConfigPaths from 'vite-tsconfig-paths'
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { defineConfig } from "vite";
+import viteReact from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import { nitro } from "nitro/vite";
+import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   tanstackStart: {
@@ -17,10 +17,10 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     tanstackStart({
-      srcDirectory: 'src',
+      srcDirectory: "src",
     }),
     viteReact(),
     nitro(),
     tsConfigPaths(),
   ],
-})
+});

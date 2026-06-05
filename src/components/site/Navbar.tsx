@@ -3,12 +3,10 @@ import { motion } from "framer-motion";
 
 const links = [
   { href: "#inicio", label: "Inicio" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#empresas", label: "Empresas" },
-  { href: "#particulares", label: "Particulares" },
+  { href: "#servicios", label: "Servicios B2B" },
   { href: "#proyectos", label: "Proyectos" },
+  { href: "#empresas", label: "Propuesta Comercial" },
   { href: "#contacto", label: "Contacto" },
-  
 ];
 
 export default function Navbar() {
@@ -33,7 +31,9 @@ export default function Navbar() {
     >
       <div
         className={`mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-10 ${
-          scrolled ? "glass rounded-full border border-border/60 shadow-[var(--shadow-soft)] py-2 pl-6 pr-2" : ""
+          scrolled
+            ? "glass rounded-full border border-border/60 shadow-[var(--shadow-soft)] py-2 pl-6 pr-2"
+            : ""
         } transition-all duration-700`}
       >
         <a href="#inicio" className="group flex items-center gap-2">
@@ -60,7 +60,7 @@ export default function Navbar() {
           href="#empresas"
           className="hidden md:inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-[12.5px] font-medium tracking-wide text-background transition-all duration-500 hover:bg-[var(--olive)] hover:shadow-[var(--shadow-lift)]"
         >
-          Solicitar evaluación
+          Solicitar propuesta
           <span aria-hidden>→</span>
         </a>
 
@@ -70,8 +70,12 @@ export default function Navbar() {
           className="md:hidden flex h-10 w-10 items-center justify-center rounded-full glass border border-border/60"
         >
           <div className="flex flex-col gap-1.5">
-            <span className={`h-px w-5 bg-foreground transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`} />
-            <span className={`h-px w-5 bg-foreground transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""}`} />
+            <span
+              className={`h-px w-5 bg-foreground transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`}
+            />
+            <span
+              className={`h-px w-5 bg-foreground transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""}`}
+            />
           </div>
         </button>
       </div>
@@ -98,7 +102,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-foreground px-5 py-3 text-center text-xs text-background"
             >
-              Solicitar evaluación
+              Solicitar propuesta
             </a>
           </div>
         </motion.div>

@@ -38,26 +38,32 @@ export default function Editorial() {
             </motion.h2>
             <div className="space-y-5 text-[15.5px] leading-[1.75] text-foreground/75 max-w-lg">
               <p>
-                En Bascharant abordamos el paisajismo desde una mirada arquitectónica:
-                composición, luz, materia y vegetación trabajan juntas para construir
-                espacios que se sienten inevitables.
+                La sociedad Paisajismo Bascharant S.P.A fue fundada en el año 2013 Prestando un servicio integral
+                enfocado en la mantención de las áreas verdes y diseño paisajístico
               </p>
               <p>
-                Diseñamos propuestas adaptadas a cada cliente, con un enfoque
-                personalizado, funcional y profundamente estético. Nuestra mantención
-                continua asegura que el proyecto siga creciendo con el tiempo.
+                En Bascharant abordamos el paisajismo desde una mirada arquitectónica: composición,
+                luz, materia y vegetación trabajan juntas para construir espacios que se sienten
+                inevitables.
+              </p>
+              <p>
+                Diseñamos propuestas adaptadas a cada cliente, con un enfoque personalizado,
+                funcional y profundamente estético. Nuestra mantención continua asegura que el
+                proyecto siga creciendo con el tiempo.
               </p>
             </div>
 
             <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
               {[
-                ["+10", "años de experiencia"],
+                ["+13", "años de experiencia"],
                 ["120+", "proyectos entregados"],
                 ["100%", "diseño a medida"],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div className="font-display text-3xl text-[var(--olive)]">{k}</div>
-                  <div className="text-[11px] tracking-wider uppercase text-muted-foreground mt-2">{v}</div>
+                  <div className="text-[11px] tracking-wider uppercase text-muted-foreground mt-2">
+                    {v}
+                  </div>
                 </div>
               ))}
             </div>

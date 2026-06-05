@@ -20,42 +20,65 @@ export default function Contact() {
             </motion.h2>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
-              <a href="https://wa.me/56988458216" target="_blank" rel="noreferrer"
-                 className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]">
+              <a
+                href="https://wa.me/56988458216"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]"
+              >
                 <div className="flex items-center gap-4">
                   <MessageCircle strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
                   <div>
-                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">WhatsApp</div>
+                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                      WhatsApp
+                    </div>
                     <div className="text-sm mt-1">+56 9 8845 8216</div>
                   </div>
                 </div>
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
               </a>
-              <a href="tel:+56988458216" className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]">
+              <a
+                href="tel:+56988458216"
+                className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]"
+              >
                 <div className="flex items-center gap-4">
                   <Phone strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
                   <div>
-                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Teléfono</div>
+                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                      Teléfono
+                    </div>
                     <div className="text-sm mt-1">+56 9 8845 8216</div>
                   </div>
                 </div>
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
               </a>
-              <a href="mailto:Paisajismojf@gmail.com" className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]">
+              <a
+                href="mailto:Paisajismojf@gmail.com"
+                className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]"
+              >
                 <div className="flex items-center gap-4">
                   <Mail strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
                   <div>
-                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Email</div>
+                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                      Email
+                    </div>
                     <div className="text-sm mt-1">Paisajismojf@gmail.com</div>
                   </div>
                 </div>
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]"
+              >
                 <div className="flex items-center gap-4">
                   <Instagram strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
                   <div>
-                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Instagram</div>
+                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                      Instagram
+                    </div>
                     <div className="text-sm mt-1">@paisajismobascharant</div>
                   </div>
                 </div>
@@ -86,7 +109,9 @@ export default function Contact() {
                   <div className="flex items-start gap-3">
                     <MapPin strokeWidth={1.2} className="h-4 w-4 mt-0.5 text-[var(--olive)]" />
                     <div>
-                      <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Cobertura</div>
+                      <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                        Cobertura
+                      </div>
                       <div className="text-sm mt-1">Santiago-Zapallar-Frutillar</div>
                     </div>
                   </div>

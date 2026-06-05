@@ -1,14 +1,15 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, type FormEvent, type ReactNode } from "react";
 import { toast } from "sonner";
 import { useGooglePlacesAutocomplete } from "@/hooks/useGooglePlacesAutocomplete";
 import empresasImg from "@/assets/empresas.jpg";
 import particularesImg from "@/assets/particulares.jpg";
-const today = new Date().toISOString().split('T')[0];
+
+const today = new Date().toISOString().split("T")[0];
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <label className="block group">
+    <label className="block group text-left">
       <span className="block text-[11px] tracking-[0.18em] uppercase text-muted-foreground mb-1.5 md:mb-2">
         {label}
       </span>
@@ -18,9 +19,8 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 }
 
 const inputCls =
-  "w-full bg-transparent border-b border-border py-2.5 md:py-3 text-[15px] outline-none transition-all duration-500 focus:border-foreground placeholder:text-muted-foreground/60";
+  "w-full bg-transparent border-b border-border py-2.5 md:py-3 text-[15px] outline-none transition-all duration-500 focus:border-foreground placeholder:text-muted-foreground/60 text-foreground";
 
-// --- FUNCIÓN ACTUALIZADA PARA CONECTAR CON FORMSPREE ---
 function handleSubmit(label: string) {
   return async (e: FormEvent) => {
     e.preventDefault();
@@ -28,7 +28,6 @@ function handleSubmit(label: string) {
     const formData = new FormData(form);
 
     try {
-      // Tu enlace exacto de Formspree
       const response = await fetch("https://formspree.io/f/maqkkbwo", {
         method: "POST",
         body: formData,
@@ -38,255 +37,418 @@ function handleSubmit(label: string) {
       });
 
       if (response.ok) {
-        toast.success("Solicitud enviada", {
-          description: `Gracias. Nos pondremos en contacto para coordinar tu ${label}.`,
+        toast.success("Solicitud enviada con éxito", {
+          description: `Gracias. Un asesor comercial se pondrá en contacto para coordinar su ${label}.`,
         });
-        form.reset(); // Limpia el formulario tras el éxito
+        form.reset();
       } else {
-        toast.error("Hubo un problema", { 
-          description: "No pudimos enviar tu solicitud. Intenta escribirnos al correo o WhatsApp." 
+        toast.error("Hubo un problema al enviar", {
+          description:
+            "No pudimos procesar su solicitud. Intente escribirnos al correo directo o WhatsApp.",
         });
       }
     } catch (error) {
-      toast.error("Error de conexión", { 
-        description: "Revisa tu conexión a internet e intenta nuevamente." 
+      toast.error("Error de conexión", {
+        description: "Revisa tu conexión a internet e intenta nuevamente.",
       });
     }
   };
 }
 
 export default function Forms() {
-  const [tab, setTab] = useState<"empresas" | "particulares">("empresas");
+  const [activeForm, setActiveForm] = useState<"propuesta" | "reunion">("propuesta");
+  const addressRef = useRef<HTMLInputElement>(null);
+  useGooglePlacesAutocomplete(addressRef);
 
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-20 md:py-32 border-t border-border/60">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        {/* Header */}
         <div className="flex flex-col md:grid md:grid-cols-12 gap-8 mb-12">
           <div className="w-full md:col-span-4">
-            <p className="eyebrow">— Trabajemos juntos</p>
+            <p className="eyebrow">— Licitaciones & Reuniones</p>
           </div>
           <div className="w-full md:col-span-8">
-            <h2 className="text-[clamp(2rem,4.5vw,4rem)] leading-[1.02] tracking-tightest text-balance">
-              Dos caminos para comenzar
-              <span className="italic text-muted-foreground"> tu proyecto.</span>
+            <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.02] tracking-tightest text-balance">
+              Canal formal para requerimientos
+              <span className="italic text-muted-foreground"> corporativos e institucionales.</span>
             </h2>
           </div>
         </div>
 
-        {/* Mobile tab switch */}
-        <div className="flex md:hidden gap-2 mb-8 rounded-full bg-secondary p-1.5 w-fit">
-          {(["empresas", "particulares"] as const).map((k) => (
+        {/* Form Switch Tabs */}
+        <div className="flex justify-center mb-10">
+          <div className="flex gap-1.5 rounded-full bg-secondary/80 p-1 w-full max-w-md shadow-sm border border-border/40">
             <button
-              key={k}
-              onClick={() => setTab(k)}
-              className={`rounded-full px-5 py-2 text-xs capitalize transition-all ${
-                tab === k ? "bg-foreground text-background" : "text-foreground/70"
+              onClick={() => setActiveForm("propuesta")}
+              className={`flex-1 rounded-full py-3 text-xs font-semibold tracking-wide capitalize transition-all ${
+                activeForm === "propuesta"
+                  ? "bg-foreground text-background shadow-md"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              {k}
+              1. Solicitar Propuesta Comercial
             </button>
-          ))}
+            <button
+              onClick={() => setActiveForm("reunion")}
+              className={`flex-1 rounded-full py-3 text-xs font-semibold tracking-wide capitalize transition-all ${
+                activeForm === "reunion"
+                  ? "bg-foreground text-background shadow-md"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              2. Agendar Reunión Técnica
+            </button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          <EmpresasCard id="empresas" hidden={false} mobileVisible={tab === "empresas"} img={empresasImg} />
-          <ParticularesCard id="particulares" mobileVisible={tab === "particulares"} img={particularesImg} />
+        {/* Form card wrapper */}
+        <div className="mx-auto max-w-4xl">
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm shadow-[var(--shadow-soft)]">
+            {/* Header banner image for context */}
+            <div className="relative aspect-[21/9] md:aspect-[24/6] overflow-hidden">
+              <img
+                src={activeForm === "propuesta" ? empresasImg : particularesImg}
+                alt="Paisajismo Bascharant B2B"
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-black/25" />
+            </div>
+
+            <div className="p-6 md:p-12">
+              <AnimatePresence mode="wait">
+                {activeForm === "propuesta" ? (
+                  <motion.div
+                    key="propuesta-form"
+                    id="empresas"
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -15 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <div className="mb-8 text-left">
+                      <span className="text-[10px] tracking-[0.25em] uppercase text-[var(--olive)] font-bold">
+                        Licitaciones y Presupuestos
+                      </span>
+                      <h3 className="font-display text-2xl md:text-3xl mt-1 mb-3">
+                        Solicitud de Propuesta Técnica y Económica
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Completa el formulario a continuación para ingresar sus bases técnicas,
+                        planos o requerimientos generales.
+                      </p>
+                    </div>
+
+                    <form
+                      onSubmit={handleSubmit("propuesta comercial")}
+                      className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6"
+                    >
+                      <Field label="Razón Social / Institución">
+                        <input
+                          name="Empresa_Razon_Social"
+                          required
+                          maxLength={120}
+                          className={inputCls}
+                          placeholder="Ej. Constructora Alianza SpA"
+                        />
+                      </Field>
+                      <Field label="RUT Empresa">
+                        <input
+                          name="RUT_Empresa"
+                          required
+                          maxLength={15}
+                          className={inputCls}
+                          placeholder="12.345.678-9"
+                        />
+                      </Field>
+                      <Field label="Nombre y Cargo del Encargado">
+                        <input
+                          name="Nombre_Contacto"
+                          required
+                          maxLength={120}
+                          className={inputCls}
+                          placeholder="Ej. Carlos Mendoza · Jefe de Adquisiciones"
+                        />
+                      </Field>
+                      <Field label="Correo Electrónico Corporativo">
+                        <input
+                          name="Correo_Contacto"
+                          required
+                          type="email"
+                          maxLength={150}
+                          className={inputCls}
+                          placeholder="nombre@empresa.cl"
+                        />
+                      </Field>
+                      <Field label="Teléfono de Contacto">
+                        <input
+                          name="Telefono_Contacto"
+                          required
+                          type="tel"
+                          maxLength={30}
+                          className={inputCls}
+                          placeholder="Ej. +56 9 1234 5678"
+                        />
+                      </Field>
+                      <Field label="Ubicación del Proyecto">
+                        <input
+                          ref={addressRef}
+                          name="Direccion_Proyecto"
+                          required
+                          maxLength={200}
+                          className={inputCls}
+                          placeholder="Comuna, ciudad"
+                        />
+                      </Field>
+
+                      <Field label="Servicio Requerido">
+                        <select
+                          name="Servicio_Requerido"
+                          required
+                          className={inputCls}
+                          defaultValue=""
+                        >
+                          <option value="" disabled>
+                            Seleccionar tipo de servicio
+                          </option>
+                          <option>Ejecución de Obras Civiles Verdes (Construcción)</option>
+                          <option>Mantención y Conservación Industrial (Contrato SLA)</option>
+                          <option>Diseño Paisajístico y Planimetría 3D</option>
+                          <option>Sistemas de Riego Tecnificado y Automatizado</option>
+                          <option>Poda en Altura y Silvicultura Certificada</option>
+                          <option>Habilitación de Oficinas y Terrazas Corporativas</option>
+                        </select>
+                      </Field>
+
+                      <Field label="Superficie Estimada (m²)">
+                        <select
+                          name="Superficie_Estimada"
+                          required
+                          className={inputCls}
+                          defaultValue=""
+                        >
+                          <option value="" disabled>
+                            Seleccionar rango
+                          </option>
+                          <option>Menor a 500 m²</option>
+                          <option>500 m² a 2.000 m²</option>
+                          <option>2.000 m² a 10.000 m²</option>
+                          <option>Mayor a 10.000 m²</option>
+                          <option>No determinado / Requiere levantamiento</option>
+                        </select>
+                      </Field>
+
+                      <Field label="Bases Técnicas / Planos / Archivos">
+                        <input
+                          name="Archivos_Adjuntos"
+                          type="file"
+                          multiple
+                          className="block w-full text-xs text-muted-foreground file:mr-4 file:rounded-full file:border-0 file:bg-foreground file:text-background file:px-4 file:py-2 file:text-[11px] file:tracking-wider file:uppercase file:font-semibold hover:file:opacity-90 file:cursor-pointer mt-2"
+                        />
+                      </Field>
+                      <Field label="Fecha Estimada de Inicio">
+                        <input
+                          name="Fecha_Estimada_Inicio"
+                          type="date"
+                          min={today}
+                          className={inputCls}
+                        />
+                      </Field>
+
+                      <div className="sm:col-span-2">
+                        <Field label="Objetivo y Alcance del Proyecto">
+                          <textarea
+                            name="Objetivo_Alcance_Proyecto"
+                            rows={3}
+                            maxLength={1000}
+                            className={`${inputCls} resize-none`}
+                            placeholder="Detalla brevemente las especificaciones del proyecto, plazos requeridos o hitos de entrega."
+                          />
+                        </Field>
+                      </div>
+
+                      <div className="sm:col-span-2 flex items-start gap-3 text-xs text-muted-foreground mt-2">
+                        <input type="checkbox" required className="mt-1 accent-[var(--olive)]" />
+                        <span>
+                          Confirmo la veracidad de los datos entregados y autorizo a Paisajismo
+                          Bascharant a emitir una cotización formal.
+                        </span>
+                      </div>
+
+                      <div className="sm:col-span-2 mt-4 text-left">
+                        <button className="group inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-[13px] font-semibold tracking-wide text-background transition-all duration-500 hover:bg-[var(--olive)] hover:shadow-[var(--shadow-lift)]">
+                          Enviar Solicitud de Propuesta{" "}
+                          <span className="transition-transform duration-500 group-hover:translate-x-1">
+                            →
+                          </span>
+                        </button>
+                      </div>
+                    </form>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="reunion-form"
+                    id="reunion-tecnica"
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -15 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <div className="mb-8 text-left">
+                      <span className="text-[10px] tracking-[0.25em] uppercase text-[var(--olive)] font-bold">
+                        Asesoría Técnica Remota o en Terreno
+                      </span>
+                      <h3 className="font-display text-2xl md:text-3xl mt-1 mb-3">
+                        Agendar Reunión Técnica con Supervisor
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Coordinemos una videoconferencia de 15 a 30 minutos o una inspección técnica en
+                        terreno para evaluar el estado fitosanitario, riego o diseño de sus áreas
+                        verdes actuales.
+                      </p>
+                    </div>
+
+                    <form
+                      onSubmit={handleSubmit("reunión técnica")}
+                      className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6"
+                    >
+                      <Field label="Nombre del Profesional">
+                        <input
+                          name="Nombre_Completo"
+                          required
+                          maxLength={120}
+                          className={inputCls}
+                          placeholder="Ej. Camila Ruiz"
+                        />
+                      </Field>
+                      <Field label="Cargo / Departamento">
+                        <input
+                          name="Cargo_Departamento"
+                          required
+                          maxLength={80}
+                          className={inputCls}
+                          placeholder="Ej. Administradora de Contratos"
+                        />
+                      </Field>
+                      <Field label="Empresa u Organismo">
+                        <input
+                          name="Empresa_Organismo"
+                          required
+                          maxLength={120}
+                          className={inputCls}
+                          placeholder="Ej. Inmobiliaria Andes"
+                        />
+                      </Field>
+                      <Field label="Correo Corporativo">
+                        <input
+                          name="Correo_Contacto"
+                          required
+                          type="email"
+                          maxLength={150}
+                          className={inputCls}
+                          placeholder="nombre@empresa.cl"
+                        />
+                      </Field>
+                      <Field label="Teléfono / Celular">
+                        <input
+                          name="Telefono_Contacto"
+                          required
+                          type="tel"
+                          maxLength={30}
+                          className={inputCls}
+                          placeholder="Ej. +56 9 1234 5678"
+                        />
+                      </Field>
+
+                      <Field label="Fecha Sugerida para Reunión">
+                        <input
+                          name="Fecha_Sugerida"
+                          required
+                          type="date"
+                          min={today}
+                          className={inputCls}
+                        />
+                      </Field>
+
+                      <Field label="Bloque Horario Preferido">
+                        <select name="Franja_Horaria" required className={inputCls} defaultValue="">
+                          <option value="" disabled>
+                            Seleccionar bloque
+                          </option>
+                          <option>Mañana (09:00 - 12:00)</option>
+                          <option>Mediodía (12:00 - 14:00)</option>
+                          <option>Tarde (14:00 - 18:00)</option>
+                        </select>
+                      </Field>
+
+                      <Field label="Modalidad de Reunión">
+                        <select
+                          name="Modalidad_Reunion"
+                          required
+                          className={inputCls}
+                          defaultValue=""
+                        >
+                          <option value="" disabled>
+                            Seleccionar modalidad
+                          </option>
+                          <option>Videollamada (Google Meet / Teams)</option>
+                          <option>Inspección técnica en Terreno (Sujeto a factibilidad)</option>
+                          <option>Llamada Telefónica</option>
+                        </select>
+                      </Field>
+
+                      <div className="sm:col-span-2">
+                        <Field label="Cuéntanos brevemente sobre tus necesidades">
+                          <textarea
+                            name="Comentarios_Reunion"
+                            rows={3}
+                            maxLength={1000}
+                            className={`${inputCls} resize-none`}
+                            placeholder="Ej. Necesitamos cotizar mantención mensual para 3 condominios en Chicureo con riego automático."
+                          />
+                        </Field>
+                      </div>
+
+                      <div className="sm:col-span-2 flex items-start gap-3 text-xs text-muted-foreground mt-2">
+                        <input type="checkbox" required className="mt-1 accent-[var(--olive)]" />
+                        <span>
+                          Acepto coordinar la reunión en la fecha solicitada o en la más cercana
+                          disponible.
+                        </span>
+                      </div>
+
+                      <div className="sm:col-span-2 mt-4 text-left">
+                        <button className="group inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-[13px] font-semibold tracking-wide text-background transition-all duration-500 hover:bg-[var(--olive)] hover:shadow-[var(--shadow-lift)]">
+                          Agendar Reunión Técnica{" "}
+                          <span className="transition-transform duration-500 group-hover:translate-x-1">
+                            →
+                          </span>
+                        </button>
+                      </div>
+                    </form>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
+
+        {/* Redirect footnote for B2C/particular traffic */}
+        <div className="mt-12 text-center text-xs text-muted-foreground max-w-md mx-auto">
+          ¿Eres un particular? Para proyectos residenciales menores o compras de productos, por
+          favor visita nuestra{" "}
+          <a
+            href="https://www.bascharant.store/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground font-semibold"
+          >
+            Tienda Bascharant
+          </a>{" "}
+          o contáctanos directamente a nuestro WhatsApp corporativo.
         </div>
       </div>
     </section>
-  );
-}
-
-function CardShell({
-  id, dark, img, eyebrow, title, text, mobileVisible, children,
-}: {
-  id: string; dark?: boolean; img: string; eyebrow: string;
-  title: string; text: string; mobileVisible: boolean; children: ReactNode;
-}) {
-  return (
-    <motion.article
-      id={id}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative overflow-hidden rounded-2xl border ${
-        dark ? "bg-[var(--charcoal)] text-background border-white/10" : "bg-secondary/50 border-border"
-      } ${mobileVisible ? "block" : "hidden md:block"}`}
-    >
-      <div className="relative aspect-[21/9] md:aspect-[16/9] overflow-hidden">
-        <img src={img} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-[1600ms] hover:scale-105" />
-        <div className={`absolute inset-0 ${dark ? "bg-gradient-to-t from-[var(--charcoal)] via-transparent to-transparent" : "bg-gradient-to-t from-secondary via-transparent to-transparent"}`} />
-      </div>
-      <div className="p-5 md:p-12">
-        <p className={`text-[11px] tracking-[0.28em] uppercase mb-3 md:mb-4 ${dark ? "text-white/60" : "text-muted-foreground"}`}>{eyebrow}</p>
-        <h3 className="font-display text-[26px] md:text-[2.4rem] leading-[1.05] tracking-tightest mb-4 md:mb-5 text-balance">
-          {title}
-        </h3>
-        <p className={`text-[14px] md:text-[14.5px] leading-relaxed mb-6 md:mb-10 max-w-prose ${dark ? "text-white/70" : "text-muted-foreground"}`}>
-          {text}
-        </p>
-        {children}
-      </div>
-    </motion.article>
-  );
-}
-
-function EmpresasCard(p: { id: string; hidden: boolean; mobileVisible: boolean; img: string }) {
-  const addressRef = useRef<HTMLInputElement>(null);
-  useGooglePlacesAutocomplete(addressRef);
-
-  return (
-    <CardShell
-      id={p.id}
-      mobileVisible={p.mobileVisible}
-      img={p.img}
-      eyebrow="Empresas"
-      title="Solicita una propuesta para tu empresa"
-      text="Diseñamos propuestas de paisajismo para empresas que buscan mejorar la imagen y experiencia de sus espacios. Completa el formulario y te contactaremos para evaluar tu proyecto."
-    >
-      <form onSubmit={handleSubmit("evaluación")} className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 md:gap-y-6">
-        {/* Se agregaron los atributos 'name' a todos los campos */}
-        <Field label="Empresa"><input name="Empresa" required maxLength={120} className={inputCls} placeholder="Razón social" /></Field>
-        <Field label="Nombre y cargo"><input name="Nombre_Contacto" required maxLength={120} className={inputCls} placeholder="Ej. Camila Ruiz · Gerente" /></Field>
-        <Field label="Teléfono"><input name="Telefono" required type="tel" maxLength={30} className={inputCls} placeholder="+56" /></Field>
-        <Field label="Correo corporativo"><input name="Correo" required type="email" maxLength={150} className={inputCls} placeholder="nombre@empresa.cl" /></Field>
-        <Field label="Rubro"><input name="Rubro" maxLength={80} className={inputCls} placeholder="Oficinas, retail, hotelería…" /></Field>
-        <Field label="Dirección del proyecto"><input ref={addressRef} name="Direccion" maxLength={200} className={inputCls} placeholder="Comuna, ciudad" /></Field>
-        
-        <Field label="Tipo de espacio">
-          <select name="Tipo_Espacio" className={inputCls} defaultValue="">
-            <option value="" disabled>Seleccionar</option>
-            <option>Oficina corporativa</option>
-            <option>Inmobiliaria / condominio</option>
-            <option>Municipalidad</option>
-            <option>Local comercial</option>
-            <option>Otro</option>
-          </select>
-        </Field>
-        
-
-        <Field label="Servicio requerido">
-          <select name="Servicio_Requerido" className={inputCls} defaultValue="">
-            <option value="" disabled>Seleccionar</option>
-            <option className="text-slate-900 bg-white">Mantención de jardín</option>
-            <option className="text-slate-900 bg-white">Diseño paisajístico</option>
-            <option className="text-slate-900 bg-white">Instalación de riego automático</option>
-            <option className="text-slate-900 bg-white">Instalación de pasto (rollo/semilla)</option>
-            <option className="text-slate-900 bg-white">Fumigación y control de plagas</option>
-            <option className="text-slate-900 bg-white">Poda y limpieza de áreas</option>
-            <option className="text-slate-900 bg-white">Otro</option>
-          </select>
-        </Field>
-        
-
-        <Field label="Fecha ideal de inicio">
-          <input name="Fecha_Inicio" type="date" min={today} className={inputCls} />
-        </Field>
-        
-        <Field label="Archivos (planos, fotos)"><input name="Archivos_Adjuntos" type="file" multiple className="block w-full text-xs file:mr-4 file:rounded-full file:border-0 file:bg-foreground file:text-background file:px-4 file:py-2 file:text-[11px] file:tracking-wider file:uppercase" /></Field>
-        
-        <div className="sm:col-span-2">
-          <Field label="Objetivo del proyecto">
-            <textarea name="Objetivo_Proyecto" rows={3} maxLength={1000} className={`${inputCls} resize-none`} placeholder="Cuéntanos brevemente qué buscas lograr" />
-          </Field>
-        </div>
-        
-        <label className="sm:col-span-2 flex items-start gap-3 text-xs text-muted-foreground mt-2">
-          <input type="checkbox" required className="mt-1 accent-[var(--olive)]" />
-          <span>Autorizo a Paisajismo Bascharant SpA a contactarme para evaluar mi proyecto.</span>
-        </label>
-        
-        <div className="sm:col-span-2 mt-4">
-          <button className="group inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-[12.5px] tracking-wide text-background transition-all duration-500 hover:bg-[var(--olive)] hover:shadow-[var(--shadow-lift)]">
-            Solicitar evaluación <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
-          </button>
-        </div>
-      </form>
-    </CardShell>
-  );
-}
-
-function ParticularesCard(p: { id: string; mobileVisible: boolean; img: string }) {
-  const addressRef = useRef<HTMLInputElement>(null);
-  useGooglePlacesAutocomplete(addressRef);
-
-  return (
-    <CardShell
-      id={p.id}
-      dark
-      mobileVisible={p.mobileVisible}
-      img={p.img}
-      eyebrow="Particulares · Locales"
-      title="Agenda una visita para tu hogar o local"
-      text="Si quieres renovar el jardín de tu casa o mejorar la estética natural de tu local, agenda una visita y revisaremos tu espacio en terreno para proponerte una solución adecuada."
-    >
-      <form onSubmit={handleSubmit("visita")} className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 md:gap-y-6">
-        {/* Se agregaron los atributos 'name' a todos los campos */}
-        <Field label="Nombre completo"><input name="Nombre_Completo" required maxLength={120} className={`${inputCls} border-white/20 focus:border-white text-white`} placeholder="Tu nombre" /></Field>
-        <Field label="Teléfono"><input name="Telefono" required type="tel" maxLength={30} className={`${inputCls} border-white/20 focus:border-white text-white`} placeholder="+56" /></Field>
-        <Field label="Correo"><input name="Correo" required type="email" maxLength={150} className={`${inputCls} border-white/20 focus:border-white text-white`} placeholder="nombre@correo.cl" /></Field>
-        <Field label="Dirección"><input ref={addressRef} name="Direccion" maxLength={200} className={`${inputCls} border-white/20 focus:border-white text-white`} placeholder="Comuna, ciudad" /></Field>
-        
-        <Field label="Tipo de cliente">
-          <select name="Tipo_Cliente" className={`${inputCls} border-white/20 focus:border-white text-white bg-[var(--charcoal)]`} defaultValue="">
-            <option value="" disabled className="text-slate-900 bg-white">Seleccionar</option>
-            <option className="text-slate-900 bg-white">Hogar</option>
-            <option className="text-slate-900 bg-white">Peluquería</option>
-            <option className="text-slate-900 bg-white">Barbería</option>
-            <option className="text-slate-900 bg-white">Centro estético</option>
-            <option className="text-slate-900 bg-white">Cafetería</option>
-            <option className="text-slate-900 bg-white">Terraza comercial</option>
-          </select>
-        </Field>
-
-        <Field label="Tipo de servicio">
-          <select name="Tipo_Servicio" className={`${inputCls} border-white/20 focus:border-white text-white bg-[var(--charcoal)]`} defaultValue="">
-            <option value="" disabled className="text-slate-900 bg-white">Seleccionar</option>
-            <option className="text-slate-900 bg-white">Mantención de jardín</option>
-            <option className="text-slate-900 bg-white">Diseño paisajístico</option>
-            <option className="text-slate-900 bg-white">Instalación de riego automático</option>
-            <option className="text-slate-900 bg-white">Instalación de pasto (rollo/semilla)</option>
-            <option className="text-slate-900 bg-white">Fumigación y control de plagas</option>
-            <option className="text-slate-900 bg-white">Poda y limpieza de áreas</option>
-            <option className="text-slate-900 bg-white">Otro</option>
-          </select>
-        </Field>
-
-        <Field label="Fecha ideal de inicio">
-          <input name="Fecha_Inicio" type="date" min={today} className={`${inputCls} border-white/20 focus:border-white text-white`} />
-        </Field>
-        
-        <Field label="Franja horaria">
-          <select name="Franja_Horaria" className={`${inputCls} border-white/20 focus:border-white text-white bg-[var(--charcoal)]`} defaultValue="">
-            <option value="" disabled className="text-slate-900 bg-white">Seleccionar</option>
-            <option className="text-slate-900 bg-white">Mañana</option>
-            <option className="text-slate-900 bg-white">Mediodía</option>
-            <option className="text-slate-900 bg-white">Tarde</option>
-          </select>
-        </Field>
-
-        <div className="sm:col-span-2">
-          <Field label="Motivo de la visita / comentarios">
-            <textarea name="Comentarios" rows={3} maxLength={1000} className={`${inputCls} border-white/20 focus:border-white text-white resize-none`} placeholder="Cuéntanos qué te gustaría lograr" />
-          </Field>
-        </div>
-        
-        <Field label="Fotos del espacio">
-          <input name="Fotos_Espacio" type="file" multiple accept="image/*" className="block w-full text-xs text-white/70 file:mr-4 file:rounded-full file:border-0 file:bg-white file:text-foreground file:px-4 file:py-2 file:text-[11px] file:tracking-wider file:uppercase" />
-        </Field>
-
-        <label className="sm:col-span-2 flex items-start gap-3 text-xs text-white/60 mt-2">
-          <input type="checkbox" required className="mt-1 accent-[var(--sage)]" />
-          <span>Confirmo que pueden contactarme para coordinar la visita.</span>
-        </label>
-        
-        <div className="sm:col-span-2 mt-4">
-          <button className="group inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-[12.5px] tracking-wide text-foreground transition-all duration-500 hover:bg-[var(--sage)] hover:text-white hover:shadow-[var(--shadow-lift)]">
-            Agendar visita <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
-          </button>
-        </div>
-      </form>
-    </CardShell>
   );
 }

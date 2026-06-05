@@ -5,7 +5,15 @@ import { useGooglePlacesAutocomplete } from "@/hooks/useGooglePlacesAutocomplete
 import empresasImg from "@/assets/empresas.jpg";
 import particularesImg from "@/assets/particulares.jpg";
 
-const today = new Date().toISOString().split("T")[0];
+/** Returns today's date in YYYY-MM-DD using the device's local timezone.
+ *  Computed at render time so iOS Safari never caches a stale value. */
+function getToday(): string {
+  const d = new Date();
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
+}
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
@@ -265,7 +273,7 @@ export default function Forms() {
                         <input
                           name="Fecha_Estimada_Inicio"
                           type="date"
-                          min={today}
+                          min={getToday()}
                           className={inputCls}
                         />
                       </Field>
@@ -379,7 +387,7 @@ export default function Forms() {
                           name="Fecha_Sugerida"
                           required
                           type="date"
-                          min={today}
+                          min={getToday()}
                           className={inputCls}
                         />
                       </Field>

@@ -1,21 +1,58 @@
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import hero from "@/assets/hero.jpg";
+import heroVideo from "@/assets/Cinematic_subtle_animation_of.mp4";
+import heroPoster from "@/assets/hero.jpg";
 
 const ease = [0.22, 1, 0.36, 1] as const;
+const FADE_OUT = 1;   // seconds to fade out before loop end
+const FADE_IN  = 0.4; // seconds to fade in after loop restart
 
 export default function Hero() {
+  const vidRef = useRef<HTMLVideoElement>(null);
+
+  /* Smooth crossfade at the loop seam */
+  useEffect(() => {
+    const v = vidRef.current;
+    if (!v) return;
+    let raf: number;
+
+    const tick = () => {
+      if (v.duration && v.duration > 0) {
+        const left = v.duration - v.currentTime;
+        const inTime = v.currentTime;
+
+        if (left <= FADE_OUT) {
+          v.style.opacity = String(left / FADE_OUT);
+        } else if (inTime <= FADE_IN) {
+          v.style.opacity = String(inTime / FADE_IN);
+        } else {
+          v.style.opacity = "1";
+        }
+      }
+      raf = requestAnimationFrame(tick);
+    };
+
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
   return (
     <section id="inicio" className="relative h-[100svh] min-h-[680px] w-full overflow-hidden">
       <motion.div
         initial={{ scale: 1.15 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2.4, ease }}
-        className="absolute inset-0"
+        className="absolute inset-0 bg-black"
       >
-        <img
-          src={hero}
-          alt="Paisajismo contemporáneo Bascharant"
-          className="h-full w-full object-cover"
+        <video
+          ref={vidRef}
+          src={heroVideo}
+          poster={heroPoster}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover transition-opacity duration-300"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(20,25,18,0.55)] via-[rgba(20,25,18,0.25)] to-[rgba(20,25,18,0.75)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(0,0,0,0.4),transparent_60%)]" />

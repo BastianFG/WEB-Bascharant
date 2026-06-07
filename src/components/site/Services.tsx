@@ -16,38 +16,38 @@ const items = [
   {
     icon: Leaf,
     n: "01",
-    t: "Diseño & Licitaciones",
-    d: "Conceptualización, modelado 3D y especificaciones técnicas para licitaciones y permisos.",
+    t: "Diseño & Licitaciones B2B",
+    d: "Planificación paisajística, modelado 3D, cubicación y preparación de bases técnicas para licitaciones públicas y privadas en Chile.",
   },
   {
     icon: HardHat,
     n: "02",
-    t: "Ejecución a Gran Escala",
-    d: "Movimiento de tierras, urbanización verde y plantación con personal acreditado en obra.",
+    t: "Ejecución de Obras Verdes",
+    d: "Construcción y habilitación de áreas verdes a gran escala, movimiento de tierras y urbanización sustentable con personal acreditado.",
   },
   {
     icon: Scissors,
     n: "03",
-    t: "Mantención Corporativa",
-    d: "Programas continuos con reportes técnicos fitosanitarios y cumplimiento estricto de SLAs.",
+    t: "Mantención Corporativa (SLA)",
+    d: "Conservación de jardines industriales con visitas técnicas periódicas, informes fitosanitarios y cumplimiento riguroso de acuerdos de nivel de servicio (SLA).",
   },
   {
     icon: Sprout,
     n: "04",
-    t: "Riego Tecnificado",
-    d: "Diseño y automatización de riego con telemetría para la optimización del recurso hídrico.",
+    t: "Riego Tecnificado y Telemetría",
+    d: "Instalación y diseño de sistemas de riego automatizado con control de consumo hídrico y telemetría para eficiencia hídrica corporativa.",
   },
   {
     icon: Building2,
     n: "05",
     t: "Paisajismo Inmobiliario",
-    d: "Habilitación de áreas comunes para condominios, parques urbanos y proyectos inmobiliarios.",
+    d: "Desarrollo de áreas comunes, parques y jardines urbanos para inmobiliarias, constructoras y condominios de alta plusvalía.",
   },
   {
     icon: Store,
     n: "06",
     t: "Espacios Comerciales & Oficinas",
-    d: "Diseño y conservación botánica de interiores, fachadas y terrazas corporativas.",
+    d: "Decoración botánica corporativa, muros verdes y mantención de jardines interiores para centros comerciales, oficinas e industrias.",
   },
 ];
 

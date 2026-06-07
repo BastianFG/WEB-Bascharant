@@ -170,24 +170,29 @@ export default function Forms() {
                         <input
                           name="Empresa_Razon_Social"
                           required
+                          autoComplete="organization"
                           maxLength={120}
                           className={inputCls}
                           placeholder="Ej. Constructora Alianza SpA"
                         />
                       </Field>
                       <Field label="RUT Empresa">
-                        <input
-                          name="RUT_Empresa"
-                          required
-                          maxLength={15}
-                          className={inputCls}
-                          placeholder="12.345.678-9"
-                        />
+                        <div className="relative w-full">
+                          <input
+                            name="RUT_Empresa"
+                            required
+                            maxLength={15}
+                            className={inputCls}
+                            placeholder="Ej. 76.123.456-K"
+                          />
+                          <span className="block text-[9px] text-muted-foreground/80 mt-1">Requerido para la facturación y licitación formal</span>
+                        </div>
                       </Field>
                       <Field label="Nombre y Cargo del Encargado">
                         <input
                           name="Nombre_Contacto"
                           required
+                          autoComplete="name"
                           maxLength={120}
                           className={inputCls}
                           placeholder="Ej. Carlos Mendoza · Jefe de Adquisiciones"
@@ -198,6 +203,7 @@ export default function Forms() {
                           name="Correo_Contacto"
                           required
                           type="email"
+                          autoComplete="email"
                           maxLength={150}
                           className={inputCls}
                           placeholder="nombre@empresa.cl"
@@ -208,6 +214,7 @@ export default function Forms() {
                           name="Telefono_Contacto"
                           required
                           type="tel"
+                          autoComplete="tel"
                           maxLength={30}
                           className={inputCls}
                           placeholder="Ej. +56 9 1234 5678"
@@ -218,6 +225,7 @@ export default function Forms() {
                           ref={addressRef}
                           name="Direccion_Proyecto"
                           required
+                          autoComplete="street-address"
                           maxLength={200}
                           className={inputCls}
                           placeholder="Comuna, ciudad"
@@ -262,12 +270,15 @@ export default function Forms() {
                       </Field>
 
                       <Field label="Bases Técnicas / Planos / Archivos">
-                        <input
-                          name="Archivos_Adjuntos"
-                          type="file"
-                          multiple
-                          className="block w-full text-xs text-muted-foreground file:mr-4 file:rounded-full file:border-0 file:bg-foreground file:text-background file:px-4 file:py-2 file:text-[11px] file:tracking-wider file:uppercase file:font-semibold hover:file:opacity-90 file:cursor-pointer mt-2"
-                        />
+                        <div className="w-full">
+                          <input
+                            name="Archivos_Adjuntos"
+                            type="file"
+                            multiple
+                            className="block w-full text-xs text-muted-foreground file:mr-4 file:rounded-full file:border-0 file:bg-foreground file:text-background file:px-4 file:py-2 file:text-[11px] file:tracking-wider file:uppercase file:font-semibold hover:file:opacity-90 file:cursor-pointer mt-2"
+                          />
+                          <span className="block text-[9px] text-muted-foreground/80 mt-1">Puedes adjuntar planos (PDF, CAD) o especificaciones del proyecto</span>
+                        </div>
                       </Field>
                       <Field label="Fecha Estimada de Inicio">
                         <input
@@ -291,20 +302,23 @@ export default function Forms() {
                       </div>
 
                       <div className="sm:col-span-2 flex items-start gap-3 text-xs text-muted-foreground mt-2">
-                        <input type="checkbox" required className="mt-1 accent-[var(--olive)]" />
+                        <input type="checkbox" defaultChecked required className="mt-1 accent-[var(--olive)]" />
                         <span>
                           Confirmo la veracidad de los datos entregados y autorizo a Paisajismo
                           Bascharant a emitir una cotización formal.
                         </span>
                       </div>
 
-                      <div className="sm:col-span-2 mt-4 text-left">
+                      <div className="sm:col-span-2 mt-4 text-left flex flex-col sm:flex-row sm:items-center gap-4">
                         <button className="group inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-[13px] font-semibold tracking-wide text-background transition-all duration-500 hover:bg-[var(--olive)] hover:shadow-[var(--shadow-lift)]">
                           Enviar Solicitud de Propuesta{" "}
                           <span className="transition-transform duration-500 group-hover:translate-x-1">
                             →
                           </span>
                         </button>
+                        <span className="text-xs text-muted-foreground/90 italic">
+                          ⚡ Respuesta estimada en menos de 48 horas hábiles.
+                        </span>
                       </div>
                     </form>
                   </motion.div>
@@ -338,6 +352,7 @@ export default function Forms() {
                         <input
                           name="Nombre_Completo"
                           required
+                          autoComplete="name"
                           maxLength={120}
                           className={inputCls}
                           placeholder="Ej. Camila Ruiz"
@@ -347,6 +362,7 @@ export default function Forms() {
                         <input
                           name="Cargo_Departamento"
                           required
+                          autoComplete="honorific-suffix"
                           maxLength={80}
                           className={inputCls}
                           placeholder="Ej. Administradora de Contratos"
@@ -356,6 +372,7 @@ export default function Forms() {
                         <input
                           name="Empresa_Organismo"
                           required
+                          autoComplete="organization"
                           maxLength={120}
                           className={inputCls}
                           placeholder="Ej. Inmobiliaria Andes"
@@ -366,6 +383,7 @@ export default function Forms() {
                           name="Correo_Contacto"
                           required
                           type="email"
+                          autoComplete="email"
                           maxLength={150}
                           className={inputCls}
                           placeholder="nombre@empresa.cl"
@@ -376,6 +394,7 @@ export default function Forms() {
                           name="Telefono_Contacto"
                           required
                           type="tel"
+                          autoComplete="tel"
                           maxLength={30}
                           className={inputCls}
                           placeholder="Ej. +56 9 1234 5678"
@@ -432,20 +451,23 @@ export default function Forms() {
                       </div>
 
                       <div className="sm:col-span-2 flex items-start gap-3 text-xs text-muted-foreground mt-2">
-                        <input type="checkbox" required className="mt-1 accent-[var(--olive)]" />
+                        <input type="checkbox" defaultChecked required className="mt-1 accent-[var(--olive)]" />
                         <span>
                           Acepto coordinar la reunión en la fecha solicitada o en la más cercana
                           disponible.
                         </span>
                       </div>
 
-                      <div className="sm:col-span-2 mt-4 text-left">
+                      <div className="sm:col-span-2 mt-4 text-left flex flex-col sm:flex-row sm:items-center gap-4">
                         <button className="group inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-[13px] font-semibold tracking-wide text-background transition-all duration-500 hover:bg-[var(--olive)] hover:shadow-[var(--shadow-lift)]">
                           Agendar Reunión Técnica{" "}
                           <span className="transition-transform duration-500 group-hover:translate-x-1">
                             →
                           </span>
                         </button>
+                        <span className="text-xs text-muted-foreground/90 italic">
+                          ⚡ Confirmación en menos de 24 horas hábiles.
+                        </span>
                       </div>
                     </form>
                   </motion.div>

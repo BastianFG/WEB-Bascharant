@@ -17,7 +17,7 @@ export default function Hero() {
     let raf: number;
 
     const tick = () => {
-      if (v.duration && v.duration > 0) {
+      if (v.duration && !isNaN(v.duration) && v.duration > 0) {
         const left = v.duration - v.currentTime;
         const inTime = v.currentTime;
 
@@ -28,6 +28,8 @@ export default function Hero() {
         } else {
           v.style.opacity = "1";
         }
+      } else {
+        v.style.opacity = "1";
       }
       raf = requestAnimationFrame(tick);
     };
@@ -95,18 +97,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2, ease }}
-            className="mt-10 flex flex-wrap items-center gap-4"
+            className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-md sm:max-w-none"
           >
             <a
               href="#empresas"
-              className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 text-[13px] font-medium tracking-wide text-foreground transition-all duration-500 hover:bg-[var(--sage)] hover:text-white hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)]"
+              className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-[13px] font-medium tracking-wide text-foreground transition-all duration-500 hover:bg-[var(--sage)] hover:text-white hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] text-center"
             >
               Solicitar Propuesta Comercial
               <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
             </a>
             <a
               href="#reunion-tecnica"
-              className="inline-flex items-center gap-3 rounded-full border border-white/30 px-7 py-4 text-[13px] font-medium tracking-wide text-white backdrop-blur-sm transition-all duration-500 hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-3 rounded-full border border-white/30 px-7 py-4 text-[13px] font-medium tracking-wide text-white backdrop-blur-sm transition-all duration-500 hover:bg-white/10 text-center"
             >
               Agendar Reunión Técnica
             </a>
@@ -117,7 +119,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.4, ease }}
-            className="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-white/10 pt-8 max-w-3xl text-left"
+            className="mt-16 grid grid-cols-3 gap-6 border-t border-white/10 pt-8 max-w-3xl text-left"
           >
             <div>
               <div className="text-2xl md:text-3xl font-display text-white font-semibold">100%</div>
@@ -130,7 +132,15 @@ export default function Hero() {
                 +13 años
               </div>
               <div className="text-[8px] tracking-wider uppercase text-white/50 mt-1">
-                años de experiencia
+                Años de Experiencia
+              </div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-display text-white font-semibold">
+                +500k m²
+              </div>
+              <div className="text-[8px] tracking-wider uppercase text-white/50 mt-1">
+                Área Verde Mantenida
               </div>
             </div>
           </motion.div>

@@ -119,7 +119,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.4, ease }}
-            className="mt-16 grid grid-cols-3 gap-6 border-t border-white/10 pt-8 max-w-3xl text-left"
+            className="mt-16 grid grid-cols-2 gap-6 border-t border-white/10 pt-8 max-w-2xl text-left"
           >
             <div>
               <div className="text-2xl md:text-3xl font-display text-white font-semibold">100%</div>
@@ -133,14 +133,6 @@ export default function Hero() {
               </div>
               <div className="text-[8px] tracking-wider uppercase text-white/50 mt-1">
                 Años de Experiencia
-              </div>
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-display text-white font-semibold">
-                +500k m²
-              </div>
-              <div className="text-[8px] tracking-wider uppercase text-white/50 mt-1">
-                Área Verde Mantenida
               </div>
             </div>
           </motion.div>

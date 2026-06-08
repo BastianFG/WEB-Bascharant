@@ -68,7 +68,7 @@ export default function Contact() {
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/paisajismobascharant/"
                 target="_blank"
                 rel="noreferrer"
                 className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]"

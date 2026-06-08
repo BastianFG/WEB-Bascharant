@@ -2,8 +2,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect, type FormEvent, type ReactNode } from "react";
 import { toast } from "sonner";
 import { useGooglePlacesAutocomplete } from "@/hooks/useGooglePlacesAutocomplete";
-import empresasImg from "@/assets/empresas.jpg";
-import particularesImg from "@/assets/particulares.jpg";
+import empresasVideo from "@/assets/Cinematic_hyper_realistic_vi.mp4";
+import particularesVideo from "@/assets/Cinematic_high_end_profession.mp4";
 
 /** Returns today's date in YYYY-MM-DD using the device's local timezone.
  *  Computed at render time so iOS Safari never caches a stale value. */
@@ -72,7 +72,7 @@ function handleSubmit(label: string) {
 }
 
 export default function Forms() {
-  const [activeForm, setActiveForm] = useState<"propuesta" | "reunion">("propuesta");
+  const [activeForm, setActiveForm] = useState<"propuesta" | "reunion">("reunion");
   const addressRef = useRef<HTMLInputElement>(null);
   useGooglePlacesAutocomplete(addressRef);
 
@@ -109,17 +109,7 @@ export default function Forms() {
         {/* Form Switch Tabs */}
         <div className="flex justify-center mb-10">
           <div className="flex gap-1.5 rounded-full bg-secondary/80 p-1 w-full max-w-md shadow-sm border border-border/40">
-            <button
-              onClick={() => setActiveForm("propuesta")}
-              className={`flex-1 rounded-full py-3 text-xs font-semibold tracking-wide capitalize transition-all ${
-                activeForm === "propuesta"
-                  ? "bg-foreground text-background shadow-md"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              1. Solicitar Propuesta Comercial
-            </button>
-            <button
+                        <button
               id="reunion-tecnica"
               onClick={() => setActiveForm("reunion")}
               className={`flex-1 rounded-full py-3 text-xs font-semibold tracking-wide capitalize transition-all ${
@@ -128,7 +118,17 @@ export default function Forms() {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              2. Agendar Reunión Técnica
+              1. Agendar Reunión Técnica
+            </button>
+            <button
+              onClick={() => setActiveForm("propuesta")}
+              className={`flex-1 rounded-full py-3 text-xs font-semibold tracking-wide capitalize transition-all ${
+                activeForm === "propuesta"
+                  ? "bg-foreground text-background shadow-md"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              2. Solicitar Propuesta Comercial
             </button>
           </div>
         </div>
@@ -137,13 +137,38 @@ export default function Forms() {
         <div className="mx-auto max-w-4xl">
           <div className="relative overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm shadow-[var(--shadow-soft)]">
             {/* Header banner image for context */}
-            <div className="relative aspect-[21/9] md:aspect-[24/6] overflow-hidden">
-              <img
-                src={activeForm === "propuesta" ? empresasImg : particularesImg}
-                alt="Paisajismo Bascharant B2B"
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105"
-              />
+            <div className="relative aspect-[21/9] md:aspect-[24/6] overflow-hidden bg-muted">
+              {activeForm === "propuesta" ? (
+                <video
+                  src={empresasVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105"
+                  onCanPlay={(e) => {
+                    (e.target as HTMLVideoElement).playbackRate = 0.8;
+                  }}
+                  onTimeUpdate={(e) => {
+                    const video = e.target as HTMLVideoElement;
+                    // Ampliamos el margen a 0.5s porque onTimeUpdate se dispara cada ~250ms
+                    // así aseguramos atrapar el evento antes de llegar a la pantalla negra.
+                    if (video.duration && video.currentTime >= video.duration - 0.5) {
+                      video.currentTime = 0.1;
+                      video.play();
+                    }
+                  }}
+                />
+              ) : (
+                <video
+                  src={particularesVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-black/25" />
             </div>
 

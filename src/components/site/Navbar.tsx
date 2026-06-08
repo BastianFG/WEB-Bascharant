@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const links = [
   { href: "/#inicio", label: "Inicio" },
-  { href: "/#servicios", label: "Servicios B2B" },
+  { href: "/#servicios", label: "Servicios" },
   { href: "/proyectos", label: "Proyectos" },
   { href: "/historia", label: "Nuestra Historia" },
   { href: "/#empresas", label: "Propuesta Comercial" },

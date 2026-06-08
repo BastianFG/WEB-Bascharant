@@ -4,39 +4,8 @@ import heroVideo from "@/assets/Cinematic_subtle_animation_of.mp4";
 import heroPoster from "@/assets/hero.jpg";
 
 const ease = [0.22, 1, 0.36, 1] as const;
-const FADE_OUT = 1;   // seconds to fade out before loop end
-const FADE_IN  = 0.4; // seconds to fade in after loop restart
-
 export default function Hero() {
   const vidRef = useRef<HTMLVideoElement>(null);
-
-  /* Smooth crossfade at the loop seam */
-  useEffect(() => {
-    const v = vidRef.current;
-    if (!v) return;
-    let raf: number;
-
-    const tick = () => {
-      if (v.duration && !isNaN(v.duration) && v.duration > 0) {
-        const left = v.duration - v.currentTime;
-        const inTime = v.currentTime;
-
-        if (left <= FADE_OUT) {
-          v.style.opacity = String(left / FADE_OUT);
-        } else if (inTime <= FADE_IN) {
-          v.style.opacity = String(inTime / FADE_IN);
-        } else {
-          v.style.opacity = "1";
-        }
-      } else {
-        v.style.opacity = "1";
-      }
-      raf = requestAnimationFrame(tick);
-    };
-
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
 
   return (
     <section id="inicio" className="relative h-[100svh] min-h-[680px] w-full overflow-hidden">

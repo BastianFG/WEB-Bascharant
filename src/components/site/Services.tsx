@@ -212,14 +212,20 @@ function MobileCarousel() {
 }
 
 // ─── Main section ──────────────────────────────────────────────────────────────
+import FallingLeaves from "./FallingLeaves";
+
 export default function Services() {
   return (
-    <section id="servicios" className="relative py-28 md:py-40">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <section id="servicios" className="relative overflow-hidden py-28 md:py-40 bg-background/50">
+      <FallingLeaves />
+      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 z-10">
         {/* Header */}
         <div className="flex flex-col md:grid md:grid-cols-12 gap-8 mb-16 md:mb-24">
-          <div className="w-full md:col-span-4">
+          <div className="w-full md:col-span-4 flex flex-col items-start gap-4">
             <p className="eyebrow">— Servicios</p>
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--olive)] bg-[var(--olive)]/10 px-3 py-1 text-[11px] font-semibold tracking-widest uppercase text-[var(--olive)]">
+              Época del Año: Otoño
+            </span>
           </div>
           <div className="w-full md:col-span-8">
             <motion.h2

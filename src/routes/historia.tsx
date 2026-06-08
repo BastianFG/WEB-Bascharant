@@ -4,6 +4,7 @@ import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import History from "@/components/site/History";
 import { Toaster } from "@/components/ui/sonner";
+import Butterfly from "@/components/site/Butterfly";
 
 export const Route = createFileRoute("/historia")({
   head: () => ({
@@ -27,6 +28,12 @@ function HistoriaPage() {
   return (
     <main className="relative bg-background text-foreground antialiased overflow-x-hidden pt-20">
       <Navbar />
+      <Butterfly />
+      <Butterfly />
+      <Butterfly />
+      <Butterfly />
+      <Butterfly />
+      <Butterfly />
       <div className="py-10">
         <History />
       </div>

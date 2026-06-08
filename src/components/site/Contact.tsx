@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MessageCircle, Instagram, MapPin } from "lucide-react";
+import FallingLeaves from "./FallingLeaves";
 
 export default function Contact() {
   return (
-    <section id="contacto" className="py-16 md:py-36 bg-secondary/40">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <section id="contacto" className="relative overflow-hidden py-16 md:py-36 bg-secondary/40">
+      <FallingLeaves />
+      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 z-10">
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10">
           <div className="w-full lg:col-span-7">
             <p className="eyebrow mb-6">— Contacto</p>

@@ -48,6 +48,14 @@ function handleSubmit(label: string) {
         toast.success("Solicitud enviada con éxito", {
           description: `Gracias. Un asesor comercial se pondrá en contacto para coordinar su ${label}.`,
         });
+
+        // Trigger Google Ads conversion tracking event
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "conversion", {
+            send_to: "AW-18198577508/N7dvCNPOibgcEOSC4eVD",
+          });
+        }
+
         form.reset();
       } else {
         toast.error("Hubo un problema al enviar", {

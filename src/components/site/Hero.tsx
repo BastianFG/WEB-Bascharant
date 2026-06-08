@@ -9,12 +9,7 @@ export default function Hero() {
 
   return (
     <section id="inicio" className="relative h-[100svh] min-h-[680px] w-full overflow-hidden">
-      <motion.div
-        initial={{ scale: 1.15 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2.4, ease }}
-        className="absolute inset-0 bg-black"
-      >
+      <div className="absolute inset-0 bg-black overflow-hidden">
         <video
           ref={vidRef}
           src={heroVideo}
@@ -23,11 +18,11 @@ export default function Hero() {
           loop
           muted
           playsInline
-          className="h-full w-full object-cover transition-opacity duration-300"
+          className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(20,25,18,0.55)] via-[rgba(20,25,18,0.25)] to-[rgba(20,25,18,0.75)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(0,0,0,0.4),transparent_60%)]" />
-      </motion.div>
+      </div>
 
       <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-between px-6 lg:px-10 pt-32 pb-12">
         <motion.div

@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import img from "@/assets/editorial.jpg";
+import Hummingbird from "@/components/site/Hummingbird";
 
 export default function Editorial() {
   const ref = useRef<HTMLDivElement>(null);
@@ -9,7 +10,10 @@ export default function Editorial() {
 
   return (
     <section ref={ref} className="relative bg-secondary/40 py-28 md:py-40 overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+      <Hummingbird />
+      <Hummingbird />
+      <Hummingbird />
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 relative z-30">
         <div className="grid grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="col-span-12 lg:col-span-6 order-2 lg:order-1">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-muted">

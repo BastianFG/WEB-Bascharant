@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const links = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#servicios", label: "Servicios B2B" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#empresas", label: "Propuesta Comercial" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#inicio", label: "Inicio" },
+  { href: "/#servicios", label: "Servicios B2B" },
+  { href: "/proyectos", label: "Proyectos" },
+  { href: "/historia", label: "Nuestra Historia" },
+  { href: "/#empresas", label: "Propuesta Comercial" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export default function Navbar() {
@@ -36,7 +37,7 @@ export default function Navbar() {
             : ""
         } transition-all duration-700`}
       >
-        <a href="#inicio" className="group flex items-center gap-2">
+        <a href="/#inicio" className="group flex items-center gap-2">
           <span className="inline-block h-2 w-2 rounded-full bg-[var(--sage)] transition-transform duration-500 group-hover:scale-150" />
           <span className="font-display text-[17px] tracking-tight">
             Bascharant<span className="text-muted-foreground"> · Paisajismo</span>
@@ -57,7 +58,7 @@ export default function Navbar() {
         </nav>
 
         <a
-          href="#empresas"
+          href="/#empresas"
           className="hidden md:inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-[12.5px] font-medium tracking-wide text-background transition-all duration-500 hover:bg-[var(--olive)] hover:shadow-[var(--shadow-lift)]"
         >
           Solicitar propuesta
@@ -98,7 +99,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#empresas"
+              href="/#empresas"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-foreground px-5 py-3 text-center text-xs text-background"
             >

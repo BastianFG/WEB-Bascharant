@@ -28,20 +28,20 @@ const items = [
   {
     icon: Scissors,
     n: "03",
-    t: "Mantención Corporativa (SLA)",
-    d: "Conservación de jardines industriales con visitas técnicas periódicas, informes fitosanitarios y cumplimiento riguroso de acuerdos de nivel de servicio (SLA).",
+    t: "Mantención Corporativa",
+    d: "Conservación de jardines industriales con visitas técnicas periódicas, informes fitosanitarios y cumplimiento riguroso de acuerdos.",
   },
   {
     icon: Sprout,
     n: "04",
     t: "Riego Tecnificado y Telemetría",
-    d: "Instalación y diseño de sistemas de riego automatizado con control de consumo hídrico y telemetría para eficiencia hídrica corporativa.",
+    d: "Instalación y diseño de sistemas de riego automatizado con control de consumo hídrico para eficiencia hídrica corporativa.",
   },
   {
     icon: Building2,
     n: "05",
     t: "Paisajismo Inmobiliario",
-    d: "Desarrollo de áreas comunes, parques y jardines urbanos para inmobiliarias, constructoras y condominios de alta plusvalía.",
+    d: "Desarrollo de áreas comunes, parques y jardines urbanos para inmobiliarias, constructoras y condominios.",
   },
   {
     icon: Store,

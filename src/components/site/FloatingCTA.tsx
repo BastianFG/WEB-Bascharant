@@ -7,7 +7,7 @@ export default function FloatingCTA() {
       {/* Botón Agendar Reunión Técnica */}
       <div className="animate-float" style={{ animationDelay: "0s" }}>
         <motion.a
-          href="#empresas"
+          href="/#empresas"
           initial={{ opacity: 0, scale: 0.8, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}

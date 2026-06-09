@@ -280,11 +280,12 @@ export default function Forms() {
                           required
                           type="tel"
                           autoComplete="tel"
+                          defaultValue="+569 "
                           maxLength={30}
                           pattern="^\+?[0-9\s\-\(\)]{8,30}$"
                           title="Ingrese un número de teléfono válido."
                           className={inputCls}
-                          placeholder="Ej. +56 9 1234 5678"
+                          placeholder="Ej. +569 1234 5678"
                         />
                       </Field>
                       <Field label="Ubicación del Proyecto">
@@ -465,11 +466,12 @@ export default function Forms() {
                           required
                           type="tel"
                           autoComplete="tel"
+                          defaultValue="+569 "
                           maxLength={30}
                           pattern="^\+?[0-9\s\-\(\)]{8,30}$"
                           title="Ingrese un número de teléfono válido."
                           className={inputCls}
-                          placeholder="Ej. +56 9 1234 5678"
+                          placeholder="Ej. +569 1234 5678"
                         />
                       </Field>
 

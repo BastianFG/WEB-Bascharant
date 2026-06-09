@@ -6,7 +6,7 @@ import History from "@/components/site/History";
 import { Toaster } from "@/components/ui/sonner";
 import Butterfly from "@/components/site/Butterfly";
 
-export const Route = createFileRoute("/historia")({
+export const Route = createFileRoute("/sobre-nosotros")({
   head: () => ({
     meta: [
       { title: "Nuestra Historia | Paisajismo Bascharant" },

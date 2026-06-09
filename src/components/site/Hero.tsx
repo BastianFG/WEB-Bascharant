@@ -52,7 +52,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 1, ease }}
             className="mt-8 max-w-2xl text-base md:text-[18px] leading-relaxed text-white/80"
           >
-            Diseño, ejecución y mantención de áreas verdes para constructoras, inmobiliarias e
+            Diseño, ejecución y mantención de áreas verdes para Empresas,constructoras, inmobiliarias e
             industrias. Capacidad operativa certificada, plazos garantizados y cobertura a nivel
             nacional.
           </motion.p>
@@ -117,7 +117,7 @@ export default function Hero() {
             Desplazar
           </div>
           <div className="hidden md:block text-right text-[10px] tracking-[0.25em] uppercase">
-            Planiﬁcación · Ejecución · SLA de Conservación
+            Diseño · Ejecución · Mantención
           </div>
         </motion.div>
       </div>

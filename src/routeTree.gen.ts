@@ -9,18 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ProyectosRouteImport } from './routes/proyectos'
-import { Route as HistoriaRouteImport } from './routes/historia'
+import { Route as SobreNosotrosRouteImport } from './routes/sobre-nosotros'
+import { Route as ProyectoPaisajismoRouteImport } from './routes/proyecto-paisajismo'
 import { Route as IndexRouteImport } from './routes/index'
 
-const ProyectosRoute = ProyectosRouteImport.update({
-  id: '/proyectos',
-  path: '/proyectos',
+const SobreNosotrosRoute = SobreNosotrosRouteImport.update({
+  id: '/sobre-nosotros',
+  path: '/sobre-nosotros',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HistoriaRoute = HistoriaRouteImport.update({
-  id: '/historia',
-  path: '/historia',
+const ProyectoPaisajismoRoute = ProyectoPaisajismoRouteImport.update({
+  id: '/proyecto-paisajismo',
+  path: '/proyecto-paisajismo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,48 +31,48 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/historia': typeof HistoriaRoute
-  '/proyectos': typeof ProyectosRoute
+  '/proyecto-paisajismo': typeof ProyectoPaisajismoRoute
+  '/sobre-nosotros': typeof SobreNosotrosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/historia': typeof HistoriaRoute
-  '/proyectos': typeof ProyectosRoute
+  '/proyecto-paisajismo': typeof ProyectoPaisajismoRoute
+  '/sobre-nosotros': typeof SobreNosotrosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/historia': typeof HistoriaRoute
-  '/proyectos': typeof ProyectosRoute
+  '/proyecto-paisajismo': typeof ProyectoPaisajismoRoute
+  '/sobre-nosotros': typeof SobreNosotrosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/historia' | '/proyectos'
+  fullPaths: '/' | '/proyecto-paisajismo' | '/sobre-nosotros'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/historia' | '/proyectos'
-  id: '__root__' | '/' | '/historia' | '/proyectos'
+  to: '/' | '/proyecto-paisajismo' | '/sobre-nosotros'
+  id: '__root__' | '/' | '/proyecto-paisajismo' | '/sobre-nosotros'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  HistoriaRoute: typeof HistoriaRoute
-  ProyectosRoute: typeof ProyectosRoute
+  ProyectoPaisajismoRoute: typeof ProyectoPaisajismoRoute
+  SobreNosotrosRoute: typeof SobreNosotrosRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/proyectos': {
-      id: '/proyectos'
-      path: '/proyectos'
-      fullPath: '/proyectos'
-      preLoaderRoute: typeof ProyectosRouteImport
+    '/sobre-nosotros': {
+      id: '/sobre-nosotros'
+      path: '/sobre-nosotros'
+      fullPath: '/sobre-nosotros'
+      preLoaderRoute: typeof SobreNosotrosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/historia': {
-      id: '/historia'
-      path: '/historia'
-      fullPath: '/historia'
-      preLoaderRoute: typeof HistoriaRouteImport
+    '/proyecto-paisajismo': {
+      id: '/proyecto-paisajismo'
+      path: '/proyecto-paisajismo'
+      fullPath: '/proyecto-paisajismo'
+      preLoaderRoute: typeof ProyectoPaisajismoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,8 +87,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  HistoriaRoute: HistoriaRoute,
-  ProyectosRoute: ProyectosRoute,
+  ProyectoPaisajismoRoute: ProyectoPaisajismoRoute,
+  SobreNosotrosRoute: SobreNosotrosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

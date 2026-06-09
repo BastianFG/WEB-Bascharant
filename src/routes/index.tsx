@@ -5,7 +5,6 @@ import Hero from "@/components/site/Hero";
 import Services from "@/components/site/Services";
 import Editorial from "@/components/site/Editorial";
 import Forms from "@/components/site/Forms";
-import Testimonials from "@/components/site/Testimonials";
 import Contact from "@/components/site/Contact";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
@@ -108,7 +107,6 @@ function Index() {
       <Services />
       <Editorial />
       <Forms />
-      <Testimonials />
       <Contact />
       <Footer />
       <FloatingCTA />

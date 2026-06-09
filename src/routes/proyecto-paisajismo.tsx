@@ -3,10 +3,11 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import Gallery from "@/components/site/Gallery";
+import Testimonials from "@/components/site/Testimonials";
 import UnderConstructionOverlay from "@/components/site/UnderConstructionOverlay";
 import { Toaster } from "@/components/ui/sonner";
 
-export const Route = createFileRoute("/proyectos")({
+export const Route = createFileRoute("/proyecto-paisajismo")({
   head: () => ({
     meta: [
       { title: "Proyectos y Portafolio | Paisajismo Bascharant" },
@@ -34,6 +35,9 @@ function ProyectosPage() {
       <Navbar />
       <div className="py-10">
         <Gallery />
+      </div>
+      <div className="border-t border-border/60 bg-muted/30">
+        <Testimonials />
       </div>
       <Footer />
       <FloatingCTA />

@@ -114,7 +114,7 @@ export default function Footer() {
 
         {/* Línea inferior de cierre */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
-          <p>&copy; {new Date().getFullYear()} Bascharant. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Paisajismo Bascharant SpA. RUT: 76.280.819-6. Todos los derechos reservados.</p>
           <p className="tracking-[0.2em] uppercase text-[10px] text-white/30">
             Empresa de Paisajismo
           </p>

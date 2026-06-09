@@ -44,6 +44,7 @@ function Index() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Paisajismo Bascharant SpA",
+    "taxID": "76280819-6",
     "alternateName": "Verde Arcadia Collective",
     "image": "https://bascharant.cl/assets/hero.jpg",
     "@id": "https://bascharant.cl/#organization",

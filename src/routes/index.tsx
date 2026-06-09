@@ -65,15 +65,84 @@ function Index() {
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
     },
     "sameAs": ["https://www.instagram.com/paisajismobascharant"],
     "areaServed": [
       {
         "@type": "AdministrativeArea",
         "name": "Santiago"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Lo Barnechea"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Las Condes"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Vitacura"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "La Dehesa"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Huechuraba"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Chicureo"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Quilicura"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Conchalí"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Colina"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Lampa"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Renca"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Macul"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Ñuñoa"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Providencia"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Peñalolén"
+      },
+      
+      {
+        "@type": "AdministrativeArea",
+        "name": "Cachagua"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Algarrobo"
       },
       {
         "@type": "AdministrativeArea",
@@ -84,14 +153,27 @@ function Index() {
         "name": "Frutillar"
       }
     ],
-    "description": "Empresa líder en paisajismo corporativo, diseño, ejecución y mantención de áreas verdes comerciales a gran escala en Chile. Especialistas en contratos SLA para constructoras e industrias.",
+    "description": "Empresa líder en paisajismo , diseño, ejecución y mantención de áreas verdes comerciales en Chile. Especialistas en contratos SLA para constructoras , oficinas , empresas , condominios y particulares.",
     "knowsAbout": [
       "Paisajismo Corporativo",
-      "Mantención de Áreas Verdes Industriales",
+      "Diseño, Construcción y Mantención de Áreas Verdes.",
+      "Trabajos de Emergencia",
+      "Mantención de Áreas Verdes Empresas",
       "Cubicación Técnica de Proyectos",
       "Sistemas de Riego Tecnificado",
       "Poda en Altura Certificada",
-      "Habilitación de Oficinas Verdes"
+      "Tala de Árboles",
+      "Diseño paisajístico 3D",      
+      "Habilitación de Oficinas Verdes",
+      "Instalación de Pasto Sintético",
+      "Mantenimiento de Jardines",
+      "Mantenimiento de Piscinas",
+      "Mantenimiento de Terrazas",
+      "Mantenimiento de Patios",
+      "Mantenimiento de Canchas",
+      "Tratamiento de Plagas",
+      "Control de Malezas",
+      "Abonado Orgánico"
     ]
   };
 

@@ -40,95 +40,73 @@ export default function Footer() {
           </div>
 
           {/* Navegación */}
-          <div className="col-span-6 md:col-span-2 md:col-start-7">
+          <div className="col-span-6 md:col-span-3 lg:col-span-2 lg:col-start-6">
             <div className="text-[11px] tracking-[0.25em] uppercase text-white/50 mb-5">
               Navegación
             </div>
             <ul className="space-y-3 text-sm text-white/80">
               <li>
-                <a href="/#inicio" className="hover:text-white transition-colors duration-300">
-                  Inicio
-                </a>
+                <a href="/#inicio" className="hover:text-white transition-colors duration-300">Inicio</a>
               </li>
               <li>
-                <a href="/#servicios" className="hover:text-white transition-colors duration-300">
-                  Servicios
-                </a>
+                <a href="/#servicios" className="hover:text-white transition-colors duration-300">Servicios</a>
               </li>
               <li>
-                <a href="/#empresas" className="hover:text-white transition-colors duration-300">
-                  Propuesta Comercial
-                </a>
+                <a href="/#empresas" className="hover:text-white transition-colors duration-300">Propuesta Comercial</a>
               </li>
               <li>
-                <a href="/proyecto-paisajismo" className="hover:text-white transition-colors duration-300">
-                  Proyectos
-                </a>
+                <a href="/proyecto-paisajismo" className="hover:text-white transition-colors duration-300">Proyectos</a>
               </li>
               <li>
-                <a href="/sobre-nosotros" className="hover:text-white transition-colors duration-300">
-                  Sobre Nosotros
-                </a>
+                <a href="/sobre-nosotros" className="hover:text-white transition-colors duration-300">Sobre Nosotros</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Especialidades SEO */}
+          <div className="col-span-12 md:col-span-5 lg:col-span-3">
+            <div className="text-[11px] tracking-[0.25em] uppercase text-white/50 mb-5">
+              Especialidades
+            </div>
+            <ul className="space-y-3 text-sm text-white/80">
+              <li>
+                <a href="/servicio-de-mantencion-de-areas-verdes" className="hover:text-white transition-colors duration-300">Mantención de Áreas Verdes</a>
+              </li>
+              <li>
+                <a href="/diseno-y-construccion-de-areas-verdes" className="hover:text-white transition-colors duration-300">Diseño y Construcción</a>
+              </li>
+              <li>
+                <a href="/control-fitosanitario-y-manejo-de-plagas-areas-verdes" className="hover:text-white transition-colors duration-300">Control Fitosanitario</a>
+              </li>
+              <li>
+                <a href="/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial" className="hover:text-white transition-colors duration-300">Arbolado Urbano y Poda</a>
+              </li>
+              <li>
+                <a href="/diseno-y-construcion-de-sistemas-de-riego" className="hover:text-white transition-colors duration-300">Sistemas de Riego</a>
               </li>
             </ul>
           </div>
 
           {/* Contacto */}
-          <div className="col-span-6 md:col-span-2">
+          <div className="col-span-6 md:col-span-4 lg:col-span-2">
             <div className="text-[11px] tracking-[0.25em] uppercase text-white/50 mb-5">
               Contacto
             </div>
             <ul className="space-y-3 text-sm text-white/80">
               <li>
-                <a
-                  href="tel:+56988458216"
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  +56 9 8845 8216
-                </a>
+                <a href="tel:+56988458216" className="hover:text-white transition-colors duration-300">+56 9 8845 8216</a>
               </li>
               <li>
-                <a
-                  href="mailto:paisajismo@bascharant.com"
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  paisajismo@bascharant.com
-                </a>
+                <a href="mailto:paisajismo@bascharant.com" className="hover:text-white transition-colors duration-300">paisajismo@bascharant.com</a>
               </li>
               <li>
-                <a
-                  href="https://wa.me/56988458216"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  WhatsApp
-                </a>
+                <a href="https://wa.me/56988458216" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">WhatsApp</a>
               </li>
-            </ul>
-          </div>
-
-          {/* Redes Sociales */}
-          <div className="col-span-12 md:col-span-2">
-            <div className="text-[11px] tracking-[0.25em] uppercase text-white/50 mb-5">Redes</div>
-            <ul className="space-y-3 text-sm text-white/80">
-              <li>
-                <a
-                  href="https://www.instagram.com/paisajismobascharant/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  Instagram
-                </a>
+              <li className="pt-2">
+                <a href="https://www.instagram.com/paisajismobascharant/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">Instagram</a>
               </li>
               <li>
-                <a
-                  href="https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/"
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  LinkedIn
-                </a>
+                <a href="https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">LinkedIn</a>
               </li>
             </ul>
           </div>

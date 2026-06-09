@@ -10,7 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreNosotrosRouteImport } from './routes/sobre-nosotros'
+import { Route as ServicioDeMantencionDeAreasVerdesRouteImport } from './routes/servicio-de-mantencion-de-areas-verdes'
 import { Route as ProyectoPaisajismoRouteImport } from './routes/proyecto-paisajismo'
+import { Route as PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRouteImport } from './routes/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+import { Route as DisenoYConstrucionDeSistemasDeRiegoRouteImport } from './routes/diseno-y-construcion-de-sistemas-de-riego'
+import { Route as DisenoYConstruccionDeAreasVerdesRouteImport } from './routes/diseno-y-construccion-de-areas-verdes'
+import { Route as ControlFitosanitarioYManejoDePlagasAreasVerdesRouteImport } from './routes/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SobreNosotrosRoute = SobreNosotrosRouteImport.update({
@@ -18,11 +23,41 @@ const SobreNosotrosRoute = SobreNosotrosRouteImport.update({
   path: '/sobre-nosotros',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicioDeMantencionDeAreasVerdesRoute =
+  ServicioDeMantencionDeAreasVerdesRouteImport.update({
+    id: '/servicio-de-mantencion-de-areas-verdes',
+    path: '/servicio-de-mantencion-de-areas-verdes',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ProyectoPaisajismoRoute = ProyectoPaisajismoRouteImport.update({
   id: '/proyecto-paisajismo',
   path: '/proyecto-paisajismo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute =
+  PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRouteImport.update({
+    id: '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial',
+    path: '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DisenoYConstrucionDeSistemasDeRiegoRoute =
+  DisenoYConstrucionDeSistemasDeRiegoRouteImport.update({
+    id: '/diseno-y-construcion-de-sistemas-de-riego',
+    path: '/diseno-y-construcion-de-sistemas-de-riego',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DisenoYConstruccionDeAreasVerdesRoute =
+  DisenoYConstruccionDeAreasVerdesRouteImport.update({
+    id: '/diseno-y-construccion-de-areas-verdes',
+    path: '/diseno-y-construccion-de-areas-verdes',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ControlFitosanitarioYManejoDePlagasAreasVerdesRoute =
+  ControlFitosanitarioYManejoDePlagasAreasVerdesRouteImport.update({
+    id: '/control-fitosanitario-y-manejo-de-plagas-areas-verdes',
+    path: '/control-fitosanitario-y-manejo-de-plagas-areas-verdes',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,31 +66,76 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/control-fitosanitario-y-manejo-de-plagas-areas-verdes': typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
+  '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
+  '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
+  '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
   '/proyecto-paisajismo': typeof ProyectoPaisajismoRoute
+  '/servicio-de-mantencion-de-areas-verdes': typeof ServicioDeMantencionDeAreasVerdesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/control-fitosanitario-y-manejo-de-plagas-areas-verdes': typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
+  '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
+  '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
+  '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
   '/proyecto-paisajismo': typeof ProyectoPaisajismoRoute
+  '/servicio-de-mantencion-de-areas-verdes': typeof ServicioDeMantencionDeAreasVerdesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/control-fitosanitario-y-manejo-de-plagas-areas-verdes': typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
+  '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
+  '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
+  '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
   '/proyecto-paisajismo': typeof ProyectoPaisajismoRoute
+  '/servicio-de-mantencion-de-areas-verdes': typeof ServicioDeMantencionDeAreasVerdesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/proyecto-paisajismo' | '/sobre-nosotros'
+  fullPaths:
+    | '/'
+    | '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
+    | '/diseno-y-construccion-de-areas-verdes'
+    | '/diseno-y-construcion-de-sistemas-de-riego'
+    | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+    | '/proyecto-paisajismo'
+    | '/servicio-de-mantencion-de-areas-verdes'
+    | '/sobre-nosotros'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/proyecto-paisajismo' | '/sobre-nosotros'
-  id: '__root__' | '/' | '/proyecto-paisajismo' | '/sobre-nosotros'
+  to:
+    | '/'
+    | '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
+    | '/diseno-y-construccion-de-areas-verdes'
+    | '/diseno-y-construcion-de-sistemas-de-riego'
+    | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+    | '/proyecto-paisajismo'
+    | '/servicio-de-mantencion-de-areas-verdes'
+    | '/sobre-nosotros'
+  id:
+    | '__root__'
+    | '/'
+    | '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
+    | '/diseno-y-construccion-de-areas-verdes'
+    | '/diseno-y-construcion-de-sistemas-de-riego'
+    | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+    | '/proyecto-paisajismo'
+    | '/servicio-de-mantencion-de-areas-verdes'
+    | '/sobre-nosotros'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ControlFitosanitarioYManejoDePlagasAreasVerdesRoute: typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
+  DisenoYConstruccionDeAreasVerdesRoute: typeof DisenoYConstruccionDeAreasVerdesRoute
+  DisenoYConstrucionDeSistemasDeRiegoRoute: typeof DisenoYConstrucionDeSistemasDeRiegoRoute
+  PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute: typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
   ProyectoPaisajismoRoute: typeof ProyectoPaisajismoRoute
+  ServicioDeMantencionDeAreasVerdesRoute: typeof ServicioDeMantencionDeAreasVerdesRoute
   SobreNosotrosRoute: typeof SobreNosotrosRoute
 }
 
@@ -68,11 +148,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SobreNosotrosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/servicio-de-mantencion-de-areas-verdes': {
+      id: '/servicio-de-mantencion-de-areas-verdes'
+      path: '/servicio-de-mantencion-de-areas-verdes'
+      fullPath: '/servicio-de-mantencion-de-areas-verdes'
+      preLoaderRoute: typeof ServicioDeMantencionDeAreasVerdesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/proyecto-paisajismo': {
       id: '/proyecto-paisajismo'
       path: '/proyecto-paisajismo'
       fullPath: '/proyecto-paisajismo'
       preLoaderRoute: typeof ProyectoPaisajismoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': {
+      id: '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+      path: '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+      fullPath: '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+      preLoaderRoute: typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diseno-y-construcion-de-sistemas-de-riego': {
+      id: '/diseno-y-construcion-de-sistemas-de-riego'
+      path: '/diseno-y-construcion-de-sistemas-de-riego'
+      fullPath: '/diseno-y-construcion-de-sistemas-de-riego'
+      preLoaderRoute: typeof DisenoYConstrucionDeSistemasDeRiegoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diseno-y-construccion-de-areas-verdes': {
+      id: '/diseno-y-construccion-de-areas-verdes'
+      path: '/diseno-y-construccion-de-areas-verdes'
+      fullPath: '/diseno-y-construccion-de-areas-verdes'
+      preLoaderRoute: typeof DisenoYConstruccionDeAreasVerdesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/control-fitosanitario-y-manejo-de-plagas-areas-verdes': {
+      id: '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
+      path: '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
+      fullPath: '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
+      preLoaderRoute: typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,7 +202,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ControlFitosanitarioYManejoDePlagasAreasVerdesRoute:
+    ControlFitosanitarioYManejoDePlagasAreasVerdesRoute,
+  DisenoYConstruccionDeAreasVerdesRoute: DisenoYConstruccionDeAreasVerdesRoute,
+  DisenoYConstrucionDeSistemasDeRiegoRoute:
+    DisenoYConstrucionDeSistemasDeRiegoRoute,
+  PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute:
+    PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute,
   ProyectoPaisajismoRoute: ProyectoPaisajismoRoute,
+  ServicioDeMantencionDeAreasVerdesRoute:
+    ServicioDeMantencionDeAreasVerdesRoute,
   SobreNosotrosRoute: SobreNosotrosRoute,
 }
 export const routeTree = rootRouteImport

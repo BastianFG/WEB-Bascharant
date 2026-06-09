@@ -9,45 +9,53 @@ import {
   Store,
   ChevronLeft,
   ChevronRight,
+  AlertTriangle,
+  PencilRuler,
 } from "lucide-react";
 import { useEffect, useRef, useState, useCallback } from "react";
 
 const items = [
   {
-    icon: Leaf,
+    icon: PencilRuler,
     n: "01",
     t: "Diseño & Licitaciones B2B",
     d: "Planificación paisajística, modelado 3D, cubicación y preparación de bases técnicas .",
+    href: "/diseno-y-construccion-de-areas-verdes"
   },
   {
     icon: HardHat,
     n: "02",
     t: "Ejecución de Obras Verdes",
     d: "Construcción y habilitación de áreas verdes, movimiento de tierras y urbanización sustentable con personal acreditado.",
+    href: "/diseno-y-construccion-de-areas-verdes"
   },
   {
     icon: Scissors,
     n: "03",
     t: "Mantención Areas Verdes",
-    d: "Conservación de jardines con visitas técnicas periódicas, informes fitosanitarios y cumplimiento riguroso de acuerdos.",
+    d: "Conservación de areas verdes para empresas, condominios, centros comerciales, oficinas e industrias. visitas técnicas periódicas, informes fitosanitarios y cumplimiento riguroso de acuerdos.",
+    href: "/servicio-de-mantencion-de-areas-verdes"
   },
   {
     icon: Sprout,
     n: "04",
     t: "Riego Tecnificado",
     d: "Instalación y diseño de sistemas de riego automatizado con control de consumo hídrico para eficiencia hídrica.",
+    href: "/diseno-y-construcion-de-sistemas-de-riego"
   },
   {
-    icon: Building2,
+    icon: Flower2,
     n: "05",
-    t: "Paisajismo Inmobiliario",
-    d: "Desarrollo de áreas comunes, parques y jardines urbanos para inmobiliarias, constructoras y condominios.",
+    t: "Control Fitosanitario",
+    d: "Diagnóstico agronómico, control biológico, fumigación autorizada y manejo integral de plagas para mantener la sanidad vegetal.",
+    href: "/control-fitosanitario-y-manejo-de-plagas-areas-verdes"
   },
   {
-    icon: Store,
+    icon: AlertTriangle,
     n: "06",
-    t: "Espacios Comerciales & Oficinas",
-    d: "Decoración botánica corporativa, muros verdes y mantención de jardines interiores para centros comerciales, oficinas e industrias.",
+    t: "Trabajos Preventivos o Emergencia",
+    d: "Atención especializada para poda en altura, tala de árboles con riesgo de caída, despeje de vías y manejo de emergencias.",
+    href: "/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial"
   },
 ];
 
@@ -140,33 +148,37 @@ function MobileCarousel() {
       <div className="overflow-hidden rounded-2xl border border-border" ref={emblaRef}>
         {/* Container */}
         <div className="flex">
-          {items.map((s) => (
-            <div
-              key={s.t}
-              className="shrink-0 grow-0 basis-full bg-background p-8 aspect-square flex flex-col items-center justify-center text-center relative overflow-hidden"
-            >
-              {/* Floating Top Number */}
-              <span className="absolute top-6 right-6 text-[10px] font-mono tracking-[0.3em] text-muted-foreground/80">
-                {s.n}
-              </span>
+          {items.map((s) => {
+            const Wrapper = s.href ? "a" : "div";
+            return (
+              <Wrapper
+                key={s.t}
+                href={s.href}
+                className={`shrink-0 grow-0 basis-full bg-background p-8 aspect-square flex flex-col items-center justify-center text-center relative overflow-hidden ${s.href ? 'cursor-pointer' : ''}`}
+              >
+                {/* Floating Top Number */}
+                <span className="absolute top-6 right-6 text-[10px] font-mono tracking-[0.3em] text-muted-foreground/80">
+                  {s.n}
+                </span>
 
-              {/* Centered Icon Container */}
-              <div className="mb-4 p-4 bg-secondary/50 rounded-2xl flex items-center justify-center">
-                <s.icon strokeWidth={1.2} className="h-8 w-8 text-[var(--olive)]" />
-              </div>
+                {/* Centered Icon Container */}
+                <div className="mb-4 p-4 bg-secondary/50 rounded-2xl flex items-center justify-center">
+                  <s.icon strokeWidth={1.2} className="h-8 w-8 text-[var(--olive)]" />
+                </div>
 
-              {/* Centered Text Content */}
-              <h3 className="font-display text-2xl leading-tight mb-2.5 text-foreground px-2">
-                {s.t}
-              </h3>
-              <p className="text-[13px] leading-relaxed text-muted-foreground px-4 text-balance">
-                {s.d}
-              </p>
+                {/* Centered Text Content */}
+                <h3 className="font-display text-2xl leading-tight mb-2.5 text-foreground px-2">
+                  {s.t}
+                </h3>
+                <p className="text-[13px] leading-relaxed text-muted-foreground px-4 text-balance">
+                  {s.d}
+                </p>
 
-              {/* Bottom Line */}
-              <span className="absolute bottom-0 left-0 h-1 w-full bg-[var(--olive)] opacity-20" />
-            </div>
-          ))}
+                {/* Bottom Line */}
+                <span className="absolute bottom-0 left-0 h-1 w-full bg-[var(--olive)] opacity-20" />
+              </Wrapper>
+            );
+          })}
         </div>
       </div>
 
@@ -249,29 +261,33 @@ export default function Services() {
 
         {/* Desktop: grid */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
-          {items.map((s, i) => (
-            <motion.article
-              key={s.t}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.9, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative bg-background p-8 md:p-10 min-h-[280px] flex flex-col justify-between overflow-hidden transition-colors duration-700 hover:bg-secondary/60"
-            >
-              <div className="flex items-start justify-between">
-                <s.icon
-                  strokeWidth={1.1}
-                  className="h-7 w-7 text-[var(--olive)] transition-transform duration-700 group-hover:-rotate-6 group-hover:scale-110"
-                />
-                <span className="text-[11px] tracking-[0.25em] text-muted-foreground">{s.n}</span>
-              </div>
-              <div>
-                <h3 className="font-display text-2xl leading-tight mb-3">{s.t}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{s.d}</p>
-              </div>
-              <span className="absolute bottom-0 left-0 h-px w-0 bg-[var(--olive)] transition-all duration-700 group-hover:w-full" />
-            </motion.article>
-          ))}
+          {items.map((s, i) => {
+            const Wrapper = s.href ? motion.a : motion.article;
+            return (
+              <Wrapper
+                key={s.t}
+                href={s.href}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.9, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                className={`group relative bg-background p-8 md:p-10 min-h-[280px] flex flex-col justify-between overflow-hidden transition-colors duration-700 hover:bg-secondary/60 ${s.href ? 'cursor-pointer' : ''}`}
+              >
+                <div className="flex items-start justify-between">
+                  <s.icon
+                    strokeWidth={1.1}
+                    className="h-7 w-7 text-[var(--olive)] transition-transform duration-700 group-hover:-rotate-6 group-hover:scale-110"
+                  />
+                  <span className="text-[11px] tracking-[0.25em] text-muted-foreground">{s.n}</span>
+                </div>
+                <div>
+                  <h3 className="font-display text-2xl leading-tight mb-3">{s.t}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{s.d}</p>
+                </div>
+                <span className="absolute bottom-0 left-0 h-px w-0 bg-[var(--olive)] transition-all duration-700 group-hover:w-full" />
+              </Wrapper>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -488,6 +488,16 @@ export default function Forms() {
                           placeholder="Ej. +569 1234 5678"
                         />
                       </Field>
+                      <Field label="Ubicación del Proyecto / Oficina">
+                        <input
+                          name="Direccion_Proyecto"
+                          required
+                          autoComplete="street-address"
+                          maxLength={200}
+                          className={inputCls}
+                          placeholder="Comuna, ciudad o dirección"
+                        />
+                      </Field>
 
                       <Field label="Fecha Sugerida para Reunión">
                         <input

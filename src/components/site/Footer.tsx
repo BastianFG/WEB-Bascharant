@@ -46,28 +46,28 @@ export default function Footer() {
             </div>
             <ul className="space-y-3 text-sm text-white/80">
               <li>
-                <a href="#inicio" className="hover:text-white transition-colors duration-300">
+                <a href="/#inicio" className="hover:text-white transition-colors duration-300">
                   Inicio
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="hover:text-white transition-colors duration-300">
+                <a href="/#servicios" className="hover:text-white transition-colors duration-300">
                   Servicios
                 </a>
               </li>
               <li>
-                <a href="#empresas" className="hover:text-white transition-colors duration-300">
-                  Empresas
+                <a href="/#empresas" className="hover:text-white transition-colors duration-300">
+                  Propuesta Comercial
                 </a>
               </li>
               <li>
-                <a href="#particulares" className="hover:text-white transition-colors duration-300">
-                  Particulares
-                </a>
-              </li>
-              <li>
-                <a href="#proyectos" className="hover:text-white transition-colors duration-300">
+                <a href="/proyectos" className="hover:text-white transition-colors duration-300">
                   Proyectos
+                </a>
+              </li>
+              <li>
+                <a href="/historia" className="hover:text-white transition-colors duration-300">
+                  Sobre Nosotros
                 </a>
               </li>
             </ul>
@@ -89,10 +89,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:contacto@bascharant.cl"
+                  href="mailto:paisajismo@bascharant.com"
                   className="hover:text-white transition-colors duration-300"
                 >
-                  contacto@bascharant.cl
+                  paisajismo@bascharant.com
                 </a>
               </li>
               <li>

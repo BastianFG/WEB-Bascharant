@@ -12,12 +12,14 @@ export const Route = createFileRoute("/sobre-nosotros")({
       { title: "Nuestra Historia | Paisajismo Bascharant" },
       {
         name: "description",
-        content: "Conoce el origen de Paisajismo Bascharant, una empresa familiar líder en servicios sustentables de áreas verdes guiada por José Alfredo Fuentes Gómez (IDMA).",
+        content:
+          "Conoce el origen de Paisajismo Bascharant, una empresa familiar líder en servicios sustentables de áreas verdes guiada por José Alfredo Fuentes Gómez (IDMA).",
       },
       { property: "og:title", content: "Nuestra Historia — Paisajismo Bascharant" },
       {
         property: "og:description",
-        content: "Trayectoria familiar y bases ecológicas con el sello de calidad de José Alfredo Fuentes Gómez (IDMA) en Chile.",
+        content:
+          "Trayectoria familiar y bases ecológicas con el sello de calidad de José Alfredo Fuentes Gómez (IDMA) en Chile.",
       },
     ],
   }),

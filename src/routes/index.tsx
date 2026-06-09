@@ -43,56 +43,57 @@ function Index() {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "LandscapingService",
-    "name": "Paisajismo Bascharant SpA",
-    "alternateName": "Verde Arcadia Collective",
-    "image": "https://bascharant.cl/assets/hero.jpg",
+    name: "Paisajismo Bascharant SpA",
+    alternateName: "Verde Arcadia Collective",
+    image: "https://bascharant.cl/assets/hero.jpg",
     "@id": "https://bascharant.cl/#organization",
-    "url": "https://bascharant.cl",
-    "telephone": "+56988458216",
-    "email": "paisajismo@bascharant.com",
-    "priceRange": "$$$",
-    "address": {
+    url: "https://bascharant.cl",
+    telephone: "+56988458216",
+    email: "paisajismo@bascharant.com",
+    priceRange: "$$$",
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "Santiago",
-      "addressLocality": "Santiago",
-      "addressRegion": "Región Metropolitana",
-      "addressCountry": "CL"
+      streetAddress: "Santiago",
+      addressLocality: "Santiago",
+      addressRegion: "Región Metropolitana",
+      addressCountry: "CL",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": "-33.4489",
-      "longitude": "-70.6693"
+      latitude: "-33.4489",
+      longitude: "-70.6693",
     },
-    "openingHoursSpecification": {
+    openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
     },
-    "sameAs": ["https://www.instagram.com/paisajismobascharant"],
-    "areaServed": [
+    sameAs: ["https://www.instagram.com/paisajismobascharant"],
+    areaServed: [
       {
         "@type": "AdministrativeArea",
-        "name": "Santiago"
+        name: "Santiago",
       },
       {
         "@type": "AdministrativeArea",
-        "name": "Zapallar"
+        name: "Zapallar",
       },
       {
         "@type": "AdministrativeArea",
-        "name": "Frutillar"
-      }
+        name: "Frutillar",
+      },
     ],
-    "description": "Empresa líder en paisajismo corporativo, diseño, ejecución y mantención de áreas verdes comerciales a gran escala en Chile. Especialistas en contratos SLA para constructoras e industrias.",
-    "knowsAbout": [
+    description:
+      "Empresa líder en paisajismo corporativo, diseño, ejecución y mantención de áreas verdes comerciales a gran escala en Chile. Especialistas en contratos SLA para constructoras e industrias.",
+    knowsAbout: [
       "Paisajismo Corporativo",
       "Mantención de Áreas Verdes Industriales",
       "Cubicación Técnica de Proyectos",
       "Sistemas de Riego Tecnificado",
       "Poda en Altura Certificada",
-      "Habilitación de Oficinas Verdes"
-    ]
+      "Habilitación de Oficinas Verdes",
+    ],
   };
 
   return (

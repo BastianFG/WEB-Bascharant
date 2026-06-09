@@ -236,10 +236,7 @@ export default function Services() {
               className="text-[clamp(2rem,4.5vw,4rem)] leading-[1.02] tracking-tightest text-balance"
             >
               Soluciones integrales para proyectos de paisajismo
-              <span className="italic text-muted-foreground">
-                {" "}
-                en infraestructura corporativa.
-              </span>
+              <span className="italic text-muted-foreground"> en infraestructura corporativa.</span>
             </motion.h2>
           </div>
         </div>

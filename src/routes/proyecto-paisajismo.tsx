@@ -13,16 +13,19 @@ export const Route = createFileRoute("/proyecto-paisajismo")({
       { title: "Proyectos y Portafolio | Paisajismo Bascharant" },
       {
         name: "description",
-        content: "Explora nuestro portafolio de proyectos de paisajismo corporativo, diseño, ejecución y mantención de áreas verdes. Soluciones ecológicas en Chile.",
+        content:
+          "Explora nuestro portafolio de proyectos de paisajismo corporativo, diseño, ejecución y mantención de áreas verdes. Soluciones ecológicas en Chile.",
       },
       { property: "og:title", content: "Proyectos— Paisajismo Bascharant" },
       {
         property: "og:description",
-        content: "Galería de proyectos de Paisajismo Bascharant. Transformando grandes superficies con sustentabilidad, riego automatizado y silvicultura preventiva.",
+        content:
+          "Galería de proyectos de Paisajismo Bascharant. Transformando grandes superficies con sustentabilidad, riego automatizado y silvicultura preventiva.",
       },
       {
         name: "keywords",
-        content: "paisajismo corporativo, proyectos paisajísticos, áreas verdes , riego tecnificado, sustentabilidad hídrica, diseño de jardines chile, mantención de áreas verdes",
+        content:
+          "paisajismo corporativo, proyectos paisajísticos, áreas verdes , riego tecnificado, sustentabilidad hídrica, diseño de jardines chile, mantención de áreas verdes",
       },
     ],
   }),

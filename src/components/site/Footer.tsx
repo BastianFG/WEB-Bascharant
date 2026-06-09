@@ -61,12 +61,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/proyecto-paisajismo" className="hover:text-white transition-colors duration-300">
+                <a
+                  href="/proyecto-paisajismo"
+                  className="hover:text-white transition-colors duration-300"
+                >
                   Proyectos
                 </a>
               </li>
               <li>
-                <a href="/sobre-nosotros" className="hover:text-white transition-colors duration-300">
+                <a
+                  href="/sobre-nosotros"
+                  className="hover:text-white transition-colors duration-300"
+                >
                   Sobre Nosotros
                 </a>
               </li>

@@ -52,9 +52,9 @@ export default function Hero() {
             transition={{ duration: 1, delay: 1, ease }}
             className="mt-8 max-w-2xl text-base md:text-[18px] leading-relaxed text-white/80"
           >
-            Diseño, ejecución y mantención de áreas verdes para Empresas,constructoras, inmobiliarias e
-            industrias. Capacidad operativa certificada, plazos garantizados y cobertura a nivel
-            nacional.
+            Diseño, ejecución y mantención de áreas verdes para Empresas,constructoras,
+            inmobiliarias e industrias. Capacidad operativa certificada, plazos garantizados y
+            cobertura a nivel nacional.
           </motion.p>
 
           <motion.div

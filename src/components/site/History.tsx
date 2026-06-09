@@ -15,52 +15,61 @@ export default function History() {
           
           {/* Text content (Left on desktop) */}
           <div className="lg:col-span-6 flex flex-col justify-center text-left">
-            <p className="eyebrow mb-6">— Nuestra Historia</p>
             
-            <motion.h2
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] tracking-tightest text-balance mb-8"
-            >
-              Cada proyecto comienza
-              <span className="italic text-muted-foreground"> escuchando el lugar.</span>
-            </motion.h2>
-
-            <div className="space-y-6 text-[15px] leading-[1.75] text-foreground/75 max-w-xl">
-              <p>
-                La sociedad Paisajismo Bascharant S.P.A fue fundada en el año 2013, prestando un servicio integral enfocado en la mantención de las áreas verdes y diseño paisajístico. El proceso parte con criterios de análisis del territorio y la zonificación que organiza áreas sociales, de tránsito y descanso.
-              </p>
-              <p>
-                Abordamos el paisajismo desde una mirada arquitectónica: su objetivo es crear un entorno atractivo y funcional, donde composición, luz, materia y vegetación trabajan juntas para construir espacios con belleza y una sólida relación entre forma y uso. Entendemos el proyecto como un sistema integrado donde el paisajismo integra arte, ciencia y técnica, combina horticultura, botánica y ecología, y define las características, estructuras y la representación de elementos inertes como pavimentos y muros dentro del paisajismo duro, junto con la selección botánica dentro del paisajismo blando. En paisajismo urbano, la planificación de espacios verdes se desarrolla en equipos interdisciplinarios y exige coordinación entre profesionales, perfiles técnicos y especialidades de ingeniería, contribuyendo además a mejorar la calidad de vida en ciudades. Ese enfoque amplía el ámbito de intervención hacia parques, plazas y urbanizaciones, con especial relevancia para la calidad de vida de las personas y su vínculo con la naturaleza en la ciudad contemporánea, pensado para el ser humano. A la vez, el paisajismo ecosistémico busca restaurar ecosistemas funcionales en entornos urbanos y reforzar el bienestar de quienes habitan esos espacios.
-              </p>
-              <p>
-                Diseñamos propuestas adaptadas a cada cliente, con ideas sustentadas en datos e información del sitio, considerando su ubicación, escala, condiciones, suelos, la arquitectura y el medio. No diseñamos "jardines bonitos" y nos vamos; nuestros diseños priorizan la funcionalidad y el uso, creando ambientes habitables al aire libre que pueden integrar iluminación, huertos y otros recursos decorativos funcionales. También incorporamos árboles, especies nativas y hojas de distintas texturas para enriquecer el verde, favorecer la biodiversidad y reducir la demanda de agua de riego. Entendemos además que el paisajismo blando se enfoca en la selección y plantación de plantas, por lo que el manejo correcto de estos seres vivos es clave para su desarrollo. Además, nuestra mantención continua considera la gestión del material vegetal y su evolución en cada etapa de trabajo, previendo también cómo evolucionan las plantas a través del tiempo, con informes fitosanitarios periódicos, cuidado del arbolado urbano y criterios de bajo mantenimiento, en línea con jardines contemporáneos que evolucionan hacia espacios más simples y con foco en la generación de soluciones sostenibles para lograr mejores resultados frente al desafío del cambio climático. A la vez, el diseño considera sustrato, asoleamiento y soluciones como rain gardens, que ayudan a controlar la escorrentía del agua en terrenos y pueden aumentar el valor de una vivienda hasta un 15%. También integramos biodiversidad como una tendencia actual del paisajismo.
+            {/* Historia */}
+            <div className="mb-12">
+              <p className="eyebrow mb-5">— Nuestra Historia y Trayectoria</p>
+              <motion.h2
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                className="text-[clamp(1.6rem,3.2vw,2.4rem)] leading-[1.1] tracking-tight text-balance mb-6"
+              >
+                Fundada en 2013 con un propósito claro: <span className="italic text-muted-foreground">elevar el estándar del diseño y la mantención de áreas verdes.</span>
+              </motion.h2>
+              <p className="text-[15px] leading-[1.75] text-foreground/80 max-w-xl">
+                La sociedad Paisajismo Bascharant S.P.A. está respaldada por más de 10 años de experiencia ininterrumpida en el rubro, consolidando nuestro trabajo al gestionar proyectos de alta exigencia. Como empresa familiar, nuestro sello es la atención directa, transparente y de confianza. No somos solo proveedores; somos socios estratégicos en el cuidado y la evolución de tu entorno.
               </p>
             </div>
 
-            {/* Micro-indicators */}
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-border/60 pt-8 max-w-lg">
-              <div className="flex gap-3 items-start">
-                <Award className="h-5 w-5 text-[var(--olive)] shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground leading-tight mb-1.5">Sello IDMA y medio ambiente</h4>
-                  <p className="text-[11px] text-muted-foreground mt-1">Dirección técnica calificada en ecología y paisajismo, con formación y criterio para integrar diseño, construcción y arte.</p>
-                </div>
+            {/* Filosofia */}
+            <div className="mb-12">
+              <p className="eyebrow mb-5">— Nuestra Filosofía: Más allá del jardín</p>
+              <div className="space-y-4 text-[15px] leading-[1.75] text-foreground/80 max-w-xl">
+                <p>
+                  Cada proyecto comienza escuchando el lugar. Abordamos el paisajismo desde una mirada arquitectónica. No nos limitamos a diseñar "jardines bonitos" para luego irnos; creamos ecosistemas atractivos y funcionales donde la composición, la luz, la materia y la vegetación trabajan juntas.
+                </p>
+                <p>
+                  Entendemos el proyecto como un sistema integrado. Seleccionamos cuidadosamente las especies botánicas nativas y de bajo consumo hídrico, combinándolas con elementos estructurales para crear espacios habitables. Nuestros diseños priorizan la biodiversidad, el control de escorrentía (como los rain gardens) y la funcionalidad, llegando a aumentar el valor comercial de una propiedad hasta en un 15%.
+                </p>
               </div>
-              <div className="flex gap-3 items-start">
-                <ShieldCheck className="h-5 w-5 text-[var(--olive)] shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground leading-tight mb-1.5">Empresa Familiar y ser humano</h4>
-                  <p className="text-[11px] text-muted-foreground mt-1">Atención directa, transparente y de confianza.</p>
+            </div>
+
+            {/* Pilares */}
+            <div className="border-t border-border/60 pt-10">
+              <p className="eyebrow mb-8">— Nuestros Pilares de Trabajo</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8 max-w-xl">
+                <div className="flex gap-4 items-start">
+                  <Leaf className="h-6 w-6 text-[var(--olive)] shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="text-[15px] font-semibold text-foreground mb-1.5">Mantención Evolutiva y Fitosanitaria</h4>
+                    <p className="text-[13.5px] text-muted-foreground leading-relaxed">Entendemos que las plantas son seres vivos. Nuestra mantención continua asegura que el proyecto crezca con el tiempo, incluyendo informes fitosanitarios periódicos, cuidado del arbolado y criterios de bajo mantenimiento adaptados al cambio climático.</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-3 items-start">
-                <Leaf className="h-5 w-5 text-[var(--olive)] shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground leading-tight mb-1.5">ECO-Eficiencia y calidad de vida</h4>
-                  <p className="text-[11px] text-muted-foreground mt-1">Riego tecnificado y diseño adaptado al clima, a la disponibilidad de agua y al manejo eficiente.</p>
+                <div className="flex gap-4 items-start">
+                  <Award className="h-6 w-6 text-[var(--olive)] shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="text-[15px] font-semibold text-foreground mb-1.5">Sello IDMA y Dirección Técnica</h4>
+                    <p className="text-[13.5px] text-muted-foreground leading-relaxed">Contamos con dirección calificada en ecología y medio ambiente, aplicando formación técnica para integrar diseño, ciencia y arte en cada espacio.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4 items-start">
+                  <ShieldCheck className="h-6 w-6 text-[var(--olive)] shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="text-[15px] font-semibold text-foreground mb-1.5">Eco-Eficiencia Hídrica</h4>
+                    <p className="text-[13.5px] text-muted-foreground leading-relaxed">Diseñamos propuestas adaptadas al clima actual, priorizando el riego tecnificado y el manejo inteligente de los recursos frente a los desafíos ambientales de hoy.</p>
+                  </div>
                 </div>
               </div>
             </div>

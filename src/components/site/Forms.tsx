@@ -27,7 +27,7 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 }
 
 const inputCls =
-  "w-full bg-transparent border-b border-border py-2.5 md:py-3 text-[15px] outline-none transition-all duration-500 focus:border-foreground placeholder:text-muted-foreground/60 text-foreground";
+  "w-full bg-transparent border-b border-border py-2.5 md:py-3 text-[15px] outline-none transition-all duration-500 focus:border-foreground placeholder:text-muted-foreground/60 text-foreground invalid:[&:not(:placeholder-shown)]:border-red-500/70 invalid:[&:not(:placeholder-shown)]:text-red-500 focus:invalid:border-red-500";
 
 function sanitizeAndValidate(formData: FormData): boolean {
   for (const [key, value] of formData.entries()) {
@@ -448,6 +448,20 @@ export default function Forms() {
                           className={inputCls}
                           placeholder="Ej. Inmobiliaria Andes"
                         />
+                      </Field>
+                      <Field label="RUT Empresa">
+                        <div className="relative w-full">
+                          <input
+                            name="RUT_Empresa"
+                            required
+                            maxLength={15}
+                            pattern="^[0-9]{7,8}-[0-9Kk]{1}$"
+                            title="Formato de RUT inválido. Ejemplo: 76123456-K (sin puntos y con guión)"
+                            className={inputCls}
+                            placeholder="Ej. 76123456-K"
+                          />
+                          <span className="block text-[9px] text-muted-foreground/80 mt-1">Requerido para agendar la visita formal</span>
+                        </div>
                       </Field>
                       <Field label="Correo Corporativo">
                         <input

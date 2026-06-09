@@ -149,10 +149,13 @@ export default function Gallery() {
               <span className="italic text-muted-foreground"> grandes superficies.</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl text-[15px] md:text-[17px] leading-relaxed">
-              Explora nuestra galería de proyectos B2B de <strong>Paisajismo Bascharant</strong>. 
-              Nos especializamos en el <strong>diseño sustentable</strong>, <strong>ejecución de obras paisajísticas</strong>, 
-              <strong>mantención de áreas verdes industriales</strong> y <strong>soluciones de riego tecnificado</strong>. 
-              Garantizamos altos estándares de calidad y compromiso ecológico para constructoras, empresas e industrias en Chile, utilizando tecnologías de vanguardia para la optimización hídrica y vegetal.
+              Explora nuestra galería de proyectos B2B de <strong>Paisajismo Bascharant</strong>.
+              Nos especializamos en el <strong>diseño sustentable</strong>,{" "}
+              <strong>ejecución de obras paisajísticas</strong>,
+              <strong>mantención de áreas verdes industriales</strong> y{" "}
+              <strong>soluciones de riego tecnificado</strong>. Garantizamos altos estándares de
+              calidad y compromiso ecológico para constructoras, empresas e industrias en Chile,
+              utilizando tecnologías de vanguardia para la optimización hídrica y vegetal.
             </p>
           </div>
         </div>

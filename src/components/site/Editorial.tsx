@@ -42,8 +42,9 @@ export default function Editorial() {
             </motion.h2>
             <div className="space-y-5 text-[15.5px] leading-[1.75] text-foreground/75 max-w-lg">
               <p>
-                La sociedad Paisajismo Bascharant S.P.A fue fundada en el año 2013 Prestando un servicio integral
-                enfocado en la mantención de las áreas verdes y diseño paisajístico
+                La sociedad Paisajismo Bascharant S.P.A fue fundada en el año 2013 Prestando un
+                servicio integral enfocado en la mantención de las áreas verdes y diseño
+                paisajístico
               </p>
               <p>
                 En Bascharant abordamos el paisajismo desde una mirada arquitectónica: composición,

@@ -33,7 +33,12 @@ function sanitizeAndValidate(formData: FormData): boolean {
   for (const [key, value] of formData.entries()) {
     if (typeof value === "string") {
       // Basic XSS/Injection prevention: Reject if contains common script/html tags
-      if (/<[a-z][\s\S]*>/i.test(value) || /javascript:/i.test(value) || /onload=/i.test(value) || /onerror=/i.test(value)) {
+      if (
+        /<[a-z][\s\S]*>/i.test(value) ||
+        /javascript:/i.test(value) ||
+        /onload=/i.test(value) ||
+        /onerror=/i.test(value)
+      ) {
         return false;
       }
       formData.set(key, value.trim());
@@ -57,7 +62,8 @@ function handleSubmit(label: string) {
 
     if (!sanitizeAndValidate(formData)) {
       toast.error("Validación fallida", {
-        description: "El formulario contiene caracteres no permitidos. Por favor, revise sus datos.",
+        description:
+          "El formulario contiene caracteres no permitidos. Por favor, revise sus datos.",
       });
       return;
     }
@@ -136,7 +142,7 @@ export default function Forms() {
         {/* Form Switch Tabs */}
         <div className="flex justify-center mb-10">
           <div className="flex gap-1.5 rounded-full bg-secondary/80 p-1 w-full max-w-md shadow-sm border border-border/40">
-                        <button
+            <button
               id="reunion-tecnica"
               onClick={() => setActiveForm("reunion")}
               className={`flex-1 rounded-full py-3 text-xs font-semibold tracking-wide capitalize transition-all ${
@@ -227,8 +233,14 @@ export default function Forms() {
                       className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6"
                     >
                       {/* Honeypot field for anti-spam bots */}
-                      <input type="text" name="_gotcha" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
-                      
+                      <input
+                        type="text"
+                        name="_gotcha"
+                        style={{ display: "none" }}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+
                       <Field label="Razón Social / Institución">
                         <input
                           name="Empresa_Razon_Social"
@@ -250,7 +262,9 @@ export default function Forms() {
                             className={inputCls}
                             placeholder="Ej. 76123456-K"
                           />
-                          <span className="block text-[9px] text-muted-foreground/80 mt-1">Requerido para la facturación y licitación formal</span>
+                          <span className="block text-[9px] text-muted-foreground/80 mt-1">
+                            Requerido para la facturación y licitación formal
+                          </span>
                         </div>
                       </Field>
                       <Field label="Nombre y Cargo del Encargado">
@@ -345,7 +359,9 @@ export default function Forms() {
                             multiple
                             className="block w-full text-xs text-muted-foreground file:mr-4 file:rounded-full file:border-0 file:bg-foreground file:text-background file:px-4 file:py-2 file:text-[11px] file:tracking-wider file:uppercase file:font-semibold hover:file:opacity-90 file:cursor-pointer mt-2"
                           />
-                          <span className="block text-[9px] text-muted-foreground/80 mt-1">Puedes adjuntar planos (PDF, CAD) o especificaciones del proyecto</span>
+                          <span className="block text-[9px] text-muted-foreground/80 mt-1">
+                            Puedes adjuntar planos (PDF, CAD) o especificaciones del proyecto
+                          </span>
                         </div>
                       </Field>
                       <Field label="Fecha Estimada de Inicio">
@@ -370,7 +386,12 @@ export default function Forms() {
                       </div>
 
                       <div className="sm:col-span-2 flex items-start gap-3 text-xs text-muted-foreground mt-2">
-                        <input type="checkbox" defaultChecked required className="mt-1 accent-[var(--olive)]" />
+                        <input
+                          type="checkbox"
+                          defaultChecked
+                          required
+                          className="mt-1 accent-[var(--olive)]"
+                        />
                         <span>
                           Confirmo la veracidad de los datos entregados y autorizo a Paisajismo
                           Bascharant a emitir una cotización formal.
@@ -406,7 +427,12 @@ export default function Forms() {
                         Agendar Reunión Técnica con Supervisor paisajista
                       </h3>
                       <p className="text-[13px] leading-relaxed text-muted-foreground">
-                        Coordinemos una videoconferencia de 15 a 30 minutos o una inspección técnica en terreno para evaluar el estado fitosanitario, riego y diseño de sus áreas verdes actuales o parques. Esta actividad incluye visitas técnicas para revisar en terreno las condiciones reales del proyecto, evaluar soluciones de riego tecnificado para mejorar la eficiencia hídrica, y entregar informes fitosanitarios con criterios técnicos e información útil para su proyecto.
+                        Coordinemos una videoconferencia de 15 a 30 minutos o una inspección técnica
+                        en terreno para evaluar el estado fitosanitario, riego y diseño de sus áreas
+                        verdes actuales o parques. Esta actividad incluye visitas técnicas para
+                        revisar en terreno las condiciones reales del proyecto, evaluar soluciones
+                        de riego tecnificado para mejorar la eficiencia hídrica, y entregar informes
+                        fitosanitarios con criterios técnicos e información útil para su proyecto.
                       </p>
                     </div>
 
@@ -415,7 +441,13 @@ export default function Forms() {
                       className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6"
                     >
                       {/* Honeypot field for anti-spam bots */}
-                      <input type="text" name="_gotcha" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+                      <input
+                        type="text"
+                        name="_gotcha"
+                        style={{ display: "none" }}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
 
                       <Field label="Nombre del Profesional">
                         <input
@@ -460,7 +492,9 @@ export default function Forms() {
                             className={inputCls}
                             placeholder="Ej. 76123456-K"
                           />
-                          <span className="block text-[9px] text-muted-foreground/80 mt-1">Requerido para agendar la visita formal</span>
+                          <span className="block text-[9px] text-muted-foreground/80 mt-1">
+                            Requerido para agendar la visita formal
+                          </span>
                         </div>
                       </Field>
                       <Field label="Correo Corporativo">
@@ -539,7 +573,12 @@ export default function Forms() {
                       </div>
 
                       <div className="sm:col-span-2 flex items-start gap-3 text-xs text-muted-foreground mt-2">
-                        <input type="checkbox" defaultChecked required className="mt-1 accent-[var(--olive)]" />
+                        <input
+                          type="checkbox"
+                          defaultChecked
+                          required
+                          className="mt-1 accent-[var(--olive)]"
+                        />
                         <span>
                           Acepto coordinar la reunión en la fecha solicitada o en la más cercana
                           disponible.

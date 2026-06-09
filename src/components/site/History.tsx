@@ -76,7 +76,7 @@ export default function History() {
           </div>
 
           {/* Image visual (Right on desktop) */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 relative">
             <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-muted shadow-[var(--shadow-soft)]">
               <motion.img
                 src={historyImg}
@@ -85,7 +85,17 @@ export default function History() {
                 className="absolute inset-0 h-[120%] w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+              
+              {/* Founder info overlay */}
+              <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 bg-background/80 backdrop-blur-md border border-white/10 p-5 rounded-xl shadow-2xl">
+                <p className="font-display text-lg md:text-xl font-medium tracking-tight text-foreground mb-1">José Alfredo Fuentes Gómez</p>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-xs md:text-sm text-muted-foreground">
+                  <span className="font-medium text-[var(--olive)]">Profesional Paisajista</span>
+                  <span className="hidden sm:inline-block h-1 w-1 rounded-full bg-border"></span>
+                  <span>Fundador de la empresa</span>
+                </div>
+              </div>
             </div>
           </div>
 

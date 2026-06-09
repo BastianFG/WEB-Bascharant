@@ -29,11 +29,38 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 const inputCls =
   "w-full bg-transparent border-b border-border py-2.5 md:py-3 text-[15px] outline-none transition-all duration-500 focus:border-foreground placeholder:text-muted-foreground/60 text-foreground";
 
+function sanitizeAndValidate(formData: FormData): boolean {
+  for (const [key, value] of formData.entries()) {
+    if (typeof value === "string") {
+      // Basic XSS/Injection prevention: Reject if contains common script/html tags
+      if (/<[a-z][\s\S]*>/i.test(value) || /javascript:/i.test(value) || /onload=/i.test(value) || /onerror=/i.test(value)) {
+        return false;
+      }
+      formData.set(key, value.trim());
+    }
+  }
+  return true;
+}
+
 function handleSubmit(label: string) {
   return async (e: FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
+
+    // Formspree Honeypot check: If the hidden _gotcha field is filled, it's a spam bot.
+    if (formData.get("_gotcha")) {
+      toast.success("Solicitud enviada con éxito", { description: "Gracias por contactarnos." });
+      form.reset();
+      return;
+    }
+
+    if (!sanitizeAndValidate(formData)) {
+      toast.error("Validación fallida", {
+        description: "El formulario contiene caracteres no permitidos. Por favor, revise sus datos.",
+      });
+      return;
+    }
 
     try {
       const response = await fetch("https://formspree.io/f/maqkkbwo", {
@@ -199,6 +226,9 @@ export default function Forms() {
                       onSubmit={handleSubmit("propuesta comercial")}
                       className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6"
                     >
+                      {/* Honeypot field for anti-spam bots */}
+                      <input type="text" name="_gotcha" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+                      
                       <Field label="Razón Social / Institución">
                         <input
                           name="Empresa_Razon_Social"
@@ -215,8 +245,10 @@ export default function Forms() {
                             name="RUT_Empresa"
                             required
                             maxLength={15}
+                            pattern="^[0-9]{7,8}-[0-9Kk]{1}$"
+                            title="Formato de RUT inválido. Ejemplo: 76123456-K (sin puntos y con guión)"
                             className={inputCls}
-                            placeholder="Ej. 76.123.456-K"
+                            placeholder="Ej. 76123456-K"
                           />
                           <span className="block text-[9px] text-muted-foreground/80 mt-1">Requerido para la facturación y licitación formal</span>
                         </div>
@@ -249,6 +281,8 @@ export default function Forms() {
                           type="tel"
                           autoComplete="tel"
                           maxLength={30}
+                          pattern="^\+?[0-9\s\-\(\)]{8,30}$"
+                          title="Ingrese un número de teléfono válido."
                           className={inputCls}
                           placeholder="Ej. +56 9 1234 5678"
                         />
@@ -379,12 +413,17 @@ export default function Forms() {
                       onSubmit={handleSubmit("reunión técnica")}
                       className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6"
                     >
+                      {/* Honeypot field for anti-spam bots */}
+                      <input type="text" name="_gotcha" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+
                       <Field label="Nombre del Profesional">
                         <input
                           name="Nombre_Completo"
                           required
                           autoComplete="name"
                           maxLength={120}
+                          pattern="^[a-zA-ZÀ-ÿ\s\.\-']+$"
+                          title="Solo se permiten letras y espacios."
                           className={inputCls}
                           placeholder="Ej. Camila Ruiz"
                         />
@@ -427,6 +466,8 @@ export default function Forms() {
                           type="tel"
                           autoComplete="tel"
                           maxLength={30}
+                          pattern="^\+?[0-9\s\-\(\)]{8,30}$"
+                          title="Ingrese un número de teléfono válido."
                           className={inputCls}
                           placeholder="Ej. +56 9 1234 5678"
                         />

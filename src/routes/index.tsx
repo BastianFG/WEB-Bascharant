@@ -50,7 +50,7 @@ function Index() {
     "@id": "https://bascharant.cl/#organization",
     "url": "https://bascharant.cl",
     "telephone": "+56988458216",
-    "email": "Paisajismojf@gmail.com",
+    "email": "paisajismo@bascharant.com",
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",

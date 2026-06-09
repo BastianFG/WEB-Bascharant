@@ -55,7 +55,7 @@ export default function Contact() {
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
               </a>
               <a
-                href="mailto:Paisajismojf@gmail.com"
+                href="mailto:paisajismo@bascharant.com"
                 className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]"
               >
                 <div className="flex items-center gap-4">
@@ -64,7 +64,7 @@ export default function Contact() {
                     <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
                       Email
                     </div>
-                    <div className="text-sm mt-1">Paisajismojf@gmail.com</div>
+                    <div className="text-sm mt-1">paisajismo@bascharant.com</div>
                   </div>
                 </div>
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>

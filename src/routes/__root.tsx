@@ -102,6 +102,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
       <head>
+        <meta name="msvalidate.01" content="64CE92E5144F205C5F2BA0A8038FECCF" />
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18198577508" />
         <script

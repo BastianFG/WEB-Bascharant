@@ -28,7 +28,7 @@ const items = [
   {
     icon: Scissors,
     n: "03",
-    t: "Mantención Corporativa",
+    t: "Mantención Areas Verdes",
     d: "Conservación de jardines con visitas técnicas periódicas, informes fitosanitarios y cumplimiento riguroso de acuerdos.",
   },
   {

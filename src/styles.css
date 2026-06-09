@@ -184,6 +184,12 @@
   will-change: transform;
 }
 
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 /* Google Maps Autocomplete Dropdown Styling */
 .pac-container {
   background-color: var(--background);

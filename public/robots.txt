@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /carrito
 Disallow: /checkout
+Sitemap: https://bascharant.cl/sitemap.xml

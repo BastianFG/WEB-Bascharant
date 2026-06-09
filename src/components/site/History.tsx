@@ -33,10 +33,10 @@ export default function History() {
                 La sociedad Paisajismo Bascharant S.P.A fue fundada en el año 2013, prestando un servicio integral enfocado en la mantención de las áreas verdes y diseño paisajístico. El proceso parte con criterios de análisis del territorio y la zonificación que organiza áreas sociales, de tránsito y descanso.
               </p>
               <p>
-                Abordamos el paisajismo desde una mirada arquitectónica: composición, luz, materia y vegetación trabajan juntas para construir espacios que se sienten inevitables. Entendemos el proyecto como un sistema integrado donde conviven elementos inertes como pavimentos y muros dentro del paisajismo duro, y la selección botánica dentro del paisajismo blando.
+                Abordamos el paisajismo desde una mirada arquitectónica: su objetivo es crear un entorno atractivo y funcional, donde composición, luz, materia y vegetación trabajan juntas para construir espacios con belleza y una sólida relación entre forma y uso. Entendemos el proyecto como un sistema integrado donde el paisajismo integra arte, ciencia y técnica, combina horticultura, botánica y ecología, y define las características, estructuras y la representación de elementos inertes como pavimentos y muros dentro del paisajismo duro, junto con la selección botánica dentro del paisajismo blando. En paisajismo urbano, la planificación de espacios verdes se desarrolla en equipos interdisciplinarios y exige coordinación entre profesionales, perfiles técnicos y especialidades de ingeniería, contribuyendo además a mejorar la calidad de vida en ciudades. Ese enfoque amplía el ámbito de intervención hacia parques, plazas y urbanizaciones, con especial relevancia para la calidad de vida de las personas y su vínculo con la naturaleza en la ciudad contemporánea, pensado para el ser humano. A la vez, el paisajismo ecosistémico busca restaurar ecosistemas funcionales en entornos urbanos y reforzar el bienestar de quienes habitan esos espacios.
               </p>
               <p>
-                Diseñamos propuestas adaptadas a cada cliente, considerando sus necesidades, la arquitectura y la ecología. No diseñamos "jardines bonitos" y nos vamos; nuestros diseños priorizan la funcionalidad creando jardines habitables. Además, nuestra mantención continua asegura que el proyecto evolucione favorablemente, considerando el clima, la biodiversidad y el bienestar humano en el tiempo.
+                Diseñamos propuestas adaptadas a cada cliente, con ideas sustentadas en datos e información del sitio, considerando su ubicación, escala, condiciones, suelos, la arquitectura y el medio. No diseñamos "jardines bonitos" y nos vamos; nuestros diseños priorizan la funcionalidad y el uso, creando ambientes habitables al aire libre que pueden integrar iluminación, huertos y otros recursos decorativos funcionales. También incorporamos árboles, especies nativas y hojas de distintas texturas para enriquecer el verde, favorecer la biodiversidad y reducir la demanda de agua de riego. Entendemos además que el paisajismo blando se enfoca en la selección y plantación de plantas, por lo que el manejo correcto de estos seres vivos es clave para su desarrollo. Además, nuestra mantención continua considera la gestión del material vegetal y su evolución en cada etapa de trabajo, previendo también cómo evolucionan las plantas a través del tiempo, con informes fitosanitarios periódicos, cuidado del arbolado urbano y criterios de bajo mantenimiento, en línea con jardines contemporáneos que evolucionan hacia espacios más simples y con foco en la generación de soluciones sostenibles para lograr mejores resultados frente al desafío del cambio climático. A la vez, el diseño considera sustrato, asoleamiento y soluciones como rain gardens, que ayudan a controlar la escorrentía del agua en terrenos y pueden aumentar el valor de una vivienda hasta un 15%. También integramos biodiversidad como una tendencia actual del paisajismo.
               </p>
             </div>
 
@@ -45,22 +45,22 @@ export default function History() {
               <div className="flex gap-3 items-start">
                 <Award className="h-5 w-5 text-[var(--olive)] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground">Sello IDMA</h4>
-                  <p className="text-[11px] text-muted-foreground mt-1">Dirección técnica calificada en ecología y paisajismo.</p>
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground leading-tight mb-1.5">Sello IDMA y medio ambiente</h4>
+                  <p className="text-[11px] text-muted-foreground mt-1">Dirección técnica calificada en ecología y paisajismo, con formación y criterio para integrar diseño, construcción y arte.</p>
                 </div>
               </div>
               <div className="flex gap-3 items-start">
                 <ShieldCheck className="h-5 w-5 text-[var(--olive)] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground">Empresa Familiar</h4>
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground leading-tight mb-1.5">Empresa Familiar y ser humano</h4>
                   <p className="text-[11px] text-muted-foreground mt-1">Atención directa, transparente y de confianza.</p>
                 </div>
               </div>
               <div className="flex gap-3 items-start">
                 <Leaf className="h-5 w-5 text-[var(--olive)] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground">ECO-Eficiencia</h4>
-                  <p className="text-[11px] text-muted-foreground mt-1">Riego tecnificado y diseño adaptado al clima .</p>
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground leading-tight mb-1.5">ECO-Eficiencia y calidad de vida</h4>
+                  <p className="text-[11px] text-muted-foreground mt-1">Riego tecnificado y diseño adaptado al clima, a la disponibilidad de agua y al manejo eficiente.</p>
                 </div>
               </div>
             </div>

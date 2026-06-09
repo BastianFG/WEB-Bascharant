@@ -30,7 +30,7 @@ export default function Contact() {
             >
               <p>Desarrollamos soluciones de paisajismo adaptadas al cambio climático, con profesionales que aportan habilidades en evaluación de terreno, suelos y selección de especies con apoyo de viveros especializados. Cada proyecto se organiza bajo un programa claro de ejecución y mantención según sus objetivos y condiciones.</p>
               <p>Enfoques como el diseño naturalista incorporan plantas nativas y contenidos técnicos en la asesoría, vinculados a selección vegetal y biodiversidad; al trabajar con seres vivos, también ayudan a reducir la necesidad de riego y el consumo de agua. Además, consideramos estrategias de paisajismo ecosistémico para restaurar ecosistemas funcionales en ciudades, incluyendo rain gardens que ayudan a controlar la escorrentía del agua en terreno urbano.</p>
-              <p>Nuestro equipo complementa su experiencia en terreno con cursos y un diplomado vinculados al diseño y manejo de áreas verdes.</p>
+              <p>Nuestro equipo complementa su experiencia en terreno con cursos y un certificado vinculados al diseño y manejo de áreas verdes.</p>
             </motion.div>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">

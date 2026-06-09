@@ -6,19 +6,19 @@ const items = [
     n: "MR",
     a: "María Reyes",
     r: "Cliente · Vitacura",
-    q: "El jardín transformó completamente la sensación de la casa. El cuidado por cada detalle es notable.",
+    q: "El jardín transformó completamente la sensación de la casa. Un buen diseño de jardines incluso puede aumentar el valor de una vivienda, y aquí se notó en el resultado final.",
   },
   {
     n: "CG",
     a: "Constructora Galena",
     r: "Empresa · Las Condes",
-    q: "Profesionalismo de principio a fin. Las áreas verdes elevaron la imagen del edificio corporativo.",
+    q: "Profesionalismo de principio a fin. Las áreas verdes elevaron la imagen del edificio corporativo, integrándose mejor al paisaje y aportando a la calidad de vida en ciudades para nuestros clientes y equipos.",
   },
   {
     n: "JP",
     a: "Juan Pablo Soto",
     r: "Café Origen · Providencia",
-    q: "El paisajismo de la terraza se volvió parte de la identidad del local. Recibimos comentarios todos los días.",
+    q: "El paisajismo de la terraza se volvió parte de la identidad del local. Recibimos comentarios todos los días, y también valoramos la coordinación entre diseñadores y ejecución en proyectos que pueden abarcar.",
   },
 ];
 

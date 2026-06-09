@@ -367,13 +367,11 @@ export default function Forms() {
                       <span className="text-[10px] tracking-[0.25em] uppercase text-[var(--olive)] font-bold">
                         Asesoría Técnica Remota o en Terreno
                       </span>
-                      <h3 className="font-display text-2xl md:text-3xl mt-1 mb-3">
-                        Agendar Reunión Técnica con Supervisor
+                      <h3 className="text-xl font-display font-medium text-foreground tracking-tight">
+                        Agendar Reunión Técnica con Supervisor paisajista
                       </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Coordinemos una videoconferencia de 15 a 30 minutos o una inspección técnica en
-                        terreno para evaluar el estado fitosanitario, riego o diseño de sus áreas
-                        verdes actuales.
+                      <p className="text-[13px] leading-relaxed text-muted-foreground">
+                        Coordinemos una videoconferencia de 15 a 30 minutos o una inspección técnica en terreno para evaluar el estado fitosanitario, riego y diseño de sus áreas verdes actuales o parques. Esta actividad incluye visitas técnicas para revisar en terreno las condiciones reales del proyecto, evaluar soluciones de riego tecnificado para mejorar la eficiencia hídrica, y entregar informes fitosanitarios con criterios técnicos e información útil para su proyecto.
                       </p>
                     </div>
 

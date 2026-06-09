@@ -24,19 +24,19 @@ export default function History() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] tracking-tightest text-balance mb-8"
             >
-              Raíces familiares y rigor técnico en
-              <span className="italic text-muted-foreground"> paisajismo sustentable.</span>
+              Cada proyecto comienza
+              <span className="italic text-muted-foreground"> escuchando el lugar.</span>
             </motion.h2>
 
             <div className="space-y-6 text-[15px] leading-[1.75] text-foreground/75 max-w-xl">
               <p>
-                En Paisajismo Bascharant hemos consolidado nuestra trayectoria como una empresa familiar dedicada al diseño, ejecución y cuidado de áreas verdes. Nos mueve la convicción de que los espacios naturales en entornos corporativos e industriales no son solo un valor estético, sino pulmones vitales que mejoran el bienestar de los equipos y la calidad de los espacios de trabajo.
+                La sociedad Paisajismo Bascharant S.P.A fue fundada en el año 2013, prestando un servicio integral enfocado en la mantención de las áreas verdes y diseño paisajístico. El proceso parte con criterios de análisis del territorio y la zonificación que organiza áreas sociales, de tránsito y descanso.
               </p>
               <p>
-                Nuestra dirección técnica está a cargo de <strong>José Alfredo Fuentes Gómez</strong>, paisajista titulado del <strong>Instituto del Medio Ambiente (IDMA)</strong>. Esta sólida base académica nos permite desarrollar cada proyecto con un enfoque ecológico claro, garantizando la salud vegetal de las especies, el uso eficiente del agua y el respeto por el entorno local.
+                Abordamos el paisajismo desde una mirada arquitectónica: composición, luz, materia y vegetación trabajan juntas para construir espacios que se sienten inevitables. Entendemos el proyecto como un sistema integrado donde conviven elementos inertes como pavimentos y muros dentro del paisajismo duro, y la selección botánica dentro del paisajismo blando.
               </p>
               <p>
-                Al ser una empresa de origen familiar, integramos la honestidad y el trato directo a los más altos estándares de servicio corporativo. Acompañamos a nuestros clientes desde la planificación inicial hasta la mantención continua, cuidando cada detalle para entregar proyectos sustentables que aportan valor a largo plazo.
+                Diseñamos propuestas adaptadas a cada cliente, considerando sus necesidades, la arquitectura y la ecología. No diseñamos "jardines bonitos" y nos vamos; nuestros diseños priorizan la funcionalidad creando jardines habitables. Además, nuestra mantención continua asegura que el proyecto evolucione favorablemente, considerando el clima, la biodiversidad y el bienestar humano en el tiempo.
               </p>
             </div>
 

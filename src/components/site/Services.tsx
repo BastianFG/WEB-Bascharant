@@ -235,10 +235,10 @@ export default function Services() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(2rem,4.5vw,4rem)] leading-[1.02] tracking-tightest text-balance"
             >
-              Soluciones integrales de paisajismo
+              Soluciones integrales para proyectos de paisajismo
               <span className="italic text-muted-foreground">
                 {" "}
-                para infraestructura corporativa.
+                en infraestructura corporativa.
               </span>
             </motion.h2>
           </div>

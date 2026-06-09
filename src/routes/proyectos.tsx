@@ -3,6 +3,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import Gallery from "@/components/site/Gallery";
+import UnderConstructionOverlay from "@/components/site/UnderConstructionOverlay";
 import { Toaster } from "@/components/ui/sonner";
 
 export const Route = createFileRoute("/proyectos")({
@@ -36,6 +37,7 @@ function ProyectosPage() {
       </div>
       <Footer />
       <FloatingCTA />
+      <UnderConstructionOverlay />
       <Toaster position="bottom-left" />
     </main>
   );

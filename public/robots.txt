@@ -2,3 +2,4 @@ User-agent: *
 Disallow:
 
 Sitemap: https://www.bascharant.com/sitemap_index.xml
+Sitemap: https://www.bascharant.cl/sitemap_index.xml

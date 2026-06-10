@@ -1,16 +1,4 @@
 User-agent: *
-Disallow: /
-User-agent: GPTBot
-Disallow: /
+Disallow:
 
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: Anthropic-ai
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-Sitemap: https://bascharant.cl/sitemap.xml
-
+Sitemap: https://bascharant.cl/sitemap_index.xml

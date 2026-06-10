@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import g1 from "@/assets/g1.jpg";
 import g2 from "@/assets/g2.jpg";
 import g3 from "@/assets/g3.jpg";
@@ -12,6 +13,7 @@ import g9 from "@/assets/Catapilco.png";
 import g10 from "@/assets/Zap2.jpeg";
 
 interface ProjectItem {
+  slug: string;
   src: string;
   t: string;
   l: string;
@@ -24,6 +26,7 @@ interface ProjectItem {
 
 const items: ProjectItem[] = [
   {
+    slug: "proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile",
     src: g9,
     t: "Paisajismo Seco y Reconversión Hídrica",
     l: "Quilicura",
@@ -34,6 +37,7 @@ const items: ProjectItem[] = [
     servicio: "Sustitución de césped y riego automatizado",
   },
   {
+    slug: "proyecto-habilitacion-terraza-corporativa-las-condes-chile",
     src: g2,
     t: "Habilitación de Terraza Corporativa",
     l: "Las Condes",
@@ -44,6 +48,7 @@ const items: ProjectItem[] = [
     servicio: "Diseño e implementación macetas y arboles",
   },
   {
+    slug: "proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile",
     src: g7,
     t: "Poda Preventiva y Silvicultura",
     l: "Quilicura",
@@ -54,6 +59,7 @@ const items: ProjectItem[] = [
     servicio: "Poda certificada y control fitosanitario",
   },
   {
+    slug: "proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile",
     src: g8,
     t: "Mantención de Áreas Verdes Industriales",
     l: "San Ignacio",
@@ -64,6 +70,7 @@ const items: ProjectItem[] = [
     servicio: "Poda en altura",
   },
   {
+    slug: "proyecto-diseno-paisajismo-vial-copec-santiago-chile",
     src: g4,
     t: "Plano Acceso y Paisajismo Vial",
     l: "Santiago",
@@ -74,6 +81,7 @@ const items: ProjectItem[] = [
     servicio: "Diseño paisajístico 3D y especificaciones técnicas",
   },
   {
+    slug: "proyecto-muro-verde-vertical-vitacura-chile",
     src: g3,
     t: "Muro Verde Vertical de Alto Tránsito",
     l: "Vitacura",
@@ -84,6 +92,7 @@ const items: ProjectItem[] = [
     servicio: "Ingeniería de soporte y plantación artificial",
   },
   {
+    slug: "proyecto-fumigacion-control-fitosanitario-quilicura-chile",
     src: g6,
     t: "Fumigación y Control Fitosanitario",
     l: "Quilicura",
@@ -94,6 +103,7 @@ const items: ProjectItem[] = [
     servicio: "Prevención fitosanitaria en áreas comunes",
   },
   {
+    slug: "proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile",
     src: g5,
     t: "Plano Habilitación Piscina + Entorno",
     l: "Chicureo",
@@ -104,6 +114,7 @@ const items: ProjectItem[] = [
     servicio: "Modelado 3D y paisajismo",
   },
   {
+    slug: "proyecto-paisajismo-residencial-zapallar-chile",
     src: g10,
     t: "Paisajismo Residencial",
     l: "Zapallar",
@@ -190,58 +201,61 @@ export default function Gallery() {
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="group flex flex-col bg-background rounded-xl border border-border/80 overflow-hidden hover:shadow-[var(--shadow-soft)] transition-shadow duration-500"
               >
-                {/* Image Container with Fixed Aspect Ratio */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-muted w-full">
-                  <img
-                    src={it.src}
-                    alt={it.t}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 right-4 bg-background/95 backdrop-blur-sm px-3 py-1 rounded-full border border-border/60 text-[10px] tracking-wide font-medium uppercase text-muted-foreground">
-                    {it.category === "ejecucion"
-                      ? "Ejecución"
-                      : it.category === "mantencion"
-                        ? "Mantención"
-                        : "Diseño"}
-                  </div>
-                </div>
-
-                {/* Project Specs - Corporate Ficha Técnica */}
-                <div className="p-6 flex flex-col flex-grow justify-between text-left">
-                  <div>
-                    <h3 className="font-display text-xl leading-snug mb-4 group-hover:text-[var(--olive)] transition-colors duration-300">
-                      {it.t}
-                    </h3>
-
-                    {/* Technical Metadata Specs */}
-                    <div className="grid grid-cols-2 gap-x-4 gap-y-3 pt-3 border-t border-border/50">
-                      <div>
-                        <div className="project-spec-label">Mandante</div>
-                        <div className="project-spec-value truncate" title={it.mandante}>
-                          {it.mandante}
-                        </div>
-                      </div>
-                      <div>
-                        <div className="project-spec-label">Superficie</div>
-                        <div className="project-spec-value">{it.superficie}</div>
-                      </div>
-                      <div>
-                        <div className="project-spec-label">Plazo Entregado</div>
-                        <div className="project-spec-value text-[var(--olive)]">{it.plazo}</div>
-                      </div>
-                      <div>
-                        <div className="project-spec-label">Ubicación</div>
-                        <div className="project-spec-value truncate">{it.l}</div>
-                      </div>
+                <Link to={`/${it.slug}`} className="flex flex-col flex-grow">
+                  {/* Image Container with Fixed Aspect Ratio */}
+                  <div className="relative aspect-[16/10] overflow-hidden bg-muted w-full">
+                    <img
+                      src={it.src}
+                      alt={it.t}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 right-4 bg-background/95 backdrop-blur-sm px-3 py-1 rounded-full border border-border/60 text-[10px] tracking-wide font-medium uppercase text-muted-foreground">
+                      {it.category === "ejecucion"
+                        ? "Ejecución"
+                        : it.category === "mantencion"
+                          ? "Mantención"
+                          : "Diseño"}
                     </div>
                   </div>
 
-                  {/* Detailed service line */}
-                  <div className="mt-5 pt-3 border-t border-border/30 text-[11.5px] text-muted-foreground italic">
-                    {it.servicio}
+                  {/* Project Specs - Corporate Ficha Técnica */}
+                  <div className="p-6 flex flex-col flex-grow justify-between text-left">
+                    <div>
+                      <h3 className="font-display text-xl leading-snug mb-4 group-hover:text-[var(--olive)] transition-colors duration-300">
+                        {it.t}
+                      </h3>
+
+                      {/* Technical Metadata Specs */}
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-3 pt-3 border-t border-border/50">
+                        <div>
+                          <div className="project-spec-label">Mandante</div>
+                          <div className="project-spec-value truncate" title={it.mandante}>
+                            {it.mandante}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="project-spec-label">Superficie</div>
+                          <div className="project-spec-value">{it.superficie}</div>
+                        </div>
+                        <div>
+                          <div className="project-spec-label">Plazo Entregado</div>
+                          <div className="project-spec-value text-[var(--olive)]">{it.plazo}</div>
+                        </div>
+                        <div>
+                          <div className="project-spec-label">Ubicación</div>
+                          <div className="project-spec-value truncate">{it.l}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Detailed service line */}
+                    <div className="mt-5 pt-3 border-t border-border/30 text-[11.5px] text-muted-foreground italic flex justify-between items-center">
+                      <span>{it.servicio}</span>
+                      <span className="text-[var(--olive)] font-medium not-italic group-hover:underline">Ver proyecto &rarr;</span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </motion.article>
             ))}
           </AnimatePresence>

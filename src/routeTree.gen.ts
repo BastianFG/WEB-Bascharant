@@ -11,7 +11,16 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreNosotrosRouteImport } from './routes/sobre-nosotros'
 import { Route as ServicioDeMantencionDeAreasVerdesRouteImport } from './routes/servicio-de-mantencion-de-areas-verdes'
+import { Route as ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRouteImport } from './routes/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile'
+import { Route as ProyectoPaisajismoSecoReconversionHidricaQuilicuraChileRouteImport } from './routes/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile'
+import { Route as ProyectoPaisajismoResidencialZapallarChileRouteImport } from './routes/proyecto-paisajismo-residencial-zapallar-chile'
 import { Route as ProyectoPaisajismoRouteImport } from './routes/proyecto-paisajismo'
+import { Route as ProyectoMuroVerdeVerticalVitacuraChileRouteImport } from './routes/proyecto-muro-verde-vertical-vitacura-chile'
+import { Route as ProyectoMantencionAreasVerdesIndustrialesSanIgnacioChileRouteImport } from './routes/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile'
+import { Route as ProyectoHabilitacionTerrazaCorporativaLasCondesChileRouteImport } from './routes/proyecto-habilitacion-terraza-corporativa-las-condes-chile'
+import { Route as ProyectoFumigacionControlFitosanitarioQuilicuraChileRouteImport } from './routes/proyecto-fumigacion-control-fitosanitario-quilicura-chile'
+import { Route as ProyectoDisenoPaisajismoVialCopecSantiagoChileRouteImport } from './routes/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
+import { Route as ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRouteImport } from './routes/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
 import { Route as PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRouteImport } from './routes/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
 import { Route as DisenoYConstrucionDeSistemasDeRiegoRouteImport } from './routes/diseno-y-construcion-de-sistemas-de-riego'
 import { Route as DisenoYConstruccionDeAreasVerdesRouteImport } from './routes/diseno-y-construccion-de-areas-verdes'
@@ -29,11 +38,65 @@ const ServicioDeMantencionDeAreasVerdesRoute =
     path: '/servicio-de-mantencion-de-areas-verdes',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute =
+  ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRouteImport.update({
+    id: '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile',
+    path: '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProyectoPaisajismoSecoReconversionHidricaQuilicuraChileRoute =
+  ProyectoPaisajismoSecoReconversionHidricaQuilicuraChileRouteImport.update({
+    id: '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile',
+    path: '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProyectoPaisajismoResidencialZapallarChileRoute =
+  ProyectoPaisajismoResidencialZapallarChileRouteImport.update({
+    id: '/proyecto-paisajismo-residencial-zapallar-chile',
+    path: '/proyecto-paisajismo-residencial-zapallar-chile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ProyectoPaisajismoRoute = ProyectoPaisajismoRouteImport.update({
   id: '/proyecto-paisajismo',
   path: '/proyecto-paisajismo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProyectoMuroVerdeVerticalVitacuraChileRoute =
+  ProyectoMuroVerdeVerticalVitacuraChileRouteImport.update({
+    id: '/proyecto-muro-verde-vertical-vitacura-chile',
+    path: '/proyecto-muro-verde-vertical-vitacura-chile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProyectoMantencionAreasVerdesIndustrialesSanIgnacioChileRoute =
+  ProyectoMantencionAreasVerdesIndustrialesSanIgnacioChileRouteImport.update({
+    id: '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile',
+    path: '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProyectoHabilitacionTerrazaCorporativaLasCondesChileRoute =
+  ProyectoHabilitacionTerrazaCorporativaLasCondesChileRouteImport.update({
+    id: '/proyecto-habilitacion-terraza-corporativa-las-condes-chile',
+    path: '/proyecto-habilitacion-terraza-corporativa-las-condes-chile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute =
+  ProyectoFumigacionControlFitosanitarioQuilicuraChileRouteImport.update({
+    id: '/proyecto-fumigacion-control-fitosanitario-quilicura-chile',
+    path: '/proyecto-fumigacion-control-fitosanitario-quilicura-chile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute =
+  ProyectoDisenoPaisajismoVialCopecSantiagoChileRouteImport.update({
+    id: '/proyecto-diseno-paisajismo-vial-copec-santiago-chile',
+    path: '/proyecto-diseno-paisajismo-vial-copec-santiago-chile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute =
+  ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRouteImport.update({
+    id: '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile',
+    path: '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute =
   PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRouteImport.update({
     id: '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial',
@@ -70,7 +133,16 @@ export interface FileRoutesByFullPath {
   '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
   '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
+  '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile': typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
+  '/proyecto-diseno-paisajismo-vial-copec-santiago-chile': typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
+  '/proyecto-fumigacion-control-fitosanitario-quilicura-chile': typeof ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute
+  '/proyecto-habilitacion-terraza-corporativa-las-condes-chile': typeof ProyectoHabilitacionTerrazaCorporativaLasCondesChileRoute
+  '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile': typeof ProyectoMantencionAreasVerdesIndustrialesSanIgnacioChileRoute
+  '/proyecto-muro-verde-vertical-vitacura-chile': typeof ProyectoMuroVerdeVerticalVitacuraChileRoute
   '/proyecto-paisajismo': typeof ProyectoPaisajismoRoute
+  '/proyecto-paisajismo-residencial-zapallar-chile': typeof ProyectoPaisajismoResidencialZapallarChileRoute
+  '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile': typeof ProyectoPaisajismoSecoReconversionHidricaQuilicuraChileRoute
+  '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile': typeof ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute
   '/servicio-de-mantencion-de-areas-verdes': typeof ServicioDeMantencionDeAreasVerdesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
 }
@@ -80,7 +152,16 @@ export interface FileRoutesByTo {
   '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
   '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
+  '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile': typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
+  '/proyecto-diseno-paisajismo-vial-copec-santiago-chile': typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
+  '/proyecto-fumigacion-control-fitosanitario-quilicura-chile': typeof ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute
+  '/proyecto-habilitacion-terraza-corporativa-las-condes-chile': typeof ProyectoHabilitacionTerrazaCorporativaLasCondesChileRoute
+  '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile': typeof ProyectoMantencionAreasVerdesIndustrialesSanIgnacioChileRoute
+  '/proyecto-muro-verde-vertical-vitacura-chile': typeof ProyectoMuroVerdeVerticalVitacuraChileRoute
   '/proyecto-paisajismo': typeof ProyectoPaisajismoRoute
+  '/proyecto-paisajismo-residencial-zapallar-chile': typeof ProyectoPaisajismoResidencialZapallarChileRoute
+  '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile': typeof ProyectoPaisajismoSecoReconversionHidricaQuilicuraChileRoute
+  '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile': typeof ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute
   '/servicio-de-mantencion-de-areas-verdes': typeof ServicioDeMantencionDeAreasVerdesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
 }
@@ -91,7 +172,16 @@ export interface FileRoutesById {
   '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
   '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
+  '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile': typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
+  '/proyecto-diseno-paisajismo-vial-copec-santiago-chile': typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
+  '/proyecto-fumigacion-control-fitosanitario-quilicura-chile': typeof ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute
+  '/proyecto-habilitacion-terraza-corporativa-las-condes-chile': typeof ProyectoHabilitacionTerrazaCorporativaLasCondesChileRoute
+  '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile': typeof ProyectoMantencionAreasVerdesIndustrialesSanIgnacioChileRoute
+  '/proyecto-muro-verde-vertical-vitacura-chile': typeof ProyectoMuroVerdeVerticalVitacuraChileRoute
   '/proyecto-paisajismo': typeof ProyectoPaisajismoRoute
+  '/proyecto-paisajismo-residencial-zapallar-chile': typeof ProyectoPaisajismoResidencialZapallarChileRoute
+  '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile': typeof ProyectoPaisajismoSecoReconversionHidricaQuilicuraChileRoute
+  '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile': typeof ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute
   '/servicio-de-mantencion-de-areas-verdes': typeof ServicioDeMantencionDeAreasVerdesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
 }
@@ -103,7 +193,16 @@ export interface FileRouteTypes {
     | '/diseno-y-construccion-de-areas-verdes'
     | '/diseno-y-construcion-de-sistemas-de-riego'
     | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+    | '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
+    | '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
+    | '/proyecto-fumigacion-control-fitosanitario-quilicura-chile'
+    | '/proyecto-habilitacion-terraza-corporativa-las-condes-chile'
+    | '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile'
+    | '/proyecto-muro-verde-vertical-vitacura-chile'
     | '/proyecto-paisajismo'
+    | '/proyecto-paisajismo-residencial-zapallar-chile'
+    | '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile'
+    | '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile'
     | '/servicio-de-mantencion-de-areas-verdes'
     | '/sobre-nosotros'
   fileRoutesByTo: FileRoutesByTo
@@ -113,7 +212,16 @@ export interface FileRouteTypes {
     | '/diseno-y-construccion-de-areas-verdes'
     | '/diseno-y-construcion-de-sistemas-de-riego'
     | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+    | '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
+    | '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
+    | '/proyecto-fumigacion-control-fitosanitario-quilicura-chile'
+    | '/proyecto-habilitacion-terraza-corporativa-las-condes-chile'
+    | '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile'
+    | '/proyecto-muro-verde-vertical-vitacura-chile'
     | '/proyecto-paisajismo'
+    | '/proyecto-paisajismo-residencial-zapallar-chile'
+    | '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile'
+    | '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile'
     | '/servicio-de-mantencion-de-areas-verdes'
     | '/sobre-nosotros'
   id:
@@ -123,7 +231,16 @@ export interface FileRouteTypes {
     | '/diseno-y-construccion-de-areas-verdes'
     | '/diseno-y-construcion-de-sistemas-de-riego'
     | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+    | '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
+    | '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
+    | '/proyecto-fumigacion-control-fitosanitario-quilicura-chile'
+    | '/proyecto-habilitacion-terraza-corporativa-las-condes-chile'
+    | '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile'
+    | '/proyecto-muro-verde-vertical-vitacura-chile'
     | '/proyecto-paisajismo'
+    | '/proyecto-paisajismo-residencial-zapallar-chile'
+    | '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile'
+    | '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile'
     | '/servicio-de-mantencion-de-areas-verdes'
     | '/sobre-nosotros'
   fileRoutesById: FileRoutesById
@@ -134,7 +251,16 @@ export interface RootRouteChildren {
   DisenoYConstruccionDeAreasVerdesRoute: typeof DisenoYConstruccionDeAreasVerdesRoute
   DisenoYConstrucionDeSistemasDeRiegoRoute: typeof DisenoYConstrucionDeSistemasDeRiegoRoute
   PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute: typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
+  ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute: typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
+  ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute: typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
+  ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute: typeof ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute
+  ProyectoHabilitacionTerrazaCorporativaLasCondesChileRoute: typeof ProyectoHabilitacionTerrazaCorporativaLasCondesChileRoute
+  ProyectoMantencionAreasVerdesIndustrialesSanIgnacioChileRoute: typeof ProyectoMantencionAreasVerdesIndustrialesSanIgnacioChileRoute
+  ProyectoMuroVerdeVerticalVitacuraChileRoute: typeof ProyectoMuroVerdeVerticalVitacuraChileRoute
   ProyectoPaisajismoRoute: typeof ProyectoPaisajismoRoute
+  ProyectoPaisajismoResidencialZapallarChileRoute: typeof ProyectoPaisajismoResidencialZapallarChileRoute
+  ProyectoPaisajismoSecoReconversionHidricaQuilicuraChileRoute: typeof ProyectoPaisajismoSecoReconversionHidricaQuilicuraChileRoute
+  ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute: typeof ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute
   ServicioDeMantencionDeAreasVerdesRoute: typeof ServicioDeMantencionDeAreasVerdesRoute
   SobreNosotrosRoute: typeof SobreNosotrosRoute
 }
@@ -155,11 +281,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicioDeMantencionDeAreasVerdesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile': {
+      id: '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile'
+      path: '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile'
+      fullPath: '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile'
+      preLoaderRoute: typeof ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile': {
+      id: '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile'
+      path: '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile'
+      fullPath: '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile'
+      preLoaderRoute: typeof ProyectoPaisajismoSecoReconversionHidricaQuilicuraChileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proyecto-paisajismo-residencial-zapallar-chile': {
+      id: '/proyecto-paisajismo-residencial-zapallar-chile'
+      path: '/proyecto-paisajismo-residencial-zapallar-chile'
+      fullPath: '/proyecto-paisajismo-residencial-zapallar-chile'
+      preLoaderRoute: typeof ProyectoPaisajismoResidencialZapallarChileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/proyecto-paisajismo': {
       id: '/proyecto-paisajismo'
       path: '/proyecto-paisajismo'
       fullPath: '/proyecto-paisajismo'
       preLoaderRoute: typeof ProyectoPaisajismoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proyecto-muro-verde-vertical-vitacura-chile': {
+      id: '/proyecto-muro-verde-vertical-vitacura-chile'
+      path: '/proyecto-muro-verde-vertical-vitacura-chile'
+      fullPath: '/proyecto-muro-verde-vertical-vitacura-chile'
+      preLoaderRoute: typeof ProyectoMuroVerdeVerticalVitacuraChileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile': {
+      id: '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile'
+      path: '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile'
+      fullPath: '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile'
+      preLoaderRoute: typeof ProyectoMantencionAreasVerdesIndustrialesSanIgnacioChileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proyecto-habilitacion-terraza-corporativa-las-condes-chile': {
+      id: '/proyecto-habilitacion-terraza-corporativa-las-condes-chile'
+      path: '/proyecto-habilitacion-terraza-corporativa-las-condes-chile'
+      fullPath: '/proyecto-habilitacion-terraza-corporativa-las-condes-chile'
+      preLoaderRoute: typeof ProyectoHabilitacionTerrazaCorporativaLasCondesChileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proyecto-fumigacion-control-fitosanitario-quilicura-chile': {
+      id: '/proyecto-fumigacion-control-fitosanitario-quilicura-chile'
+      path: '/proyecto-fumigacion-control-fitosanitario-quilicura-chile'
+      fullPath: '/proyecto-fumigacion-control-fitosanitario-quilicura-chile'
+      preLoaderRoute: typeof ProyectoFumigacionControlFitosanitarioQuilicuraChileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proyecto-diseno-paisajismo-vial-copec-santiago-chile': {
+      id: '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
+      path: '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
+      fullPath: '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
+      preLoaderRoute: typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile': {
+      id: '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
+      path: '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
+      fullPath: '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
+      preLoaderRoute: typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': {
@@ -209,7 +398,25 @@ const rootRouteChildren: RootRouteChildren = {
     DisenoYConstrucionDeSistemasDeRiegoRoute,
   PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute:
     PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute,
+  ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute:
+    ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute,
+  ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute:
+    ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute,
+  ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute:
+    ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute,
+  ProyectoHabilitacionTerrazaCorporativaLasCondesChileRoute:
+    ProyectoHabilitacionTerrazaCorporativaLasCondesChileRoute,
+  ProyectoMantencionAreasVerdesIndustrialesSanIgnacioChileRoute:
+    ProyectoMantencionAreasVerdesIndustrialesSanIgnacioChileRoute,
+  ProyectoMuroVerdeVerticalVitacuraChileRoute:
+    ProyectoMuroVerdeVerticalVitacuraChileRoute,
   ProyectoPaisajismoRoute: ProyectoPaisajismoRoute,
+  ProyectoPaisajismoResidencialZapallarChileRoute:
+    ProyectoPaisajismoResidencialZapallarChileRoute,
+  ProyectoPaisajismoSecoReconversionHidricaQuilicuraChileRoute:
+    ProyectoPaisajismoSecoReconversionHidricaQuilicuraChileRoute,
+  ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute:
+    ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute,
   ServicioDeMantencionDeAreasVerdesRoute:
     ServicioDeMantencionDeAreasVerdesRoute,
   SobreNosotrosRoute: SobreNosotrosRoute,

@@ -17,6 +17,18 @@ const services = [
   '/control-fitosanitario-y-manejo-de-plagas-areas-verdes',
 ];
 
+const portfolio = [
+  '/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile',
+  '/proyecto-habilitacion-terraza-corporativa-las-condes-chile',
+  '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile',
+  '/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile',
+  '/proyecto-diseno-paisajismo-vial-copec-santiago-chile',
+  '/proyecto-muro-verde-vertical-vitacura-chile',
+  '/proyecto-fumigacion-control-fitosanitario-quilicura-chile',
+  '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile',
+  '/proyecto-paisajismo-residencial-zapallar-chile'
+];
+
 function generateSitemapXml(urls) {
   const currentDate = new Date().toISOString();
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
@@ -56,11 +68,13 @@ async function main() {
   
   const pagesXml = generateSitemapXml(pages);
   const servicesXml = generateSitemapXml(services);
+  const portfolioXml = generateSitemapXml(portfolio);
   
   fs.writeFileSync(path.join(publicDir, 'pages-sitemap.xml'), pagesXml);
   fs.writeFileSync(path.join(publicDir, 'services-sitemap.xml'), servicesXml);
+  fs.writeFileSync(path.join(publicDir, 'portfolio-sitemap.xml'), portfolioXml);
   
-  const indexXml = generateSitemapIndexXml(['pages-sitemap.xml', 'services-sitemap.xml']);
+  const indexXml = generateSitemapIndexXml(['pages-sitemap.xml', 'services-sitemap.xml', 'portfolio-sitemap.xml']);
   fs.writeFileSync(path.join(publicDir, 'sitemap_index.xml'), indexXml);
   
   console.log('✅ Sitemaps generated successfully.');

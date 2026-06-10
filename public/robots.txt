@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://bascharant.cl/sitemap_index.xml
+Sitemap: https://www.bascharant.com/sitemap_index.xml

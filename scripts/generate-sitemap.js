@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const BASE_URL = 'https://bascharant.cl';
+const BASE_URL = 'https://www.bascharant.com';
 
 const pages = [
   '/',

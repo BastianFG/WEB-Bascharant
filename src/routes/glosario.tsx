@@ -71,6 +71,36 @@ const GLOSSARY_TERMS = [
     term: "Cubicación Técnica",
     definition: "Proceso de cálculo preciso de los materiales, volúmenes de tierra, cantidad de especies vegetales e insumos necesarios para ejecutar un proyecto de paisajismo de acuerdo a los planos y especificaciones técnicas.",
     tags: ["Diseño", "Ejecución"]
+  },
+  {
+    term: "Manejo Integrado de Plagas (MIP)",
+    definition: "Estrategia ecológica que se enfoca en la prevención a largo plazo de plagas mediante la combinación de técnicas como el control biológico, físico y químico de manera focalizada para prevenir infestaciones antes de que ocurran.",
+    tags: ["Fitosanitario", "Mantenimiento"]
+  },
+  {
+    term: "Bioseguridad Corporativa",
+    definition: "Conjunto de medidas preventivas destinadas a mantener el control de factores de riesgo laborales procedentes de agentes biológicos, físicos o químicos en un entorno empresarial.",
+    tags: ["Corporativo", "Salud"]
+  },
+  {
+    term: "Vectores Sanitarios",
+    definition: "Organismos vivos, como insectos (mosquitos, moscas) o roedores, que pueden transmitir enfermedades infecciosas dentro de un entorno empresarial o residencial.",
+    tags: ["Salud", "Fitosanitario"]
+  },
+  {
+    term: "Biofilia",
+    definition: "Afinidad innata del ser humano por la naturaleza. El Diseño Biofílico integra luz natural, vegetación y materiales orgánicos en oficinas para reducir el estrés, potenciar la concentración y mejorar la productividad laboral.",
+    tags: ["Diseño", "Bienestar"]
+  },
+  {
+    term: "Isla de Calor Urbana",
+    definition: "Fenómeno donde las áreas urbanas construidas presentan temperaturas significativamente más altas que sus alrededores naturales debido a la absorción de radiación solar por el asfalto y hormigón. Se mitiga mediante muros verdes y plantación de arbolado.",
+    tags: ["Clima", "Sustentabilidad"]
+  },
+  {
+    term: "Estrés Hídrico",
+    definition: "Condición en la cual la demanda de agua supera la cantidad disponible o la calidad del agua restringe su uso. En paisajismo, se combate mediante especies xerófitas, sistemas de riego inteligente y disminución de superficies de césped.",
+    tags: ["Agua", "Sustentabilidad"]
   }
 ];
 

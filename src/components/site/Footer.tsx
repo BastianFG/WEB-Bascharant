@@ -63,6 +63,9 @@ export default function Footer() {
               <li>
                 <a href="/glosario" className="hover:text-white transition-colors duration-300 text-[var(--olive)]">Glosario Técnico</a>
               </li>
+              <li>
+                <a href="/info" className="hover:text-white transition-colors duration-300 text-[var(--olive)]">Info</a>
+              </li>
             </ul>
           </div>
 
@@ -86,6 +89,9 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/diseno-y-construcion-de-sistemas-de-riego" className="hover:text-white transition-colors duration-300">Sistemas de Riego</a>
+              </li>
+              <li>
+                <a href="https://www.bascharant.store/servicios" className="hover:text-white transition-colors duration-300">Mantecion hogar</a>
               </li>
             </ul>
           </div>

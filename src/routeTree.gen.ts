@@ -28,6 +28,14 @@ import { Route as DisenoYConstruccionDeAreasVerdesRouteImport } from './routes/d
 import { Route as ControlFitosanitarioYManejoDePlagasAreasVerdesRouteImport } from './routes/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InfoIndexRouteImport } from './routes/info/index'
+import { Route as InfoXerojardineriaPaisajismoSecoCorporativoRouteImport } from './routes/info/xerojardineria-paisajismo-seco-corporativo'
+import { Route as InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport } from './routes/info/muros-verdes-y-jardines-verticales-corporativos'
+import { Route as InfoImportanciaRiegoInteligenteEmpresasRouteImport } from './routes/info/importancia-riego-inteligente-empresas'
+import { Route as InfoImportanciaPodaPreventivaOtonoRouteImport } from './routes/info/importancia-poda-preventiva-otono'
+import { Route as InfoImportanciaFumigacionesPreventivasRouteImport } from './routes/info/importancia-fumigaciones-preventivas'
+import { Route as InfoEndoterapiaVegetalAlternativaEcologicaRouteImport } from './routes/info/endoterapia-vegetal-alternativa-ecologica'
+import { Route as InfoBeneficiosDisenoBiofilicoProductividadRouteImport } from './routes/info/beneficios-diseno-biofilico-productividad'
 
 const SobreNosotrosRoute = SobreNosotrosRouteImport.update({
   id: '/sobre-nosotros',
@@ -138,6 +146,53 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InfoIndexRoute = InfoIndexRouteImport.update({
+  id: '/info/',
+  path: '/info/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InfoXerojardineriaPaisajismoSecoCorporativoRoute =
+  InfoXerojardineriaPaisajismoSecoCorporativoRouteImport.update({
+    id: '/info/xerojardineria-paisajismo-seco-corporativo',
+    path: '/info/xerojardineria-paisajismo-seco-corporativo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InfoMurosVerdesYJardinesVerticalesCorporativosRoute =
+  InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport.update({
+    id: '/info/muros-verdes-y-jardines-verticales-corporativos',
+    path: '/info/muros-verdes-y-jardines-verticales-corporativos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InfoImportanciaRiegoInteligenteEmpresasRoute =
+  InfoImportanciaRiegoInteligenteEmpresasRouteImport.update({
+    id: '/info/importancia-riego-inteligente-empresas',
+    path: '/info/importancia-riego-inteligente-empresas',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InfoImportanciaPodaPreventivaOtonoRoute =
+  InfoImportanciaPodaPreventivaOtonoRouteImport.update({
+    id: '/info/importancia-poda-preventiva-otono',
+    path: '/info/importancia-poda-preventiva-otono',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InfoImportanciaFumigacionesPreventivasRoute =
+  InfoImportanciaFumigacionesPreventivasRouteImport.update({
+    id: '/info/importancia-fumigaciones-preventivas',
+    path: '/info/importancia-fumigaciones-preventivas',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InfoEndoterapiaVegetalAlternativaEcologicaRoute =
+  InfoEndoterapiaVegetalAlternativaEcologicaRouteImport.update({
+    id: '/info/endoterapia-vegetal-alternativa-ecologica',
+    path: '/info/endoterapia-vegetal-alternativa-ecologica',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InfoBeneficiosDisenoBiofilicoProductividadRoute =
+  InfoBeneficiosDisenoBiofilicoProductividadRouteImport.update({
+    id: '/info/beneficios-diseno-biofilico-productividad',
+    path: '/info/beneficios-diseno-biofilico-productividad',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -159,6 +214,14 @@ export interface FileRoutesByFullPath {
   '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile': typeof ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute
   '/servicio-de-mantencion-de-areas-verdes': typeof ServicioDeMantencionDeAreasVerdesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
+  '/info/beneficios-diseno-biofilico-productividad': typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
+  '/info/endoterapia-vegetal-alternativa-ecologica': typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
+  '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
+  '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
+  '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
+  '/info/': typeof InfoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -180,6 +243,14 @@ export interface FileRoutesByTo {
   '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile': typeof ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute
   '/servicio-de-mantencion-de-areas-verdes': typeof ServicioDeMantencionDeAreasVerdesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
+  '/info/beneficios-diseno-biofilico-productividad': typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
+  '/info/endoterapia-vegetal-alternativa-ecologica': typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
+  '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
+  '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
+  '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
+  '/info': typeof InfoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -202,6 +273,14 @@ export interface FileRoutesById {
   '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile': typeof ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute
   '/servicio-de-mantencion-de-areas-verdes': typeof ServicioDeMantencionDeAreasVerdesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
+  '/info/beneficios-diseno-biofilico-productividad': typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
+  '/info/endoterapia-vegetal-alternativa-ecologica': typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
+  '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
+  '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
+  '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
+  '/info/': typeof InfoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -225,6 +304,14 @@ export interface FileRouteTypes {
     | '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile'
     | '/servicio-de-mantencion-de-areas-verdes'
     | '/sobre-nosotros'
+    | '/info/beneficios-diseno-biofilico-productividad'
+    | '/info/endoterapia-vegetal-alternativa-ecologica'
+    | '/info/importancia-fumigaciones-preventivas'
+    | '/info/importancia-poda-preventiva-otono'
+    | '/info/importancia-riego-inteligente-empresas'
+    | '/info/muros-verdes-y-jardines-verticales-corporativos'
+    | '/info/xerojardineria-paisajismo-seco-corporativo'
+    | '/info/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -246,6 +333,14 @@ export interface FileRouteTypes {
     | '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile'
     | '/servicio-de-mantencion-de-areas-verdes'
     | '/sobre-nosotros'
+    | '/info/beneficios-diseno-biofilico-productividad'
+    | '/info/endoterapia-vegetal-alternativa-ecologica'
+    | '/info/importancia-fumigaciones-preventivas'
+    | '/info/importancia-poda-preventiva-otono'
+    | '/info/importancia-riego-inteligente-empresas'
+    | '/info/muros-verdes-y-jardines-verticales-corporativos'
+    | '/info/xerojardineria-paisajismo-seco-corporativo'
+    | '/info'
   id:
     | '__root__'
     | '/'
@@ -267,6 +362,14 @@ export interface FileRouteTypes {
     | '/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile'
     | '/servicio-de-mantencion-de-areas-verdes'
     | '/sobre-nosotros'
+    | '/info/beneficios-diseno-biofilico-productividad'
+    | '/info/endoterapia-vegetal-alternativa-ecologica'
+    | '/info/importancia-fumigaciones-preventivas'
+    | '/info/importancia-poda-preventiva-otono'
+    | '/info/importancia-riego-inteligente-empresas'
+    | '/info/muros-verdes-y-jardines-verticales-corporativos'
+    | '/info/xerojardineria-paisajismo-seco-corporativo'
+    | '/info/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -289,6 +392,14 @@ export interface RootRouteChildren {
   ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute: typeof ProyectoPodaPreventivaSilviculturaArboladoQuilicuraChileRoute
   ServicioDeMantencionDeAreasVerdesRoute: typeof ServicioDeMantencionDeAreasVerdesRoute
   SobreNosotrosRoute: typeof SobreNosotrosRoute
+  InfoBeneficiosDisenoBiofilicoProductividadRoute: typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
+  InfoEndoterapiaVegetalAlternativaEcologicaRoute: typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  InfoImportanciaFumigacionesPreventivasRoute: typeof InfoImportanciaFumigacionesPreventivasRoute
+  InfoImportanciaPodaPreventivaOtonoRoute: typeof InfoImportanciaPodaPreventivaOtonoRoute
+  InfoImportanciaRiegoInteligenteEmpresasRoute: typeof InfoImportanciaRiegoInteligenteEmpresasRoute
+  InfoMurosVerdesYJardinesVerticalesCorporativosRoute: typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  InfoXerojardineriaPaisajismoSecoCorporativoRoute: typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
+  InfoIndexRoute: typeof InfoIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -426,6 +537,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/info/': {
+      id: '/info/'
+      path: '/info'
+      fullPath: '/info/'
+      preLoaderRoute: typeof InfoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/info/xerojardineria-paisajismo-seco-corporativo': {
+      id: '/info/xerojardineria-paisajismo-seco-corporativo'
+      path: '/info/xerojardineria-paisajismo-seco-corporativo'
+      fullPath: '/info/xerojardineria-paisajismo-seco-corporativo'
+      preLoaderRoute: typeof InfoXerojardineriaPaisajismoSecoCorporativoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/info/muros-verdes-y-jardines-verticales-corporativos': {
+      id: '/info/muros-verdes-y-jardines-verticales-corporativos'
+      path: '/info/muros-verdes-y-jardines-verticales-corporativos'
+      fullPath: '/info/muros-verdes-y-jardines-verticales-corporativos'
+      preLoaderRoute: typeof InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/info/importancia-riego-inteligente-empresas': {
+      id: '/info/importancia-riego-inteligente-empresas'
+      path: '/info/importancia-riego-inteligente-empresas'
+      fullPath: '/info/importancia-riego-inteligente-empresas'
+      preLoaderRoute: typeof InfoImportanciaRiegoInteligenteEmpresasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/info/importancia-poda-preventiva-otono': {
+      id: '/info/importancia-poda-preventiva-otono'
+      path: '/info/importancia-poda-preventiva-otono'
+      fullPath: '/info/importancia-poda-preventiva-otono'
+      preLoaderRoute: typeof InfoImportanciaPodaPreventivaOtonoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/info/importancia-fumigaciones-preventivas': {
+      id: '/info/importancia-fumigaciones-preventivas'
+      path: '/info/importancia-fumigaciones-preventivas'
+      fullPath: '/info/importancia-fumigaciones-preventivas'
+      preLoaderRoute: typeof InfoImportanciaFumigacionesPreventivasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/info/endoterapia-vegetal-alternativa-ecologica': {
+      id: '/info/endoterapia-vegetal-alternativa-ecologica'
+      path: '/info/endoterapia-vegetal-alternativa-ecologica'
+      fullPath: '/info/endoterapia-vegetal-alternativa-ecologica'
+      preLoaderRoute: typeof InfoEndoterapiaVegetalAlternativaEcologicaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/info/beneficios-diseno-biofilico-productividad': {
+      id: '/info/beneficios-diseno-biofilico-productividad'
+      path: '/info/beneficios-diseno-biofilico-productividad'
+      fullPath: '/info/beneficios-diseno-biofilico-productividad'
+      preLoaderRoute: typeof InfoBeneficiosDisenoBiofilicoProductividadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -462,6 +629,21 @@ const rootRouteChildren: RootRouteChildren = {
   ServicioDeMantencionDeAreasVerdesRoute:
     ServicioDeMantencionDeAreasVerdesRoute,
   SobreNosotrosRoute: SobreNosotrosRoute,
+  InfoBeneficiosDisenoBiofilicoProductividadRoute:
+    InfoBeneficiosDisenoBiofilicoProductividadRoute,
+  InfoEndoterapiaVegetalAlternativaEcologicaRoute:
+    InfoEndoterapiaVegetalAlternativaEcologicaRoute,
+  InfoImportanciaFumigacionesPreventivasRoute:
+    InfoImportanciaFumigacionesPreventivasRoute,
+  InfoImportanciaPodaPreventivaOtonoRoute:
+    InfoImportanciaPodaPreventivaOtonoRoute,
+  InfoImportanciaRiegoInteligenteEmpresasRoute:
+    InfoImportanciaRiegoInteligenteEmpresasRoute,
+  InfoMurosVerdesYJardinesVerticalesCorporativosRoute:
+    InfoMurosVerdesYJardinesVerticalesCorporativosRoute,
+  InfoXerojardineriaPaisajismoSecoCorporativoRoute:
+    InfoXerojardineriaPaisajismoSecoCorporativoRoute,
+  InfoIndexRoute: InfoIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

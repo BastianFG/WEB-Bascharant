@@ -108,6 +108,9 @@ export default function Footer() {
               <li>
                 <a href="https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">LinkedIn</a>
               </li>
+              <li>
+                <a href="https://www.facebook.com/people/Paisajismo-Bascharant/61590789628168/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">Facebook</a>
+              </li>
             </ul>
           </div>
         </div>

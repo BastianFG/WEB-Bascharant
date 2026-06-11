@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, MessageCircle, Instagram, MapPin } from "lucide-react";
+import { Phone, Mail, MessageCircle, Instagram, Facebook, Linkedin, MapPin } from "lucide-react";
 import FallingLeaves from "./FallingLeaves";
 
 export default function Contact() {
@@ -94,6 +94,40 @@ export default function Contact() {
                       Instagram
                     </div>
                     <div className="text-sm mt-1">@paisajismobascharant</div>
+                  </div>
+                </div>
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+              </a>
+              <a
+                href="https://www.facebook.com/people/Paisajismo-Bascharant/61590789628168/"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]"
+              >
+                <div className="flex items-center gap-4">
+                  <Facebook strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
+                  <div>
+                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                      Facebook
+                    </div>
+                    <div className="text-sm mt-1">Paisajismo Bascharant</div>
+                  </div>
+                </div>
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]"
+              >
+                <div className="flex items-center gap-4">
+                  <Linkedin strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
+                  <div>
+                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                      LinkedIn
+                    </div>
+                    <div className="text-sm mt-1">Paisajismo Bascharant</div>
                   </div>
                 </div>
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>

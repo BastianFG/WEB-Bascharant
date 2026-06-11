@@ -70,7 +70,11 @@ function Index() {
       "opens": "00:00",
       "closes": "23:59"
     },
-    "sameAs": ["https://www.instagram.com/paisajismobascharant"],
+    "sameAs": [
+      "https://www.instagram.com/paisajismobascharant",
+      "https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/",
+      "https://www.facebook.com/people/Paisajismo-Bascharant/61590789628168/"
+    ],
     "areaServed": [
       {
         "@type": "AdministrativeArea",

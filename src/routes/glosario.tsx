@@ -1,7 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, BookOpen, Leaf, X } from "lucide-react";
+import { Search, BookOpen, Leaf, X, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
@@ -74,6 +74,7 @@ const GLOSSARY_TERMS = [
 ];
 
 function GlosarioPage() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredTerms = useMemo(() => {
@@ -97,6 +98,21 @@ function GlosarioPage() {
         
         <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 z-10">
           <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex justify-center mb-8"
+            >
+              <button 
+                onClick={() => router.history.back()}
+                className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Volver a la página anterior
+              </button>
+            </motion.div>
+            
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}

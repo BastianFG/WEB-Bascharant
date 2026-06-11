@@ -6,6 +6,7 @@ import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import FloatingBackButton from "@/components/site/FloatingBackButton";
 import { Toaster } from "@/components/ui/sonner";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
@@ -58,14 +59,16 @@ function ContactPage() {
               Agenda una sesión <span className="italic text-muted-foreground">técnica.</span>
             </motion.h1>
             
-            <motion.p
+            <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-muted-foreground text-lg text-balance"
+              className="max-w-2xl text-[14px] leading-relaxed text-muted-foreground space-y-4 mb-10"
             >
-              Ya sea para evaluar un terreno, consultar por nuestro servicio corporativo B2B o solicitar un presupuesto de diseño, nuestro equipo está listo para asesorarte.
-            </motion.p>
+              <p>Desarrollamos soluciones de paisajismo adaptadas al cambio climático, con profesionales que aportan habilidades en evaluación de terreno, suelos y selección de especies con apoyo de viveros especializados. Cada proyecto se organiza bajo un programa claro de ejecución y mantención según sus objetivos y condiciones.</p>
+              <p>Enfoques como el diseño naturalista incorporan plantas nativas y contenidos técnicos en la asesoría, vinculados a selección vegetal y <GlossaryLink>biodiversidad</GlossaryLink>; al trabajar con seres vivos, también ayudan a reducir la necesidad de riego y el consumo de agua. Además, consideramos estrategias de paisajismo ecosistémico para restaurar ecosistemas funcionales en ciudades, incluyendo rain gardens que ayudan a controlar la <GlossaryLink>escorrentía</GlossaryLink> del agua en terreno urbano.</p>
+              <p>Nuestro equipo complementa su experiencia en terreno con cursos y un certificado vinculados al diseño y manejo de áreas verdes.</p>
+            </motion.div>
           </div>
 
           {/* Bento Grid Layout */}

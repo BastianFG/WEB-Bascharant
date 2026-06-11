@@ -175,6 +175,13 @@ function MobileCarousel() {
                   {s.d}
                 </p>
 
+                {/* Clickable indicator for mobile */}
+                {s.href && (
+                  <div className="mt-5 inline-flex items-center gap-1 text-[11px] font-medium tracking-[0.15em] uppercase text-[var(--olive)] opacity-80">
+                    Saber más <ChevronRight className="h-3 w-3" />
+                  </div>
+                )}
+
                 {/* Bottom Line */}
                 <span className="absolute bottom-0 left-0 h-1 w-full bg-[var(--olive)] opacity-20" />
               </Wrapper>

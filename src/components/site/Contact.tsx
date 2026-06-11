@@ -126,15 +126,6 @@ export default function Contact() {
             </div>
             <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
           </a>
-          
-          <div className="group flex items-center justify-between rounded-2xl border border-transparent bg-background/50 p-5">
-            <div className="flex items-center gap-4">
-              <div>
-                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Razón Social</div>
-                <div className="text-sm mt-1 text-foreground/80">Paisajismo Bascharant SpA</div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* 3 Horizontal Maps Row */}

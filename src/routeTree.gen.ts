@@ -26,6 +26,7 @@ import { Route as GlosarioRouteImport } from './routes/glosario'
 import { Route as DisenoYConstrucionDeSistemasDeRiegoRouteImport } from './routes/diseno-y-construcion-de-sistemas-de-riego'
 import { Route as DisenoYConstruccionDeAreasVerdesRouteImport } from './routes/diseno-y-construccion-de-areas-verdes'
 import { Route as ControlFitosanitarioYManejoDePlagasAreasVerdesRouteImport } from './routes/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
+import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SobreNosotrosRoute = SobreNosotrosRouteImport.update({
@@ -127,6 +128,11 @@ const ControlFitosanitarioYManejoDePlagasAreasVerdesRoute =
     path: '/control-fitosanitario-y-manejo-de-plagas-areas-verdes',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -135,6 +141,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
   '/control-fitosanitario-y-manejo-de-plagas-areas-verdes': typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
   '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
@@ -155,6 +162,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
   '/control-fitosanitario-y-manejo-de-plagas-areas-verdes': typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
   '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
@@ -176,6 +184,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
   '/control-fitosanitario-y-manejo-de-plagas-areas-verdes': typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
   '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
@@ -198,6 +207,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contacto'
     | '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
     | '/diseno-y-construccion-de-areas-verdes'
     | '/diseno-y-construcion-de-sistemas-de-riego'
@@ -218,6 +228,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contacto'
     | '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
     | '/diseno-y-construccion-de-areas-verdes'
     | '/diseno-y-construcion-de-sistemas-de-riego'
@@ -238,6 +249,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/contacto'
     | '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
     | '/diseno-y-construccion-de-areas-verdes'
     | '/diseno-y-construcion-de-sistemas-de-riego'
@@ -259,6 +271,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactoRoute: typeof ContactoRoute
   ControlFitosanitarioYManejoDePlagasAreasVerdesRoute: typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
   DisenoYConstruccionDeAreasVerdesRoute: typeof DisenoYConstruccionDeAreasVerdesRoute
   DisenoYConstrucionDeSistemasDeRiegoRoute: typeof DisenoYConstrucionDeSistemasDeRiegoRoute
@@ -399,6 +412,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -411,6 +431,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactoRoute: ContactoRoute,
   ControlFitosanitarioYManejoDePlagasAreasVerdesRoute:
     ControlFitosanitarioYManejoDePlagasAreasVerdesRoute,
   DisenoYConstruccionDeAreasVerdesRoute: DisenoYConstruccionDeAreasVerdesRoute,

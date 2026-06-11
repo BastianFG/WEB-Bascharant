@@ -6,8 +6,9 @@ const links = [
   { href: "/#servicios", label: "Servicios" },
   { href: "/proyecto-paisajismo", label: "Proyectos" },
   { href: "/sobre-nosotros", label: "Sobre Nosotros" },
+  { href: "/glosario", label: "Glosario" },
   { href: "/#empresas", label: "Cotizar" },
-  { href: "/#contacto", label: "Contacto" },
+  { href: "/contacto", label: "Contacto" },
 ];
 
 export default function Navbar() {

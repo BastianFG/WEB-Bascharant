@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, MessageCircle, Instagram, Facebook, Linkedin, MapPin } from "lucide-react";
+import { Phone, Mail, MessageCircle, Instagram, Facebook, Linkedin, Twitter, MapPin } from "lucide-react";
 import FallingLeaves from "./FallingLeaves";
 
 export default function Contact() {
@@ -126,6 +126,23 @@ export default function Contact() {
                   <div>
                     <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
                       LinkedIn
+                    </div>
+                    <div className="text-sm mt-1">Paisajismo Bascharant</div>
+                  </div>
+                </div>
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+              </a>
+              <a
+                href="https://x.com/Josfuentesgome2"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:border-[var(--olive)] hover:shadow-[var(--shadow-soft)]"
+              >
+                <div className="flex items-center gap-4">
+                  <Twitter strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
+                  <div>
+                    <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                      X (Twitter)
                     </div>
                     <div className="text-sm mt-1">Paisajismo Bascharant</div>
                   </div>

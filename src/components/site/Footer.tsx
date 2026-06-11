@@ -111,6 +111,9 @@ export default function Footer() {
               <li>
                 <a href="https://www.facebook.com/people/Paisajismo-Bascharant/61590789628168/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">Facebook</a>
               </li>
+              <li>
+                <a href="https://x.com/Josfuentesgome2" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">X (Twitter)</a>
+              </li>
             </ul>
           </div>
         </div>

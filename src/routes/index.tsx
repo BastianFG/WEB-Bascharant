@@ -73,7 +73,8 @@ function Index() {
     "sameAs": [
       "https://www.instagram.com/paisajismobascharant",
       "https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/",
-      "https://www.facebook.com/people/Paisajismo-Bascharant/61590789628168/"
+      "https://www.facebook.com/people/Paisajismo-Bascharant/61590789628168/",
+      "https://x.com/Josfuentesgome2"
     ],
     "areaServed": [
       {

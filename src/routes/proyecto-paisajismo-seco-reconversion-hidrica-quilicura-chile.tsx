@@ -4,6 +4,7 @@ import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import img from "@/assets/Catapilco.png";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile")({
   head: () => ({
@@ -47,7 +48,9 @@ function ProjectDetail() {
             
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2 className="text-2xl font-semibold mb-4 text-primary">Descripción del Proyecto</h2>
-              <p className="text-muted-foreground leading-relaxed text-[17px]" dangerouslySetInnerHTML={{ __html: 'En este proyecto ejecutado en Quilicura, aplicamos los más altos estándares de <strong>paisajismo seco y reconversión hídrica</strong> para optimizar el consumo de agua. Como especialistas en <strong>mantención de áreas verdes en Chile</strong>, reemplazamos el césped tradicional por especies de bajo requerimiento hídrico e instalamos un sistema de <strong>riego automatizado</strong> altamente eficiente, garantizando la sustentabilidad a largo plazo de las instalaciones industriales de Arauco.' }}></p>
+              <p className="text-muted-foreground leading-relaxed text-[17px]">
+                En este proyecto ejecutado en Quilicura, aplicamos los más altos estándares de <strong><GlossaryLink>paisajismo seco</GlossaryLink> y reconversión hídrica</strong> para optimizar el consumo de agua. Como especialistas en <strong>mantención de áreas verdes en Chile</strong>, reemplazamos el césped tradicional por especies de bajo requerimiento hídrico e instalamos un sistema de <strong>riego automatizado</strong> altamente eficiente, garantizando la sustentabilidad a largo plazo de las instalaciones industriales de Arauco.
+              </p>
             </div>
           </div>
           

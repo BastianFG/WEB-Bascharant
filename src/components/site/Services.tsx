@@ -13,13 +13,14 @@ import {
   PencilRuler,
 } from "lucide-react";
 import { useEffect, useRef, useState, useCallback } from "react";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 const items = [
   {
     icon: PencilRuler,
     n: "01",
-    t: "Diseño & Licitaciones B2B",
-    d: "Planificación paisajística, modelado 3D, cubicación y preparación de bases técnicas .",
+    t: "Diseño y Cubicación",
+    d: <>Planificación paisajística, modelado 3D, <GlossaryLink>cubicación</GlossaryLink> y preparación de bases técnicas.</>,
     href: "/diseno-y-construccion-de-areas-verdes"
   },
   {

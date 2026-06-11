@@ -4,6 +4,7 @@ import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import img from "@/assets/PodaQuilicura.png";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile")({
   head: () => ({
@@ -47,7 +48,9 @@ function ProjectDetail() {
             
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2 className="text-2xl font-semibold mb-4 text-primary">Descripción del Proyecto</h2>
-              <p className="text-muted-foreground leading-relaxed text-[17px]" dangerouslySetInnerHTML={{ __html: 'La <strong>silvicultura y poda preventiva</strong> son esenciales para la seguridad industrial. En este proyecto en Quilicura, nuestros expertos en <strong>mantención de áreas verdes en Chile</strong> realizaron podas certificadas y tratamientos de <strong>control fitosanitario</strong> en 45 ejemplares. Aseguramos la salud del arbolado y mitigamos riesgos, consolidándonos como líderes en paisajismo y manejo arbóreo a nivel nacional.' }}></p>
+              <p className="text-muted-foreground leading-relaxed text-[17px]">
+                La <strong><GlossaryLink>silvicultura</GlossaryLink> y poda preventiva</strong> son esenciales para la seguridad industrial. En este proyecto en Quilicura, nuestros expertos en <strong>mantención de áreas verdes en Chile</strong> realizaron podas certificadas y tratamientos de <strong>control <GlossaryLink>fitosanitario</GlossaryLink></strong> en 45 ejemplares. Aseguramos la salud del arbolado y mitigamos riesgos, consolidándonos como líderes en paisajismo y manejo arbóreo a nivel nacional.
+              </p>
             </div>
           </div>
           

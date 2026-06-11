@@ -4,6 +4,7 @@ import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import img from "@/assets/g6.jpg";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/proyecto-fumigacion-control-fitosanitario-quilicura-chile")({
   head: () => ({
@@ -47,7 +48,9 @@ function ProjectDetail() {
             
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2 className="text-2xl font-semibold mb-4 text-primary">Descripción del Proyecto</h2>
-              <p className="text-muted-foreground leading-relaxed text-[17px]" dangerouslySetInnerHTML={{ __html: 'La protección de grandes extensiones vegetales requiere un manejo técnico experto. Nuestro servicio mensual de <strong>fumigación y control fitosanitario</strong> en Quilicura abarca 8.500 m², asegurando la prevención de plagas en áreas comunes. Complementamos la <strong>mantención de áreas verdes en Chile</strong> con un enfoque científico y productos amigables con el medio ambiente.' }}></p>
+              <p className="text-muted-foreground leading-relaxed text-[17px]">
+                La protección de grandes extensiones vegetales requiere un manejo técnico experto. Nuestro servicio mensual de <strong>fumigación y control <GlossaryLink>fitosanitario</GlossaryLink></strong> en Quilicura abarca 8.500 m², asegurando la prevención de plagas en áreas comunes. Complementamos la <strong>mantención de áreas verdes en Chile</strong> con un enfoque científico y productos amigables con el medio ambiente.
+              </p>
             </div>
           </div>
           

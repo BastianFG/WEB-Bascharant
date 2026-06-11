@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import ServiceLayout from "@/components/site/ServiceLayout";
 
+import GlossaryLink from "@/components/site/GlossaryLink";
+
 export const Route = createFileRoute("/control-fitosanitario-y-manejo-de-plagas-areas-verdes")({
   head: () => ({
     meta: [
@@ -27,7 +29,7 @@ function ControlFitosanitarioPage() {
           Sanidad Vegetal para un Entorno Saludable
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-6">
-          El <strong>control fitosanitario en áreas verdes</strong> es fundamental para mantener la vitalidad y el valor estético de los jardines corporativos. Un brote de plagas o enfermedades fúngicas puede destruir años de crecimiento en semanas. Nuestro equipo de profesionales realiza diagnósticos tempranos y aplica tratamientos precisos y seguros.
+          El <strong>control <GlossaryLink>fitosanitario</GlossaryLink> en áreas verdes</strong> es fundamental para mantener la vitalidad y el valor estético de los jardines corporativos. Un brote de plagas o enfermedades fúngicas puede destruir años de crecimiento en semanas. Nuestro equipo de profesionales realiza diagnósticos tempranos y aplica tratamientos precisos y seguros.
         </p>
         <h3 className="text-xl font-medium mt-8 mb-3">Nuestros Servicios Fitosanitarios</h3>
         <ul className="space-y-2 text-muted-foreground mb-8">
@@ -35,7 +37,7 @@ function ControlFitosanitarioPage() {
           <li>✓ <strong>Fumigación y Aplicación de Agroquímicos:</strong> Uso responsable de insecticidas, fungicidas y acaricidas autorizados por el SAG en Chile, minimizando el impacto ambiental.</li>
           <li>✓ <strong>Control Biológico de Plagas:</strong> Implementación de métodos ecológicos y manejo integrado de plagas (MIP) para corporaciones con políticas de sostenibilidad estrictas.</li>
           <li>✓ <strong>Tratamientos Preventivos:</strong> Aplicaciones estacionales para prevenir la aparición de enfermedades comunes en el clima de la zona central y Santiago.</li>
-          <li>✓ <strong>Inyecciones a Tronco (Endoterapia):</strong> Tratamientos de última tecnología, inyectando nutrientes y medicación directamente al sistema vascular de los árboles urbanos.</li>
+          <li>✓ <strong>Inyecciones a Tronco (<GlossaryLink>Endoterapia</GlossaryLink>):</strong> Tratamientos de última tecnología, inyectando nutrientes y medicación directamente al sistema vascular de los árboles urbanos.</li>
         </ul>
         <p className="text-muted-foreground leading-relaxed">
           Evite pérdidas costosas y mantenga sus áreas verdes siempre prístinas. Todos nuestros procedimientos de fumigación y control fitosanitario se realizan respetando rigurosamente las normativas de seguridad laboral y medioambiental chilenas.

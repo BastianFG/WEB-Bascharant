@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MessageCircle, Instagram, Facebook, Linkedin, Twitter, MapPin } from "lucide-react";
 import FallingLeaves from "./FallingLeaves";
+import GlossaryLink from "./GlossaryLink";
 
 export default function Contact() {
   return (
@@ -29,7 +30,7 @@ export default function Contact() {
               className="max-w-2xl text-[14px] leading-relaxed text-muted-foreground space-y-4 mb-10"
             >
               <p>Desarrollamos soluciones de paisajismo adaptadas al cambio climático, con profesionales que aportan habilidades en evaluación de terreno, suelos y selección de especies con apoyo de viveros especializados. Cada proyecto se organiza bajo un programa claro de ejecución y mantención según sus objetivos y condiciones.</p>
-              <p>Enfoques como el diseño naturalista incorporan plantas nativas y contenidos técnicos en la asesoría, vinculados a selección vegetal y biodiversidad; al trabajar con seres vivos, también ayudan a reducir la necesidad de riego y el consumo de agua. Además, consideramos estrategias de paisajismo ecosistémico para restaurar ecosistemas funcionales en ciudades, incluyendo rain gardens que ayudan a controlar la escorrentía del agua en terreno urbano.</p>
+              <p>Enfoques como el diseño naturalista incorporan plantas nativas y contenidos técnicos en la asesoría, vinculados a selección vegetal y <GlossaryLink>biodiversidad</GlossaryLink>; al trabajar con seres vivos, también ayudan a reducir la necesidad de riego y el consumo de agua. Además, consideramos estrategias de paisajismo ecosistémico para restaurar ecosistemas funcionales en ciudades, incluyendo rain gardens que ayudan a controlar la <GlossaryLink>escorrentía</GlossaryLink> del agua en terreno urbano.</p>
               <p>Nuestro equipo complementa su experiencia en terreno con cursos y un certificado vinculados al diseño y manejo de áreas verdes.</p>
             </motion.div>
 

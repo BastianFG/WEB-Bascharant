@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import ServiceLayout from "@/components/site/ServiceLayout";
 
+import GlossaryLink from "@/components/site/GlossaryLink";
+
 export const Route = createFileRoute("/servicio-de-mantencion-de-areas-verdes")({
   head: () => ({
     meta: [
@@ -27,7 +29,7 @@ function MantencionPage() {
           Excelencia en el Cuidado de su Entorno
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-6">
-          En Paisajismo Bascharant, entendemos que las áreas verdes de su empresa son la carta de presentación ante sus clientes y el entorno de bienestar para sus colaboradores. Nuestro servicio de <strong>mantención de áreas verdes en Chile</strong> está diseñado específicamente para el sector corporativo (B2B), inmobiliarias e instituciones.
+          En Paisajismo Bascharant, entendemos que las áreas verdes de su empresa son la carta de presentación ante sus clientes y el entorno de bienestar para sus colaboradores. Nuestro servicio de <strong>mantención de áreas verdes en Chile</strong> está diseñado específicamente para el sector corporativo (<GlossaryLink>B2B</GlossaryLink>), inmobiliarias e instituciones.
         </p>
         <h3 className="text-xl font-medium mt-8 mb-3">¿Qué incluye nuestro servicio?</h3>
         <ul className="space-y-2 text-muted-foreground mb-8">
@@ -38,7 +40,7 @@ function MantencionPage() {
           <li>✓ <strong>Revisión periódica del sistema de riego</strong> para asegurar la eficiencia hídrica.</li>
         </ul>
         <p className="text-muted-foreground leading-relaxed">
-          Trabajamos bajo altos estándares de seguridad, con personal acreditado y entregando informes periódicos del estado fitosanitario de sus instalaciones. Asegure el valor de su inversión paisajística con nosotros.
+          Trabajamos bajo altos estándares de seguridad, con personal acreditado y entregando informes periódicos del estado <GlossaryLink>fitosanitario</GlossaryLink> de sus instalaciones. Asegure el valor de su inversión paisajística con nosotros.
         </p>
       </div>
     </ServiceLayout>

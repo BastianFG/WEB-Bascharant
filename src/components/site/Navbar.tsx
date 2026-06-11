@@ -6,6 +6,7 @@ const links = [
   { href: "/#servicios", label: "Servicios" },
   { href: "/proyecto-paisajismo", label: "Proyectos" },
   { href: "/sobre-nosotros", label: "Sobre Nosotros" },
+  { href: "/glosario", label: "Glosario" },
   { href: "/#empresas", label: "Propuesta Comercial" },
   { href: "/#contacto", label: "Contacto" },
 ];

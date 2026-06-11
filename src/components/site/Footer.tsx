@@ -60,6 +60,9 @@ export default function Footer() {
               <li>
                 <a href="/sobre-nosotros" className="hover:text-white transition-colors duration-300">Sobre Nosotros</a>
               </li>
+              <li>
+                <a href="/glosario" className="hover:text-white transition-colors duration-300 text-[var(--olive)]">Glosario Técnico</a>
+              </li>
             </ul>
           </div>
 

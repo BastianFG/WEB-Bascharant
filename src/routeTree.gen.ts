@@ -22,6 +22,7 @@ import { Route as ProyectoFumigacionControlFitosanitarioQuilicuraChileRouteImpor
 import { Route as ProyectoDisenoPaisajismoVialCopecSantiagoChileRouteImport } from './routes/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
 import { Route as ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRouteImport } from './routes/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
 import { Route as PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRouteImport } from './routes/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+import { Route as GlosarioRouteImport } from './routes/glosario'
 import { Route as DisenoYConstrucionDeSistemasDeRiegoRouteImport } from './routes/diseno-y-construcion-de-sistemas-de-riego'
 import { Route as DisenoYConstruccionDeAreasVerdesRouteImport } from './routes/diseno-y-construccion-de-areas-verdes'
 import { Route as ControlFitosanitarioYManejoDePlagasAreasVerdesRouteImport } from './routes/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
@@ -103,6 +104,11 @@ const PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute =
     path: '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial',
     getParentRoute: () => rootRouteImport,
   } as any)
+const GlosarioRoute = GlosarioRouteImport.update({
+  id: '/glosario',
+  path: '/glosario',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DisenoYConstrucionDeSistemasDeRiegoRoute =
   DisenoYConstrucionDeSistemasDeRiegoRouteImport.update({
     id: '/diseno-y-construcion-de-sistemas-de-riego',
@@ -132,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/control-fitosanitario-y-manejo-de-plagas-areas-verdes': typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
   '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
+  '/glosario': typeof GlosarioRoute
   '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
   '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile': typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
   '/proyecto-diseno-paisajismo-vial-copec-santiago-chile': typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
@@ -151,6 +158,7 @@ export interface FileRoutesByTo {
   '/control-fitosanitario-y-manejo-de-plagas-areas-verdes': typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
   '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
+  '/glosario': typeof GlosarioRoute
   '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
   '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile': typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
   '/proyecto-diseno-paisajismo-vial-copec-santiago-chile': typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
@@ -171,6 +179,7 @@ export interface FileRoutesById {
   '/control-fitosanitario-y-manejo-de-plagas-areas-verdes': typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
   '/diseno-y-construccion-de-areas-verdes': typeof DisenoYConstruccionDeAreasVerdesRoute
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
+  '/glosario': typeof GlosarioRoute
   '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
   '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile': typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
   '/proyecto-diseno-paisajismo-vial-copec-santiago-chile': typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
@@ -192,6 +201,7 @@ export interface FileRouteTypes {
     | '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
     | '/diseno-y-construccion-de-areas-verdes'
     | '/diseno-y-construcion-de-sistemas-de-riego'
+    | '/glosario'
     | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
     | '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
     | '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
@@ -211,6 +221,7 @@ export interface FileRouteTypes {
     | '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
     | '/diseno-y-construccion-de-areas-verdes'
     | '/diseno-y-construcion-de-sistemas-de-riego'
+    | '/glosario'
     | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
     | '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
     | '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
@@ -230,6 +241,7 @@ export interface FileRouteTypes {
     | '/control-fitosanitario-y-manejo-de-plagas-areas-verdes'
     | '/diseno-y-construccion-de-areas-verdes'
     | '/diseno-y-construcion-de-sistemas-de-riego'
+    | '/glosario'
     | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
     | '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
     | '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
@@ -250,6 +262,7 @@ export interface RootRouteChildren {
   ControlFitosanitarioYManejoDePlagasAreasVerdesRoute: typeof ControlFitosanitarioYManejoDePlagasAreasVerdesRoute
   DisenoYConstruccionDeAreasVerdesRoute: typeof DisenoYConstruccionDeAreasVerdesRoute
   DisenoYConstrucionDeSistemasDeRiegoRoute: typeof DisenoYConstrucionDeSistemasDeRiegoRoute
+  GlosarioRoute: typeof GlosarioRoute
   PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute: typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
   ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute: typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
   ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute: typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
@@ -358,6 +371,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/glosario': {
+      id: '/glosario'
+      path: '/glosario'
+      fullPath: '/glosario'
+      preLoaderRoute: typeof GlosarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/diseno-y-construcion-de-sistemas-de-riego': {
       id: '/diseno-y-construcion-de-sistemas-de-riego'
       path: '/diseno-y-construcion-de-sistemas-de-riego'
@@ -396,6 +416,7 @@ const rootRouteChildren: RootRouteChildren = {
   DisenoYConstruccionDeAreasVerdesRoute: DisenoYConstruccionDeAreasVerdesRoute,
   DisenoYConstrucionDeSistemasDeRiegoRoute:
     DisenoYConstrucionDeSistemasDeRiegoRoute,
+  GlosarioRoute: GlosarioRoute,
   PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute:
     PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute,
   ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute:

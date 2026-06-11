@@ -140,9 +140,9 @@ export default function Contact() {
         {/* 3 Horizontal Maps Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { city: "Santiago", query: "Santiago,Chile", zoom: 11, url: "https://www.google.com/maps/place/Santiago" },
+            { city: "Santiago", query: "Santiago,Chile", zoom: 12, url: "https://www.google.com/maps/place/Santiago" },
             { city: "Zapallar", query: "Zapallar,Chile", zoom: 12, url: "https://www.google.com/maps/place/Zapallar" },
-            { city: "Frutillar", query: "Frutillar,Chile", zoom: 11, url: "https://www.google.com/maps/place/Frutillar" }
+            { city: "Frutillar", query: "Frutillar,Chile", zoom: 12, url: "https://www.google.com/maps/place/Frutillar" }
           ].map((location) => (
             <div key={location.city} className="relative h-[280px] md:h-[360px] overflow-hidden rounded-2xl border border-border bg-background hover:shadow-[var(--shadow-soft)] transition-all duration-500 group/map">
               <iframe

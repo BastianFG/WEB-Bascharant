@@ -148,9 +148,9 @@ function ContactPage() {
               className="lg:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6"
             >
               {[
-                { city: "Santiago", query: "Santiago,Chile", zoom: 11, url: "https://www.google.com/maps/place/Santiago" },
+                { city: "Santiago", query: "Santiago,Chile", zoom: 12, url: "https://www.google.com/maps/place/Santiago" },
                 { city: "Zapallar", query: "Zapallar,Chile", zoom: 12, url: "https://www.google.com/maps/place/Zapallar" },
-                { city: "Frutillar", query: "Frutillar,Chile", zoom: 11, url: "https://www.google.com/maps/place/Frutillar" }
+                { city: "Frutillar", query: "Frutillar,Chile", zoom: 12, url: "https://www.google.com/maps/place/Frutillar" }
               ].map((location) => (
                 <div key={location.city} className="relative h-[320px] md:h-[400px] overflow-hidden rounded-3xl border border-border bg-muted group shadow-sm transition-shadow duration-500 hover:shadow-xl">
                   <div className="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none z-20" />

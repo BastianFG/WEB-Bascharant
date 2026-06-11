@@ -7,7 +7,7 @@ const links = [
   { href: "/proyecto-paisajismo", label: "Proyectos" },
   { href: "/sobre-nosotros", label: "Sobre Nosotros" },
   { href: "/#empresas", label: "Cotizar" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export default function Navbar() {

@@ -72,14 +72,14 @@ function ContactPage() {
           </div>
 
           {/* Bento Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-20">
             
-            {/* Primary Contact Column (Left) */}
+            {/* Primary Contact Row */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="lg:col-span-5 flex flex-col gap-6"
+              className="lg:col-span-12 grid grid-cols-1 lg:grid-cols-2 gap-6"
             >
               {/* WhatsApp Card - Primary */}
               <a
@@ -140,50 +140,56 @@ function ContactPage() {
               </div>
             </motion.div>
 
-            {/* Map Column (Right) */}
+            {/* Maps Row (3 columns horizontally) */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
-              className="lg:col-span-7 relative"
+              className="lg:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6"
             >
-              <div className="relative h-full min-h-[400px] overflow-hidden rounded-3xl border border-border bg-muted group shadow-sm transition-shadow duration-500 hover:shadow-xl">
-                <div className="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none z-20" />
-                <iframe
-                  src="https://maps.google.com/maps?q=Santiago,Chile&t=&z=6&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0 w-full h-full grayscale-[50%] contrast-[1.1] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 z-0"
-                />
-                
-                {/* Floating Map Overlay */}
-                <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-auto z-10 pointer-events-none">
-                  <div className="bg-background/80 backdrop-blur-md border border-border p-5 rounded-2xl shadow-2xl pointer-events-auto hover:border-[var(--olive)]/50 transition-colors">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-[var(--olive)]/10 p-2.5 rounded-full text-[var(--olive)]">
-                        <MapPin strokeWidth={1.5} className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <div className="font-medium text-foreground mb-1">Zona de Cobertura</div>
-                        <p className="text-sm text-muted-foreground mb-3">Santiago · Zapallar · Frutillar</p>
-                        <a
-                          href="https://www.google.com/maps/dir/Santiago/Zapallar/Frutillar"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center text-xs font-semibold text-[var(--olive)] hover:text-primary transition-colors group/link"
-                        >
-                          Ver en Maps 
-                          <ArrowRight className="h-3 w-3 ml-1 group-hover/link:translate-x-1 transition-transform" />
-                        </a>
+              {[
+                { city: "Santiago", query: "Santiago,Chile", zoom: 11, url: "https://www.google.com/maps/place/Santiago" },
+                { city: "Zapallar", query: "Zapallar,Chile", zoom: 12, url: "https://www.google.com/maps/place/Zapallar" },
+                { city: "Frutillar", query: "Frutillar,Chile", zoom: 11, url: "https://www.google.com/maps/place/Frutillar" }
+              ].map((location) => (
+                <div key={location.city} className="relative h-[320px] md:h-[400px] overflow-hidden rounded-3xl border border-border bg-muted group shadow-sm transition-shadow duration-500 hover:shadow-xl">
+                  <div className="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none z-20" />
+                  <iframe
+                    src={`https://maps.google.com/maps?q=${location.query}&t=&z=${location.zoom}&ie=UTF8&iwloc=&output=embed`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="absolute inset-0 w-full h-full grayscale-[30%] contrast-[1.05] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 z-0"
+                  />
+                  
+                  {/* Floating Map Overlay */}
+                  <div className="absolute bottom-4 left-4 right-4 z-10 pointer-events-none">
+                    <div className="bg-background/90 backdrop-blur-md border border-border p-4 rounded-2xl shadow-xl pointer-events-auto hover:border-[var(--olive)]/50 transition-colors">
+                      <div className="flex flex-col gap-2">
+                        <div className="flex items-center gap-2">
+                          <MapPin strokeWidth={1.5} className="h-4 w-4 text-[var(--olive)]" />
+                          <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium">Cobertura</div>
+                        </div>
+                        <div className="flex items-end justify-between gap-2">
+                          <div className="font-medium text-foreground leading-none">{location.city}</div>
+                          <a
+                            href={location.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-[11px] font-medium text-[var(--olive)] hover:text-primary transition-colors group/link"
+                          >
+                            Ver en Maps 
+                            <ArrowRight className="h-3 w-3 ml-1 group-hover/link:translate-x-1 transition-transform" />
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </motion.div>
 
             {/* Social Links Row */}

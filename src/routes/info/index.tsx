@@ -5,6 +5,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import FloatingBackButton from "@/components/site/FloatingBackButton";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/info/")({
   head: () => ({
@@ -22,7 +23,7 @@ export const Route = createFileRoute("/info/")({
 const ARTICLES = [
   {
     title: "La Importancia de las Fumigaciones Preventivas",
-    description: "Descubre por qué las fumigaciones preventivas son esenciales para la bioseguridad y el control integral de plagas en las empresas.",
+    description: <>Descubre por qué las <GlossaryLink>fumigaciones preventivas</GlossaryLink> son esenciales para la <GlossaryLink>bioseguridad</GlossaryLink> y el <GlossaryLink>control integral de plagas</GlossaryLink> en las empresas.</>,
     href: "/info/importancia-fumigaciones-preventivas",
     icon: <ShieldCheck className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
     tags: ["MIP", "Bioseguridad", "Corporativo"],
@@ -30,7 +31,7 @@ const ARTICLES = [
   },
   {
     title: "Importancia de la Poda Preventiva en Otoño",
-    description: "Preparar el arbolado urbano y los jardines corporativos antes del invierno reduce riesgos biomecánicos y mejora la salud vegetal.",
+    description: <>Preparar el <GlossaryLink>arbolado urbano</GlossaryLink> y los jardines corporativos antes del invierno reduce <GlossaryLink>riesgos biomecánicos</GlossaryLink> y mejora la salud vegetal.</>,
     href: "/info/importancia-poda-preventiva-otono",
     icon: <Leaf className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
     tags: ["Silvicultura", "Prevención", "Otoño"],
@@ -38,7 +39,7 @@ const ARTICLES = [
   },
   {
     title: "Beneficios del Diseño Biofílico en la Productividad",
-    description: "Aprende cómo la integración de áreas verdes y el diseño biofílico en empresas reduce el estrés y eleva la productividad.",
+    description: <>Aprende cómo la integración de áreas verdes y el <GlossaryLink>diseño biofílico</GlossaryLink> en empresas reduce el estrés y eleva la productividad.</>,
     href: "/info/beneficios-diseno-biofilico-productividad",
     icon: <BrainCircuit className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
     tags: ["Bienestar", "Biofilia", "Oficinas"],
@@ -46,7 +47,7 @@ const ARTICLES = [
   },
   {
     title: "Xerojardinería: Paisajismo ante la Crisis Hídrica",
-    description: "Conoce las ventajas corporativas del paisajismo seco y la eficiencia hídrica como solución a la sequía prolongada.",
+    description: <>Conoce las ventajas corporativas de la <GlossaryLink>Xerojardinería</GlossaryLink> (paisajismo seco) y la eficiencia hídrica como solución a la sequía prolongada.</>,
     href: "/info/xerojardineria-paisajismo-seco-corporativo",
     icon: <Droplets className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
     tags: ["Agua", "Sostenibilidad", "Nativo"],
@@ -54,7 +55,7 @@ const ARTICLES = [
   },
   {
     title: "Reducción de Costos con Riego Inteligente",
-    description: "La importancia de implementar sistemas de riego tecnificado e inteligente para optimizar el consumo de agua corporativo.",
+    description: <>La importancia de implementar sistemas de <GlossaryLink>riego tecnificado</GlossaryLink> e inteligente para optimizar el consumo de agua corporativo.</>,
     href: "/info/importancia-riego-inteligente-empresas",
     icon: <Settings2 className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
     tags: ["Tecnología", "Eficiencia", "Ahorro"],
@@ -62,7 +63,7 @@ const ARTICLES = [
   },
   {
     title: "Endoterapia Vegetal: Alternativa Ecológica",
-    description: "Innovación en sanidad vegetal que protege a los árboles sin emitir químicos al medio ambiente ni afectar a las personas.",
+    description: <>Innovación en <GlossaryLink>sanidad vegetal</GlossaryLink> mediante <GlossaryLink>Endoterapia</GlossaryLink> que protege a los árboles sin emitir químicos al medio ambiente.</>,
     href: "/info/endoterapia-vegetal-alternativa-ecologica",
     icon: <Syringe className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
     tags: ["Innovación", "Ecológico", "Árboles"],
@@ -70,7 +71,7 @@ const ARTICLES = [
   },
   {
     title: "Muros Verdes contra las Islas de Calor",
-    description: "Descubre cómo los jardines verticales combaten las altas temperaturas urbanas y mejoran la imagen corporativa.",
+    description: <>Descubre cómo los <GlossaryLink>jardines verticales</GlossaryLink> combaten las altas temperaturas urbanas (reduciendo las <GlossaryLink>islas de calor</GlossaryLink>) y mejoran la imagen corporativa.</>,
     href: "/info/muros-verdes-y-jardines-verticales-corporativos",
     icon: <ThermometerSun className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
     tags: ["Arquitectura", "Vertical", "Clima"],

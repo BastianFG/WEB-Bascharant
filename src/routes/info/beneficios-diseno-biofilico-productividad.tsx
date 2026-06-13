@@ -5,6 +5,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import FloatingBackButton from "@/components/site/FloatingBackButton";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/info/beneficios-diseno-biofilico-productividad")({
   head: () => ({
@@ -80,12 +81,12 @@ function DisenoBiofilicoArticle() {
           <div className="prose prose-lg dark:prose-invert prose-headings:font-display prose-headings:font-normal prose-a:text-[var(--olive)] prose-a:no-underline hover:prose-a:underline max-w-none">
             
             <p className="lead text-xl text-muted-foreground mb-10">
-              Las oficinas estériles y grises son cosa del pasado. Hoy en día, la incorporación estratégica de la naturaleza en los espacios de trabajo, conocida como <strong>Diseño Biofílico</strong>, se ha convertido en una herramienta comprobada para potenciar la retención de talento y la productividad.
+              Las oficinas estériles y grises son cosa del pasado. Hoy en día, la incorporación estratégica de la naturaleza en los espacios de trabajo, conocida como <strong><GlossaryLink>Diseño Biofílico</GlossaryLink></strong>, se ha convertido en una herramienta comprobada para potenciar la retención de talento y la productividad.
             </p>
 
             <h2 className="text-3xl mt-12 mb-6">¿Qué es el Diseño Biofílico?</h2>
             <p>
-              El término <em>biofilia</em> significa literalmente "amor a la vida". En arquitectura y paisajismo, se refiere a la necesidad humana innata de estar en contacto con la naturaleza. Un diseño biofílico va más allá de poner una maceta en un escritorio; implica una integración profunda de luz natural, agua, vegetación y materiales orgánicos en la estructura de la empresa.
+              El término <em><GlossaryLink>biofilia</GlossaryLink></em> significa literalmente "amor a la vida". En arquitectura y paisajismo, se refiere a la necesidad humana innata de estar en contacto con la naturaleza. Un diseño biofílico va más allá de poner una maceta en un escritorio; implica una integración profunda de luz natural, agua, vegetación y materiales orgánicos en la estructura de la empresa.
             </p>
 
             <div className="my-12 p-8 rounded-2xl bg-[var(--olive)]/5 border border-[var(--olive)]/20">

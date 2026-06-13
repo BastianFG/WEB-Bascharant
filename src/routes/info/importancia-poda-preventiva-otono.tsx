@@ -5,6 +5,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import FloatingBackButton from "@/components/site/FloatingBackButton";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/info/importancia-poda-preventiva-otono")({
   head: () => ({
@@ -85,7 +86,7 @@ function PodaPreventivaOtonoArticle() {
 
             <h2 className="text-3xl mt-12 mb-6">Más allá de la estética: Gestión de Riesgos</h2>
             <p>
-              En entornos urbanos y corporativos, un árbol no mantenido es un pasivo de alto riesgo. La <strong>evaluación de riesgo biomecánico</strong> determina qué ramas tienen pudrición o uniones débiles que podrían ceder ante el viento y la lluvia intensa del invierno.
+              En entornos urbanos y corporativos, un árbol no mantenido es un pasivo de alto riesgo. La <strong>evaluación de <GlossaryLink>riesgo biomecánico</GlossaryLink></strong> determina qué ramas tienen pudrición o uniones débiles que podrían ceder ante el viento y la lluvia intensa del invierno.
             </p>
 
             <div className="my-12 p-8 rounded-2xl bg-[var(--clay)]/5 border border-[var(--clay)]/20">
@@ -112,7 +113,7 @@ function PodaPreventivaOtonoArticle() {
 
             <h2 className="text-3xl mt-12 mb-6">Silvicultura Urbana con Expertos</h2>
             <p>
-              En Paisajismo Bascharant, nuestro servicio de <em>Silvicultura Urbana</em> emplea técnicas avanzadas de trepa y plataformas elevadoras para realizar cortas direccionales precisas. No "mutilamos" el arbolado (práctica lamentablemente común); realizamos podas sanitarias y de formación que respetan la arquitectura natural de la especie.
+              En Paisajismo Bascharant, nuestro servicio de <em><GlossaryLink>Silvicultura Urbana</GlossaryLink></em> emplea técnicas avanzadas de trepa y plataformas elevadoras para realizar cortas direccionales precisas. No "mutilamos" el arbolado (práctica lamentablemente común); realizamos podas sanitarias y de formación que respetan la arquitectura natural de la especie.
             </p>
 
           </div>

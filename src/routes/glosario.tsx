@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, BookOpen, Leaf, X } from "lucide-react";
 import Navbar from "@/components/site/Navbar";
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/glosario")({
 
 const GLOSSARY_TERMS = [
   {
-    term: "Fitosanitario",
+    term: "Fitosanitario / Sanidad Vegetal",
     definition: "Relativo a la prevención y curación de las enfermedades de las plantas. Involucra el control de plagas y enfermedades mediante métodos ecológicos, químicos o biológicos para mantener la salud integral de las áreas verdes.",
     tags: ["Mantenimiento", "Salud Vegetal"]
   },
@@ -73,7 +73,7 @@ const GLOSSARY_TERMS = [
     tags: ["Diseño", "Ejecución"]
   },
   {
-    term: "Manejo Integrado de Plagas (MIP)",
+    term: "Manejo Integrado de Plagas (MIP) / Control Integral de Plagas",
     definition: "Estrategia ecológica que se enfoca en la prevención a largo plazo de plagas mediante la combinación de técnicas como el control biológico, físico y químico de manera focalizada para prevenir infestaciones antes de que ocurran.",
     tags: ["Fitosanitario", "Mantenimiento"]
   },
@@ -88,12 +88,12 @@ const GLOSSARY_TERMS = [
     tags: ["Salud", "Fitosanitario"]
   },
   {
-    term: "Biofilia",
+    term: "Biofilia / Diseño Biofílico",
     definition: "Afinidad innata del ser humano por la naturaleza. El Diseño Biofílico integra luz natural, vegetación y materiales orgánicos en oficinas para reducir el estrés, potenciar la concentración y mejorar la productividad laboral.",
     tags: ["Diseño", "Bienestar"]
   },
   {
-    term: "Isla de Calor Urbana",
+    term: "Isla de Calor Urbana / Islas de Calor",
     definition: "Fenómeno donde las áreas urbanas construidas presentan temperaturas significativamente más altas que sus alrededores naturales debido a la absorción de radiación solar por el asfalto y hormigón. Se mitiga mediante muros verdes y plantación de arbolado.",
     tags: ["Clima", "Sustentabilidad"]
   },
@@ -101,11 +101,42 @@ const GLOSSARY_TERMS = [
     term: "Estrés Hídrico",
     definition: "Condición en la cual la demanda de agua supera la cantidad disponible o la calidad del agua restringe su uso. En paisajismo, se combate mediante especies xerófitas, sistemas de riego inteligente y disminución de superficies de césped.",
     tags: ["Agua", "Sustentabilidad"]
+  },
+  {
+    term: "Fumigaciones Preventivas",
+    definition: "Aplicación programada de productos y estrategias fitosanitarias para evitar la aparición y proliferación de plagas en entornos corporativos. Asegura la bioseguridad y evita el alto costo de la reactividad ante infestaciones mayores.",
+    tags: ["Fitosanitario", "Prevención"]
+  },
+  {
+    term: "Riesgo Biomecánico / Riesgos Biomecánicos",
+    definition: "Probabilidad de que una rama o un árbol entero falle y caiga debido a pudrición, uniones débiles o exceso de peso por humedad. Se evalúa a través de silvicultura urbana preventiva para proteger personas, vehículos e infraestructura.",
+    tags: ["Arbolado", "Seguridad"]
+  },
+  {
+    term: "Riego Tecnificado / Inteligente",
+    definition: "Sistema de irrigación automatizado de alta eficiencia. Incorpora líneas de goteo, sensores de lluvia y humedad de suelo, y conexión a estaciones meteorológicas para entregar el agua exacta requerida, reduciendo drásticamente el consumo y costos hídricos.",
+    tags: ["Tecnología", "Agua"]
+  },
+  {
+    term: "Muros Verdes / Jardines Verticales",
+    definition: "Estructuras arquitectónicas verticales cubiertas de vegetación, utilizadas en fachadas o interiores. Son vitales en zonas de alta densidad ya que combaten el efecto isla de calor, aíslan el ruido, purifican el aire y optimizan espacios reducidos.",
+    tags: ["Arquitectura Verde", "Diseño"]
   }
 ];
 
 function GlosarioPage() {
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Si el usuario llega desde un enlace con parámetro ?q=Termino
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get("q");
+      if (q) {
+        setSearchQuery(q);
+      }
+    }
+  }, []);
 
   const filteredTerms = useMemo(() => {
     return GLOSSARY_TERMS.filter((item) => {

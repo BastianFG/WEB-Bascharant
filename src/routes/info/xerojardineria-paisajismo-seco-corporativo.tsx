@@ -5,6 +5,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import FloatingBackButton from "@/components/site/FloatingBackButton";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/info/xerojardineria-paisajismo-seco-corporativo")({
   head: () => ({
@@ -80,7 +81,7 @@ function XerojardineriaArticle() {
           <div className="prose prose-lg dark:prose-invert prose-headings:font-display prose-headings:font-normal prose-a:text-[var(--charcoal)] prose-a:no-underline hover:prose-a:underline max-w-none">
             
             <p className="lead text-xl text-muted-foreground mb-10">
-              Con el cambio climático y la sequía prolongada en la zona central, mantener vastas extensiones de césped en corporaciones es insostenible financiera y ecológicamente. La respuesta es la <strong>Xerojardinería</strong> (o Paisajismo Seco).
+              Con el cambio climático y la sequía prolongada en la zona central, mantener vastas extensiones de césped en corporaciones es insostenible financiera y ecológicamente. La respuesta es la <strong><GlossaryLink>Xerojardinería</GlossaryLink></strong> (o Paisajismo Seco).
             </p>
 
             <h2 className="text-3xl mt-12 mb-6">El Fin del Césped Excesivo</h2>
@@ -101,7 +102,7 @@ function XerojardineriaArticle() {
             <ul>
               <li><strong>Selección Vegetal Nativa:</strong> Especies xerófitas o de clima mediterráneo (como el pennisetum, romero rastrero, lavandas y suculentas) que están biológicamente preparadas para soportar largos períodos de sequía.</li>
               <li><strong>Uso de Mulch y Cubresuelos:</strong> Aplicar cortezas de árbol, gravillas o canto rodado sobre el sustrato frena la evaporación del agua, manteniendo la humedad del suelo y dificultando el crecimiento de malezas.</li>
-              <li><strong>Topografía Funcional:</strong> Diseño de leves desniveles ("Rain Gardens") que captan el agua lluvia invernal y permiten que percole hacia las napas, evitando la escorrentía inútil.</li>
+              <li><strong>Topografía Funcional:</strong> Diseño de leves desniveles ("Rain Gardens") que captan el agua lluvia invernal y permiten que percole hacia las napas, evitando la <GlossaryLink>escorrentía</GlossaryLink> inútil.</li>
             </ul>
 
             <h2 className="text-3xl mt-12 mb-6">Imagen Corporativa de Responsabilidad</h2>

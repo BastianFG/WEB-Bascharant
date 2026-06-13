@@ -5,6 +5,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import FloatingBackButton from "@/components/site/FloatingBackButton";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/info/importancia-riego-inteligente-empresas")({
   head: () => ({
@@ -90,7 +91,7 @@ function RiegoInteligenteArticle() {
               <Settings2 className="w-10 h-10 text-[var(--clay)] mb-4" />
               <h3 className="text-xl font-medium mb-3 mt-0 text-foreground">El Riego Tecnificado e Inteligente</h3>
               <p className="text-muted-foreground text-base m-0">
-                Un sistema de riego inteligente incluye <strong>sensores de lluvia y humedad de suelo</strong>. Además, los programadores modernos se conectan a internet para leer el pronóstico del clima local, ajustando automáticamente los tiempos de riego según la evapotranspiración diaria real.
+                Un sistema de <GlossaryLink>riego inteligente</GlossaryLink> incluye <strong>sensores de lluvia y humedad de suelo</strong>. Además, los programadores modernos se conectan a internet para leer el pronóstico del clima local, ajustando automáticamente los tiempos de riego según la evapotranspiración diaria real.
               </p>
             </div>
 

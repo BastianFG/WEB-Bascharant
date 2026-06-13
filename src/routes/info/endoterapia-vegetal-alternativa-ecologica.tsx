@@ -5,6 +5,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import FloatingBackButton from "@/components/site/FloatingBackButton";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/info/endoterapia-vegetal-alternativa-ecologica")({
   head: () => ({
@@ -78,14 +79,14 @@ function EndoterapiaArticle() {
           <div className="prose prose-lg dark:prose-invert prose-headings:font-display prose-headings:font-normal prose-a:text-[var(--olive)] prose-a:no-underline hover:prose-a:underline max-w-none">
             
             <p className="lead text-xl text-muted-foreground mb-10">
-              Durante décadas, el control de plagas en árboles de gran altura ha dependido de fumigaciones aéreas y aspersiones. Este método no solo desperdicia gran cantidad de químicos, sino que es altamente tóxico para los transeúntes, empleados y fauna útil (como abejas). La <strong>Endoterapia</strong> llega a cambiar el paradigma.
+              Durante décadas, el control de plagas en árboles de gran altura ha dependido de fumigaciones aéreas y aspersiones. Este método no solo desperdicia gran cantidad de químicos, sino que es altamente tóxico para los transeúntes, empleados y fauna útil (como abejas). La <strong><GlossaryLink>Endoterapia</GlossaryLink></strong> llega a cambiar el paradigma.
             </p>
 
             <div className="my-12 p-8 rounded-2xl bg-[var(--olive)]/5 border border-[var(--olive)]/20">
               <Syringe className="w-10 h-10 text-[var(--olive)] mb-4" />
               <h3 className="text-xl font-medium mb-3 mt-0 text-foreground">¿En qué consiste la Endoterapia?</h3>
               <p className="text-muted-foreground text-base m-0">
-                Al igual que una "vacuna", la endoterapia vegetal consiste en la inyección directa del producto fitosanitario (o nutriente) en el sistema vascular del árbol. La propia savia de la planta se encarga de distribuir el producto de manera uniforme hasta las hojas, eliminando la plaga desde adentro.
+                Al igual que una "vacuna", la <GlossaryLink>endoterapia vegetal</GlossaryLink> consiste en la inyección directa del producto fitosanitario (o nutriente) en el sistema vascular del árbol. La propia savia de la planta se encarga de distribuir el producto de manera uniforme hasta las hojas, eliminando la plaga desde adentro.
               </p>
             </div>
 

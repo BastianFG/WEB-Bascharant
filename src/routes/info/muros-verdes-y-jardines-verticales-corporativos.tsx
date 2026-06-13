@@ -5,6 +5,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import FloatingBackButton from "@/components/site/FloatingBackButton";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/info/muros-verdes-y-jardines-verticales-corporativos")({
   head: () => ({
@@ -78,14 +79,14 @@ function MurosVerdesArticle() {
           <div className="prose prose-lg dark:prose-invert prose-headings:font-display prose-headings:font-normal prose-a:text-[var(--sage)] prose-a:no-underline hover:prose-a:underline max-w-none">
             
             <p className="lead text-xl text-muted-foreground mb-10">
-              En zonas densamente pobladas y parques industriales, el espacio horizontal es un recurso escaso. Las fachadas de edificios, muros ciegos y columnas representan "lienzos" perfectos para implementar <strong>jardines verticales</strong> que no solo decoran, sino que cumplen un rol ecológico vital.
+              En zonas densamente pobladas y parques industriales, el espacio horizontal es un recurso escaso. Las fachadas de edificios, muros ciegos y columnas representan "lienzos" perfectos para implementar <strong><GlossaryLink>jardines verticales</GlossaryLink></strong> que no solo decoran, sino que cumplen un rol ecológico vital.
             </p>
 
             <div className="my-12 p-8 rounded-2xl bg-[var(--sage)]/10 border border-[var(--sage)]/20">
               <ThermometerSun className="w-10 h-10 text-[var(--sage)] mb-4" />
               <h3 className="text-xl font-medium mb-3 mt-0 text-foreground">El Efecto de "Isla de Calor"</h3>
               <p className="text-muted-foreground text-base m-0">
-                Las superficies de concreto y asfalto absorben la radiación solar y la re-emiten como calor, elevando artificialmente la temperatura de la ciudad. Un muro verde actúa como un <strong>aislante térmico</strong>. Refleja la radiación solar, reduce la temperatura de la pared exterior (y por ende el uso de aire acondicionado interior) y refresca el aire mediante la evapotranspiración de las hojas.
+                Las superficies de concreto y asfalto absorben la radiación solar y la re-emiten como calor, elevando artificialmente la temperatura de la ciudad. Un <GlossaryLink>muro verde</GlossaryLink> actúa como un <strong>aislante térmico</strong>. Refleja la radiación solar, reduce la temperatura de la pared exterior (y por ende el uso de aire acondicionado interior) y refresca el aire mediante la evapotranspiración de las hojas.
               </p>
             </div>
 

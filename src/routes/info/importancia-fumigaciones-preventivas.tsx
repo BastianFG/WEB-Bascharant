@@ -5,6 +5,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import FloatingBackButton from "@/components/site/FloatingBackButton";
+import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/info/importancia-fumigaciones-preventivas")({
   head: () => ({
@@ -104,7 +105,7 @@ function FumigacionesPreventivasArticle() {
                 <div>
                   <strong className="block text-lg font-medium text-foreground mb-1">Protección de la Bioseguridad</strong>
                   <span className="text-muted-foreground block">
-                    Las plagas son <em>vectores sanitarios</em> de múltiples enfermedades transmisibles al ser humano. La bioseguridad en el lugar de trabajo garantiza un ambiente sano, reduciendo el ausentismo laboral por enfermedades.
+                    Las plagas son <em>vectores sanitarios</em> de múltiples enfermedades transmisibles al ser humano. La <GlossaryLink>bioseguridad</GlossaryLink> en el lugar de trabajo garantiza un ambiente sano, reduciendo el ausentismo laboral por enfermedades.
                   </span>
                 </div>
               </li>
@@ -130,7 +131,7 @@ function FumigacionesPreventivasArticle() {
 
             <h2 className="text-3xl mt-12 mb-6">Nuestra Estrategia B2B</h2>
             <p>
-              En Paisajismo Bascharant, nuestros contratos de mantenimiento incluyen servicios de control fitosanitario programado y fumigaciones preventivas. A través de un <strong>SLA (Service Level Agreement)</strong>, aseguramos inspecciones periódicas, barreras perimetrales y endoterapia en el arbolado, protegiendo las inversiones de nuestros clientes corporativos.
+              En Paisajismo Bascharant, nuestros contratos de mantenimiento incluyen servicios de control fitosanitario programado y <GlossaryLink>fumigaciones preventivas</GlossaryLink>. A través de un <strong>SLA (Service Level Agreement)</strong>, aseguramos inspecciones periódicas, barreras perimetrales y <GlossaryLink>endoterapia</GlossaryLink> en el arbolado, protegiendo las inversiones de nuestros clientes corporativos.
             </p>
 
             <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-6">

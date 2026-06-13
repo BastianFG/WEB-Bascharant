@@ -25,9 +25,8 @@ export default function FloatingCTA() {
               <Calendar strokeWidth={1.4} className="h-5 w-5 text-[var(--charcoal)]" />
             </span>
           </span>
-          <span className="hidden md:flex flex-col text-left leading-tight relative z-10">
-            <span className="text-[9px] tracking-[0.2em] uppercase text-[var(--sage)] group-hover:text-[var(--olive)] transition-colors duration-500">Reunión Técnica</span>
-            <span className="text-[13px] font-medium text-white/90 group-hover:text-[var(--charcoal)] transition-colors duration-500">Agendar Sesión</span>
+          <span className="hidden md:flex flex-col items-center text-center leading-tight relative z-10">
+            <span className="text-[13px] font-medium text-white/90 group-hover:text-[var(--charcoal)] transition-colors duration-500">Agendar</span>
           </span>
         </motion.a>
       </div>
@@ -55,7 +54,7 @@ export default function FloatingCTA() {
               <MessageCircle strokeWidth={1.4} className="h-5 w-5 text-white" />
             </span>
           </span>
-          <span className="hidden md:flex flex-col text-left leading-tight relative z-10">
+          <span className="hidden md:flex flex-col items-center text-center leading-tight relative z-10">
             <span className="text-[9px] tracking-[0.2em] uppercase text-emerald-400 group-hover:text-emerald-700 transition-colors duration-500">Canal Directo</span>
             <span className="text-[13px] font-medium text-white/90 group-hover:text-[var(--charcoal)] transition-colors duration-500">WhatsApp</span>
           </span>

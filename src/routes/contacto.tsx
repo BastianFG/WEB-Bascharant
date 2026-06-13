@@ -56,7 +56,7 @@ function ContactPage() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-4xl md:text-6xl font-display tracking-tight leading-[1.05] text-balance mb-6"
             >
-              Agenda una sesión <span className="italic text-muted-foreground">técnica.</span>
+              Agenda una visita <span className="italic text-muted-foreground">técnica.</span>
             </motion.h1>
             
             <motion.div 

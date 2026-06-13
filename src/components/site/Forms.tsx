@@ -352,18 +352,29 @@ export default function Forms() {
         </div>
 
         {/* Redirect footnote for B2C/particular traffic */}
-        <div className="mt-12 text-center text-xs text-muted-foreground max-w-md mx-auto">
-          ¿Eres un particular? Para proyectos residenciales menores o compras de productos, por
-          favor visita nuestra{" "}
-          <a
-            href="https://www.bascharant.store/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-foreground font-semibold"
-          >
-            Tienda Bascharant
-          </a>{" "}
-          o contáctanos directamente a nuestro WhatsApp corporativo.
+        <div className="mt-16 mx-auto max-w-2xl">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--olive)]/10 to-transparent border border-[var(--olive)]/20 p-6 md:p-8 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left transition-all duration-500 hover:border-[var(--olive)]/40 hover:shadow-lg">
+            <div className="flex-shrink-0 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[var(--olive)]/20 text-[var(--olive)]">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
+            <div className="flex-grow">
+              <h4 className="text-[17px] font-semibold text-foreground mb-1.5">¿Eres un particular o buscas servicios para el hogar?</h4>
+              <p className="text-[14px] text-muted-foreground leading-relaxed">
+                Para proyectos residenciales menores, jardinería en casas particulares o compras de productos, por favor visita nuestra plataforma dedicada o escríbenos al WhatsApp.
+              </p>
+            </div>
+            <div className="flex-shrink-0 mt-4 sm:mt-0">
+              <a
+                href="https://bascharant.store/servicios"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center whitespace-nowrap rounded-full text-[13px] font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-[var(--olive)] text-white hover:bg-[var(--olive)]/90 h-11 px-7 shadow-sm hover:shadow-md"
+              >
+                Ir a Servicios{" "}
+                <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

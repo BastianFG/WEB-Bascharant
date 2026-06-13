@@ -8,11 +8,11 @@ import img from "@/assets/Podaaltura.png";
 export const Route = createFileRoute("/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile")({
   head: () => ({
     meta: [
-      { title: "Mantención Áreas Verdes Industriales San Ignacio Chile | Bascharant" },
-      { name: "description", content: "Contrato de mantención de áreas verdes industriales y poda en altura en San Ignacio. Empresa líder en paisajismo en Chile." },
-      { name: "keywords", content: "mantencion areas verdes industriales, poda en altura chile, paisajismo industrial, jardineria san ignacio" },
-      { property: "og:title", content: "Mantención Áreas Verdes Industriales San Ignacio Chile | Bascharant" },
-      { property: "og:description", content: "Contrato de mantención de áreas verdes industriales y poda en altura en San Ignacio. Empresa líder en paisajismo en Chile." },
+      { title: "Mantención Áreas Verdes  San Ignacio Chile | Bascharant" },
+      { name: "description", content: "Contrato de mantención de áreas verdes  y poda en altura en San Ignacio. Empresa líder en paisajismo en Chile." },
+      { name: "keywords", content: "mantencion areas verdes , poda en altura chile, paisajismo industrial, jardineria san ignacio" },
+      { property: "og:title", content: "Mantención Áreas Verdes  San Ignacio Chile | Bascharant" },
+      { property: "og:description", content: "Contrato de mantención de áreas verdes  y poda en altura en San Ignacio. Empresa líder en paisajismo en Chile." },
     ],
   }),
   component: ProjectDetail,
@@ -32,7 +32,7 @@ function ProjectDetail() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Volver a Proyectos
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">{ "Mantención de Áreas Verdes Industriales en San Ignacio" }</h1>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">{ "Mantención de Áreas Verdes en San Ignacio" }</h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
@@ -40,14 +40,14 @@ function ProjectDetail() {
             <div className="rounded-3xl overflow-hidden bg-muted border border-border/50 shadow-lg mb-10">
               <img 
                 src={img} 
-                alt="Mantención de Áreas Verdes Industriales en San Ignacio" 
+                alt="Mantención de Áreas Verdes  en San Ignacio" 
                 className="w-full h-auto max-h-[600px] object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2 className="text-2xl font-semibold mb-4 text-primary">Descripción del Proyecto</h2>
-              <p className="text-muted-foreground leading-relaxed text-[17px]" dangerouslySetInnerHTML={{ __html: 'Nuestro servicio continuo de <strong>mantención de áreas verdes industriales</strong> garantiza entornos corporativos seguros y estéticos. En San Ignacio, llevamos a cabo rigurosas labores de <strong>poda en altura</strong> y cuidado paisajístico bajo un modelo de contrato recurrente. En Bascharant somos la empresa experta en <strong>paisajismo en Chile</strong> orientada al sector industrial.' }}></p>
+              <p className="text-muted-foreground leading-relaxed text-[17px]" dangerouslySetInnerHTML={{ __html: 'Nuestro servicio continuo de <strong>mantención de áreas verdes </strong> garantiza entornos corporativos seguros y estéticos. En San Ignacio, llevamos a cabo rigurosas labores de <strong>poda en altura</strong> y cuidado paisajístico bajo un modelo de contrato recurrente. En Bascharant somos la empresa experta en <strong>paisajismo en Chile</strong> orientada al sector industrial.' }}></p>
             </div>
           </div>
           

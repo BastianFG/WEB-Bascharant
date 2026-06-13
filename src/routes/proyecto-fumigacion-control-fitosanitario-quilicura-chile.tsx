@@ -10,10 +10,10 @@ export const Route = createFileRoute("/proyecto-fumigacion-control-fitosanitario
   head: () => ({
     meta: [
       { title: "Fumigación y Control Fitosanitario Áreas Verdes Quilicura | Bascharant" },
-      { name: "description", content: "Servicio de fumigación y control fitosanitario para grandes superficies industriales en Quilicura. Expertos en salud vegetal en Chile." },
+      { name: "description", content: "Servicio de fumigación y control fitosanitario para grandes superficies  en Quilicura. Expertos en salud vegetal en Chile." },
       { name: "keywords", content: "fumigacion areas verdes, control fitosanitario chile, prevencion de plagas, mantencion areas verdes quilicura" },
       { property: "og:title", content: "Fumigación y Control Fitosanitario Áreas Verdes Quilicura | Bascharant" },
-      { property: "og:description", content: "Servicio de fumigación y control fitosanitario para grandes superficies industriales en Quilicura. Expertos en salud vegetal en Chile." },
+      { property: "og:description", content: "Servicio de fumigación y control fitosanitario para grandes superficies  en Quilicura. Expertos en salud vegetal en Chile." },
     ],
   }),
   component: ProjectDetail,

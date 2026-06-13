@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 const links = [
   { href: "/#inicio", label: "Inicio" },
   { href: "/#servicios", label: "Servicios" },
-  { href: "/proyecto-paisajismo", label: "Proyectos" },
   { href: "/sobre-nosotros", label: "Sobre Nosotros" },
   { href: "/#empresas", label: "Cotizar" },
   { href: "/#contacto", label: "Contacto" },
+  { href: "/proyecto-paisajismo", label: "Portafolio Fotográfico" },
 ];
 
 export default function Navbar() {

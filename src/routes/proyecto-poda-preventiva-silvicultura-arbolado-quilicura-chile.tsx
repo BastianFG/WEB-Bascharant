@@ -3,7 +3,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import img from "@/assets/PodaQuilicura.png";
+import img from "@/assets/Trabajos/PodaQuilicura.png";
 import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/proyecto-poda-preventiva-silvicultura-arbolado-quilicura-chile")({

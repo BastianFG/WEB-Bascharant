@@ -3,7 +3,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import img from "@/assets/Zap2.jpeg";
+import img from "@/assets/Paisajismo/Zap2.jpeg";
 
 export const Route = createFileRoute("/proyecto-paisajismo-residencial-zapallar-chile")({
   head: () => ({

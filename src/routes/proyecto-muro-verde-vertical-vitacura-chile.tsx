@@ -3,7 +3,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import img from "@/assets/g3.jpg";
+import img from "@/assets/Paisajismo/g3.jpg";
 
 export const Route = createFileRoute("/proyecto-muro-verde-vertical-vitacura-chile")({
   head: () => ({

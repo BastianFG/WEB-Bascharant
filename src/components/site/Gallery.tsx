@@ -1,16 +1,23 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import g1 from "@/assets/g1.jpg";
-import g2 from "@/assets/g2.jpg";
-import g3 from "@/assets/g3.jpg";
-import g4 from "@/assets/g4.jpg";
-import g5 from "@/assets/g5.jpg";
+import g1 from "@/assets/Trabajos/Movimiento-macetas-quilicura-1.jpg";
+import g2 from "@/assets/Paisajismo/g2.jpg";
+import g3 from "@/assets/Paisajismo/g3.jpg";
+import g4 from "@/assets/Paisajismo/g4.jpg";
+import g5 from "@/assets/Paisajismo/g5.jpg";
 import g6 from "@/assets/g6.jpg";
-import g7 from "@/assets/PodaQuilicura.png";
-import g8 from "@/assets/Podaaltura.png";
-import g9 from "@/assets/Catapilco.png";
-import g10 from "@/assets/Zap2.jpeg";
+import g7 from "@/assets/Trabajos/PodaQuilicura.png";
+import g8 from "@/assets/Trabajos/Podaaltura.png";
+import g9 from "@/assets/Paisajismo/Catapilco.png";
+import g10 from "@/assets/Paisajismo/Zap2.jpeg";
+import imgJardinera from "@/assets/Paisajismo/Pallet-jardinera-quilicura-reciclaje.jpg";
+import imgPodaPreventiva from "@/assets/Trabajos/Poda-Preventiva-Mall-Arauco-san-ignacio-Quilicura-1.jpg";
+import imgMovimientoSanIgnacio from "@/assets/Trabajos/Movimiento-macetas-arauco-san-ignacio-quilicura-1.jpg";
+import imgEmergencia from "@/assets/Trabajos/poda-tala-emergencia-arauco-quilicura-1.jpg";
+import imgDespeje from "@/assets/Trabajos/Despeje-canal-arauco-san-ignacio-quilicura-1.jpg";
+import imgMantencionContrato from "@/assets/Mantenciones/Mantecion-preventiva-contrato-anual-arauco-quilicura-1.jpg";
+import imgDelimitador from "@/assets/Trabajos/Delimitador- vegetal-exterior-mall-quilicura.jpg";
 
 interface ProjectItem {
   slug: string;
@@ -26,11 +33,99 @@ interface ProjectItem {
 
 const items: ProjectItem[] = [
   {
+    slug: "Mantencion-preventiva-contrato-anual-arauco-quilicura",
+    src: imgMantencionContrato,
+    t: "Mantención Preventiva Anual",
+    l: "Quilicura",
+    category: "mantencion",
+    mandante: "Arauco Quilicura",
+    superficie: "Año 2017 - Julio",
+    plazo: "Contrato Anual",
+    servicio: "Mantención corporativa",
+  },
+  {
+    slug: "Trabajo-despeje-canal-arauco-san-ignacio-quilicura",
+    src: imgDespeje,
+    t: "Despeje Preventivo de Canal",
+    l: "Quilicura",
+    category: "ejecucion",
+    mandante: "Arauco San Ignacio Quilicura",
+    superficie: "Año 2017 - Julio",
+    plazo: "2 días",
+    servicio: "Despeje de canal tras lluvias",
+  },
+  {
+    slug: "Trabajo-poda-tala-emergencia-arauco-quilicura",
+    src: imgEmergencia,
+    t: "⚠️ Poda y Tala de Emergencia",
+    l: "Quilicura",
+    category: "ejecucion",
+    mandante: "Arauco Quilicura",
+    superficie: "Año 2017 - Julio",
+    plazo: "1 día",
+    servicio: "Poda y tala de emergencia",
+  },
+  {
+    slug: "Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura",
+    src: imgMovimientoSanIgnacio,
+    t: "Movimiento Macetas San Ignacio",
+    l: "Quilicura",
+    category: "ejecucion",
+    mandante: "Arauco San Ignacio Quilicura",
+    superficie: "Año 2017 - Julio",
+    plazo: "1 día",
+    servicio: "Movimiento de macetas",
+  },
+  {
+    slug: "Trabajo-poda-preventiva-mall-arauco-san-ignacio-quilicura",
+    src: imgPodaPreventiva,
+    t: "Poda Preventiva y Silvicultura",
+    l: "Quilicura",
+    category: "ejecucion",
+    mandante: "Arauco San Ignacio Quilicura",
+    superficie: "Año 2017 - Mayo",
+    plazo: "2 días",
+    servicio: "Poda en altura y retiro de ramas",
+  },
+  {
+    slug: "Trabajo-delimitador-vegetal-exterior-mall-quilicura",
+    src: imgDelimitador,
+    t: "Delimitador Vegetal Exterior",
+    l: "Quilicura",
+    category: "ejecucion",
+    mandante: "Arauco Quilicura",
+    superficie: "Año 2017 - Mayo",
+    plazo: "2 días",
+    servicio: "Cerco vivo de Pittosporum tobira",
+  },
+  {
+    slug: "Paisajismo-jardinera-pallet-mall-quilicura",
+    src: imgJardinera,
+    t: "Jardinera Pallet Reciclado",
+    l: "Quilicura",
+    category: "diseno",
+    mandante: "Arauco Quilicura",
+    superficie: "Año 2017 - Mayo",
+    plazo: "2 días",
+    servicio: "Diseño y armado con plantas de temporada",
+  },
+  {
+    slug: "Trabajo-movimiento-macetas-quilicura",
+    src: g1,
+    t: "Movimiento de Macetas",
+    l: "Quilicura",
+    category: "ejecucion",
+    mandante: "Arauco Quilicura",
+    superficie: "Año 2017",
+    plazo: "1 día",
+    servicio: "Movimiento y reubicación de macetas",
+  },
+  {
     slug: "proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile",
     src: g9,
     t: "Paisajismo Seco y Reconversión Hídrica",
     l: "Quilicura",
-    category: "ejecucion",
+    category: "diseno",
     mandante: "Arauco Quilicura",
     superficie: "4.800 m²",
     plazo: "90 días",
@@ -162,7 +257,7 @@ export default function Gallery() {
             <p className="text-muted-foreground max-w-2xl text-[15px] md:text-[17px] leading-relaxed">
               Explora nuestra galería de proyectos B2B de <strong>Paisajismo Bascharant</strong>. 
               Nos especializamos en el <strong>diseño sustentable</strong>, <strong>ejecución de obras paisajísticas</strong>, 
-              <strong>mantención de áreas verdes industriales</strong> y <strong>soluciones de riego tecnificado</strong>. 
+              <strong>mantención de áreas verdes</strong> y <strong>soluciones de riego tecnificado</strong>. 
               Garantizamos altos estándares de calidad y compromiso ecológico para constructoras, empresas e industrias en Chile, utilizando tecnologías de vanguardia para la optimización hídrica y vegetal.
             </p>
           </div>

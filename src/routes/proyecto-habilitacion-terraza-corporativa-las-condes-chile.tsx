@@ -3,7 +3,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import img from "@/assets/g2.jpg";
+import img from "@/assets/Paisajismo/g2.jpg";
 
 export const Route = createFileRoute("/proyecto-habilitacion-terraza-corporativa-las-condes-chile")({
   head: () => ({

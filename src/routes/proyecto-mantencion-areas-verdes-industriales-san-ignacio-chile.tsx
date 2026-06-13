@@ -3,7 +3,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import img from "@/assets/Podaaltura.png";
+import img from "@/assets/Trabajos/Podaaltura.png";
 
 export const Route = createFileRoute("/proyecto-mantencion-areas-verdes-industriales-san-ignacio-chile")({
   head: () => ({

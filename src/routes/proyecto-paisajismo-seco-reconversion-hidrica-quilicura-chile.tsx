@@ -3,7 +3,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import img from "@/assets/Catapilco.png";
+import img from "@/assets/Paisajismo/Catapilco.png";
 import GlossaryLink from "@/components/site/GlossaryLink";
 
 export const Route = createFileRoute("/proyecto-paisajismo-seco-reconversion-hidrica-quilicura-chile")({

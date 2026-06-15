@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" 
-                xmlns:html="http://www.w3.org/TR/REC-html40"
-                xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-                xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+  
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
@@ -83,6 +80,7 @@
             border-bottom: 1px solid #f0f0f0;
             font-size: 0.95em;
             color: #555;
+            word-break: break-all;
           }
           tr:hover td {
             background-color: #f9fdfa;
@@ -126,73 +124,8 @@
           <p>Explorador interactivo de URLs y Sitemaps para Bascharant</p>
         </div>
         <div class="container">
-          <xsl:if test="sitemap:sitemapindex">
-            <div class="info">
-              Este es un Índice de Sitemaps. Contiene <strong style="margin: 0 4px;"><xsl:value-of select="count(sitemap:sitemapindex/sitemap:sitemap)"/></strong> sitemaps en total.
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>URL del Sitemap</th>
-                  <th>Última Modificación</th>
-                </tr>
-              </thead>
-              <tbody>
-                <xsl:for-each select="sitemap:sitemapindex/sitemap:sitemap">
-                  <tr>
-                    <td>
-                      <xsl:variable name="itemURL">
-                        <xsl:value-of select="sitemap:loc"/>
-                      </xsl:variable>
-                      <a href="{$itemURL}"><xsl:value-of select="sitemap:loc"/></a>
-                    </td>
-                    <td>
-                      <xsl:value-of select="concat(substring(sitemap:lastmod,1,10),concat(' ', substring(sitemap:lastmod,12,5)))"/>
-                    </td>
-                  </tr>
-                </xsl:for-each>
-              </tbody>
-            </table>
-          </xsl:if>
-          
-          <xsl:if test="sitemap:urlset">
-            <div class="info">
-              Este sitemap contiene <strong style="margin: 0 4px;"><xsl:value-of select="count(sitemap:urlset/sitemap:url)"/></strong> URLs en total.
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>URL</th>
-                  <th>Prioridad</th>
-                  <th>Frecuencia</th>
-                  <th>Última Modificación</th>
-                </tr>
-              </thead>
-              <tbody>
-                <xsl:for-each select="sitemap:urlset/sitemap:url">
-                  <tr>
-                    <td>
-                      <xsl:variable name="itemURL">
-                        <xsl:value-of select="sitemap:loc"/>
-                      </xsl:variable>
-                      <a href="{$itemURL}"><xsl:value-of select="sitemap:loc"/></a>
-                    </td>
-                    <td>
-                      <xsl:if test="sitemap:priority">
-                        <span class="badge"><xsl:value-of select="sitemap:priority"/></span>
-                      </xsl:if>
-                    </td>
-                    <td class="freq">
-                      <xsl:value-of select="sitemap:changefreq"/>
-                    </td>
-                    <td>
-                      <xsl:value-of select="concat(substring(sitemap:lastmod,1,10),concat(' ', substring(sitemap:lastmod,12,5)))"/>
-                    </td>
-                  </tr>
-                </xsl:for-each>
-              </tbody>
-            </table>
-          </xsl:if>
+          <xsl:apply-templates select="*[local-name()='sitemapindex']" />
+          <xsl:apply-templates select="*[local-name()='urlset']" />
         </div>
         <div class="footer">
           Generado automáticamente para el sitio web de Bascharant.
@@ -200,4 +133,73 @@
       </body>
     </html>
   </xsl:template>
+
+  <xsl:template match="*[local-name()='sitemapindex']">
+    <div class="info">
+      Este es un Índice de Sitemaps. Contiene <strong style="margin: 0 4px;"><xsl:value-of select="count(*[local-name()='sitemap'])"/></strong> sitemaps en total.
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>URL del Sitemap</th>
+          <th>Última Modificación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <xsl:for-each select="*[local-name()='sitemap']">
+          <tr>
+            <td>
+              <xsl:variable name="itemURL" select="*[local-name()='loc']" />
+              <a href="{$itemURL}"><xsl:value-of select="*[local-name()='loc']"/></a>
+            </td>
+            <td>
+              <xsl:variable name="date" select="*[local-name()='lastmod']" />
+              <xsl:value-of select="concat(substring($date,1,10), ' ', substring($date,12,5))"/>
+            </td>
+          </tr>
+        </xsl:for-each>
+      </tbody>
+    </table>
+  </xsl:template>
+
+  <xsl:template match="*[local-name()='urlset']">
+    <div class="info">
+      Este sitemap contiene <strong style="margin: 0 4px;"><xsl:value-of select="count(*[local-name()='url'])"/></strong> URLs en total.
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Prioridad</th>
+          <th>Frecuencia</th>
+          <th>Última Modificación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <xsl:for-each select="*[local-name()='url']">
+          <tr>
+            <td>
+              <xsl:variable name="itemURL" select="*[local-name()='loc']" />
+              <a href="{$itemURL}"><xsl:value-of select="*[local-name()='loc']"/></a>
+            </td>
+            <td>
+              <xsl:if test="*[local-name()='priority']">
+                <span class="badge"><xsl:value-of select="*[local-name()='priority']"/></span>
+              </xsl:if>
+            </td>
+            <td class="freq">
+              <xsl:value-of select="*[local-name()='changefreq']"/>
+            </td>
+            <td>
+              <xsl:variable name="date" select="*[local-name()='lastmod']" />
+              <xsl:if test="string-length($date) &gt; 0">
+                <xsl:value-of select="concat(substring($date,1,10), ' ', substring($date,12,5))"/>
+              </xsl:if>
+            </td>
+          </tr>
+        </xsl:for-each>
+      </tbody>
+    </table>
+  </xsl:template>
+
 </xsl:stylesheet>

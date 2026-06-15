@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" 
+<xsl:stylesheet version="1.0" 
                 xmlns:html="http://www.w3.org/TR/REC-html40"
                 xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
                 xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -147,7 +147,7 @@
                       <a href="{$itemURL}"><xsl:value-of select="sitemap:loc"/></a>
                     </td>
                     <td>
-                      <xsl:value-of select="concat(substring(sitemap:lastmod,0,11),concat(' ', substring(sitemap:lastmod,12,5)))"/>
+                      <xsl:value-of select="concat(substring(sitemap:lastmod,1,10),concat(' ', substring(sitemap:lastmod,12,5)))"/>
                     </td>
                   </tr>
                 </xsl:for-each>
@@ -186,7 +186,7 @@
                       <xsl:value-of select="sitemap:changefreq"/>
                     </td>
                     <td>
-                      <xsl:value-of select="concat(substring(sitemap:lastmod,0,11),concat(' ', substring(sitemap:lastmod,12,5)))"/>
+                      <xsl:value-of select="concat(substring(sitemap:lastmod,1,10),concat(' ', substring(sitemap:lastmod,12,5)))"/>
                     </td>
                   </tr>
                 </xsl:for-each>

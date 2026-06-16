@@ -18,6 +18,7 @@ import imgEmergencia from "@/assets/Trabajos/poda-tala-emergencia-arauco-quilicu
 import imgDespeje from "@/assets/Trabajos/Despeje-canal-arauco-san-ignacio-quilicura-1.jpg";
 import imgMantencionContrato from "@/assets/Mantenciones/Mantecion-preventiva-contrato-anual-arauco-quilicura-1.jpg";
 import imgDelimitador from "@/assets/Trabajos/Delimitador- vegetal-exterior-mall-quilicura.jpg";
+import imgPodaAirLiquide from "@/assets/Trabajos/Poda-emergencia-air -liquide-noviembre-2017.jpg";
 
 interface ProjectItem {
   slug: string;
@@ -32,6 +33,17 @@ interface ProjectItem {
 }
 
 const items: ProjectItem[] = [
+  {
+    slug: "Poda-emergencia-empresa-air-liquide",
+    src: imgPodaAirLiquide,
+    t: "Poda emergencia empresa Air Liquide",
+    l: "Quilicura",
+    category: "ejecucion",
+    mandante: "Air Liquide Chile S.A.",
+    superficie: "Año 2017 - noviembre",
+    plazo: "2 días",
+    servicio: "Poda emergencia empresa air -liquide retiro de ramas",
+  },
   {
     slug: "Mantencion-preventiva-contrato-anual-arauco-quilicura",
     src: imgMantencionContrato,

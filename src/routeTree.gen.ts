@@ -33,6 +33,7 @@ import { Route as TrabajoMovimientoMacetasQuilicuraRouteImport } from './routes/
 import { Route as TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRouteImport } from './routes/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura'
 import { Route as TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRouteImport } from './routes/Trabajo-despeje-canal-arauco-san-ignacio-quilicura'
 import { Route as TrabajoDelimitadorVegetalExteriorMallQuilicuraRouteImport } from './routes/Trabajo-delimitador-vegetal-exterior-mall-quilicura'
+import { Route as PodaEmergenciaEmpresaAirLiquideRouteImport } from './routes/Poda-emergencia-empresa-air-liquide'
 import { Route as PaisajismoJardineraPalletMallQuilicuraRouteImport } from './routes/Paisajismo-jardinera-pallet-mall-quilicura'
 import { Route as MantencionPreventivaContratoAnualAraucoQuilicuraRouteImport } from './routes/Mantencion-preventiva-contrato-anual-arauco-quilicura'
 import { Route as IndexRouteImport } from './routes/index'
@@ -43,6 +44,7 @@ import { Route as InfoImportanciaRiegoInteligenteEmpresasRouteImport } from './r
 import { Route as InfoImportanciaPodaPreventivaOtonoRouteImport } from './routes/info/importancia-poda-preventiva-otono'
 import { Route as InfoImportanciaFumigacionesPreventivasRouteImport } from './routes/info/importancia-fumigaciones-preventivas'
 import { Route as InfoImportanciaDesmalezadoControlPlagasEmpresasRouteImport } from './routes/info/importancia-desmalezado-control-plagas-empresas'
+import { Route as InfoImportanciaDeAreasVerdesOficinasEmpresasRouteImport } from './routes/info/importancia-de-areas-verdes-oficinas-empresas'
 import { Route as InfoEndoterapiaVegetalAlternativaEcologicaRouteImport } from './routes/info/endoterapia-vegetal-alternativa-ecologica'
 import { Route as InfoBeneficiosDisenoBiofilicoProductividadRouteImport } from './routes/info/beneficios-diseno-biofilico-productividad'
 
@@ -186,6 +188,12 @@ const TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute =
     path: '/Trabajo-delimitador-vegetal-exterior-mall-quilicura',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PodaEmergenciaEmpresaAirLiquideRoute =
+  PodaEmergenciaEmpresaAirLiquideRouteImport.update({
+    id: '/Poda-emergencia-empresa-air-liquide',
+    path: '/Poda-emergencia-empresa-air-liquide',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PaisajismoJardineraPalletMallQuilicuraRoute =
   PaisajismoJardineraPalletMallQuilicuraRouteImport.update({
     id: '/Paisajismo-jardinera-pallet-mall-quilicura',
@@ -244,6 +252,12 @@ const InfoImportanciaDesmalezadoControlPlagasEmpresasRoute =
     path: '/info/importancia-desmalezado-control-plagas-empresas',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InfoImportanciaDeAreasVerdesOficinasEmpresasRoute =
+  InfoImportanciaDeAreasVerdesOficinasEmpresasRouteImport.update({
+    id: '/info/importancia-de-areas-verdes-oficinas-empresas',
+    path: '/info/importancia-de-areas-verdes-oficinas-empresas',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InfoEndoterapiaVegetalAlternativaEcologicaRoute =
   InfoEndoterapiaVegetalAlternativaEcologicaRouteImport.update({
     id: '/info/endoterapia-vegetal-alternativa-ecologica',
@@ -261,6 +275,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/Mantencion-preventiva-contrato-anual-arauco-quilicura': typeof MantencionPreventivaContratoAnualAraucoQuilicuraRoute
   '/Paisajismo-jardinera-pallet-mall-quilicura': typeof PaisajismoJardineraPalletMallQuilicuraRoute
+  '/Poda-emergencia-empresa-air-liquide': typeof PodaEmergenciaEmpresaAirLiquideRoute
   '/Trabajo-delimitador-vegetal-exterior-mall-quilicura': typeof TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute
   '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura': typeof TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute
   '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura': typeof TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRoute
@@ -287,6 +302,7 @@ export interface FileRoutesByFullPath {
   '/sobre-nosotros': typeof SobreNosotrosRoute
   '/info/beneficios-diseno-biofilico-productividad': typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
   '/info/endoterapia-vegetal-alternativa-ecologica': typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  '/info/importancia-de-areas-verdes-oficinas-empresas': typeof InfoImportanciaDeAreasVerdesOficinasEmpresasRoute
   '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
   '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
@@ -299,6 +315,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/Mantencion-preventiva-contrato-anual-arauco-quilicura': typeof MantencionPreventivaContratoAnualAraucoQuilicuraRoute
   '/Paisajismo-jardinera-pallet-mall-quilicura': typeof PaisajismoJardineraPalletMallQuilicuraRoute
+  '/Poda-emergencia-empresa-air-liquide': typeof PodaEmergenciaEmpresaAirLiquideRoute
   '/Trabajo-delimitador-vegetal-exterior-mall-quilicura': typeof TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute
   '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura': typeof TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute
   '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura': typeof TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRoute
@@ -325,6 +342,7 @@ export interface FileRoutesByTo {
   '/sobre-nosotros': typeof SobreNosotrosRoute
   '/info/beneficios-diseno-biofilico-productividad': typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
   '/info/endoterapia-vegetal-alternativa-ecologica': typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  '/info/importancia-de-areas-verdes-oficinas-empresas': typeof InfoImportanciaDeAreasVerdesOficinasEmpresasRoute
   '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
   '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
@@ -338,6 +356,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/Mantencion-preventiva-contrato-anual-arauco-quilicura': typeof MantencionPreventivaContratoAnualAraucoQuilicuraRoute
   '/Paisajismo-jardinera-pallet-mall-quilicura': typeof PaisajismoJardineraPalletMallQuilicuraRoute
+  '/Poda-emergencia-empresa-air-liquide': typeof PodaEmergenciaEmpresaAirLiquideRoute
   '/Trabajo-delimitador-vegetal-exterior-mall-quilicura': typeof TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute
   '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura': typeof TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute
   '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura': typeof TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRoute
@@ -364,6 +383,7 @@ export interface FileRoutesById {
   '/sobre-nosotros': typeof SobreNosotrosRoute
   '/info/beneficios-diseno-biofilico-productividad': typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
   '/info/endoterapia-vegetal-alternativa-ecologica': typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  '/info/importancia-de-areas-verdes-oficinas-empresas': typeof InfoImportanciaDeAreasVerdesOficinasEmpresasRoute
   '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
   '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
@@ -378,6 +398,7 @@ export interface FileRouteTypes {
     | '/'
     | '/Mantencion-preventiva-contrato-anual-arauco-quilicura'
     | '/Paisajismo-jardinera-pallet-mall-quilicura'
+    | '/Poda-emergencia-empresa-air-liquide'
     | '/Trabajo-delimitador-vegetal-exterior-mall-quilicura'
     | '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura'
     | '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura'
@@ -404,6 +425,7 @@ export interface FileRouteTypes {
     | '/sobre-nosotros'
     | '/info/beneficios-diseno-biofilico-productividad'
     | '/info/endoterapia-vegetal-alternativa-ecologica'
+    | '/info/importancia-de-areas-verdes-oficinas-empresas'
     | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
     | '/info/importancia-poda-preventiva-otono'
@@ -416,6 +438,7 @@ export interface FileRouteTypes {
     | '/'
     | '/Mantencion-preventiva-contrato-anual-arauco-quilicura'
     | '/Paisajismo-jardinera-pallet-mall-quilicura'
+    | '/Poda-emergencia-empresa-air-liquide'
     | '/Trabajo-delimitador-vegetal-exterior-mall-quilicura'
     | '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura'
     | '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura'
@@ -442,6 +465,7 @@ export interface FileRouteTypes {
     | '/sobre-nosotros'
     | '/info/beneficios-diseno-biofilico-productividad'
     | '/info/endoterapia-vegetal-alternativa-ecologica'
+    | '/info/importancia-de-areas-verdes-oficinas-empresas'
     | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
     | '/info/importancia-poda-preventiva-otono'
@@ -454,6 +478,7 @@ export interface FileRouteTypes {
     | '/'
     | '/Mantencion-preventiva-contrato-anual-arauco-quilicura'
     | '/Paisajismo-jardinera-pallet-mall-quilicura'
+    | '/Poda-emergencia-empresa-air-liquide'
     | '/Trabajo-delimitador-vegetal-exterior-mall-quilicura'
     | '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura'
     | '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura'
@@ -480,6 +505,7 @@ export interface FileRouteTypes {
     | '/sobre-nosotros'
     | '/info/beneficios-diseno-biofilico-productividad'
     | '/info/endoterapia-vegetal-alternativa-ecologica'
+    | '/info/importancia-de-areas-verdes-oficinas-empresas'
     | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
     | '/info/importancia-poda-preventiva-otono'
@@ -493,6 +519,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   MantencionPreventivaContratoAnualAraucoQuilicuraRoute: typeof MantencionPreventivaContratoAnualAraucoQuilicuraRoute
   PaisajismoJardineraPalletMallQuilicuraRoute: typeof PaisajismoJardineraPalletMallQuilicuraRoute
+  PodaEmergenciaEmpresaAirLiquideRoute: typeof PodaEmergenciaEmpresaAirLiquideRoute
   TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute: typeof TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute
   TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute: typeof TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute
   TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRoute: typeof TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRoute
@@ -519,6 +546,7 @@ export interface RootRouteChildren {
   SobreNosotrosRoute: typeof SobreNosotrosRoute
   InfoBeneficiosDisenoBiofilicoProductividadRoute: typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
   InfoEndoterapiaVegetalAlternativaEcologicaRoute: typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  InfoImportanciaDeAreasVerdesOficinasEmpresasRoute: typeof InfoImportanciaDeAreasVerdesOficinasEmpresasRoute
   InfoImportanciaDesmalezadoControlPlagasEmpresasRoute: typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   InfoImportanciaFumigacionesPreventivasRoute: typeof InfoImportanciaFumigacionesPreventivasRoute
   InfoImportanciaPodaPreventivaOtonoRoute: typeof InfoImportanciaPodaPreventivaOtonoRoute
@@ -698,6 +726,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrabajoDelimitadorVegetalExteriorMallQuilicuraRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/Poda-emergencia-empresa-air-liquide': {
+      id: '/Poda-emergencia-empresa-air-liquide'
+      path: '/Poda-emergencia-empresa-air-liquide'
+      fullPath: '/Poda-emergencia-empresa-air-liquide'
+      preLoaderRoute: typeof PodaEmergenciaEmpresaAirLiquideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/Paisajismo-jardinera-pallet-mall-quilicura': {
       id: '/Paisajismo-jardinera-pallet-mall-quilicura'
       path: '/Paisajismo-jardinera-pallet-mall-quilicura'
@@ -768,6 +803,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/info/importancia-de-areas-verdes-oficinas-empresas': {
+      id: '/info/importancia-de-areas-verdes-oficinas-empresas'
+      path: '/info/importancia-de-areas-verdes-oficinas-empresas'
+      fullPath: '/info/importancia-de-areas-verdes-oficinas-empresas'
+      preLoaderRoute: typeof InfoImportanciaDeAreasVerdesOficinasEmpresasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/info/endoterapia-vegetal-alternativa-ecologica': {
       id: '/info/endoterapia-vegetal-alternativa-ecologica'
       path: '/info/endoterapia-vegetal-alternativa-ecologica'
@@ -791,6 +833,7 @@ const rootRouteChildren: RootRouteChildren = {
     MantencionPreventivaContratoAnualAraucoQuilicuraRoute,
   PaisajismoJardineraPalletMallQuilicuraRoute:
     PaisajismoJardineraPalletMallQuilicuraRoute,
+  PodaEmergenciaEmpresaAirLiquideRoute: PodaEmergenciaEmpresaAirLiquideRoute,
   TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute:
     TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute,
   TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute:
@@ -838,6 +881,8 @@ const rootRouteChildren: RootRouteChildren = {
     InfoBeneficiosDisenoBiofilicoProductividadRoute,
   InfoEndoterapiaVegetalAlternativaEcologicaRoute:
     InfoEndoterapiaVegetalAlternativaEcologicaRoute,
+  InfoImportanciaDeAreasVerdesOficinasEmpresasRoute:
+    InfoImportanciaDeAreasVerdesOficinasEmpresasRoute,
   InfoImportanciaDesmalezadoControlPlagasEmpresasRoute:
     InfoImportanciaDesmalezadoControlPlagasEmpresasRoute,
   InfoImportanciaFumigacionesPreventivasRoute:

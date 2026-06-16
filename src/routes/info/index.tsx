@@ -22,6 +22,14 @@ export const Route = createFileRoute("/info/")({
 
 const ARTICLES = [
   {
+    title: "Importancia de Áreas Verdes en Oficinas",
+    description: <>Descubre por qué llevar la naturaleza al interior de la empresa se ha vuelto una ventaja competitiva indispensable.</>,
+    href: "/info/importancia-de-areas-verdes-oficinas-empresas",
+    icon: <Leaf className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
+    tags: ["Bienestar", "Oficinas", "Paisajismo"],
+    date: "16 Jun 2026"
+  },
+  {
     title: "Importancia del Desmalezado y Control de Plagas",
     description: <>Descubre por qué el desmalezado regular es fundamental para la prevención y el <GlossaryLink>control fitosanitario</GlossaryLink> en recintos empresariales.</>,
     href: "/info/importancia-desmalezado-control-plagas-empresas",

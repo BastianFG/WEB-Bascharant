@@ -28,6 +28,11 @@ export const Route = createFileRoute("/glosario")({
 
 const GLOSSARY_TERMS = [
   {
+    term: "Control Fitosanitario",
+    definition: "Conjunto de medidas y tratamientos aplicados para prevenir, mitigar y erradicar plagas y enfermedades que afectan a las especies vegetales. Asegura la salud integral de las áreas verdes y evita la proliferación de vectores de riesgo.",
+    tags: ["Sanidad", "Prevención"]
+  },
+  {
     term: "Fitosanitario / Sanidad Vegetal",
     definition: "Relativo a la prevención y curación de las enfermedades de las plantas. Involucra el control de plagas y enfermedades mediante métodos ecológicos, químicos o biológicos para mantener la salud integral de las áreas verdes.",
     tags: ["Mantenimiento", "Salud Vegetal"]

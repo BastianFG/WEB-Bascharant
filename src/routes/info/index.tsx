@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { BookOpen, ShieldCheck, Leaf, ArrowRight, BrainCircuit, Droplets, Settings2, Syringe, ThermometerSun } from "lucide-react";
+import { BookOpen, ShieldCheck, Leaf, ArrowRight, BrainCircuit, Droplets, Settings2, Syringe, ThermometerSun, Bug } from "lucide-react";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
@@ -21,6 +21,14 @@ export const Route = createFileRoute("/info/")({
 });
 
 const ARTICLES = [
+  {
+    title: "Importancia del Desmalezado y Control de Plagas",
+    description: <>Descubre por qué el desmalezado regular es fundamental para la prevención y el <GlossaryLink>control fitosanitario</GlossaryLink> en recintos empresariales.</>,
+    href: "/info/importancia-desmalezado-control-plagas-empresas",
+    icon: <Bug className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
+    tags: ["Maleza", "Prevención", "Plagas"],
+    date: "15 Jun 2026"
+  },
   {
     title: "La Importancia de las Fumigaciones Preventivas",
     description: <>Descubre por qué las <GlossaryLink>fumigaciones preventivas</GlossaryLink> son esenciales para la <GlossaryLink>bioseguridad</GlossaryLink> y el <GlossaryLink>control integral de plagas</GlossaryLink> en las empresas.</>,

@@ -41,7 +41,7 @@ export default function History() {
                   Cada proyecto comienza escuchando el lugar. Abordamos el paisajismo desde una mirada arquitectónica. No nos limitamos a diseñar "jardines bonitos" para luego irnos; creamos ecosistemas atractivos y funcionales donde la composición, la luz, la materia y la vegetación trabajan juntas.
                 </p>
                 <p>
-                  Entendemos el proyecto como un sistema integrado. Seleccionamos cuidadosamente las especies botánicas nativas y de bajo consumo hídrico, combinándolas con elementos estructurales para crear espacios habitables. Nuestros diseños priorizan la biodiversidad, el control de escorrentía (como los rain gardens) y la funcionalidad, llegando a aumentar el valor comercial de una propiedad hasta en un 15%.
+                  Entendemos el proyecto como un sistema integrado. Seleccionamos cuidadosamente las especies botánicas nativas y de bajo consumo hídrico, combinándolas con elementos estructurales para crear espacios habitables. Nuestros diseños priorizan la biodiversidad y el control de escorrentía (como los rain gardens).
                 </p>
               </div>
             </div>

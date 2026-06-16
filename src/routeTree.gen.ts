@@ -42,6 +42,7 @@ import { Route as InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport } fr
 import { Route as InfoImportanciaRiegoInteligenteEmpresasRouteImport } from './routes/info/importancia-riego-inteligente-empresas'
 import { Route as InfoImportanciaPodaPreventivaOtonoRouteImport } from './routes/info/importancia-poda-preventiva-otono'
 import { Route as InfoImportanciaFumigacionesPreventivasRouteImport } from './routes/info/importancia-fumigaciones-preventivas'
+import { Route as InfoImportanciaDesmalezadoControlPlagasEmpresasRouteImport } from './routes/info/importancia-desmalezado-control-plagas-empresas'
 import { Route as InfoEndoterapiaVegetalAlternativaEcologicaRouteImport } from './routes/info/endoterapia-vegetal-alternativa-ecologica'
 import { Route as InfoBeneficiosDisenoBiofilicoProductividadRouteImport } from './routes/info/beneficios-diseno-biofilico-productividad'
 
@@ -237,6 +238,12 @@ const InfoImportanciaFumigacionesPreventivasRoute =
     path: '/info/importancia-fumigaciones-preventivas',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InfoImportanciaDesmalezadoControlPlagasEmpresasRoute =
+  InfoImportanciaDesmalezadoControlPlagasEmpresasRouteImport.update({
+    id: '/info/importancia-desmalezado-control-plagas-empresas',
+    path: '/info/importancia-desmalezado-control-plagas-empresas',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InfoEndoterapiaVegetalAlternativaEcologicaRoute =
   InfoEndoterapiaVegetalAlternativaEcologicaRouteImport.update({
     id: '/info/endoterapia-vegetal-alternativa-ecologica',
@@ -280,6 +287,7 @@ export interface FileRoutesByFullPath {
   '/sobre-nosotros': typeof SobreNosotrosRoute
   '/info/beneficios-diseno-biofilico-productividad': typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
   '/info/endoterapia-vegetal-alternativa-ecologica': typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
   '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
@@ -317,6 +325,7 @@ export interface FileRoutesByTo {
   '/sobre-nosotros': typeof SobreNosotrosRoute
   '/info/beneficios-diseno-biofilico-productividad': typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
   '/info/endoterapia-vegetal-alternativa-ecologica': typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
   '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
@@ -355,6 +364,7 @@ export interface FileRoutesById {
   '/sobre-nosotros': typeof SobreNosotrosRoute
   '/info/beneficios-diseno-biofilico-productividad': typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
   '/info/endoterapia-vegetal-alternativa-ecologica': typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
   '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
@@ -394,6 +404,7 @@ export interface FileRouteTypes {
     | '/sobre-nosotros'
     | '/info/beneficios-diseno-biofilico-productividad'
     | '/info/endoterapia-vegetal-alternativa-ecologica'
+    | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
     | '/info/importancia-poda-preventiva-otono'
     | '/info/importancia-riego-inteligente-empresas'
@@ -431,6 +442,7 @@ export interface FileRouteTypes {
     | '/sobre-nosotros'
     | '/info/beneficios-diseno-biofilico-productividad'
     | '/info/endoterapia-vegetal-alternativa-ecologica'
+    | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
     | '/info/importancia-poda-preventiva-otono'
     | '/info/importancia-riego-inteligente-empresas'
@@ -468,6 +480,7 @@ export interface FileRouteTypes {
     | '/sobre-nosotros'
     | '/info/beneficios-diseno-biofilico-productividad'
     | '/info/endoterapia-vegetal-alternativa-ecologica'
+    | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
     | '/info/importancia-poda-preventiva-otono'
     | '/info/importancia-riego-inteligente-empresas'
@@ -506,6 +519,7 @@ export interface RootRouteChildren {
   SobreNosotrosRoute: typeof SobreNosotrosRoute
   InfoBeneficiosDisenoBiofilicoProductividadRoute: typeof InfoBeneficiosDisenoBiofilicoProductividadRoute
   InfoEndoterapiaVegetalAlternativaEcologicaRoute: typeof InfoEndoterapiaVegetalAlternativaEcologicaRoute
+  InfoImportanciaDesmalezadoControlPlagasEmpresasRoute: typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   InfoImportanciaFumigacionesPreventivasRoute: typeof InfoImportanciaFumigacionesPreventivasRoute
   InfoImportanciaPodaPreventivaOtonoRoute: typeof InfoImportanciaPodaPreventivaOtonoRoute
   InfoImportanciaRiegoInteligenteEmpresasRoute: typeof InfoImportanciaRiegoInteligenteEmpresasRoute
@@ -747,6 +761,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InfoImportanciaFumigacionesPreventivasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/info/importancia-desmalezado-control-plagas-empresas': {
+      id: '/info/importancia-desmalezado-control-plagas-empresas'
+      path: '/info/importancia-desmalezado-control-plagas-empresas'
+      fullPath: '/info/importancia-desmalezado-control-plagas-empresas'
+      preLoaderRoute: typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/info/endoterapia-vegetal-alternativa-ecologica': {
       id: '/info/endoterapia-vegetal-alternativa-ecologica'
       path: '/info/endoterapia-vegetal-alternativa-ecologica'
@@ -817,6 +838,8 @@ const rootRouteChildren: RootRouteChildren = {
     InfoBeneficiosDisenoBiofilicoProductividadRoute,
   InfoEndoterapiaVegetalAlternativaEcologicaRoute:
     InfoEndoterapiaVegetalAlternativaEcologicaRoute,
+  InfoImportanciaDesmalezadoControlPlagasEmpresasRoute:
+    InfoImportanciaDesmalezadoControlPlagasEmpresasRoute,
   InfoImportanciaFumigacionesPreventivasRoute:
     InfoImportanciaFumigacionesPreventivasRoute,
   InfoImportanciaPodaPreventivaOtonoRoute:

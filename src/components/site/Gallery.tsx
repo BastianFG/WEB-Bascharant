@@ -19,6 +19,8 @@ import imgDespeje from "@/assets/Trabajos/Despeje-canal-arauco-san-ignacio-quili
 import imgMantencionContrato from "@/assets/Mantenciones/Mantecion-preventiva-contrato-anual-arauco-quilicura-1.jpg";
 import imgDelimitador from "@/assets/Trabajos/Delimitador- vegetal-exterior-mall-quilicura.jpg";
 import imgPodaAirLiquide from "@/assets/Trabajos/Poda-emergencia-air -liquide-noviembre-2017.jpg";
+import imgPodaAlturaSanIgnacio from "@/assets/Trabajos/Poda-en-altura-mall-san-ignacio-Quilicura.1.jpg";
+import imgMantencionAraucoQuilicura from "@/assets/Mantenciones/Mantecion-areas-verdes-mall-arauco-quilicura-1.jpg";
 
 interface ProjectItem {
   slug: string;
@@ -33,6 +35,28 @@ interface ProjectItem {
 }
 
 const items: ProjectItem[] = [
+  {
+    slug: "Poda-en-altura-mall-san-ignacio-Quilicura",
+    src: imgPodaAlturaSanIgnacio,
+    t: "Poda en Altura Mall San Ignacio",
+    l: "Quilicura",
+    category: "ejecucion",
+    mandante: "Mall Arauco San Ignacio",
+    superficie: "Año 2018 - enero",
+    plazo: "3 días",
+    servicio: "Poda en altura mall san ignacio Quilicura",
+  },
+  {
+    slug: "Mantecion-areas-verdes-mall-arauco-quilicura",
+    src: imgMantencionAraucoQuilicura,
+    t: "Mantención de Áreas Verdes Mall Arauco Quilicura",
+    l: "Quilicura",
+    category: "mantencion",
+    mandante: "Mall Arauco Quilicura",
+    superficie: "Año 2017 - octubre",
+    plazo: "Contrato Anual",
+    servicio: "Mantención de áreas verdes",
+  },
   {
     slug: "Poda-emergencia-empresa-air-liquide",
     src: imgPodaAirLiquide,

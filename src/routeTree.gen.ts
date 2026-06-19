@@ -33,9 +33,11 @@ import { Route as TrabajoMovimientoMacetasQuilicuraRouteImport } from './routes/
 import { Route as TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRouteImport } from './routes/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura'
 import { Route as TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRouteImport } from './routes/Trabajo-despeje-canal-arauco-san-ignacio-quilicura'
 import { Route as TrabajoDelimitadorVegetalExteriorMallQuilicuraRouteImport } from './routes/Trabajo-delimitador-vegetal-exterior-mall-quilicura'
+import { Route as PodaEnAlturaMallSanIgnacioQuilicuraRouteImport } from './routes/Poda-en-altura-mall-san-ignacio-Quilicura'
 import { Route as PodaEmergenciaEmpresaAirLiquideRouteImport } from './routes/Poda-emergencia-empresa-air-liquide'
 import { Route as PaisajismoJardineraPalletMallQuilicuraRouteImport } from './routes/Paisajismo-jardinera-pallet-mall-quilicura'
 import { Route as MantencionPreventivaContratoAnualAraucoQuilicuraRouteImport } from './routes/Mantencion-preventiva-contrato-anual-arauco-quilicura'
+import { Route as MantecionAreasVerdesMallAraucoQuilicuraRouteImport } from './routes/Mantecion-areas-verdes-mall-arauco-quilicura'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as InfoIndexRouteImport } from './routes/info/index'
 import { Route as InfoXerojardineriaPaisajismoSecoCorporativoRouteImport } from './routes/info/xerojardineria-paisajismo-seco-corporativo'
@@ -189,6 +191,12 @@ const TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute =
     path: '/Trabajo-delimitador-vegetal-exterior-mall-quilicura',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PodaEnAlturaMallSanIgnacioQuilicuraRoute =
+  PodaEnAlturaMallSanIgnacioQuilicuraRouteImport.update({
+    id: '/Poda-en-altura-mall-san-ignacio-Quilicura',
+    path: '/Poda-en-altura-mall-san-ignacio-Quilicura',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PodaEmergenciaEmpresaAirLiquideRoute =
   PodaEmergenciaEmpresaAirLiquideRouteImport.update({
     id: '/Poda-emergencia-empresa-air-liquide',
@@ -205,6 +213,12 @@ const MantencionPreventivaContratoAnualAraucoQuilicuraRoute =
   MantencionPreventivaContratoAnualAraucoQuilicuraRouteImport.update({
     id: '/Mantencion-preventiva-contrato-anual-arauco-quilicura',
     path: '/Mantencion-preventiva-contrato-anual-arauco-quilicura',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MantecionAreasVerdesMallAraucoQuilicuraRoute =
+  MantecionAreasVerdesMallAraucoQuilicuraRouteImport.update({
+    id: '/Mantecion-areas-verdes-mall-arauco-quilicura',
+    path: '/Mantecion-areas-verdes-mall-arauco-quilicura',
     getParentRoute: () => rootRouteImport,
   } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -280,9 +294,11 @@ const InfoBeneficiosDisenoBiofilicoProductividadRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/Mantecion-areas-verdes-mall-arauco-quilicura': typeof MantecionAreasVerdesMallAraucoQuilicuraRoute
   '/Mantencion-preventiva-contrato-anual-arauco-quilicura': typeof MantencionPreventivaContratoAnualAraucoQuilicuraRoute
   '/Paisajismo-jardinera-pallet-mall-quilicura': typeof PaisajismoJardineraPalletMallQuilicuraRoute
   '/Poda-emergencia-empresa-air-liquide': typeof PodaEmergenciaEmpresaAirLiquideRoute
+  '/Poda-en-altura-mall-san-ignacio-Quilicura': typeof PodaEnAlturaMallSanIgnacioQuilicuraRoute
   '/Trabajo-delimitador-vegetal-exterior-mall-quilicura': typeof TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute
   '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura': typeof TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute
   '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura': typeof TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRoute
@@ -321,9 +337,11 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/Mantecion-areas-verdes-mall-arauco-quilicura': typeof MantecionAreasVerdesMallAraucoQuilicuraRoute
   '/Mantencion-preventiva-contrato-anual-arauco-quilicura': typeof MantencionPreventivaContratoAnualAraucoQuilicuraRoute
   '/Paisajismo-jardinera-pallet-mall-quilicura': typeof PaisajismoJardineraPalletMallQuilicuraRoute
   '/Poda-emergencia-empresa-air-liquide': typeof PodaEmergenciaEmpresaAirLiquideRoute
+  '/Poda-en-altura-mall-san-ignacio-Quilicura': typeof PodaEnAlturaMallSanIgnacioQuilicuraRoute
   '/Trabajo-delimitador-vegetal-exterior-mall-quilicura': typeof TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute
   '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura': typeof TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute
   '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura': typeof TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRoute
@@ -363,9 +381,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/Mantecion-areas-verdes-mall-arauco-quilicura': typeof MantecionAreasVerdesMallAraucoQuilicuraRoute
   '/Mantencion-preventiva-contrato-anual-arauco-quilicura': typeof MantencionPreventivaContratoAnualAraucoQuilicuraRoute
   '/Paisajismo-jardinera-pallet-mall-quilicura': typeof PaisajismoJardineraPalletMallQuilicuraRoute
   '/Poda-emergencia-empresa-air-liquide': typeof PodaEmergenciaEmpresaAirLiquideRoute
+  '/Poda-en-altura-mall-san-ignacio-Quilicura': typeof PodaEnAlturaMallSanIgnacioQuilicuraRoute
   '/Trabajo-delimitador-vegetal-exterior-mall-quilicura': typeof TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute
   '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura': typeof TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute
   '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura': typeof TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRoute
@@ -406,9 +426,11 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/Mantecion-areas-verdes-mall-arauco-quilicura'
     | '/Mantencion-preventiva-contrato-anual-arauco-quilicura'
     | '/Paisajismo-jardinera-pallet-mall-quilicura'
     | '/Poda-emergencia-empresa-air-liquide'
+    | '/Poda-en-altura-mall-san-ignacio-Quilicura'
     | '/Trabajo-delimitador-vegetal-exterior-mall-quilicura'
     | '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura'
     | '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura'
@@ -447,9 +469,11 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/Mantecion-areas-verdes-mall-arauco-quilicura'
     | '/Mantencion-preventiva-contrato-anual-arauco-quilicura'
     | '/Paisajismo-jardinera-pallet-mall-quilicura'
     | '/Poda-emergencia-empresa-air-liquide'
+    | '/Poda-en-altura-mall-san-ignacio-Quilicura'
     | '/Trabajo-delimitador-vegetal-exterior-mall-quilicura'
     | '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura'
     | '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura'
@@ -488,9 +512,11 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/Mantecion-areas-verdes-mall-arauco-quilicura'
     | '/Mantencion-preventiva-contrato-anual-arauco-quilicura'
     | '/Paisajismo-jardinera-pallet-mall-quilicura'
     | '/Poda-emergencia-empresa-air-liquide'
+    | '/Poda-en-altura-mall-san-ignacio-Quilicura'
     | '/Trabajo-delimitador-vegetal-exterior-mall-quilicura'
     | '/Trabajo-despeje-canal-arauco-san-ignacio-quilicura'
     | '/Trabajo-movimiento-macetas-arauco-san-ignacio-quilicura'
@@ -530,9 +556,11 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MantecionAreasVerdesMallAraucoQuilicuraRoute: typeof MantecionAreasVerdesMallAraucoQuilicuraRoute
   MantencionPreventivaContratoAnualAraucoQuilicuraRoute: typeof MantencionPreventivaContratoAnualAraucoQuilicuraRoute
   PaisajismoJardineraPalletMallQuilicuraRoute: typeof PaisajismoJardineraPalletMallQuilicuraRoute
   PodaEmergenciaEmpresaAirLiquideRoute: typeof PodaEmergenciaEmpresaAirLiquideRoute
+  PodaEnAlturaMallSanIgnacioQuilicuraRoute: typeof PodaEnAlturaMallSanIgnacioQuilicuraRoute
   TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute: typeof TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute
   TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute: typeof TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute
   TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRoute: typeof TrabajoMovimientoMacetasAraucoSanIgnacioQuilicuraRoute
@@ -740,6 +768,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrabajoDelimitadorVegetalExteriorMallQuilicuraRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/Poda-en-altura-mall-san-ignacio-Quilicura': {
+      id: '/Poda-en-altura-mall-san-ignacio-Quilicura'
+      path: '/Poda-en-altura-mall-san-ignacio-Quilicura'
+      fullPath: '/Poda-en-altura-mall-san-ignacio-Quilicura'
+      preLoaderRoute: typeof PodaEnAlturaMallSanIgnacioQuilicuraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/Poda-emergencia-empresa-air-liquide': {
       id: '/Poda-emergencia-empresa-air-liquide'
       path: '/Poda-emergencia-empresa-air-liquide'
@@ -759,6 +794,13 @@ declare module '@tanstack/react-router' {
       path: '/Mantencion-preventiva-contrato-anual-arauco-quilicura'
       fullPath: '/Mantencion-preventiva-contrato-anual-arauco-quilicura'
       preLoaderRoute: typeof MantencionPreventivaContratoAnualAraucoQuilicuraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/Mantecion-areas-verdes-mall-arauco-quilicura': {
+      id: '/Mantecion-areas-verdes-mall-arauco-quilicura'
+      path: '/Mantecion-areas-verdes-mall-arauco-quilicura'
+      fullPath: '/Mantecion-areas-verdes-mall-arauco-quilicura'
+      preLoaderRoute: typeof MantecionAreasVerdesMallAraucoQuilicuraRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -850,11 +892,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MantecionAreasVerdesMallAraucoQuilicuraRoute:
+    MantecionAreasVerdesMallAraucoQuilicuraRoute,
   MantencionPreventivaContratoAnualAraucoQuilicuraRoute:
     MantencionPreventivaContratoAnualAraucoQuilicuraRoute,
   PaisajismoJardineraPalletMallQuilicuraRoute:
     PaisajismoJardineraPalletMallQuilicuraRoute,
   PodaEmergenciaEmpresaAirLiquideRoute: PodaEmergenciaEmpresaAirLiquideRoute,
+  PodaEnAlturaMallSanIgnacioQuilicuraRoute:
+    PodaEnAlturaMallSanIgnacioQuilicuraRoute,
   TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute:
     TrabajoDelimitadorVegetalExteriorMallQuilicuraRoute,
   TrabajoDespejeCanalAraucoSanIgnacioQuilicuraRoute:

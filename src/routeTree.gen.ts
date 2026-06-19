@@ -39,6 +39,7 @@ import { Route as MantencionPreventivaContratoAnualAraucoQuilicuraRouteImport } 
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as InfoIndexRouteImport } from './routes/info/index'
 import { Route as InfoXerojardineriaPaisajismoSecoCorporativoRouteImport } from './routes/info/xerojardineria-paisajismo-seco-corporativo'
+import { Route as InfoRiesgosDesmalezarEspaciosPublicosSinGestionRouteImport } from './routes/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
 import { Route as InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport } from './routes/info/muros-verdes-y-jardines-verticales-corporativos'
 import { Route as InfoImportanciaRiegoInteligenteEmpresasRouteImport } from './routes/info/importancia-riego-inteligente-empresas'
 import { Route as InfoImportanciaPodaPreventivaOtonoRouteImport } from './routes/info/importancia-poda-preventiva-otono'
@@ -222,6 +223,12 @@ const InfoXerojardineriaPaisajismoSecoCorporativoRoute =
     path: '/info/xerojardineria-paisajismo-seco-corporativo',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute =
+  InfoRiesgosDesmalezarEspaciosPublicosSinGestionRouteImport.update({
+    id: '/info/riesgos-desmalezar-espacios-publicos-sin-gestion',
+    path: '/info/riesgos-desmalezar-espacios-publicos-sin-gestion',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InfoMurosVerdesYJardinesVerticalesCorporativosRoute =
   InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport.update({
     id: '/info/muros-verdes-y-jardines-verticales-corporativos',
@@ -308,6 +315,7 @@ export interface FileRoutesByFullPath {
   '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   '/info/': typeof InfoIndexRoute
 }
@@ -348,6 +356,7 @@ export interface FileRoutesByTo {
   '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   '/info': typeof InfoIndexRoute
 }
@@ -389,6 +398,7 @@ export interface FileRoutesById {
   '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   '/info/': typeof InfoIndexRoute
 }
@@ -431,6 +441,7 @@ export interface FileRouteTypes {
     | '/info/importancia-poda-preventiva-otono'
     | '/info/importancia-riego-inteligente-empresas'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
+    | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
     | '/info/'
   fileRoutesByTo: FileRoutesByTo
@@ -471,6 +482,7 @@ export interface FileRouteTypes {
     | '/info/importancia-poda-preventiva-otono'
     | '/info/importancia-riego-inteligente-empresas'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
+    | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
     | '/info'
   id:
@@ -511,6 +523,7 @@ export interface FileRouteTypes {
     | '/info/importancia-poda-preventiva-otono'
     | '/info/importancia-riego-inteligente-empresas'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
+    | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
     | '/info/'
   fileRoutesById: FileRoutesById
@@ -552,6 +565,7 @@ export interface RootRouteChildren {
   InfoImportanciaPodaPreventivaOtonoRoute: typeof InfoImportanciaPodaPreventivaOtonoRoute
   InfoImportanciaRiegoInteligenteEmpresasRoute: typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   InfoMurosVerdesYJardinesVerticalesCorporativosRoute: typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute: typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   InfoXerojardineriaPaisajismoSecoCorporativoRoute: typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   InfoIndexRoute: typeof InfoIndexRoute
 }
@@ -768,6 +782,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InfoXerojardineriaPaisajismoSecoCorporativoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': {
+      id: '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
+      path: '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
+      fullPath: '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
+      preLoaderRoute: typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/info/muros-verdes-y-jardines-verticales-corporativos': {
       id: '/info/muros-verdes-y-jardines-verticales-corporativos'
       path: '/info/muros-verdes-y-jardines-verticales-corporativos'
@@ -893,6 +914,8 @@ const rootRouteChildren: RootRouteChildren = {
     InfoImportanciaRiegoInteligenteEmpresasRoute,
   InfoMurosVerdesYJardinesVerticalesCorporativosRoute:
     InfoMurosVerdesYJardinesVerticalesCorporativosRoute,
+  InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute:
+    InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute,
   InfoXerojardineriaPaisajismoSecoCorporativoRoute:
     InfoXerojardineriaPaisajismoSecoCorporativoRoute,
   InfoIndexRoute: InfoIndexRoute,

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { BookOpen, ShieldCheck, Leaf, ArrowRight, BrainCircuit, Droplets, Settings2, Syringe, ThermometerSun, Bug } from "lucide-react";
+import { BookOpen, ShieldCheck, Leaf, ArrowRight, BrainCircuit, Droplets, Settings2, Syringe, ThermometerSun, Bug, AlertTriangle } from "lucide-react";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
@@ -21,6 +21,14 @@ export const Route = createFileRoute("/info/")({
 });
 
 const ARTICLES = [
+  {
+    title: "El proyectil invisible: Riesgos de desmalezar sin gestión",
+    description: <>Descubre por qué desmalezar en espacios públicos sin gestión previa puede convertirse en un grave problema legal y financiero para tu empresa.</>,
+    href: "/info/riesgos-desmalezar-espacios-publicos-sin-gestion",
+    icon: <AlertTriangle className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
+    tags: ["Prevención", "Riesgos", "Mantenimiento"],
+    date: "19 Jun 2026"
+  },
   {
     title: "Importancia de Áreas Verdes en Oficinas",
     description: <>Descubre por qué llevar la naturaleza al interior de la empresa se ha vuelto una ventaja competitiva indispensable.</>,

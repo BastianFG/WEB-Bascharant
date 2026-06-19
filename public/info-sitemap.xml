@@ -54,4 +54,16 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.bascharant.com/info/importancia-de-areas-verdes-oficinas-empresas</loc>
+    <lastmod>2026-06-19T13:46:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bascharant.com/info/riesgos-desmalezar-espacios-publicos-sin-gestion</loc>
+    <lastmod>2026-06-19T13:46:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

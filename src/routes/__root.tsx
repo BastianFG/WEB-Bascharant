@@ -8,7 +8,9 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useLocation,
 } from "@tanstack/react-router";
+import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
 
@@ -127,6 +129,20 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const location = useLocation();
+
+  useEffect(() => {
+    const cleanPath = location.pathname === "/" ? "" : location.pathname.replace(/\/$/, "");
+    const canonicalUrl = `https://www.bascharant.com${cleanPath}`;
+    
+    let link: HTMLLinkElement | null = document.querySelector("link[rel='canonical']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "canonical";
+      document.head.appendChild(link);
+    }
+    link.href = canonicalUrl;
+  }, [location.pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>

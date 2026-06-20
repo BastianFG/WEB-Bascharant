@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, type FormEvent, type ReactNode } from "react";
 import { toast } from "sonner";
 import { useGooglePlacesAutocomplete } from "@/hooks/useGooglePlacesAutocomplete";
@@ -99,7 +99,9 @@ function handleSubmit() {
 
 export default function Forms() {
   const addressRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   useGooglePlacesAutocomplete(addressRef);
+  const isInView = useInView(containerRef, { once: true, margin: "300px" });
 
   return (
     <section id="empresas" className="relative py-20 md:py-32 border-t border-border/60">
@@ -121,25 +123,27 @@ export default function Forms() {
         <div className="mx-auto max-w-4xl">
           <div className="relative overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm shadow-[var(--shadow-soft)]">
             {/* Header banner image for context */}
-            <div className="relative aspect-[21/9] md:aspect-[24/6] overflow-hidden bg-muted">
-              <video
-                src={empresasVideo}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105"
-                onCanPlay={(e) => {
-                  (e.target as HTMLVideoElement).playbackRate = 0.8;
-                }}
-                onTimeUpdate={(e) => {
-                  const video = e.target as HTMLVideoElement;
-                  if (video.duration && video.currentTime >= video.duration - 0.5) {
-                    video.currentTime = 0.1;
-                    video.play();
-                  }
-                }}
-              />
+            <div ref={containerRef} className="relative aspect-[21/9] md:aspect-[24/6] overflow-hidden bg-muted">
+              {isInView && (
+                <video
+                  src={empresasVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105"
+                  onCanPlay={(e) => {
+                    (e.target as HTMLVideoElement).playbackRate = 0.8;
+                  }}
+                  onTimeUpdate={(e) => {
+                    const video = e.target as HTMLVideoElement;
+                    if (video.duration && video.currentTime >= video.duration - 0.5) {
+                      video.currentTime = 0.1;
+                      video.play();
+                    }
+                  }}
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-black/25" />
             </div>
 

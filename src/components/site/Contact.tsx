@@ -137,6 +137,7 @@ export default function Contact() {
           ].map((location) => (
             <div key={location.city} className="relative h-[280px] md:h-[360px] overflow-hidden rounded-2xl border border-border bg-background hover:shadow-[var(--shadow-soft)] transition-all duration-500 group/map">
               <iframe
+                title={`Mapa de cobertura en ${location.city}`}
                 src={`https://maps.google.com/maps?q=${location.query}&t=&z=${location.zoom}&ie=UTF8&iwloc=&output=embed`}
                 width="100%"
                 height="100%"

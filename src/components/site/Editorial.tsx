@@ -20,6 +20,8 @@ export default function Editorial() {
               <motion.img
                 src={img}
                 alt="Empresa Bascharant"
+                width="1080"
+                height="1553"
                 style={{ y }}
                 className="absolute inset-0 h-[115%] w-full object-cover"
                 loading="lazy"

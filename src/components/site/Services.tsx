@@ -200,22 +200,24 @@ function MobileCarousel() {
           <ChevronLeft className="h-5 w-5" />
         </button>
 
-        <div className="flex gap-1.5">
+        <div className="flex gap-0.5 items-center justify-center">
           {items.map((_, i) => (
             <button
               key={i}
               onClick={() => handleDotClick(i)}
               aria-label={`Ir al servicio ${i + 1}`}
-              style={{
-                height: 6,
-                borderRadius: 99,
-                width: i === current ? 20 : 6,
-                background: i === current ? "var(--olive)" : "var(--border)",
-                transition: "all 0.3s ease",
-                border: "none",
-                cursor: "pointer",
-              }}
-            />
+              className="p-3 flex items-center justify-center cursor-pointer border-none bg-transparent min-w-[32px] min-h-[32px] hover:bg-secondary/20 rounded-full transition-colors"
+            >
+              <div
+                style={{
+                  height: 6,
+                  borderRadius: 99,
+                  width: i === current ? 20 : 6,
+                  background: i === current ? "var(--olive)" : "var(--border)",
+                  transition: "all 0.3s ease",
+                }}
+              />
+            </button>
           ))}
         </div>
 

@@ -49,6 +49,8 @@ export function LogosEmpresas() {
                   src={cliente.logo}
                   alt={`Logo de ${cliente.nombre}`}
                   title={cliente.nombre}
+                  width="176"
+                  height="80"
                   className="max-h-full max-w-full object-contain transition-all duration-500 ease-out hover:scale-105 cursor-pointer"
                   loading="lazy"
                 />

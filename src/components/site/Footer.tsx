@@ -13,6 +13,8 @@ export default function Footer() {
               <img
                 src={logo}
                 alt=""
+                width="600"
+                height="225"
                 /* 
                   - w-[130%] lg:w-[110%]: Hace que el logo sea un poco más ancho que la columna, dándole ese efecto de "desborde" elegante.
                   - max-w-none: Evita que el logo se comprima.
@@ -29,6 +31,8 @@ export default function Footer() {
                 <img
                   src={logo}
                   alt="Sello Bascharant"
+                  width="160"
+                  height="28"
                   className="h-7 w-auto object-contain filter brightness-0 invert opacity-80 transition-opacity duration-300"
                 />
               </div>

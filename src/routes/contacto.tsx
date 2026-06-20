@@ -144,6 +144,7 @@ function ContactPage() {
               ].map((location) => (
                 <div key={location.city} className="relative h-[120px] overflow-hidden rounded-2xl border border-border bg-muted group shadow-sm">
                   <iframe
+                    title={`Mapa de cobertura en ${location.city}`}
                     src={`https://maps.google.com/maps?q=${location.query}&t=&z=${location.zoom}&ie=UTF8&iwloc=&output=embed`}
                     width="100%"
                     height="100%"

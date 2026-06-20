@@ -326,13 +326,13 @@ export default function Forms() {
                     </Field>
                   </div>
 
-                  <div className="sm:col-span-2 flex items-start gap-3 text-xs text-muted-foreground mt-2">
-                    <input type="checkbox" defaultChecked required className="mt-1 accent-[var(--olive)]" />
+                  <label className="sm:col-span-2 flex items-start gap-3 text-xs text-muted-foreground mt-2 cursor-pointer">
+                    <input type="checkbox" defaultChecked required className="mt-1 accent-[var(--olive)]" aria-label="Confirmar veracidad de los datos" />
                     <span>
                       Confirmo la veracidad de los datos entregados y autorizo a Paisajismo
                       Bascharant a contactarme para evaluar y dar curso a mi solicitud.
                     </span>
-                  </div>
+                  </label>
 
                   <div className="sm:col-span-2 mt-4 text-left flex flex-col sm:flex-row sm:items-center gap-4">
                     <button className="group inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-[13px] font-semibold tracking-wide text-background transition-all duration-500 hover:bg-[var(--olive)] hover:shadow-[var(--shadow-lift)]">

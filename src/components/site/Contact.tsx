@@ -61,7 +61,7 @@ export default function Contact() {
               <Mail strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
                 <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Email</div>
-                <div className="text-sm mt-1 truncate max-w-[120px]" title="paisajismo@bascharant.com">paisajismo...</div>
+                <div className="text-sm mt-1" title="paisajismo@bascharant.com">paisajismo@bascharant.com</div>
               </div>
             </div>
             <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
@@ -76,7 +76,7 @@ export default function Contact() {
               <Instagram strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
                 <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Instagram</div>
-                <div className="text-sm mt-1 truncate max-w-[120px]">@paisajismobascharant</div>
+                <div className="text-sm mt-1">@paisajismobascharant</div>
               </div>
             </div>
             <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
@@ -91,7 +91,7 @@ export default function Contact() {
               <Facebook strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
                 <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Facebook</div>
-                <div className="text-sm mt-1 truncate max-w-[120px]">Paisajismo Bascharant</div>
+                <div className="text-sm mt-1">Paisajismo Bascharant</div>
               </div>
             </div>
             <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
@@ -106,7 +106,7 @@ export default function Contact() {
               <Linkedin strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
                 <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">LinkedIn</div>
-                <div className="text-sm mt-1 truncate max-w-[120px]">Paisajismo Bascharant</div>
+                <div className="text-sm mt-1">Paisajismo Bascharant</div>
               </div>
             </div>
             <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
@@ -121,7 +121,7 @@ export default function Contact() {
               <Twitter strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
                 <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">X (Twitter)</div>
-                <div className="text-sm mt-1 truncate max-w-[120px]">Paisajismo Bascharant</div>
+                <div className="text-sm mt-1">Paisajismo Bascharant</div>
               </div>
             </div>
             <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>

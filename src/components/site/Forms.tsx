@@ -331,9 +331,9 @@ export default function Forms() {
                   </div>
 
                   <label className="sm:col-span-2 flex items-start gap-3 text-xs text-muted-foreground mt-2 cursor-pointer">
-                    <input type="checkbox" defaultChecked required className="mt-1 accent-[var(--olive)]" aria-label="Confirmar veracidad de los datos" />
+                    <input type="checkbox" defaultChecked required className="mt-1 accent-[var(--olive)]" aria-label="Confirmar veracidad de los datos y Política de Privacidad" />
                     <span>
-                      Confirmo la veracidad de los datos entregados y autorizo a Paisajismo
+                      Confirmo la veracidad de los datos entregados, acepto la <a href="/privacy-policy" target="_blank" className="text-[var(--olive)] hover:underline">Política de Privacidad</a> y autorizo a Paisajismo
                       Bascharant a contactarme para evaluar y dar curso a mi solicitud.
                     </span>
                   </label>

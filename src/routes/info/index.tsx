@@ -22,6 +22,14 @@ export const Route = createFileRoute("/info/")({
 
 const ARTICLES = [
   {
+    title: "El enemigo silencioso de las veredas: Mala elección de árbol",
+    description: <>Descubre por qué plantar especies como el Brachychiton cerca de veredas peatonales es una bomba de tiempo para la infraestructura y cómo evitarlo.</>,
+    href: "/info/mala-eleccion-arbol-costos-infraestructura",
+    icon: <AlertTriangle className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
+    tags: ["Infraestructura", "Árboles", "Riesgos"],
+    date: "20 Jun 2026"
+  },
+  {
     title: "El proyectil invisible: Riesgos de desmalezar sin gestión",
     description: <>Descubre por qué desmalezar en espacios públicos sin gestión previa puede convertirse en un grave problema legal y financiero para tu empresa.</>,
     href: "/info/riesgos-desmalezar-espacios-publicos-sin-gestion",

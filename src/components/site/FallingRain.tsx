@@ -15,7 +15,7 @@ export default function FallingRain() {
       id: i,
       left: Math.random() * 100, // Random starting left position (percentage)
       delay: Math.random() * 2, // Random animation delay
-      duration: 0.8 + Math.random() * 0.6, // Random fall duration (slower for a softer look)
+      duration: 1.5 + Math.random() * 1.5, // Random fall duration (slower for a softer look)
       height: 15 + Math.random() * 20, // Random height (15-35px)
       opacity: 0.4 + Math.random() * 0.4, // Random opacity (increased so it's visible)
     }));

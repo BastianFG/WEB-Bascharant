@@ -235,11 +235,13 @@ function MobileCarousel() {
 
 // ─── Main section ──────────────────────────────────────────────────────────────
 import FallingRain from "./FallingRain";
+import FallingBranches from "./FallingBranches";
 
 export default function Services() {
   return (
     <section id="servicios" className="relative overflow-hidden py-28 md:py-40 bg-background/50">
       <FallingRain />
+      <FallingBranches />
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 z-10">
         {/* Header */}
         <div className="flex flex-col md:grid md:grid-cols-12 gap-8 mb-16 md:mb-24">

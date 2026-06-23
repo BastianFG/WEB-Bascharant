@@ -21,6 +21,7 @@ import { Route as ProyectoHabilitacionTerrazaCorporativaLasCondesChileRouteImpor
 import { Route as ProyectoFumigacionControlFitosanitarioQuilicuraChileRouteImport } from './routes/proyecto-fumigacion-control-fitosanitario-quilicura-chile'
 import { Route as ProyectoDisenoPaisajismoVialCopecSantiagoChileRouteImport } from './routes/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
 import { Route as ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRouteImport } from './routes/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRouteImport } from './routes/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
 import { Route as GlosarioRouteImport } from './routes/glosario'
 import { Route as DisenoYConstrucionDeSistemasDeRiegoRouteImport } from './routes/diseno-y-construcion-de-sistemas-de-riego'
@@ -43,8 +44,9 @@ import { Route as InfoIndexRouteImport } from './routes/info/index'
 import { Route as InfoXerojardineriaPaisajismoSecoCorporativoRouteImport } from './routes/info/xerojardineria-paisajismo-seco-corporativo'
 import { Route as InfoRiesgosDesmalezarEspaciosPublicosSinGestionRouteImport } from './routes/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
 import { Route as InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport } from './routes/info/muros-verdes-y-jardines-verticales-corporativos'
+import { Route as InfoMalaEleccionArbolCostosInfraestructuraRouteImport } from './routes/info/mala-eleccion-arbol-costos-infraestructura'
 import { Route as InfoImportanciaRiegoInteligenteEmpresasRouteImport } from './routes/info/importancia-riego-inteligente-empresas'
-import { Route as InfoImportanciaPodaPreventivaOtonoRouteImport } from './routes/info/importancia-poda-preventiva-otono'
+import { Route as InfoImportanciaPodaPreventivaInviernoRouteImport } from './routes/info/importancia-poda-preventiva-invierno'
 import { Route as InfoImportanciaFumigacionesPreventivasRouteImport } from './routes/info/importancia-fumigaciones-preventivas'
 import { Route as InfoImportanciaDesmalezadoControlPlagasEmpresasRouteImport } from './routes/info/importancia-desmalezado-control-plagas-empresas'
 import { Route as InfoImportanciaDeAreasVerdesOficinasEmpresasRouteImport } from './routes/info/importancia-de-areas-verdes-oficinas-empresas'
@@ -121,6 +123,11 @@ const ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute =
     path: '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute =
   PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRouteImport.update({
     id: '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial',
@@ -249,16 +256,22 @@ const InfoMurosVerdesYJardinesVerticalesCorporativosRoute =
     path: '/info/muros-verdes-y-jardines-verticales-corporativos',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InfoMalaEleccionArbolCostosInfraestructuraRoute =
+  InfoMalaEleccionArbolCostosInfraestructuraRouteImport.update({
+    id: '/info/mala-eleccion-arbol-costos-infraestructura',
+    path: '/info/mala-eleccion-arbol-costos-infraestructura',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InfoImportanciaRiegoInteligenteEmpresasRoute =
   InfoImportanciaRiegoInteligenteEmpresasRouteImport.update({
     id: '/info/importancia-riego-inteligente-empresas',
     path: '/info/importancia-riego-inteligente-empresas',
     getParentRoute: () => rootRouteImport,
   } as any)
-const InfoImportanciaPodaPreventivaOtonoRoute =
-  InfoImportanciaPodaPreventivaOtonoRouteImport.update({
-    id: '/info/importancia-poda-preventiva-otono',
-    path: '/info/importancia-poda-preventiva-otono',
+const InfoImportanciaPodaPreventivaInviernoRoute =
+  InfoImportanciaPodaPreventivaInviernoRouteImport.update({
+    id: '/info/importancia-poda-preventiva-invierno',
+    path: '/info/importancia-poda-preventiva-invierno',
     getParentRoute: () => rootRouteImport,
   } as any)
 const InfoImportanciaFumigacionesPreventivasRoute =
@@ -311,6 +324,7 @@ export interface FileRoutesByFullPath {
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
   '/glosario': typeof GlosarioRoute
   '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile': typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
   '/proyecto-diseno-paisajismo-vial-copec-santiago-chile': typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
   '/proyecto-fumigacion-control-fitosanitario-quilicura-chile': typeof ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute
@@ -328,8 +342,9 @@ export interface FileRoutesByFullPath {
   '/info/importancia-de-areas-verdes-oficinas-empresas': typeof InfoImportanciaDeAreasVerdesOficinasEmpresasRoute
   '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
-  '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
+  '/info/importancia-poda-preventiva-invierno': typeof InfoImportanciaPodaPreventivaInviernoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
+  '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
   '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
@@ -354,6 +369,7 @@ export interface FileRoutesByTo {
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
   '/glosario': typeof GlosarioRoute
   '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile': typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
   '/proyecto-diseno-paisajismo-vial-copec-santiago-chile': typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
   '/proyecto-fumigacion-control-fitosanitario-quilicura-chile': typeof ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute
@@ -371,8 +387,9 @@ export interface FileRoutesByTo {
   '/info/importancia-de-areas-verdes-oficinas-empresas': typeof InfoImportanciaDeAreasVerdesOficinasEmpresasRoute
   '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
-  '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
+  '/info/importancia-poda-preventiva-invierno': typeof InfoImportanciaPodaPreventivaInviernoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
+  '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
   '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
@@ -398,6 +415,7 @@ export interface FileRoutesById {
   '/diseno-y-construcion-de-sistemas-de-riego': typeof DisenoYConstrucionDeSistemasDeRiegoRoute
   '/glosario': typeof GlosarioRoute
   '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile': typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
   '/proyecto-diseno-paisajismo-vial-copec-santiago-chile': typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
   '/proyecto-fumigacion-control-fitosanitario-quilicura-chile': typeof ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute
@@ -415,8 +433,9 @@ export interface FileRoutesById {
   '/info/importancia-de-areas-verdes-oficinas-empresas': typeof InfoImportanciaDeAreasVerdesOficinasEmpresasRoute
   '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
-  '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
+  '/info/importancia-poda-preventiva-invierno': typeof InfoImportanciaPodaPreventivaInviernoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
+  '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
   '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
@@ -443,6 +462,7 @@ export interface FileRouteTypes {
     | '/diseno-y-construcion-de-sistemas-de-riego'
     | '/glosario'
     | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+    | '/privacy-policy'
     | '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
     | '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
     | '/proyecto-fumigacion-control-fitosanitario-quilicura-chile'
@@ -460,8 +480,9 @@ export interface FileRouteTypes {
     | '/info/importancia-de-areas-verdes-oficinas-empresas'
     | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
-    | '/info/importancia-poda-preventiva-otono'
+    | '/info/importancia-poda-preventiva-invierno'
     | '/info/importancia-riego-inteligente-empresas'
+    | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
     | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
@@ -486,6 +507,7 @@ export interface FileRouteTypes {
     | '/diseno-y-construcion-de-sistemas-de-riego'
     | '/glosario'
     | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+    | '/privacy-policy'
     | '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
     | '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
     | '/proyecto-fumigacion-control-fitosanitario-quilicura-chile'
@@ -503,8 +525,9 @@ export interface FileRouteTypes {
     | '/info/importancia-de-areas-verdes-oficinas-empresas'
     | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
-    | '/info/importancia-poda-preventiva-otono'
+    | '/info/importancia-poda-preventiva-invierno'
     | '/info/importancia-riego-inteligente-empresas'
+    | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
     | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
@@ -529,6 +552,7 @@ export interface FileRouteTypes {
     | '/diseno-y-construcion-de-sistemas-de-riego'
     | '/glosario'
     | '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial'
+    | '/privacy-policy'
     | '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
     | '/proyecto-diseno-paisajismo-vial-copec-santiago-chile'
     | '/proyecto-fumigacion-control-fitosanitario-quilicura-chile'
@@ -546,8 +570,9 @@ export interface FileRouteTypes {
     | '/info/importancia-de-areas-verdes-oficinas-empresas'
     | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
-    | '/info/importancia-poda-preventiva-otono'
+    | '/info/importancia-poda-preventiva-invierno'
     | '/info/importancia-riego-inteligente-empresas'
+    | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
     | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
@@ -573,6 +598,7 @@ export interface RootRouteChildren {
   DisenoYConstrucionDeSistemasDeRiegoRoute: typeof DisenoYConstrucionDeSistemasDeRiegoRoute
   GlosarioRoute: typeof GlosarioRoute
   PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute: typeof PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute: typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute
   ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute: typeof ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute
   ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute: typeof ProyectoFumigacionControlFitosanitarioQuilicuraChileRoute
@@ -590,8 +616,9 @@ export interface RootRouteChildren {
   InfoImportanciaDeAreasVerdesOficinasEmpresasRoute: typeof InfoImportanciaDeAreasVerdesOficinasEmpresasRoute
   InfoImportanciaDesmalezadoControlPlagasEmpresasRoute: typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   InfoImportanciaFumigacionesPreventivasRoute: typeof InfoImportanciaFumigacionesPreventivasRoute
-  InfoImportanciaPodaPreventivaOtonoRoute: typeof InfoImportanciaPodaPreventivaOtonoRoute
+  InfoImportanciaPodaPreventivaInviernoRoute: typeof InfoImportanciaPodaPreventivaInviernoRoute
   InfoImportanciaRiegoInteligenteEmpresasRoute: typeof InfoImportanciaRiegoInteligenteEmpresasRoute
+  InfoMalaEleccionArbolCostosInfraestructuraRoute: typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   InfoMurosVerdesYJardinesVerticalesCorporativosRoute: typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
   InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute: typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   InfoXerojardineriaPaisajismoSecoCorporativoRoute: typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
@@ -682,6 +709,13 @@ declare module '@tanstack/react-router' {
       path: '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
       fullPath: '/proyecto-diseno-habilitacion-piscina-entorno-chicureo-chile'
       preLoaderRoute: typeof ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial': {
@@ -838,6 +872,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/info/mala-eleccion-arbol-costos-infraestructura': {
+      id: '/info/mala-eleccion-arbol-costos-infraestructura'
+      path: '/info/mala-eleccion-arbol-costos-infraestructura'
+      fullPath: '/info/mala-eleccion-arbol-costos-infraestructura'
+      preLoaderRoute: typeof InfoMalaEleccionArbolCostosInfraestructuraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/info/importancia-riego-inteligente-empresas': {
       id: '/info/importancia-riego-inteligente-empresas'
       path: '/info/importancia-riego-inteligente-empresas'
@@ -845,11 +886,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InfoImportanciaRiegoInteligenteEmpresasRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/info/importancia-poda-preventiva-otono': {
-      id: '/info/importancia-poda-preventiva-otono'
-      path: '/info/importancia-poda-preventiva-otono'
-      fullPath: '/info/importancia-poda-preventiva-otono'
-      preLoaderRoute: typeof InfoImportanciaPodaPreventivaOtonoRouteImport
+    '/info/importancia-poda-preventiva-invierno': {
+      id: '/info/importancia-poda-preventiva-invierno'
+      path: '/info/importancia-poda-preventiva-invierno'
+      fullPath: '/info/importancia-poda-preventiva-invierno'
+      preLoaderRoute: typeof InfoImportanciaPodaPreventivaInviernoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/info/importancia-fumigaciones-preventivas': {
@@ -922,6 +963,7 @@ const rootRouteChildren: RootRouteChildren = {
   GlosarioRoute: GlosarioRoute,
   PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute:
     PodaTalaYTransplanteProfesionalDeArboladoUrbanoComercialRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute:
     ProyectoDisenoHabilitacionPiscinaEntornoChicureoChileRoute,
   ProyectoDisenoPaisajismoVialCopecSantiagoChileRoute:
@@ -954,10 +996,12 @@ const rootRouteChildren: RootRouteChildren = {
     InfoImportanciaDesmalezadoControlPlagasEmpresasRoute,
   InfoImportanciaFumigacionesPreventivasRoute:
     InfoImportanciaFumigacionesPreventivasRoute,
-  InfoImportanciaPodaPreventivaOtonoRoute:
-    InfoImportanciaPodaPreventivaOtonoRoute,
+  InfoImportanciaPodaPreventivaInviernoRoute:
+    InfoImportanciaPodaPreventivaInviernoRoute,
   InfoImportanciaRiegoInteligenteEmpresasRoute:
     InfoImportanciaRiegoInteligenteEmpresasRoute,
+  InfoMalaEleccionArbolCostosInfraestructuraRoute:
+    InfoMalaEleccionArbolCostosInfraestructuraRoute,
   InfoMurosVerdesYJardinesVerticalesCorporativosRoute:
     InfoMurosVerdesYJardinesVerticalesCorporativosRoute,
   InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute:

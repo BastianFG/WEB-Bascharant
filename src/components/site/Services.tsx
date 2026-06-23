@@ -234,20 +234,26 @@ function MobileCarousel() {
 }
 
 // ─── Main section ──────────────────────────────────────────────────────────────
-import FallingLeaves from "./FallingLeaves";
+import FallingRain from "./FallingRain";
 
 export default function Services() {
   return (
     <section id="servicios" className="relative overflow-hidden py-28 md:py-40 bg-background/50">
-      <FallingLeaves />
+      <FallingRain />
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 z-10">
         {/* Header */}
         <div className="flex flex-col md:grid md:grid-cols-12 gap-8 mb-16 md:mb-24">
           <div className="w-full md:col-span-4 flex flex-col items-start gap-4">
             <p className="eyebrow">— Servicios</p>
             <span className="inline-flex items-center gap-2 rounded-full border border-[var(--olive)] bg-[var(--olive)]/10 px-3 py-1 text-[11px] font-semibold tracking-widest uppercase text-[var(--olive)]">
-              Época del Año: Otoño
+              Época del Año: Invierno
             </span>
+            <div className="inline-flex items-start gap-2.5 rounded-xl border border-destructive/20 bg-destructive/10 p-3 text-xs text-destructive max-w-xs">
+              <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" />
+              <p className="leading-relaxed m-0">
+                <strong>¡Peligro!</strong> Riesgo de caída de ramas y árboles por fuertes vientos y lluvia. Recomendamos poda preventiva.
+              </p>
+            </div>
           </div>
           <div className="w-full md:col-span-8">
             <motion.h2

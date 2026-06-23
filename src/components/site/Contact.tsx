@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MessageCircle, Instagram, Facebook, Linkedin, Twitter, MapPin, ArrowRight } from "lucide-react";
-import FallingLeaves from "./FallingLeaves";
+import FallingRain from "./FallingRain";
 
 export default function Contact() {
   return (
     <section id="contacto" className="relative overflow-hidden py-16 md:py-36 bg-secondary/40">
-      <FallingLeaves />
+      <FallingRain />
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 z-10">
         
         {/* Header and Title */}

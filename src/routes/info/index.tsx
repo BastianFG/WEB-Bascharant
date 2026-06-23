@@ -62,11 +62,11 @@ const ARTICLES = [
     date: "11 Jun 2026"
   },
   {
-    title: "Importancia de la Poda Preventiva en Otoño",
-    description: <>Preparar el <GlossaryLink>arbolado urbano</GlossaryLink> y los jardines corporativos antes del invierno reduce <GlossaryLink>riesgos biomecánicos</GlossaryLink> y mejora la salud vegetal.</>,
-    href: "/info/importancia-poda-preventiva-otono",
+    title: "Importancia de la Poda Preventiva en Invierno",
+    description: <>Preparar el <GlossaryLink>arbolado urbano</GlossaryLink> y los jardines corporativos durante el invierno reduce <GlossaryLink>riesgos biomecánicos</GlossaryLink> y mejora la salud vegetal.</>,
+    href: "/info/importancia-poda-preventiva-invierno",
     icon: <Leaf className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
-    tags: ["Silvicultura", "Prevención", "Otoño"],
+    tags: ["Silvicultura", "Prevención", "Invierno"],
     date: "10 Jun 2026"
   },
   {

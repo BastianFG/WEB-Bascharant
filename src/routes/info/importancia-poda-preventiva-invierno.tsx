@@ -7,20 +7,20 @@ import FloatingCTA from "@/components/site/FloatingCTA";
 import FloatingBackButton from "@/components/site/FloatingBackButton";
 import GlossaryLink from "@/components/site/GlossaryLink";
 
-export const Route = createFileRoute("/info/importancia-poda-preventiva-otono")({
+export const Route = createFileRoute("/info/importancia-poda-preventiva-invierno")({
   head: () => ({
     meta: [
-      { title: "Importancia de la Poda Preventiva en Otoño | Info" },
+      { title: "Importancia de la Poda Preventiva en Invierno | Info" },
       {
         name: "description",
-        content: "Conoce por qué el otoño es el momento clave para la poda preventiva y la silvicultura urbana, evitando riesgos biomecánicos en invierno.",
+        content: "Conoce por qué el invierno es el momento clave para la poda preventiva y la silvicultura urbana, evitando riesgos biomecánicos ante fuertes vientos.",
       },
     ],
   }),
-  component: PodaPreventivaOtonoArticle,
+  component: PodaPreventivaInviernoArticle,
 });
 
-function PodaPreventivaOtonoArticle() {
+function PodaPreventivaInviernoArticle() {
   return (
     <main className="relative bg-background text-foreground antialiased overflow-x-hidden min-h-screen flex flex-col">
       <Navbar />
@@ -50,7 +50,7 @@ function PodaPreventivaOtonoArticle() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-display tracking-tight leading-[1.1] text-balance mb-8"
           >
-            La Importancia de la <span className="italic text-[var(--clay)]">Poda Preventiva</span> en Otoño
+            La Importancia de la <span className="italic text-[var(--clay)]">Poda Preventiva</span> en Invierno
           </motion.h1>
           
           <motion.div
@@ -81,7 +81,7 @@ function PodaPreventivaOtonoArticle() {
           <div className="prose prose-lg dark:prose-invert prose-headings:font-display prose-headings:font-normal prose-a:text-[var(--clay)] prose-a:no-underline hover:prose-a:underline max-w-none">
             
             <p className="lead text-xl text-muted-foreground mb-10">
-              A medida que las temperaturas descienden y los días se acortan, el arbolado entra en un estado de letargo. El otoño y el principio del invierno son los momentos biológicamente más adecuados para intervenir las especies arbóreas, minimizando el estrés vegetal y preparando el entorno para los temporales.
+              A medida que las temperaturas descienden y los días se acortan, el arbolado entra en un estado de letargo. El invierno es el momento biológicamente más adecuado para intervenir las especies arbóreas, minimizando el estrés vegetal y preparando el entorno para los temporales.
             </p>
 
             <h2 className="text-3xl mt-12 mb-6">Más allá de la estética: Gestión de Riesgos</h2>
@@ -97,11 +97,11 @@ function PodaPreventivaOtonoArticle() {
               </p>
             </div>
 
-            <h2 className="text-3xl mt-12 mb-6">Beneficios Biológicos de la Poda Otoñal</h2>
+            <h2 className="text-3xl mt-12 mb-6">Beneficios Biológicos de la Poda Invernal</h2>
             
             <ul className="space-y-6 mt-6 mb-12 list-disc pl-5">
               <li>
-                <strong>Cicatrización limpia:</strong> Durante el letargo invernal, el árbol detiene el flujo de savia hacia la copa, evitando que "sangre" excesivamente por los cortes. Esto previene infecciones por hongos patógenos.
+                <strong>Cicatrización limpia:</strong> Durante el invierno, el árbol detiene el flujo de savia hacia la copa, evitando que "sangre" excesivamente por los cortes. Esto previene infecciones por hongos patógenos.
               </li>
               <li>
                 <strong>Visibilidad estructural:</strong> En las especies caducifolias (que pierden la hoja), la ausencia de follaje permite a nuestros arboristas ver con claridad la estructura del esqueleto del árbol, facilitando la identificación de ramas cruzadas, enfermas o mal formadas.

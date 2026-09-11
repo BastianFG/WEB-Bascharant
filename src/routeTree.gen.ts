@@ -43,6 +43,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as InfoIndexRouteImport } from './routes/info/index'
 import { Route as InfoXerojardineriaPaisajismoSecoCorporativoRouteImport } from './routes/info/xerojardineria-paisajismo-seco-corporativo'
 import { Route as InfoRiesgosDesmalezarEspaciosPublicosSinGestionRouteImport } from './routes/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
+import { Route as InfoPrecaucionesInviernoAreasArboladasRouteImport } from './routes/info/precauciones-invierno-areas-arboladas'
 import { Route as InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport } from './routes/info/muros-verdes-y-jardines-verticales-corporativos'
 import { Route as InfoMalaEleccionArbolCostosInfraestructuraRouteImport } from './routes/info/mala-eleccion-arbol-costos-infraestructura'
 import { Route as InfoImportanciaRiegoInteligenteEmpresasRouteImport } from './routes/info/importancia-riego-inteligente-empresas'
@@ -250,6 +251,12 @@ const InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute =
     path: '/info/riesgos-desmalezar-espacios-publicos-sin-gestion',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InfoPrecaucionesInviernoAreasArboladasRoute =
+  InfoPrecaucionesInviernoAreasArboladasRouteImport.update({
+    id: '/info/precauciones-invierno-areas-arboladas',
+    path: '/info/precauciones-invierno-areas-arboladas',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InfoMurosVerdesYJardinesVerticalesCorporativosRoute =
   InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport.update({
     id: '/info/muros-verdes-y-jardines-verticales-corporativos',
@@ -346,6 +353,7 @@ export interface FileRoutesByFullPath {
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  '/info/precauciones-invierno-areas-arboladas': typeof InfoPrecaucionesInviernoAreasArboladasRoute
   '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   '/info/': typeof InfoIndexRoute
@@ -391,6 +399,7 @@ export interface FileRoutesByTo {
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  '/info/precauciones-invierno-areas-arboladas': typeof InfoPrecaucionesInviernoAreasArboladasRoute
   '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   '/info': typeof InfoIndexRoute
@@ -437,6 +446,7 @@ export interface FileRoutesById {
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  '/info/precauciones-invierno-areas-arboladas': typeof InfoPrecaucionesInviernoAreasArboladasRoute
   '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   '/info/': typeof InfoIndexRoute
@@ -484,6 +494,7 @@ export interface FileRouteTypes {
     | '/info/importancia-riego-inteligente-empresas'
     | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
+    | '/info/precauciones-invierno-areas-arboladas'
     | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
     | '/info/'
@@ -529,6 +540,7 @@ export interface FileRouteTypes {
     | '/info/importancia-riego-inteligente-empresas'
     | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
+    | '/info/precauciones-invierno-areas-arboladas'
     | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
     | '/info'
@@ -574,6 +586,7 @@ export interface FileRouteTypes {
     | '/info/importancia-riego-inteligente-empresas'
     | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
+    | '/info/precauciones-invierno-areas-arboladas'
     | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
     | '/info/'
@@ -620,6 +633,7 @@ export interface RootRouteChildren {
   InfoImportanciaRiegoInteligenteEmpresasRoute: typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   InfoMalaEleccionArbolCostosInfraestructuraRoute: typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   InfoMurosVerdesYJardinesVerticalesCorporativosRoute: typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
+  InfoPrecaucionesInviernoAreasArboladasRoute: typeof InfoPrecaucionesInviernoAreasArboladasRoute
   InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute: typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   InfoXerojardineriaPaisajismoSecoCorporativoRoute: typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   InfoIndexRoute: typeof InfoIndexRoute
@@ -865,6 +879,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/info/precauciones-invierno-areas-arboladas': {
+      id: '/info/precauciones-invierno-areas-arboladas'
+      path: '/info/precauciones-invierno-areas-arboladas'
+      fullPath: '/info/precauciones-invierno-areas-arboladas'
+      preLoaderRoute: typeof InfoPrecaucionesInviernoAreasArboladasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/info/muros-verdes-y-jardines-verticales-corporativos': {
       id: '/info/muros-verdes-y-jardines-verticales-corporativos'
       path: '/info/muros-verdes-y-jardines-verticales-corporativos'
@@ -1004,6 +1025,8 @@ const rootRouteChildren: RootRouteChildren = {
     InfoMalaEleccionArbolCostosInfraestructuraRoute,
   InfoMurosVerdesYJardinesVerticalesCorporativosRoute:
     InfoMurosVerdesYJardinesVerticalesCorporativosRoute,
+  InfoPrecaucionesInviernoAreasArboladasRoute:
+    InfoPrecaucionesInviernoAreasArboladasRoute,
   InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute:
     InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute,
   InfoXerojardineriaPaisajismoSecoCorporativoRoute:

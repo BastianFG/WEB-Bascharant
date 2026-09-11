@@ -234,26 +234,24 @@ function MobileCarousel() {
 }
 
 // ─── Main section ──────────────────────────────────────────────────────────────
-import FallingRain from "./FallingRain";
-import FallingBranches from "./FallingBranches";
+import FiestasPatrias from "./FiestasPatrias";
 
 export default function Services() {
   return (
     <section id="servicios" className="relative overflow-hidden py-28 md:py-40 bg-background/50">
-      <FallingRain />
-      <FallingBranches />
+      <FiestasPatrias />
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 z-10">
         {/* Header */}
         <div className="flex flex-col md:grid md:grid-cols-12 gap-8 mb-16 md:mb-24">
           <div className="w-full md:col-span-4 flex flex-col items-start gap-4">
             <p className="eyebrow">— Servicios</p>
             <span className="inline-flex items-center gap-2 rounded-full border border-[var(--olive)] bg-[var(--olive)]/10 px-3 py-1 text-[11px] font-semibold tracking-widest uppercase text-[var(--olive)]">
-              Época del Año: Invierno
+              Mes de la Patria
             </span>
-            <div className="inline-flex items-start gap-2.5 rounded-xl border border-destructive/20 bg-destructive/10 p-3 text-xs text-destructive max-w-xs">
-              <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" />
-              <p className="leading-relaxed m-0">
-                <strong>¡Peligro!</strong> Riesgo de caída de ramas y árboles por fuertes vientos y lluvia. Recomendamos poda preventiva.
+            <div className="inline-flex items-start gap-2.5 rounded-xl border border-[var(--olive)]/20 bg-[var(--olive)]/10 p-3 text-xs text-foreground max-w-xs">
+              <span className="text-xl leading-none">🇨🇱</span>
+              <p className="leading-relaxed m-0 text-muted-foreground">
+                <strong>¡Felices Fiestas Patrias!</strong> Celebramos este 18 de septiembre embelleciendo las áreas verdes de Chile.
               </p>
             </div>
           </div>
@@ -263,12 +261,12 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[clamp(2rem,4.5vw,4rem)] leading-[1.02] tracking-tightest text-balance"
+              className="text-[clamp(1.5rem,3.5vw,3rem)] leading-[1.15] tracking-tight text-balance"
             >
-              Soluciones integrales para proyectos de paisajismo
+              Soluciones integrales de paisajismo para infraestructura corporativa,
               <span className="italic text-muted-foreground">
                 {" "}
-                en infraestructura corporativa.
+                con enfoque en diseño, mantención y sustentabilidad.
               </span>
             </motion.h2>
           </div>

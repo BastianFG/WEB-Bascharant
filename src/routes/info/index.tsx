@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { BookOpen, ShieldCheck, Leaf, ArrowRight, BrainCircuit, Droplets, Settings2, Syringe, ThermometerSun, Bug, AlertTriangle } from "lucide-react";
+import { BookOpen, ShieldCheck, Leaf, ArrowRight, BrainCircuit, Droplets, Settings2, Syringe, ThermometerSun, Bug, AlertTriangle, Snowflake } from "lucide-react";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
@@ -21,6 +21,14 @@ export const Route = createFileRoute("/info/")({
 });
 
 const ARTICLES = [
+  {
+    title: "Llegada del Invierno: Precauciones en Áreas Arboladas",
+    description: <>Descubre las precauciones esenciales a tomar frente a la llegada del invierno en zonas con árboles para evitar accidentes estructurales y riesgos.</>,
+    href: "/info/precauciones-invierno-areas-arboladas",
+    icon: <Snowflake className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
+    tags: ["Prevención", "Invierno", "Árboles"],
+    date: "23 Jun 2026"
+  },
   {
     title: "El enemigo silencioso de las veredas: Mala elección de árbol",
     description: <>Descubre por qué plantar especies como el Brachychiton cerca de veredas peatonales es una bomba de tiempo para la infraestructura y cómo evitarlo.</>,

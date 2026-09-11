@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import img from "@/assets/editorial.jpg";
 import Hummingbird from "@/components/site/Hummingbird";
+import CopihueDesign from "./CopihueDesign";
 
 export default function Editorial() {
   const ref = useRef<HTMLDivElement>(null);
@@ -30,9 +31,12 @@ export default function Editorial() {
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-6 order-1 lg:order-2">
-            <p className="eyebrow mb-6">— Filosofía</p>
-            <motion.h2
+          <div className="col-span-12 lg:col-span-6 order-1 lg:order-2 relative">
+            <CopihueDesign className="absolute -top-16 -right-4 lg:-right-12 w-32 h-32 lg:w-48 lg:h-48 opacity-90 hidden sm:block z-0 pointer-events-none" />
+            
+            <div className="relative z-10">
+              <p className="eyebrow mb-6">— Filosofía</p>
+              <motion.h2
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -72,6 +76,7 @@ export default function Editorial() {
                   </div>
                 </div>
               ))}
+            </div>
             </div>
           </div>
         </div>

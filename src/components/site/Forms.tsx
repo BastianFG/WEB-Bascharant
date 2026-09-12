@@ -182,15 +182,6 @@ export default function Forms() {
                       placeholder="Ej. Carlos Mendoza"
                     />
                   </Field>
-                  <Field label="Cargo / Departamento (Opcional)">
-                    <input
-                      name="Cargo_Departamento"
-                      autoComplete="honorific-suffix"
-                      maxLength={80}
-                      className={inputCls}
-                      placeholder="Ej. Jefe de Operaciones"
-                    />
-                  </Field>
                   <Field label="Empresa / Razón Social / Condominio">
                     <input
                       name="Empresa_Razon_Social"
@@ -201,20 +192,7 @@ export default function Forms() {
                       placeholder="Ej. Constructora Alianza SpA"
                     />
                   </Field>
-                  <Field label="RUT Empresa (Opcional)">
-                    <div className="relative w-full">
-                      <input
-                        name="RUT_Empresa"
-                        maxLength={15}
-                        pattern="^[0-9]{7,8}-[0-9Kk]{1}$"
-                        title="Formato de RUT inválido. Ejemplo: 76123456-K (sin puntos y con guión)"
-                        className={inputCls}
-                        placeholder="Ej. 76123456-K"
-                      />
-                      <span className="block text-[9px] text-muted-foreground/80 mt-1">Requerido para facturación formal o licitaciones</span>
-                    </div>
-                  </Field>
-                  <Field label="Correo Electrónico Corporativo">
+                  <Field label="Correo Electrónico">
                     <input
                       name="Correo_Contacto"
                       required
@@ -278,22 +256,6 @@ export default function Forms() {
                     </Field>
                   </div>
 
-                  <Field label="Superficie Estimada (Opcional)">
-                    <select
-                      name="Superficie_Estimada"
-                      className={inputCls}
-                      defaultValue=""
-                    >
-                      <option value="" disabled>
-                        Seleccionar rango
-                      </option>
-                      <option>Menor a 500 m²</option>
-                      <option>500 m² a 2.000 m²</option>
-                      <option>2.000 m² a 10.000 m²</option>
-                      <option>Mayor a 10.000 m²</option>
-                      <option>No determinado / Requiere levantamiento</option>
-                    </select>
-                  </Field>
                   <Field label="Fecha Sugerida (Para inicio o reunión)">
                     <input
                       name="Fecha_Sugerida"
@@ -302,20 +264,6 @@ export default function Forms() {
                       className={inputCls}
                     />
                   </Field>
-
-                  <div className="sm:col-span-2">
-                    <Field label="Bases Técnicas / Planos / Archivos (Opcional)">
-                      <div className="w-full">
-                        <input
-                          name="Archivos_Adjuntos"
-                          type="file"
-                          multiple
-                          className="block w-full text-xs text-muted-foreground file:mr-4 file:rounded-full file:border-0 file:bg-foreground file:text-background file:px-4 file:py-2 file:text-[11px] file:tracking-wider file:uppercase file:font-semibold hover:file:opacity-90 file:cursor-pointer mt-2"
-                        />
-                        <span className="block text-[9px] text-muted-foreground/80 mt-1">Puedes adjuntar planos (PDF, CAD), especificaciones del proyecto o fotos del área</span>
-                      </div>
-                    </Field>
-                  </div>
 
                   <div className="sm:col-span-2">
                     <Field label="Detalles del Requerimiento / Objetivos">

@@ -70,12 +70,6 @@ export default function Hero() {
               Solicitar Propuesta Comercial
               <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
             </a>
-            <a
-              href="#reunion-tecnica"
-              className="inline-flex items-center justify-center gap-3 rounded-full border border-white/30 px-7 py-4 text-[13px] font-medium tracking-wide text-white backdrop-blur-sm transition-all duration-500 hover:bg-white/10 text-center"
-            >
-              Agendar Reunión Técnica
-            </a>
           </motion.div>
 
           {/* SLA & B2B Trust Indicators */}

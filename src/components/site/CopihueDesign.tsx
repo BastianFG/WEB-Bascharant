@@ -35,18 +35,12 @@ export default function CopihueDesign({ className = "" }: { className?: string }
           {/* Base verde del copihue */}
           <path d="M40 10 L48 20 L32 20 Z" fill="#209848" />
           <circle cx="40" cy="10" r="5" fill="#209848" />
-
+          
           {/* Pétalos traseros */}
-          <path
-            d="M40 20 Q 15 40 5 85 Q 25 75 40 110 Q 55 75 75 85 Q 65 40 40 20 Z"
-            fill="#b91329"
-          />
-
+          <path d="M40 20 Q 15 40 5 85 Q 25 75 40 110 Q 55 75 75 85 Q 65 40 40 20 Z" fill="#b91329" />
+          
           {/* Pétalos delanteros */}
-          <path
-            d="M40 20 Q 25 50 20 80 Q 40 105 40 125 Q 40 105 60 80 Q 55 50 40 20 Z"
-            fill="#dc1835"
-          />
+          <path d="M40 20 Q 25 50 20 80 Q 40 105 40 125 Q 40 105 60 80 Q 55 50 40 20 Z" fill="#dc1835" />
         </g>
 
         {/* Copihue 2 (Derecho) */}
@@ -54,18 +48,12 @@ export default function CopihueDesign({ className = "" }: { className?: string }
           {/* Base verde del copihue */}
           <path d="M40 10 L48 20 L32 20 Z" fill="#209848" />
           <circle cx="40" cy="10" r="5" fill="#209848" />
-
+          
           {/* Pétalos traseros */}
-          <path
-            d="M40 20 Q 15 40 5 85 Q 25 75 40 110 Q 55 75 75 85 Q 65 40 40 20 Z"
-            fill="#b91329"
-          />
-
+          <path d="M40 20 Q 15 40 5 85 Q 25 75 40 110 Q 55 75 75 85 Q 65 40 40 20 Z" fill="#b91329" />
+          
           {/* Pétalos delanteros */}
-          <path
-            d="M40 20 Q 25 50 20 80 Q 40 105 40 125 Q 40 105 60 80 Q 55 50 40 20 Z"
-            fill="#e61f3e"
-          />
+          <path d="M40 20 Q 25 50 20 80 Q 40 105 40 125 Q 40 105 60 80 Q 55 50 40 20 Z" fill="#e61f3e" />
         </g>
       </svg>
     </motion.div>

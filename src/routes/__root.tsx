@@ -10,6 +10,7 @@ import {
   Scripts,
   useLocation,
 } from "@tanstack/react-router";
+import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
 
@@ -71,51 +72,28 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: ({ location }) => {
-    const cleanPath = location.pathname === "/" ? "" : location.pathname.replace(/\/$/, "");
-    const canonicalUrl = `https://www.bascharant.com${cleanPath}`;
-
-    return {
-      meta: [
-        { charSet: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no" },
-        { title: "Paisajismo Bascharant | Paisajismo Corporativo y Sustentable en Chile" },
-        {
-          name: "description",
-          content:
-            "Diseño, construcción y mantención de áreas verdes empresas, condominios, industrias e instituciones. Más de 13 años de experiencia.",
-        },
-        { name: "author", content: "Paisajismo Bascharant SpA" },
-        {
-          name: "robots",
-          content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-        },
-        { name: "theme-color", content: "#2d3722" },
-        {
-          property: "og:title",
-          content: "Paisajismo Bascharant | Líderes en Paisajismo Corporativo",
-        },
-        {
-          property: "og:description",
-          content:
-            "Servicios integrales de paisajismo a gran escala para empresas, condominios, industrias e instituciones en Chile.",
-        },
-        { property: "og:type", content: "website" },
-        { property: "og:locale", content: "es_CL" },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-      links: [
-        {
-          rel: "stylesheet",
-          href: appCss,
-        },
-        {
-          rel: "canonical",
-          href: canonicalUrl,
-        },
-      ],
-    };
-  },
+  head: () => ({
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no" },
+      { title: "Paisajismo Bascharant | Paisajismo Corporativo y Sustentable en Chile" },
+      { name: "description", content: "Diseño, construcción y mantención de áreas verdes empresas, condominios, industrias e instituciones. Más de 13 años de experiencia." },
+      { name: "author", content: "Paisajismo Bascharant SpA" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "theme-color", content: "#2d3722" },
+      { property: "og:title", content: "Paisajismo Bascharant | Líderes en Paisajismo Corporativo" },
+      { property: "og:description", content: "Servicios integrales de paisajismo a gran escala para empresas, condominios, industrias e instituciones en Chile." },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "es_CL" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [
+      {
+        rel: "stylesheet",
+        href: appCss,
+      },
+    ],
+  }),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -152,6 +130,19 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const location = useLocation();
+
+  useEffect(() => {
+    const cleanPath = location.pathname === "/" ? "" : location.pathname.replace(/\/$/, "");
+    const canonicalUrl = `https://www.bascharant.com${cleanPath}`;
+    
+    let link: HTMLLinkElement | null = document.querySelector("link[rel='canonical']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "canonical";
+      document.head.appendChild(link);
+    }
+    link.href = canonicalUrl;
+  }, [location.pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>

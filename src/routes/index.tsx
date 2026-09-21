@@ -43,125 +43,124 @@ function Index() {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Paisajismo Bascharant SpA",
-    taxID: "76280819-6",
-    alternateName: "Verde Arcadia Collective",
-    image: "https://bascharant.cl/assets/hero.jpg",
+    "name": "Paisajismo Bascharant SpA",
+    "taxID": "76280819-6",
+    "alternateName": "Verde Arcadia Collective",
+    "image": "https://bascharant.cl/assets/hero.jpg",
     "@id": "https://bascharant.cl/#organization",
-    url: "https://bascharant.cl",
-    telephone: "+56988458216",
-    email: "paisajismo@bascharant.com",
-    priceRange: "$$$",
-    address: {
+    "url": "https://bascharant.cl",
+    "telephone": "+56988458216",
+    "email": "paisajismo@bascharant.com",
+    "priceRange": "$$$",
+    "address": {
       "@type": "PostalAddress",
-      streetAddress: "Santiago",
-      addressLocality: "Santiago",
-      addressRegion: "Región Metropolitana",
-      addressCountry: "CL",
+      "streetAddress": "Santiago",
+      "addressLocality": "Santiago",
+      "addressRegion": "Región Metropolitana",
+      "addressCountry": "CL"
     },
-    geo: {
+    "geo": {
       "@type": "GeoCoordinates",
-      latitude: "-33.4489",
-      longitude: "-70.6693",
+      "latitude": "-33.4489",
+      "longitude": "-70.6693"
     },
-    openingHoursSpecification: {
+    "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "00:00",
-      closes: "23:59",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
     },
-    sameAs: [
+    "sameAs": [
       "https://www.instagram.com/paisajismobascharant",
       "https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/",
       "https://www.facebook.com/people/Paisajismo-Bascharant/61590789628168/",
-      "https://x.com/Josfuentesgome2",
+      "https://x.com/Josfuentesgome2"
     ],
-    areaServed: [
+    "areaServed": [
       {
         "@type": "AdministrativeArea",
-        name: "Santiago",
+        "name": "Santiago"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Lo Barnechea",
+        "name": "Lo Barnechea"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Las Condes",
+        "name": "Las Condes"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Vitacura",
+        "name": "Vitacura"
       },
       {
         "@type": "AdministrativeArea",
-        name: "La Dehesa",
+        "name": "La Dehesa"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Huechuraba",
+        "name": "Huechuraba"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Chicureo",
+        "name": "Chicureo"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Quilicura",
+        "name": "Quilicura"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Conchalí",
+        "name": "Conchalí"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Colina",
+        "name": "Colina"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Lampa",
+        "name": "Lampa"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Renca",
+        "name": "Renca"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Macul",
+        "name": "Macul"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Ñuñoa",
+        "name": "Ñuñoa"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Providencia",
+        "name": "Providencia"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Peñalolén",
+        "name": "Peñalolén"
       },
-
+      
       {
         "@type": "AdministrativeArea",
-        name: "Cachagua",
-      },
-      {
-        "@type": "AdministrativeArea",
-        name: "Algarrobo",
+        "name": "Cachagua"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Zapallar",
+        "name": "Algarrobo"
       },
       {
         "@type": "AdministrativeArea",
-        name: "Frutillar",
+        "name": "Zapallar"
       },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Frutillar"
+      }
     ],
-    description:
-      "Empresa líder en paisajismo , diseño, ejecución y mantención de áreas verdes comerciales en Chile. Especialistas en contratos SLA para constructoras , oficinas , empresas , condominios y particulares.",
-    knowsAbout: [
+    "description": "Empresa líder en paisajismo , diseño, ejecución y mantención de áreas verdes comerciales en Chile. Especialistas en contratos SLA para constructoras , oficinas , empresas , condominios y particulares.",
+    "knowsAbout": [
       "Paisajismo Corporativo",
       "Diseño, Construcción y Mantención de Áreas Verdes.",
       "Trabajos de Emergencia",
@@ -170,7 +169,7 @@ function Index() {
       "Sistemas de Riego Tecnificado",
       "Poda en Altura Certificada",
       "Tala de Árboles",
-      "Diseño paisajístico 3D",
+      "Diseño paisajístico 3D",      
       "Habilitación de Oficinas Verdes",
       "Instalación de Pasto Sintético",
       "Mantenimiento de Jardines",
@@ -180,8 +179,8 @@ function Index() {
       "Mantenimiento de Canchas",
       "Tratamiento de Plagas",
       "Control de Malezas",
-      "Abonado Orgánico",
-    ],
+      "Abonado Orgánico"
+    ]
   };
 
   return (

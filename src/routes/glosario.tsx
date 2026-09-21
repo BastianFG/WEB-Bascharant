@@ -14,14 +14,12 @@ export const Route = createFileRoute("/glosario")({
       { title: "Glosario Técnico | Paisajismo Bascharant" },
       {
         name: "description",
-        content:
-          "Diccionario y conceptos técnicos sobre paisajismo, mantención de áreas verdes, tratamientos fitosanitarios y servicios corporativos B2B.",
+        content: "Diccionario y conceptos técnicos sobre paisajismo, mantención de áreas verdes, tratamientos fitosanitarios y servicios corporativos B2B.",
       },
       { property: "og:title", content: "Glosario Técnico — Paisajismo Bascharant" },
       {
         property: "og:description",
-        content:
-          "Aprende el significado de conceptos clave como Endoterapia, Fitosanitario, Xerojardinería y más.",
+        content: "Aprende el significado de conceptos clave como Endoterapia, Fitosanitario, Xerojardinería y más.",
       },
     ],
   }),
@@ -31,124 +29,104 @@ export const Route = createFileRoute("/glosario")({
 const GLOSSARY_TERMS = [
   {
     term: "Control Fitosanitario",
-    definition:
-      "Conjunto de medidas y tratamientos aplicados para prevenir, mitigar y erradicar plagas y enfermedades que afectan a las especies vegetales. Asegura la salud integral de las áreas verdes y evita la proliferación de vectores de riesgo.",
-    tags: ["Sanidad", "Prevención"],
+    definition: "Conjunto de medidas y tratamientos aplicados para prevenir, mitigar y erradicar plagas y enfermedades que afectan a las especies vegetales. Asegura la salud integral de las áreas verdes y evita la proliferación de vectores de riesgo.",
+    tags: ["Sanidad", "Prevención"]
   },
   {
     term: "Fitosanitario / Sanidad Vegetal",
-    definition:
-      "Relativo a la prevención y curación de las enfermedades de las plantas. Involucra el control de plagas y enfermedades mediante métodos ecológicos, químicos o biológicos para mantener la salud integral de las áreas verdes.",
-    tags: ["Mantenimiento", "Salud Vegetal"],
+    definition: "Relativo a la prevención y curación de las enfermedades de las plantas. Involucra el control de plagas y enfermedades mediante métodos ecológicos, químicos o biológicos para mantener la salud integral de las áreas verdes.",
+    tags: ["Mantenimiento", "Salud Vegetal"]
   },
   {
     term: "Endoterapia",
-    definition:
-      "Innovador método terapéutico de tratamientos fitosanitarios del arbolado urbano. Consiste en la inyección del producto directamente en el sistema vascular de la planta. Es más ecológico, focalizado y seguro para el entorno que las fumigaciones tradicionales en spray.",
-    tags: ["Innovación", "Arbolado"],
+    definition: "Innovador método terapéutico de tratamientos fitosanitarios del arbolado urbano. Consiste en la inyección del producto directamente en el sistema vascular de la planta. Es más ecológico, focalizado y seguro para el entorno que las fumigaciones tradicionales en spray.",
+    tags: ["Innovación", "Arbolado"]
   },
   {
     term: "B2B (Business to Business)",
-    definition:
-      "Modelo de negocio corporativo en el que los servicios se prestan de una empresa a otra. En Paisajismo Bascharant, nos especializamos en servicios B2B, atendiendo los exigentes requerimientos de constructoras, condominios, oficinas y corporaciones.",
-    tags: ["Corporativo", "Negocios"],
+    definition: "Modelo de negocio corporativo en el que los servicios se prestan de una empresa a otra. En Paisajismo Bascharant, nos especializamos en servicios B2B, atendiendo los exigentes requerimientos de constructoras, condominios, oficinas y corporaciones.",
+    tags: ["Corporativo", "Negocios"]
   },
   {
     term: "SLA (Service Level Agreement)",
-    definition:
-      "Acuerdo de Nivel de Servicio. Es un contrato corporativo que documenta y asegura los servicios específicos que proveeremos y los estándares de calidad obligatorios. Garantiza a nuestros clientes resultados medibles, predecibles y profesionales.",
-    tags: ["Corporativo", "Contratos"],
+    definition: "Acuerdo de Nivel de Servicio. Es un contrato corporativo que documenta y asegura los servicios específicos que proveeremos y los estándares de calidad obligatorios. Garantiza a nuestros clientes resultados medibles, predecibles y profesionales.",
+    tags: ["Corporativo", "Contratos"]
   },
   {
     term: "Xerojardinería / Paisajismo Seco",
-    definition:
-      "Estilo de paisajismo de vanguardia diseñado para minimizar o eliminar la necesidad de riego suplementario. Utiliza especies nativas o exóticas adaptadas al clima árido y técnicas de conservación de humedad, ideal para la crisis hídrica actual en Chile.",
-    tags: ["Diseño", "Sustentabilidad"],
+    definition: "Estilo de paisajismo de vanguardia diseñado para minimizar o eliminar la necesidad de riego suplementario. Utiliza especies nativas o exóticas adaptadas al clima árido y técnicas de conservación de humedad, ideal para la crisis hídrica actual en Chile.",
+    tags: ["Diseño", "Sustentabilidad"]
   },
   {
     term: "Silvicultura Urbana",
-    definition:
-      "Cuidado, manejo y planificación de poblaciones de árboles en entornos urbanos con el propósito de mejorar el medio ambiente y la calidad de vida. Incluye poda técnica, tala preventiva, plantación y evaluación de riesgo biomecánico del arbolado.",
-    tags: ["Mantenimiento", "Arbolado"],
+    definition: "Cuidado, manejo y planificación de poblaciones de árboles en entornos urbanos con el propósito de mejorar el medio ambiente y la calidad de vida. Incluye poda técnica, tala preventiva, plantación y evaluación de riesgo biomecánico del arbolado.",
+    tags: ["Mantenimiento", "Arbolado"]
   },
   {
     term: "Escorrentía",
-    definition:
-      "Flujo del agua de lluvia o riego que escurre sobre la superficie del terreno sin ser absorbida. Un diseño paisajístico ecosistémico, como los 'rain gardens' (jardines de lluvia), ayuda a controlar y retener la escorrentía, previniendo inundaciones locales.",
-    tags: ["Agua", "Ecosistema"],
+    definition: "Flujo del agua de lluvia o riego que escurre sobre la superficie del terreno sin ser absorbida. Un diseño paisajístico ecosistémico, como los 'rain gardens' (jardines de lluvia), ayuda a controlar y retener la escorrentía, previniendo inundaciones locales.",
+    tags: ["Agua", "Ecosistema"]
   },
   {
     term: "Biodiversidad",
-    definition:
-      "Variedad y variabilidad de especies de flora, fauna y microorganismos en un área verde. Un paisajismo moderno y sustentable busca aumentar activamente la biodiversidad para crear ecosistemas resilientes, hermosos y autorregulados frente a plagas.",
-    tags: ["Ecosistema", "Sustentabilidad"],
+    definition: "Variedad y variabilidad de especies de flora, fauna y microorganismos en un área verde. Un paisajismo moderno y sustentable busca aumentar activamente la biodiversidad para crear ecosistemas resilientes, hermosos y autorregulados frente a plagas.",
+    tags: ["Ecosistema", "Sustentabilidad"]
   },
   {
     term: "Cubicación Técnica",
-    definition:
-      "Proceso de cálculo preciso de los materiales, volúmenes de tierra, cantidad de especies vegetales e insumos necesarios para ejecutar un proyecto de paisajismo de acuerdo a los planos y especificaciones técnicas.",
-    tags: ["Diseño", "Ejecución"],
+    definition: "Proceso de cálculo preciso de los materiales, volúmenes de tierra, cantidad de especies vegetales e insumos necesarios para ejecutar un proyecto de paisajismo de acuerdo a los planos y especificaciones técnicas.",
+    tags: ["Diseño", "Ejecución"]
   },
   {
     term: "Manejo Integrado de Plagas (MIP) / Control Integral de Plagas",
-    definition:
-      "Estrategia ecológica que se enfoca en la prevención a largo plazo de plagas mediante la combinación de técnicas como el control biológico, físico y químico de manera focalizada para prevenir infestaciones antes de que ocurran.",
-    tags: ["Fitosanitario", "Mantenimiento"],
+    definition: "Estrategia ecológica que se enfoca en la prevención a largo plazo de plagas mediante la combinación de técnicas como el control biológico, físico y químico de manera focalizada para prevenir infestaciones antes de que ocurran.",
+    tags: ["Fitosanitario", "Mantenimiento"]
   },
   {
     term: "Bioseguridad Corporativa",
-    definition:
-      "Conjunto de medidas preventivas destinadas a mantener el control de factores de riesgo laborales procedentes de agentes biológicos, físicos o químicos en un entorno empresarial.",
-    tags: ["Corporativo", "Salud"],
+    definition: "Conjunto de medidas preventivas destinadas a mantener el control de factores de riesgo laborales procedentes de agentes biológicos, físicos o químicos en un entorno empresarial.",
+    tags: ["Corporativo", "Salud"]
   },
   {
     term: "Vectores Sanitarios",
-    definition:
-      "Organismos vivos, como insectos (mosquitos, moscas) o roedores, que pueden transmitir enfermedades infecciosas dentro de un entorno empresarial o residencial.",
-    tags: ["Salud", "Fitosanitario"],
+    definition: "Organismos vivos, como insectos (mosquitos, moscas) o roedores, que pueden transmitir enfermedades infecciosas dentro de un entorno empresarial o residencial.",
+    tags: ["Salud", "Fitosanitario"]
   },
   {
     term: "Biofilia / Diseño Biofílico",
-    definition:
-      "Afinidad innata del ser humano por la naturaleza. El Diseño Biofílico integra luz natural, vegetación y materiales orgánicos en oficinas para reducir el estrés, potenciar la concentración y mejorar la productividad laboral.",
-    tags: ["Diseño", "Bienestar"],
+    definition: "Afinidad innata del ser humano por la naturaleza. El Diseño Biofílico integra luz natural, vegetación y materiales orgánicos en oficinas para reducir el estrés, potenciar la concentración y mejorar la productividad laboral.",
+    tags: ["Diseño", "Bienestar"]
   },
   {
     term: "Isla de Calor Urbana / Islas de Calor",
-    definition:
-      "Fenómeno donde las áreas urbanas construidas presentan temperaturas significativamente más altas que sus alrededores naturales debido a la absorción de radiación solar por el asfalto y hormigón. Se mitiga mediante muros verdes y plantación de arbolado.",
-    tags: ["Clima", "Sustentabilidad"],
+    definition: "Fenómeno donde las áreas urbanas construidas presentan temperaturas significativamente más altas que sus alrededores naturales debido a la absorción de radiación solar por el asfalto y hormigón. Se mitiga mediante muros verdes y plantación de arbolado.",
+    tags: ["Clima", "Sustentabilidad"]
   },
   {
     term: "Estrés Hídrico",
-    definition:
-      "Condición en la cual la demanda de agua supera la cantidad disponible o la calidad del agua restringe su uso. En paisajismo, se combate mediante especies xerófitas, sistemas de riego inteligente y disminución de superficies de césped.",
-    tags: ["Agua", "Sustentabilidad"],
+    definition: "Condición en la cual la demanda de agua supera la cantidad disponible o la calidad del agua restringe su uso. En paisajismo, se combate mediante especies xerófitas, sistemas de riego inteligente y disminución de superficies de césped.",
+    tags: ["Agua", "Sustentabilidad"]
   },
   {
     term: "Fumigaciones Preventivas",
-    definition:
-      "Aplicación programada de productos y estrategias fitosanitarias para evitar la aparición y proliferación de plagas en entornos corporativos. Asegura la bioseguridad y evita el alto costo de la reactividad ante infestaciones mayores.",
-    tags: ["Fitosanitario", "Prevención"],
+    definition: "Aplicación programada de productos y estrategias fitosanitarias para evitar la aparición y proliferación de plagas en entornos corporativos. Asegura la bioseguridad y evita el alto costo de la reactividad ante infestaciones mayores.",
+    tags: ["Fitosanitario", "Prevención"]
   },
   {
     term: "Riesgo Biomecánico / Riesgos Biomecánicos",
-    definition:
-      "Probabilidad de que una rama o un árbol entero falle y caiga debido a pudrición, uniones débiles o exceso de peso por humedad. Se evalúa a través de silvicultura urbana preventiva para proteger personas, vehículos e infraestructura.",
-    tags: ["Arbolado", "Seguridad"],
+    definition: "Probabilidad de que una rama o un árbol entero falle y caiga debido a pudrición, uniones débiles o exceso de peso por humedad. Se evalúa a través de silvicultura urbana preventiva para proteger personas, vehículos e infraestructura.",
+    tags: ["Arbolado", "Seguridad"]
   },
   {
     term: "Riego Tecnificado / Inteligente",
-    definition:
-      "Sistema de irrigación automatizado de alta eficiencia. Incorpora líneas de goteo, sensores de lluvia y humedad de suelo, y conexión a estaciones meteorológicas para entregar el agua exacta requerida, reduciendo drásticamente el consumo y costos hídricos.",
-    tags: ["Tecnología", "Agua"],
+    definition: "Sistema de irrigación automatizado de alta eficiencia. Incorpora líneas de goteo, sensores de lluvia y humedad de suelo, y conexión a estaciones meteorológicas para entregar el agua exacta requerida, reduciendo drásticamente el consumo y costos hídricos.",
+    tags: ["Tecnología", "Agua"]
   },
   {
     term: "Muros Verdes / Jardines Verticales",
-    definition:
-      "Estructuras arquitectónicas verticales cubiertas de vegetación, utilizadas en fachadas o interiores. Son vitales en zonas de alta densidad ya que combaten el efecto isla de calor, aíslan el ruido, purifican el aire y optimizan espacios reducidos.",
-    tags: ["Arquitectura Verde", "Diseño"],
-  },
+    definition: "Estructuras arquitectónicas verticales cubiertas de vegetación, utilizadas en fachadas o interiores. Son vitales en zonas de alta densidad ya que combaten el efecto isla de calor, aíslan el ruido, purifican el aire y optimizan espacios reducidos.",
+    tags: ["Arquitectura Verde", "Diseño"]
+  }
 ];
 
 function GlosarioPage() {
@@ -171,7 +149,7 @@ function GlosarioPage() {
       return (
         item.term.toLowerCase().includes(searchLower) ||
         item.definition.toLowerCase().includes(searchLower) ||
-        item.tags.some((tag) => tag.toLowerCase().includes(searchLower))
+        item.tags.some(tag => tag.toLowerCase().includes(searchLower))
       );
     });
   }, [searchQuery]);
@@ -179,13 +157,14 @@ function GlosarioPage() {
   return (
     <main className="relative bg-background text-foreground antialiased overflow-x-hidden min-h-screen flex flex-col">
       <Navbar />
-
+      
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-[var(--olive)]/5 pattern-dots opacity-50 pointer-events-none" />
-
+        
         <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 z-10">
           <div className="max-w-3xl mx-auto text-center">
+            
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -195,7 +174,7 @@ function GlosarioPage() {
               <BookOpen size={14} />
               <span>Diccionario Corporativo</span>
             </motion.div>
-
+            
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -204,15 +183,14 @@ function GlosarioPage() {
             >
               Glosario <span className="italic text-muted-foreground">Técnico</span>
             </motion.h1>
-
+            
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-muted-foreground text-lg text-balance mb-12"
             >
-              Comprende los términos clave de la arquitectura del paisaje, la silvicultura urbana y
-              nuestros servicios B2B.
+              Comprende los términos clave de la arquitectura del paisaje, la silvicultura urbana y nuestros servicios B2B.
             </motion.p>
 
             {/* Search Bar */}
@@ -233,7 +211,7 @@ function GlosarioPage() {
                   className="w-full bg-transparent border-none outline-none py-2 text-foreground placeholder:text-muted-foreground/70"
                 />
                 {searchQuery && (
-                  <button
+                  <button 
                     onClick={() => setSearchQuery("")}
                     className="p-2 text-muted-foreground hover:text-foreground transition-colors"
                   >
@@ -251,7 +229,7 @@ function GlosarioPage() {
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <AnimatePresence mode="popLayout">
             {filteredTerms.length > 0 ? (
-              <motion.div
+              <motion.div 
                 layout
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
               >
@@ -267,27 +245,24 @@ function GlosarioPage() {
                   >
                     {/* Glow effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[var(--olive)]/0 to-[var(--clay)]/0 rounded-3xl blur-xl transition-all duration-500 group-hover:from-[var(--olive)]/10 group-hover:to-[var(--clay)]/10 -z-10" />
-
+                    
                     {/* Card */}
                     <div className="h-full flex flex-col p-8 rounded-3xl bg-background/50 backdrop-blur-sm border border-border/40 hover:border-[var(--olive)]/30 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                       <div className="flex items-start justify-between mb-4">
                         <h3 className="text-xl font-medium tracking-tight text-foreground group-hover:text-[var(--olive)] transition-colors">
                           {item.term}
                         </h3>
-                        <Leaf
-                          className="w-5 h-5 text-muted-foreground/30 group-hover:text-[var(--olive)]/50 transition-colors"
-                          strokeWidth={1.5}
-                        />
+                        <Leaf className="w-5 h-5 text-muted-foreground/30 group-hover:text-[var(--olive)]/50 transition-colors" strokeWidth={1.5} />
                       </div>
-
+                      
                       <p className="text-muted-foreground text-[14px] leading-relaxed flex-grow">
                         {item.definition}
                       </p>
-
+                      
                       <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-border/30">
-                        {item.tags.map((tag) => (
-                          <span
-                            key={tag}
+                        {item.tags.map(tag => (
+                          <span 
+                            key={tag} 
                             className="px-2.5 py-1 rounded-md bg-secondary/50 text-secondary-foreground text-[11px] font-medium tracking-wider uppercase"
                           >
                             {tag}

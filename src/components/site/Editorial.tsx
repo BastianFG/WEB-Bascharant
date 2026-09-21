@@ -33,51 +33,50 @@ export default function Editorial() {
 
           <div className="col-span-12 lg:col-span-6 order-1 lg:order-2 relative">
             <CopihueDesign className="absolute -top-16 -right-4 lg:-right-12 w-32 h-32 lg:w-48 lg:h-48 opacity-90 hidden sm:block z-0 pointer-events-none" />
-
+            
             <div className="relative z-10">
               <p className="eyebrow mb-6">— Filosofía</p>
               <motion.h2
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1 }}
-                className="text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] tracking-tightest text-balance mb-8"
-              >
-                Cada proyecto comienza escuchando
-                <span className="italic text-muted-foreground"> el lugar.</span>
-              </motion.h2>
-              <div className="space-y-5 text-[15.5px] leading-[1.75] text-foreground/75 max-w-lg">
-                <p>
-                  La sociedad Paisajismo Bascharant S.P.A fue fundada en el año 2013 Prestando un
-                  servicio integral enfocado en la mantención de las áreas verdes y diseño
-                  paisajístico
-                </p>
-                <p>
-                  En Bascharant abordamos el paisajismo desde una mirada arquitectónica:
-                  composición, luz, materia y vegetación trabajan juntas para construir espacios que
-                  se sienten inevitables.
-                </p>
-                <p>
-                  Diseñamos propuestas adaptadas a cada cliente, con un enfoque personalizado,
-                  funcional y profundamente estético. Nuestra mantención continua asegura que el
-                  proyecto siga creciendo con el tiempo.
-                </p>
-              </div>
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] tracking-tightest text-balance mb-8"
+            >
+              Cada proyecto comienza escuchando
+              <span className="italic text-muted-foreground"> el lugar.</span>
+            </motion.h2>
+            <div className="space-y-5 text-[15.5px] leading-[1.75] text-foreground/75 max-w-lg">
+              <p>
+                La sociedad Paisajismo Bascharant S.P.A fue fundada en el año 2013 Prestando un servicio integral
+                enfocado en la mantención de las áreas verdes y diseño paisajístico
+              </p>
+              <p>
+                En Bascharant abordamos el paisajismo desde una mirada arquitectónica: composición,
+                luz, materia y vegetación trabajan juntas para construir espacios que se sienten
+                inevitables.
+              </p>
+              <p>
+                Diseñamos propuestas adaptadas a cada cliente, con un enfoque personalizado,
+                funcional y profundamente estético. Nuestra mantención continua asegura que el
+                proyecto siga creciendo con el tiempo.
+              </p>
+            </div>
 
-              <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
-                {[
-                  ["+13", "años de experiencia"],
-                  ["120+", "proyectos entregados"],
-                  ["100%", "diseño a medida"],
-                ].map(([k, v]) => (
-                  <div key={k}>
-                    <div className="font-display text-3xl text-[var(--olive)]">{k}</div>
-                    <div className="text-[11px] tracking-wider uppercase text-muted-foreground mt-2">
-                      {v}
-                    </div>
+            <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
+              {[
+                ["+13", "años de experiencia"],
+                ["120+", "proyectos entregados"],
+                ["100%", "diseño a medida"],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <div className="font-display text-3xl text-[var(--olive)]">{k}</div>
+                  <div className="text-[11px] tracking-wider uppercase text-muted-foreground mt-2">
+                    {v}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
             </div>
           </div>
         </div>

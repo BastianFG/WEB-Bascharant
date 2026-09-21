@@ -8,9 +8,11 @@ interface GlossaryLinkProps {
 export default function GlossaryLink({ children, term }: GlossaryLinkProps) {
   // Extract text if children is a simple string, to use as fallback query
   const queryText = term || (typeof children === "string" ? children : "");
-
+  
   // Create URL with query parameter
-  const href = queryText ? `/glosario?q=${encodeURIComponent(queryText)}` : "/glosario";
+  const href = queryText 
+    ? `/glosario?q=${encodeURIComponent(queryText)}` 
+    : "/glosario";
 
   return (
     <a

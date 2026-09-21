@@ -13,7 +13,7 @@ export default function FloatingCTA() {
         >
           {/* Subtle slow pulse instead of harsh ping */}
           <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
+          
           <span className="relative flex h-9 w-9 items-center justify-center shrink-0">
             <span className="absolute inset-0 rounded-full bg-[var(--sage)] blur-[6px] opacity-40 group-hover:opacity-70 transition-opacity duration-500"></span>
             <span className="relative flex h-full w-full items-center justify-center rounded-full bg-[var(--sage)] shadow-sm">
@@ -21,9 +21,7 @@ export default function FloatingCTA() {
             </span>
           </span>
           <span className="hidden md:flex flex-col items-center text-center leading-tight relative z-10">
-            <span className="text-[13px] font-medium text-white/90 group-hover:text-[var(--charcoal)] transition-colors duration-500">
-              Agendar
-            </span>
+            <span className="text-[13px] font-medium text-white/90 group-hover:text-[var(--charcoal)] transition-colors duration-500">Agendar</span>
           </span>
         </a>
       </div>
@@ -48,12 +46,8 @@ export default function FloatingCTA() {
             </span>
           </span>
           <span className="hidden md:flex flex-col items-center text-center leading-tight relative z-10">
-            <span className="text-[9px] tracking-[0.2em] uppercase text-emerald-400 group-hover:text-emerald-700 transition-colors duration-500">
-              Canal Directo
-            </span>
-            <span className="text-[13px] font-medium text-white/90 group-hover:text-[var(--charcoal)] transition-colors duration-500">
-              WhatsApp
-            </span>
+            <span className="text-[9px] tracking-[0.2em] uppercase text-emerald-400 group-hover:text-emerald-700 transition-colors duration-500">Canal Directo</span>
+            <span className="text-[13px] font-medium text-white/90 group-hover:text-[var(--charcoal)] transition-colors duration-500">WhatsApp</span>
           </span>
         </a>
       </div>

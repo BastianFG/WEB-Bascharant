@@ -20,23 +20,16 @@ export default function FloatingBackButton() {
         >
           {/* Subtle slow pulse */}
           <div className="absolute inset-0 bg-gradient-to-tr from-[var(--olive)]/0 via-[var(--olive)]/5 to-[var(--olive)]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
+          
           <span className="relative flex h-9 w-9 items-center justify-center shrink-0">
             <span className="absolute inset-0 rounded-full bg-[var(--olive)] blur-[6px] opacity-20 group-hover:opacity-40 transition-opacity duration-500"></span>
             <span className="relative flex h-full w-full items-center justify-center rounded-full bg-background/50 border border-border/50 shadow-sm group-hover:border-[var(--olive)]/30 transition-colors duration-500">
-              <ArrowLeft
-                strokeWidth={1.5}
-                className="h-4 w-4 text-foreground group-hover:text-[var(--olive)] transition-colors duration-500"
-              />
+              <ArrowLeft strokeWidth={1.5} className="h-4 w-4 text-foreground group-hover:text-[var(--olive)] transition-colors duration-500" />
             </span>
           </span>
           <span className="hidden md:flex flex-col text-left leading-tight relative z-10">
-            <span className="text-[9px] tracking-[0.2em] uppercase text-muted-foreground group-hover:text-[var(--olive)] transition-colors duration-500">
-              Anterior
-            </span>
-            <span className="text-[13px] font-medium text-foreground transition-colors duration-500">
-              Volver atrás
-            </span>
+            <span className="text-[9px] tracking-[0.2em] uppercase text-muted-foreground group-hover:text-[var(--olive)] transition-colors duration-500">Anterior</span>
+            <span className="text-[13px] font-medium text-foreground transition-colors duration-500">Volver atrás</span>
           </span>
         </motion.button>
       </div>

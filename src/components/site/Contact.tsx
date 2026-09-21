@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, MessageCircle, Instagram, Facebook, Linkedin, Twitter, MapPin, ArrowRight } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MessageCircle,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Twitter,
+  MapPin,
+  ArrowRight,
+} from "lucide-react";
 
 export default function Contact() {
   return (
     <section id="contacto" className="relative overflow-hidden py-16 md:py-36 bg-secondary/40">
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 z-10">
-        
         {/* Header and Title */}
         <div className="max-w-3xl mb-12 md:mb-16">
           <p className="eyebrow mb-6">— Contacto</p>
@@ -32,7 +41,9 @@ export default function Contact() {
             <div className="flex items-center gap-4">
               <MessageCircle strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
-                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">WhatsApp</div>
+                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                  WhatsApp
+                </div>
                 <div className="text-sm mt-1">+56 9 8845 8216</div>
               </div>
             </div>
@@ -45,7 +56,9 @@ export default function Contact() {
             <div className="flex items-center gap-4">
               <Phone strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
-                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Teléfono</div>
+                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                  Teléfono
+                </div>
                 <div className="text-sm mt-1">+56 9 8845 8216</div>
               </div>
             </div>
@@ -58,8 +71,12 @@ export default function Contact() {
             <div className="flex items-center gap-4">
               <Mail strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
-                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Email</div>
-                <div className="text-sm mt-1" title="paisajismo@bascharant.com">paisajismo@bascharant.com</div>
+                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                  Email
+                </div>
+                <div className="text-sm mt-1" title="paisajismo@bascharant.com">
+                  paisajismo@bascharant.com
+                </div>
               </div>
             </div>
             <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
@@ -73,7 +90,9 @@ export default function Contact() {
             <div className="flex items-center gap-4">
               <Instagram strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
-                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Instagram</div>
+                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                  Instagram
+                </div>
                 <div className="text-sm mt-1">@paisajismobascharant</div>
               </div>
             </div>
@@ -88,7 +107,9 @@ export default function Contact() {
             <div className="flex items-center gap-4">
               <Facebook strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
-                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Facebook</div>
+                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                  Facebook
+                </div>
                 <div className="text-sm mt-1">Paisajismo Bascharant</div>
               </div>
             </div>
@@ -103,7 +124,9 @@ export default function Contact() {
             <div className="flex items-center gap-4">
               <Linkedin strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
-                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">LinkedIn</div>
+                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                  LinkedIn
+                </div>
                 <div className="text-sm mt-1">Paisajismo Bascharant</div>
               </div>
             </div>
@@ -118,7 +141,9 @@ export default function Contact() {
             <div className="flex items-center gap-4">
               <Twitter strokeWidth={1.2} className="h-5 w-5 text-[var(--olive)]" />
               <div>
-                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">X (Twitter)</div>
+                <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                  X (Twitter)
+                </div>
                 <div className="text-sm mt-1">Paisajismo Bascharant</div>
               </div>
             </div>
@@ -129,11 +154,29 @@ export default function Contact() {
         {/* 3 Horizontal Maps Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { city: "Santiago", query: "Santiago,Chile", zoom: 12, url: "https://www.google.com/maps/place/Santiago" },
-            { city: "Zapallar", query: "Zapallar,Chile", zoom: 12, url: "https://www.google.com/maps/place/Zapallar" },
-            { city: "Frutillar", query: "Frutillar,Chile", zoom: 12, url: "https://www.google.com/maps/place/Frutillar" }
+            {
+              city: "Santiago",
+              query: "Santiago,Chile",
+              zoom: 12,
+              url: "https://www.google.com/maps/place/Santiago",
+            },
+            {
+              city: "Zapallar",
+              query: "Zapallar,Chile",
+              zoom: 12,
+              url: "https://www.google.com/maps/place/Zapallar",
+            },
+            {
+              city: "Frutillar",
+              query: "Frutillar,Chile",
+              zoom: 12,
+              url: "https://www.google.com/maps/place/Frutillar",
+            },
           ].map((location) => (
-            <div key={location.city} className="relative h-[280px] md:h-[360px] overflow-hidden rounded-2xl border border-border bg-background hover:shadow-[var(--shadow-soft)] transition-all duration-500 group/map">
+            <div
+              key={location.city}
+              className="relative h-[280px] md:h-[360px] overflow-hidden rounded-2xl border border-border bg-background hover:shadow-[var(--shadow-soft)] transition-all duration-500 group/map"
+            >
               <iframe
                 title={`Mapa de cobertura en ${location.city}`}
                 src={`https://maps.google.com/maps?q=${location.query}&t=&z=${location.zoom}&ie=UTF8&iwloc=&output=embed`}
@@ -169,7 +212,6 @@ export default function Contact() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

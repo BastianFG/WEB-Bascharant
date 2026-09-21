@@ -1,6 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Phone, Mail, MessageCircle, Instagram, Facebook, Linkedin, Twitter, MapPin } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MessageCircle,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Twitter,
+  MapPin,
+} from "lucide-react";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
@@ -14,12 +23,14 @@ export const Route = createFileRoute("/contacto")({
       { title: "Contacto Corporativo | Paisajismo Bascharant" },
       {
         name: "description",
-        content: "Agenda una visita técnica o contacta a nuestros asesores. Soluciones integrales de paisajismo en Santiago, Zapallar y Frutillar.",
+        content:
+          "Agenda una visita técnica o contacta a nuestros asesores. Soluciones integrales de paisajismo en Santiago, Zapallar y Frutillar.",
       },
       { property: "og:title", content: "Contacto Corporativo — Paisajismo Bascharant" },
       {
         property: "og:description",
-        content: "Hablemos de tu próximo espacio. Soluciones B2B para condominios, empresas y constructoras.",
+        content:
+          "Hablemos de tu próximo espacio. Soluciones B2B para condominios, empresas y constructoras.",
       },
     ],
   }),
@@ -30,7 +41,7 @@ function ContactPage() {
   return (
     <main className="relative bg-background text-foreground antialiased overflow-x-hidden min-h-screen flex flex-col">
       <Navbar />
-      
+
       {/* Background Tech Pattern */}
       <div className="absolute inset-0 bg-[var(--olive)]/5 pattern-dots opacity-50 pointer-events-none z-0" />
       <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-to-b from-[var(--olive)]/10 to-transparent pointer-events-none z-0" />
@@ -43,20 +54,19 @@ function ContactPage() {
       {/* Alternative Contact Methods (Secondary Grid) */}
       <section className="relative pb-24 z-10 flex-grow mt-4 border-t border-border/40 pt-16">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-          
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h3 className="text-3xl font-display tracking-tight text-balance mb-4">
               Canales Directos & Redes
             </h3>
             <p className="text-muted-foreground text-[15px] leading-relaxed">
-              Si prefieres un trato más directo o quieres seguir nuestro trabajo, te invitamos a usar nuestros canales de comunicación rápida o a visitar nuestras redes sociales.
+              Si prefieres un trato más directo o quieres seguir nuestro trabajo, te invitamos a
+              usar nuestros canales de comunicación rápida o a visitar nuestras redes sociales.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-5xl mx-auto">
-            
             {/* Primary Direct Contacts */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -72,8 +82,12 @@ function ContactPage() {
                   <MessageCircle strokeWidth={1.5} className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-medium tracking-tight group-hover:text-emerald-600 transition-colors">WhatsApp</h4>
-                  <p className="text-muted-foreground text-[11px] mt-0.5 font-mono">+56 9 8845 8216</p>
+                  <h4 className="text-sm font-medium tracking-tight group-hover:text-emerald-600 transition-colors">
+                    WhatsApp
+                  </h4>
+                  <p className="text-muted-foreground text-[11px] mt-0.5 font-mono">
+                    +56 9 8845 8216
+                  </p>
                 </div>
               </a>
 
@@ -85,7 +99,9 @@ function ContactPage() {
                   <Phone strokeWidth={1.5} className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-medium tracking-tight group-hover:text-[var(--olive)] transition-colors">Llamar</h4>
+                  <h4 className="text-sm font-medium tracking-tight group-hover:text-[var(--olive)] transition-colors">
+                    Llamar
+                  </h4>
                   <p className="text-muted-foreground text-[11px] mt-0.5">Línea Directa</p>
                 </div>
               </a>
@@ -98,23 +114,39 @@ function ContactPage() {
                   <Mail strokeWidth={1.5} className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-medium tracking-tight group-hover:text-[var(--olive)] transition-colors">Correo</h4>
-                  <p className="text-muted-foreground text-[11px] mt-0.5 truncate max-w-[150px]">paisajismo@bascharant.com</p>
+                  <h4 className="text-sm font-medium tracking-tight group-hover:text-[var(--olive)] transition-colors">
+                    Correo
+                  </h4>
+                  <p className="text-muted-foreground text-[11px] mt-0.5 truncate max-w-[150px]">
+                    paisajismo@bascharant.com
+                  </p>
                 </div>
               </a>
             </motion.div>
 
             {/* Social Links Row */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-4 mt-2"
             >
               {[
-                { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/" },
-                { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/paisajismobascharant/" },
-                { name: "Facebook", icon: Facebook, url: "https://www.facebook.com/people/Paisajismo-Bascharant/61590789628168/" },
+                {
+                  name: "LinkedIn",
+                  icon: Linkedin,
+                  url: "https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/",
+                },
+                {
+                  name: "Instagram",
+                  icon: Instagram,
+                  url: "https://www.instagram.com/paisajismobascharant/",
+                },
+                {
+                  name: "Facebook",
+                  icon: Facebook,
+                  url: "https://www.facebook.com/people/Paisajismo-Bascharant/61590789628168/",
+                },
                 { name: "X (Twitter)", icon: Twitter, url: "https://x.com/Josfuentesgome2" },
               ].map((social) => (
                 <a
@@ -124,14 +156,17 @@ function ContactPage() {
                   rel="noreferrer"
                   className="group flex flex-col p-4 rounded-2xl bg-background/50 backdrop-blur-md border border-border hover:border-[var(--olive)]/50 transition-all duration-300 hover:shadow-sm hover:-translate-y-1 text-center items-center justify-center gap-2"
                 >
-                  <social.icon strokeWidth={1.5} className="h-5 w-5 text-muted-foreground group-hover:text-[var(--olive)] transition-colors duration-300" />
+                  <social.icon
+                    strokeWidth={1.5}
+                    className="h-5 w-5 text-muted-foreground group-hover:text-[var(--olive)] transition-colors duration-300"
+                  />
                   <div className="font-medium text-[12px] text-foreground">{social.name}</div>
                 </a>
               ))}
             </motion.div>
 
             {/* Small Maps Row */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -140,9 +175,12 @@ function ContactPage() {
               {[
                 { city: "Santiago", query: "Santiago,Chile", zoom: 12 },
                 { city: "Zapallar", query: "Zapallar,Chile", zoom: 12 },
-                { city: "Frutillar", query: "Frutillar,Chile", zoom: 12 }
+                { city: "Frutillar", query: "Frutillar,Chile", zoom: 12 },
               ].map((location) => (
-                <div key={location.city} className="relative h-[120px] overflow-hidden rounded-2xl border border-border bg-muted group shadow-sm">
+                <div
+                  key={location.city}
+                  className="relative h-[120px] overflow-hidden rounded-2xl border border-border bg-muted group shadow-sm"
+                >
                   <iframe
                     title={`Mapa de cobertura en ${location.city}`}
                     src={`https://maps.google.com/maps?q=${location.query}&t=&z=${location.zoom}&ie=UTF8&iwloc=&output=embed`}
@@ -160,7 +198,6 @@ function ContactPage() {
                 </div>
               ))}
             </motion.div>
-
           </div>
         </div>
       </section>

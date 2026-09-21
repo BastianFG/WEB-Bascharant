@@ -50,25 +50,51 @@ export default function Footer() {
             </div>
             <ul className="space-y-3 text-sm text-white/80">
               <li>
-                <a href="/#inicio" className="hover:text-white transition-colors duration-300">Inicio</a>
+                <a href="/#inicio" className="hover:text-white transition-colors duration-300">
+                  Inicio
+                </a>
               </li>
               <li>
-                <a href="/#servicios" className="hover:text-white transition-colors duration-300">Servicios</a>
+                <a href="/#servicios" className="hover:text-white transition-colors duration-300">
+                  Servicios
+                </a>
               </li>
               <li>
-                <a href="/#empresas" className="hover:text-white transition-colors duration-300">Propuesta Comercial</a>
+                <a href="/#empresas" className="hover:text-white transition-colors duration-300">
+                  Propuesta Comercial
+                </a>
               </li>
               <li>
-                <a href="/proyecto-paisajismo" className="hover:text-white transition-colors duration-300">Proyectos</a>
+                <a
+                  href="/proyecto-paisajismo"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Proyectos
+                </a>
               </li>
               <li>
-                <a href="/sobre-nosotros" className="hover:text-white transition-colors duration-300">Sobre Nosotros</a>
+                <a
+                  href="/sobre-nosotros"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Sobre Nosotros
+                </a>
               </li>
               <li>
-                <a href="/glosario" className="hover:text-white transition-colors duration-300 text-[var(--olive)]">Glosario Técnico</a>
+                <a
+                  href="/glosario"
+                  className="hover:text-white transition-colors duration-300 text-[var(--olive)]"
+                >
+                  Glosario Técnico
+                </a>
               </li>
               <li>
-                <a href="/info" className="hover:text-white transition-colors duration-300 text-[var(--olive)]">Centro de Información</a>
+                <a
+                  href="/info"
+                  className="hover:text-white transition-colors duration-300 text-[var(--olive)]"
+                >
+                  Centro de Información
+                </a>
               </li>
             </ul>
           </div>
@@ -80,22 +106,52 @@ export default function Footer() {
             </div>
             <ul className="space-y-3 text-sm text-white/80">
               <li>
-                <a href="/servicio-de-mantencion-de-areas-verdes" className="hover:text-white transition-colors duration-300">Mantención de Áreas Verdes</a>
+                <a
+                  href="/servicio-de-mantencion-de-areas-verdes"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Mantención de Áreas Verdes
+                </a>
               </li>
               <li>
-                <a href="/diseno-y-construccion-de-areas-verdes" className="hover:text-white transition-colors duration-300">Diseño y Construcción</a>
+                <a
+                  href="/diseno-y-construccion-de-areas-verdes"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Diseño y Construcción
+                </a>
               </li>
               <li>
-                <a href="/control-fitosanitario-y-manejo-de-plagas-areas-verdes" className="hover:text-white transition-colors duration-300">Control Fitosanitario</a>
+                <a
+                  href="/control-fitosanitario-y-manejo-de-plagas-areas-verdes"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Control Fitosanitario
+                </a>
               </li>
               <li>
-                <a href="/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial" className="hover:text-white transition-colors duration-300">Arbolado Urbano y Poda</a>
+                <a
+                  href="/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Arbolado Urbano y Poda
+                </a>
               </li>
               <li>
-                <a href="/diseno-y-construcion-de-sistemas-de-riego" className="hover:text-white transition-colors duration-300">Sistemas de Riego</a>
+                <a
+                  href="/diseno-y-construcion-de-sistemas-de-riego"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Sistemas de Riego
+                </a>
               </li>
               <li>
-                <a href="https://www.bascharant.store/servicios" className="hover:text-white transition-colors duration-300">Mantecion hogar</a>
+                <a
+                  href="https://www.bascharant.store/servicios"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Mantecion hogar
+                </a>
               </li>
             </ul>
           </div>
@@ -107,25 +163,70 @@ export default function Footer() {
             </div>
             <ul className="space-y-3 text-sm text-white/80">
               <li>
-                <a href="tel:+56988458216" className="hover:text-white transition-colors duration-300">+56 9 8845 8216</a>
+                <a
+                  href="tel:+56988458216"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  +56 9 8845 8216
+                </a>
               </li>
               <li>
-                <a href="mailto:paisajismo@bascharant.com" className="hover:text-white transition-colors duration-300">paisajismo@bascharant.com</a>
+                <a
+                  href="mailto:paisajismo@bascharant.com"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  paisajismo@bascharant.com
+                </a>
               </li>
               <li>
-                <a href="https://wa.me/56988458216" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">WhatsApp</a>
+                <a
+                  href="https://wa.me/56988458216"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  WhatsApp
+                </a>
               </li>
               <li className="pt-2">
-                <a href="https://www.instagram.com/paisajismobascharant/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">Instagram</a>
+                <a
+                  href="https://www.instagram.com/paisajismobascharant/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Instagram
+                </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">LinkedIn</a>
+                <a
+                  href="https://www.linkedin.com/in/paisajismo-bascharat-490b06b8/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  LinkedIn
+                </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/people/Paisajismo-Bascharant/61590789628168/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">Facebook</a>
+                <a
+                  href="https://www.facebook.com/people/Paisajismo-Bascharant/61590789628168/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Facebook
+                </a>
               </li>
               <li>
-                <a href="https://x.com/Josfuentesgome2" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">X (Twitter)</a>
+                <a
+                  href="https://x.com/Josfuentesgome2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  X (Twitter)
+                </a>
               </li>
             </ul>
           </div>
@@ -133,7 +234,16 @@ export default function Footer() {
 
         {/* Línea inferior de cierre */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
-          <p>&copy; {new Date().getFullYear()} Paisajismo Bascharant SpA. RUT: 76.280.819-6. Todos los derechos reservados. <a href="/privacy-policy" className="hover:text-white transition-colors duration-300 ml-1">· Política de Privacidad</a></p>
+          <p>
+            &copy; {new Date().getFullYear()} Paisajismo Bascharant SpA. RUT: 76.280.819-6. Todos
+            los derechos reservados.{" "}
+            <a
+              href="/privacy-policy"
+              className="hover:text-white transition-colors duration-300 ml-1"
+            >
+              · Política de Privacidad
+            </a>
+          </p>
           <p className="tracking-[0.2em] uppercase text-[10px] text-white/30">
             Empresa de Paisajismo
           </p>

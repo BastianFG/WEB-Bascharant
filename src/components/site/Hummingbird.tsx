@@ -33,7 +33,7 @@ export default function Hummingbird() {
 
   useEffect(() => {
     if (containerSize.width === 0) return;
-    
+
     // Initial start position
     posRef.current = { x: -100, y: containerSize.height / 3 };
 
@@ -50,7 +50,7 @@ export default function Hummingbird() {
         scaleX: 1,
         transition: { duration: 2 + Math.random() * 3, ease: "easeOut" },
       });
-      
+
       posRef.current = { x: initialTargetX, y: initialTargetY };
 
       while (isMounted) {
@@ -140,16 +140,9 @@ export default function Hummingbird() {
               }}
             >
               {/* Wing Back */}
-              <path
-                d="M 45 55 Q 30 15 10 5 Q 35 30 45 55 Z"
-                fill="#74c69d"
-                opacity="0.8"
-              />
+              <path d="M 45 55 Q 30 15 10 5 Q 35 30 45 55 Z" fill="#74c69d" opacity="0.8" />
               {/* Wing Front */}
-              <path
-                d="M 40 60 Q 20 20 5 15 Q 30 40 40 60 Z"
-                fill="#95d5b2"
-              />
+              <path d="M 40 60 Q 20 20 5 15 Q 30 40 40 60 Z" fill="#95d5b2" />
             </g>
 
             <style>

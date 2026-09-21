@@ -20,43 +20,48 @@ const items = [
     icon: PencilRuler,
     n: "01",
     t: "Diseño y Cubicación",
-    d: <>Planificación paisajística, modelado 3D, <GlossaryLink>cubicación</GlossaryLink> y preparación de bases técnicas.</>,
-    href: "/diseno-y-construccion-de-areas-verdes"
+    d: (
+      <>
+        Planificación paisajística, modelado 3D, <GlossaryLink>cubicación</GlossaryLink> y
+        preparación de bases técnicas.
+      </>
+    ),
+    href: "/diseno-y-construccion-de-areas-verdes",
   },
   {
     icon: HardHat,
     n: "02",
     t: "Ejecución de Obras Verdes",
     d: "Construcción y habilitación de áreas verdes, movimiento de tierras y urbanización sustentable con personal acreditado.",
-    href: "/diseno-y-construccion-de-areas-verdes"
+    href: "/diseno-y-construccion-de-areas-verdes",
   },
   {
     icon: Scissors,
     n: "03",
     t: "Mantención Areas Verdes",
     d: "Conservación de areas verdes para empresas, condominios, centros comerciales, oficinas e industrias. visitas técnicas periódicas, informes fitosanitarios y cumplimiento riguroso de acuerdos.",
-    href: "/servicio-de-mantencion-de-areas-verdes"
+    href: "/servicio-de-mantencion-de-areas-verdes",
   },
   {
     icon: Sprout,
     n: "04",
     t: "Riego Tecnificado",
     d: "Instalación y diseño de sistemas de riego automatizado con control de consumo hídrico para eficiencia hídrica.",
-    href: "/diseno-y-construcion-de-sistemas-de-riego"
+    href: "/diseno-y-construcion-de-sistemas-de-riego",
   },
   {
     icon: Flower2,
     n: "05",
     t: "Control Fitosanitario",
     d: "Diagnóstico agronómico, control biológico, fumigación autorizada y manejo integral de plagas para mantener la sanidad vegetal.",
-    href: "/control-fitosanitario-y-manejo-de-plagas-areas-verdes"
+    href: "/control-fitosanitario-y-manejo-de-plagas-areas-verdes",
   },
   {
     icon: AlertTriangle,
     n: "06",
     t: "Trabajos Preventivos o Emergencia",
     d: "Atención especializada para poda en altura, tala de árboles con riesgo de caída, despeje de vías y manejo de emergencias.",
-    href: "/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial"
+    href: "/poda-tala-y-transplante-profesional-de-arbolado-urbano-comercial",
   },
 ];
 
@@ -155,7 +160,7 @@ function MobileCarousel() {
               <Wrapper
                 key={s.t}
                 href={s.href}
-                className={`shrink-0 grow-0 basis-full bg-background p-8 aspect-square flex flex-col items-center justify-center text-center relative overflow-hidden ${s.href ? 'cursor-pointer' : ''}`}
+                className={`shrink-0 grow-0 basis-full bg-background p-8 aspect-square flex flex-col items-center justify-center text-center relative overflow-hidden ${s.href ? "cursor-pointer" : ""}`}
               >
                 {/* Floating Top Number */}
                 <span className="absolute top-6 right-6 text-[10px] font-mono tracking-[0.3em] text-muted-foreground/80">
@@ -251,7 +256,8 @@ export default function Services() {
             <div className="inline-flex items-start gap-2.5 rounded-xl border border-[var(--olive)]/20 bg-[var(--olive)]/10 p-3 text-xs text-foreground max-w-xs">
               <span className="text-xl leading-none">🇨🇱</span>
               <p className="leading-relaxed m-0 text-muted-foreground">
-                <strong>¡Felices Fiestas Patrias!</strong> Celebramos este 18 de septiembre embelleciendo las áreas verdes de Chile.
+                <strong>¡Felices Fiestas Patrias!</strong> Celebramos este 18 de septiembre
+                embelleciendo las áreas verdes de Chile.
               </p>
             </div>
           </div>
@@ -287,7 +293,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.9, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                className={`group relative bg-background p-8 md:p-10 min-h-[280px] flex flex-col justify-between overflow-hidden transition-colors duration-700 hover:bg-secondary/60 ${s.href ? 'cursor-pointer' : ''}`}
+                className={`group relative bg-background p-8 md:p-10 min-h-[280px] flex flex-col justify-between overflow-hidden transition-colors duration-700 hover:bg-secondary/60 ${s.href ? "cursor-pointer" : ""}`}
               >
                 <div className="flex items-start justify-between">
                   <s.icon

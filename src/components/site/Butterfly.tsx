@@ -87,10 +87,7 @@ export default function Butterfly() {
   }, [containerSize, controls]);
 
   return (
-    <div
-      ref={wrapperRef}
-      className="absolute inset-0 pointer-events-none z-30 overflow-hidden"
-    >
+    <div ref={wrapperRef} className="absolute inset-0 pointer-events-none z-30 overflow-hidden">
       {containerSize.width > 0 && (
         <motion.div
           initial={{ x: -100, y: containerSize.height / 3, scaleX: 1 }}
@@ -112,16 +109,8 @@ export default function Butterfly() {
                 animation: "flap 0.4s infinite alternate ease-in-out",
               }}
             >
-              <path
-                d="M 50 10 Q 20 0 30 30 Q 20 60 50 50 Z"
-                fill="#f5c2e7"
-                opacity="0.9"
-              />
-              <path
-                d="M 50 10 Q 80 0 70 30 Q 80 60 50 50 Z"
-                fill="#f5c2e7"
-                opacity="0.9"
-              />
+              <path d="M 50 10 Q 20 0 30 30 Q 20 60 50 50 Z" fill="#f5c2e7" opacity="0.9" />
+              <path d="M 50 10 Q 80 0 70 30 Q 80 60 50 50 Z" fill="#f5c2e7" opacity="0.9" />
             </g>
 
             {/* Cuerpo */}

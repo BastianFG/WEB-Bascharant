@@ -32,7 +32,12 @@ function sanitizeAndValidate(formData: FormData): boolean {
   for (const [key, value] of formData.entries()) {
     if (typeof value === "string") {
       // Basic XSS/Injection prevention: Reject if contains common script/html tags
-      if (/<[a-z][\s\S]*>/i.test(value) || /javascript:/i.test(value) || /onload=/i.test(value) || /onerror=/i.test(value)) {
+      if (
+        /<[a-z][\s\S]*>/i.test(value) ||
+        /javascript:/i.test(value) ||
+        /onload=/i.test(value) ||
+        /onerror=/i.test(value)
+      ) {
         return false;
       }
       formData.set(key, value.trim());
@@ -56,7 +61,8 @@ function handleSubmit() {
 
     if (!sanitizeAndValidate(formData)) {
       toast.error("Validación fallida", {
-        description: "El formulario contiene caracteres no permitidos. Por favor, revise sus datos.",
+        description:
+          "El formulario contiene caracteres no permitidos. Por favor, revise sus datos.",
       });
       return;
     }
@@ -123,7 +129,10 @@ export default function Forms() {
         <div className="mx-auto max-w-4xl">
           <div className="relative overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm shadow-[var(--shadow-soft)]">
             {/* Header banner image for context */}
-            <div ref={containerRef} className="relative aspect-[21/9] md:aspect-[24/6] overflow-hidden bg-muted">
+            <div
+              ref={containerRef}
+              className="relative aspect-[21/9] md:aspect-[24/6] overflow-hidden bg-muted"
+            >
               {isInView && (
                 <video
                   src={empresasVideo}
@@ -161,7 +170,8 @@ export default function Forms() {
                     Asesoría Técnica y Propuestas Comerciales
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Completa este formulario para solicitar una propuesta, cotizar un trabajo preventivo o coordinar una visita técnica a terreno.
+                    Completa este formulario para solicitar una propuesta, cotizar un trabajo
+                    preventivo o coordinar una visita técnica a terreno.
                   </p>
                 </div>
 
@@ -170,8 +180,14 @@ export default function Forms() {
                   className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6"
                 >
                   {/* Honeypot field for anti-spam bots */}
-                  <input type="text" name="_gotcha" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
-                  
+                  <input
+                    type="text"
+                    name="_gotcha"
+                    style={{ display: "none" }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
                   <Field label="Nombre Completo del Solicitante">
                     <input
                       name="Nombre_Contacto"
@@ -243,7 +259,8 @@ export default function Forms() {
                           Seleccionar tipo de requerimiento
                         </option>
                         <option value="Trabajos Preventivos o Express (Poda, Fumigación, Corte de Pasto y Jardinería)">
-                          Trabajos Preventivos o Express (Poda, Fumigación, Corte de Pasto y Jardinería)
+                          Trabajos Preventivos o Express (Poda, Fumigación, Corte de Pasto y
+                          Jardinería)
                         </option>
                         <option>Agendar Reunión Técnica / Visita a Terreno</option>
                         <option>Ejecución de Obras Civiles Verdes (Construcción)</option>
@@ -279,10 +296,24 @@ export default function Forms() {
                   </div>
 
                   <label className="sm:col-span-2 flex items-start gap-3 text-xs text-muted-foreground mt-2 cursor-pointer">
-                    <input type="checkbox" defaultChecked required className="mt-1 accent-[var(--olive)]" aria-label="Confirmar veracidad de los datos y Política de Privacidad" />
+                    <input
+                      type="checkbox"
+                      defaultChecked
+                      required
+                      className="mt-1 accent-[var(--olive)]"
+                      aria-label="Confirmar veracidad de los datos y Política de Privacidad"
+                    />
                     <span>
-                      Confirmo la veracidad de los datos entregados, acepto la <a href="/privacy-policy" target="_blank" className="text-[var(--olive)] hover:underline">Política de Privacidad</a> y autorizo a Paisajismo
-                      Bascharant a contactarme para evaluar y dar curso a mi solicitud.
+                      Confirmo la veracidad de los datos entregados, acepto la{" "}
+                      <a
+                        href="/privacy-policy"
+                        target="_blank"
+                        className="text-[var(--olive)] hover:underline"
+                      >
+                        Política de Privacidad
+                      </a>{" "}
+                      y autorizo a Paisajismo Bascharant a contactarme para evaluar y dar curso a mi
+                      solicitud.
                     </span>
                   </label>
 
@@ -307,12 +338,27 @@ export default function Forms() {
         <div className="mt-16 mx-auto max-w-2xl">
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--olive)]/10 to-transparent border border-[var(--olive)]/20 p-6 md:p-8 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left transition-all duration-500 hover:border-[var(--olive)]/40 hover:shadow-lg">
             <div className="flex-shrink-0 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[var(--olive)]/20 text-[var(--olive)]">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
             </div>
             <div className="flex-grow">
-              <h4 className="text-[17px] font-semibold text-foreground mb-1.5">¿Eres un particular o buscas servicios para el hogar?</h4>
+              <h4 className="text-[17px] font-semibold text-foreground mb-1.5">
+                ¿Eres un particular o buscas servicios para el hogar?
+              </h4>
               <p className="text-[14px] text-muted-foreground leading-relaxed">
-                Para proyectos residenciales menores, jardinería en casas particulares o compras de productos, por favor visita nuestra plataforma dedicada o escríbenos al WhatsApp.
+                Para proyectos residenciales menores, jardinería en casas particulares o compras de
+                productos, por favor visita nuestra plataforma dedicada o escríbenos al WhatsApp.
               </p>
             </div>
             <div className="flex-shrink-0 mt-4 sm:mt-0">
@@ -323,7 +369,9 @@ export default function Forms() {
                 className="group inline-flex items-center justify-center whitespace-nowrap rounded-full text-[13px] font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-[var(--olive)] text-white hover:bg-[var(--olive)]/90 h-11 px-7 shadow-sm hover:shadow-md"
               >
                 Ir a Servicios{" "}
-                <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
               </a>
             </div>
           </div>

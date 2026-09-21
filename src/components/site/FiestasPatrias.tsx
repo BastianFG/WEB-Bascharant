@@ -5,7 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
  * Generates an animation of Chilean decorations for 18 de Septiembre.
  */
 export default function FiestasPatrias() {
-  const [decorations, setDecorations] = useState<{ id: number; isLeft: boolean; type: number }[]>([]);
+  const [decorations, setDecorations] = useState<{ id: number; isLeft: boolean; type: number }[]>(
+    [],
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -17,7 +19,7 @@ export default function FiestasPatrias() {
           type: Math.random() > 0.5 ? 0 : 2, // 0: Bandera, 2: Remolino
         },
       ]);
-      
+
       setDecorations((prev) => {
         if (prev.length > 8) return prev.slice(prev.length - 8);
         return prev;

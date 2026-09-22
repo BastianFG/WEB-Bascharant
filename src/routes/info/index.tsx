@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { BookOpen, ShieldCheck, Leaf, ArrowRight, BrainCircuit, Droplets, Settings2, Syringe, ThermometerSun, Bug, AlertTriangle, Snowflake } from "lucide-react";
+import { BookOpen, ShieldCheck, Leaf, ArrowRight, BrainCircuit, Droplets, Settings2, Syringe, ThermometerSun, Bug, AlertTriangle, Snowflake, Sun } from "lucide-react";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
@@ -21,6 +21,14 @@ export const Route = createFileRoute("/info/")({
 });
 
 const ARTICLES = [
+  {
+    title: "Llegada de la Primavera: Preparación y Mantenimiento Estratégico",
+    description: <>Descubre cómo preparar tus áreas verdes corporativas para la primavera: ajustes de riego, poda de formación y manejo del césped.</>,
+    href: "/info/preparacion-areas-verdes-primavera",
+    icon: <Sun className="w-8 h-8 text-[var(--olive)]" strokeWidth={1.5} />,
+    tags: ["Mantenimiento", "Primavera", "Jardines"],
+    date: "22 Sep 2026"
+  },
   {
     title: "Llegada del Invierno: Precauciones en Áreas Arboladas",
     description: <>Descubre las precauciones esenciales a tomar frente a la llegada del invierno en zonas con árboles para evitar accidentes estructurales y riesgos.</>,

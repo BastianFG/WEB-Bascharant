@@ -28,6 +28,7 @@ export const Route = createFileRoute("/sobre-nosotros")({
 function HistoriaPage() {
   return (
     <main className="relative bg-background text-foreground antialiased overflow-x-hidden pt-20">
+      <h1 className="sr-only">Nuestra Historia - Paisajismo Bascharant</h1>
       <Navbar />
       <Butterfly />
       <Butterfly />

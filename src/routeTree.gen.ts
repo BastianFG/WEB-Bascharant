@@ -47,6 +47,7 @@ import { Route as InfoPrecaucionesInviernoAreasArboladasRouteImport } from './ro
 import { Route as InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport } from './routes/info/muros-verdes-y-jardines-verticales-corporativos'
 import { Route as InfoMalaEleccionArbolCostosInfraestructuraRouteImport } from './routes/info/mala-eleccion-arbol-costos-infraestructura'
 import { Route as InfoImportanciaRiegoInteligenteEmpresasRouteImport } from './routes/info/importancia-riego-inteligente-empresas'
+import { Route as InfoImportanciaPodaPreventivaOtonoRouteImport } from './routes/info/importancia-poda-preventiva-otono'
 import { Route as InfoImportanciaPodaPreventivaInviernoRouteImport } from './routes/info/importancia-poda-preventiva-invierno'
 import { Route as InfoImportanciaFumigacionesPreventivasRouteImport } from './routes/info/importancia-fumigaciones-preventivas'
 import { Route as InfoImportanciaDesmalezadoControlPlagasEmpresasRouteImport } from './routes/info/importancia-desmalezado-control-plagas-empresas'
@@ -275,6 +276,12 @@ const InfoImportanciaRiegoInteligenteEmpresasRoute =
     path: '/info/importancia-riego-inteligente-empresas',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InfoImportanciaPodaPreventivaOtonoRoute =
+  InfoImportanciaPodaPreventivaOtonoRouteImport.update({
+    id: '/info/importancia-poda-preventiva-otono',
+    path: '/info/importancia-poda-preventiva-otono',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InfoImportanciaPodaPreventivaInviernoRoute =
   InfoImportanciaPodaPreventivaInviernoRouteImport.update({
     id: '/info/importancia-poda-preventiva-invierno',
@@ -350,6 +357,7 @@ export interface FileRoutesByFullPath {
   '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
   '/info/importancia-poda-preventiva-invierno': typeof InfoImportanciaPodaPreventivaInviernoRoute
+  '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
@@ -396,6 +404,7 @@ export interface FileRoutesByTo {
   '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
   '/info/importancia-poda-preventiva-invierno': typeof InfoImportanciaPodaPreventivaInviernoRoute
+  '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
@@ -443,6 +452,7 @@ export interface FileRoutesById {
   '/info/importancia-desmalezado-control-plagas-empresas': typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   '/info/importancia-fumigaciones-preventivas': typeof InfoImportanciaFumigacionesPreventivasRoute
   '/info/importancia-poda-preventiva-invierno': typeof InfoImportanciaPodaPreventivaInviernoRoute
+  '/info/importancia-poda-preventiva-otono': typeof InfoImportanciaPodaPreventivaOtonoRoute
   '/info/importancia-riego-inteligente-empresas': typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
@@ -491,6 +501,7 @@ export interface FileRouteTypes {
     | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
     | '/info/importancia-poda-preventiva-invierno'
+    | '/info/importancia-poda-preventiva-otono'
     | '/info/importancia-riego-inteligente-empresas'
     | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
@@ -537,6 +548,7 @@ export interface FileRouteTypes {
     | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
     | '/info/importancia-poda-preventiva-invierno'
+    | '/info/importancia-poda-preventiva-otono'
     | '/info/importancia-riego-inteligente-empresas'
     | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
@@ -583,6 +595,7 @@ export interface FileRouteTypes {
     | '/info/importancia-desmalezado-control-plagas-empresas'
     | '/info/importancia-fumigaciones-preventivas'
     | '/info/importancia-poda-preventiva-invierno'
+    | '/info/importancia-poda-preventiva-otono'
     | '/info/importancia-riego-inteligente-empresas'
     | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
@@ -630,6 +643,7 @@ export interface RootRouteChildren {
   InfoImportanciaDesmalezadoControlPlagasEmpresasRoute: typeof InfoImportanciaDesmalezadoControlPlagasEmpresasRoute
   InfoImportanciaFumigacionesPreventivasRoute: typeof InfoImportanciaFumigacionesPreventivasRoute
   InfoImportanciaPodaPreventivaInviernoRoute: typeof InfoImportanciaPodaPreventivaInviernoRoute
+  InfoImportanciaPodaPreventivaOtonoRoute: typeof InfoImportanciaPodaPreventivaOtonoRoute
   InfoImportanciaRiegoInteligenteEmpresasRoute: typeof InfoImportanciaRiegoInteligenteEmpresasRoute
   InfoMalaEleccionArbolCostosInfraestructuraRoute: typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   InfoMurosVerdesYJardinesVerticalesCorporativosRoute: typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
@@ -907,6 +921,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InfoImportanciaRiegoInteligenteEmpresasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/info/importancia-poda-preventiva-otono': {
+      id: '/info/importancia-poda-preventiva-otono'
+      path: '/info/importancia-poda-preventiva-otono'
+      fullPath: '/info/importancia-poda-preventiva-otono'
+      preLoaderRoute: typeof InfoImportanciaPodaPreventivaOtonoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/info/importancia-poda-preventiva-invierno': {
       id: '/info/importancia-poda-preventiva-invierno'
       path: '/info/importancia-poda-preventiva-invierno'
@@ -1019,6 +1040,8 @@ const rootRouteChildren: RootRouteChildren = {
     InfoImportanciaFumigacionesPreventivasRoute,
   InfoImportanciaPodaPreventivaInviernoRoute:
     InfoImportanciaPodaPreventivaInviernoRoute,
+  InfoImportanciaPodaPreventivaOtonoRoute:
+    InfoImportanciaPodaPreventivaOtonoRoute,
   InfoImportanciaRiegoInteligenteEmpresasRoute:
     InfoImportanciaRiegoInteligenteEmpresasRoute,
   InfoMalaEleccionArbolCostosInfraestructuraRoute:

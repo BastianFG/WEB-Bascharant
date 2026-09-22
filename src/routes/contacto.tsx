@@ -29,6 +29,7 @@ export const Route = createFileRoute("/contacto")({
 function ContactPage() {
   return (
     <main className="relative bg-background text-foreground antialiased overflow-x-hidden min-h-screen flex flex-col">
+      <h1 className="sr-only">Contacto Corporativo - Paisajismo Bascharant</h1>
       <Navbar />
       
       {/* Background Tech Pattern */}

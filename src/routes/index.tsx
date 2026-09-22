@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "LandscapingBusiness",
     "name": "Paisajismo Bascharant SpA",
     "taxID": "76280819-6",
     "alternateName": "Verde Arcadia Collective",

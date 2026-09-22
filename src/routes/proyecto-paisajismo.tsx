@@ -32,7 +32,6 @@ export const Route = createFileRoute("/proyecto-paisajismo")({
 function ProyectosPage() {
   return (
     <main className="relative bg-background text-foreground antialiased overflow-x-hidden pt-20">
-      <h1 className="sr-only">Proyectos y Portafolio - Paisajismo Bascharant</h1>
       <Navbar />
       <div className="py-10">
         <Gallery />

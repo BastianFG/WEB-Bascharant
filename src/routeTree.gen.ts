@@ -43,6 +43,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as InfoIndexRouteImport } from './routes/info/index'
 import { Route as InfoXerojardineriaPaisajismoSecoCorporativoRouteImport } from './routes/info/xerojardineria-paisajismo-seco-corporativo'
 import { Route as InfoRiesgosDesmalezarEspaciosPublicosSinGestionRouteImport } from './routes/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
+import { Route as InfoPreparacionAreasVerdesPrimaveraRouteImport } from './routes/info/preparacion-areas-verdes-primavera'
 import { Route as InfoPrecaucionesInviernoAreasArboladasRouteImport } from './routes/info/precauciones-invierno-areas-arboladas'
 import { Route as InfoMurosVerdesYJardinesVerticalesCorporativosRouteImport } from './routes/info/muros-verdes-y-jardines-verticales-corporativos'
 import { Route as InfoMalaEleccionArbolCostosInfraestructuraRouteImport } from './routes/info/mala-eleccion-arbol-costos-infraestructura'
@@ -252,6 +253,12 @@ const InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute =
     path: '/info/riesgos-desmalezar-espacios-publicos-sin-gestion',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InfoPreparacionAreasVerdesPrimaveraRoute =
+  InfoPreparacionAreasVerdesPrimaveraRouteImport.update({
+    id: '/info/preparacion-areas-verdes-primavera',
+    path: '/info/preparacion-areas-verdes-primavera',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InfoPrecaucionesInviernoAreasArboladasRoute =
   InfoPrecaucionesInviernoAreasArboladasRouteImport.update({
     id: '/info/precauciones-invierno-areas-arboladas',
@@ -362,6 +369,7 @@ export interface FileRoutesByFullPath {
   '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
   '/info/precauciones-invierno-areas-arboladas': typeof InfoPrecaucionesInviernoAreasArboladasRoute
+  '/info/preparacion-areas-verdes-primavera': typeof InfoPreparacionAreasVerdesPrimaveraRoute
   '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   '/info/': typeof InfoIndexRoute
@@ -409,6 +417,7 @@ export interface FileRoutesByTo {
   '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
   '/info/precauciones-invierno-areas-arboladas': typeof InfoPrecaucionesInviernoAreasArboladasRoute
+  '/info/preparacion-areas-verdes-primavera': typeof InfoPreparacionAreasVerdesPrimaveraRoute
   '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   '/info': typeof InfoIndexRoute
@@ -457,6 +466,7 @@ export interface FileRoutesById {
   '/info/mala-eleccion-arbol-costos-infraestructura': typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   '/info/muros-verdes-y-jardines-verticales-corporativos': typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
   '/info/precauciones-invierno-areas-arboladas': typeof InfoPrecaucionesInviernoAreasArboladasRoute
+  '/info/preparacion-areas-verdes-primavera': typeof InfoPreparacionAreasVerdesPrimaveraRoute
   '/info/riesgos-desmalezar-espacios-publicos-sin-gestion': typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   '/info/xerojardineria-paisajismo-seco-corporativo': typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   '/info/': typeof InfoIndexRoute
@@ -506,6 +516,7 @@ export interface FileRouteTypes {
     | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
     | '/info/precauciones-invierno-areas-arboladas'
+    | '/info/preparacion-areas-verdes-primavera'
     | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
     | '/info/'
@@ -553,6 +564,7 @@ export interface FileRouteTypes {
     | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
     | '/info/precauciones-invierno-areas-arboladas'
+    | '/info/preparacion-areas-verdes-primavera'
     | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
     | '/info'
@@ -600,6 +612,7 @@ export interface FileRouteTypes {
     | '/info/mala-eleccion-arbol-costos-infraestructura'
     | '/info/muros-verdes-y-jardines-verticales-corporativos'
     | '/info/precauciones-invierno-areas-arboladas'
+    | '/info/preparacion-areas-verdes-primavera'
     | '/info/riesgos-desmalezar-espacios-publicos-sin-gestion'
     | '/info/xerojardineria-paisajismo-seco-corporativo'
     | '/info/'
@@ -648,6 +661,7 @@ export interface RootRouteChildren {
   InfoMalaEleccionArbolCostosInfraestructuraRoute: typeof InfoMalaEleccionArbolCostosInfraestructuraRoute
   InfoMurosVerdesYJardinesVerticalesCorporativosRoute: typeof InfoMurosVerdesYJardinesVerticalesCorporativosRoute
   InfoPrecaucionesInviernoAreasArboladasRoute: typeof InfoPrecaucionesInviernoAreasArboladasRoute
+  InfoPreparacionAreasVerdesPrimaveraRoute: typeof InfoPreparacionAreasVerdesPrimaveraRoute
   InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute: typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute
   InfoXerojardineriaPaisajismoSecoCorporativoRoute: typeof InfoXerojardineriaPaisajismoSecoCorporativoRoute
   InfoIndexRoute: typeof InfoIndexRoute
@@ -893,6 +907,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InfoRiesgosDesmalezarEspaciosPublicosSinGestionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/info/preparacion-areas-verdes-primavera': {
+      id: '/info/preparacion-areas-verdes-primavera'
+      path: '/info/preparacion-areas-verdes-primavera'
+      fullPath: '/info/preparacion-areas-verdes-primavera'
+      preLoaderRoute: typeof InfoPreparacionAreasVerdesPrimaveraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/info/precauciones-invierno-areas-arboladas': {
       id: '/info/precauciones-invierno-areas-arboladas'
       path: '/info/precauciones-invierno-areas-arboladas'
@@ -1050,6 +1071,8 @@ const rootRouteChildren: RootRouteChildren = {
     InfoMurosVerdesYJardinesVerticalesCorporativosRoute,
   InfoPrecaucionesInviernoAreasArboladasRoute:
     InfoPrecaucionesInviernoAreasArboladasRoute,
+  InfoPreparacionAreasVerdesPrimaveraRoute:
+    InfoPreparacionAreasVerdesPrimaveraRoute,
   InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute:
     InfoRiesgosDesmalezarEspaciosPublicosSinGestionRoute,
   InfoXerojardineriaPaisajismoSecoCorporativoRoute:

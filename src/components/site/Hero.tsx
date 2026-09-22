@@ -64,11 +64,21 @@ export default function Hero() {
             className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-md sm:max-w-none"
           >
             <a
-              href="#empresas"
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-[13px] font-medium tracking-wide text-foreground transition-all duration-500 hover:bg-[var(--sage)] hover:text-white hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] text-center"
+              href="https://bascharant.store"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#E5E3DB] px-8 py-4 text-[13px] font-medium tracking-wide text-[#334155] transition-all duration-500 hover:bg-[#d8d5cd] hover:shadow-[0_15px_40px_-15px_rgba(229,227,219,0.5)] hover:-translate-y-0.5 text-center"
             >
-              Solicitar Propuesta Comercial
-              <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
+              Para Particulares
+              <span className="transition-transform duration-500 group-hover:translate-x-1 text-[#334155]/60">→</span>
+            </a>
+            
+            <a
+              href="#empresas"
+              className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#111827] px-8 py-4 text-[13px] font-medium tracking-wide text-white transition-all duration-500 hover:bg-[#1f2937] hover:shadow-[0_15px_40px_-15px_rgba(17,24,39,0.5)] hover:-translate-y-0.5 text-center"
+            >
+              Cotizar Empresas
+              <span className="transition-transform duration-500 group-hover:translate-x-1 text-white/60">→</span>
             </a>
           </motion.div>
 

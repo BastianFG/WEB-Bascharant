@@ -22,6 +22,11 @@ export const Route = createFileRoute("/contacto")({
         content: "Hablemos de tu próximo espacio. Soluciones B2B para condominios, empresas y constructoras.",
       },
     ],
+    scripts: [
+      {
+        children: `gtag('event', 'conversion', {'send_to': 'AW-18198577508/N7dvCNPOibgcEOSC4eVD'});`,
+      }
+    ],
   }),
   component: ContactPage,
 });

@@ -234,24 +234,30 @@ function MobileCarousel() {
 }
 
 // ─── Main section ──────────────────────────────────────────────────────────────
-import FiestasPatrias from "./FiestasPatrias";
+import Primavera from "./Primavera";
 
 export default function Services() {
   return (
     <section id="servicios" className="relative overflow-hidden py-28 md:py-40 bg-background/50">
-      <FiestasPatrias />
+      <Primavera />
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 z-10">
         {/* Header */}
         <div className="flex flex-col md:grid md:grid-cols-12 gap-8 mb-16 md:mb-24">
           <div className="w-full md:col-span-4 flex flex-col items-start gap-4">
-            <p className="eyebrow">— Servicios</p>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--olive)] bg-[var(--olive)]/10 px-3 py-1 text-[11px] font-semibold tracking-widest uppercase text-[var(--olive)]">
-              Mes de la Patria
-            </span>
-            <div className="inline-flex items-start gap-2.5 rounded-xl border border-[var(--olive)]/20 bg-[var(--olive)]/10 p-3 text-xs text-foreground max-w-xs">
-              <span className="text-xl leading-none">🇨🇱</span>
-              <p className="leading-relaxed m-0 text-muted-foreground">
-                <strong>¡Felices Fiestas Patrias!</strong> Celebramos este 18 de septiembre embelleciendo las áreas verdes de Chile.
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                Servicios
+              </span>
+            </div>
+            
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--olive)]/30 bg-[var(--olive)]/5 text-[var(--olive)] text-[10px] font-bold tracking-widest uppercase mb-4">
+              Temporada de Primavera
+            </div>
+            
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-secondary/30 border border-border/40 text-sm max-w-sm">
+              <div className="font-semibold text-foreground pt-0.5">CL</div>
+              <p className="text-muted-foreground leading-relaxed">
+                <strong className="text-foreground font-medium">¡Bienvenida Primavera!</strong> Preparamos y mantenemos tus áreas verdes para su máximo esplendor en esta temporada.
               </p>
             </div>
           </div>
